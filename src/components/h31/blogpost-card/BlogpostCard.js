@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
 
+import moment from "moment";
+
 const Container = styled.button`
   display: flex;
   flex-direction: column;
@@ -35,7 +37,7 @@ const InfoContainer = styled.div`
 const TitleContainer = styled.div`
   text-decoration: underline;
   padding: 0px 20px;
-  margin-top: -5px;
+  margin-top: 5px;
   margin-bottom: -5px;
   font-size: 1.25em;
 `;
@@ -56,9 +58,15 @@ const MomentContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   height: 10%;
+  font-size: 1.3em;
 `;
 
-const BlogpostCard = ({ TitleComponent, ParagraphComponent, TitleColor }) => (
+const BlogpostCard = ({
+  TitleComponent,
+  ParagraphComponent,
+  TitleColor,
+  Date
+}) => (
   <Container>
     <ImageContainer />
 
@@ -74,7 +82,7 @@ const BlogpostCard = ({ TitleComponent, ParagraphComponent, TitleColor }) => (
       <ParagraphContainer>{ParagraphComponent}</ParagraphContainer>
     </InfoContainer>
 
-    <MomentContainer />
+    <MomentContainer>{Date}</MomentContainer>
   </Container>
 );
 
@@ -89,14 +97,16 @@ BlogpostCard.defaultProps = {
       cillum fugiat.
     </p>
   ),
-  TitleColor: "#595959"
+  TitleColor: "#595959",
+  Date: moment().format("LL")
 };
 
 BlogpostCard.propTypes = {
   // handleClick: PropTypes.func,
   TitleComponent: PropTypes.element,
   ParagraphComponent: PropTypes.element,
-  TitleColor: PropTypes.string
+  TitleColor: PropTypes.string,
+  Date: PropTypes.func
 };
 
 export default BlogpostCard;
