@@ -39,33 +39,33 @@ const Layout = ({ children }) => (
         }
         ${H31Title1} {
           color: ${_config.colorWhite};
-          font-family: Sarpanch;
+          font-family: ${_config.fontSecondary};
           font-weight: 300;
           text-transform: uppercase;
         }
         ${H31Title2} {
           color: ${_config.colorWhite};
           font-size: 2.5rem;
-          font-family: Sarpanch;
+          font-family: ${_config.fontSecondary};
           font-weight: bold;
           text-transform: uppercase;
         }
         ${H31Link1} {
           color: ${_config.colorWhite};
-          font-family: Roboto Slab;
+          font-family: ${_config.fontPrimary};
           font-size: 0.8rem;
           text-transform: uppercase;
         }
         ${H31Text1} {
           color: ${_config.colorWhite};
-          font-family: Roboto Slab;
+          font-family: ${_config.fontPrimary};
           text-transform: uppercase;
           font-weight: bold;
           font-size: 0.8rem;
         }
         ${H31Text2} {
           color: ${_config.colorWhite};
-          font-family: Roboto Slab;
+          font-family: ${_config.fontPrimary};
           font-size: 1.25rem;
         }
       `}
