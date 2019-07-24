@@ -13,7 +13,7 @@ const Wrapper = styled.section`
 `;
 
 const TitleWithBackground = ({
-  HeadingComponent,
+  TitleComponent,
   backgroundColor,
   textAlign
 }) => (
@@ -23,20 +23,20 @@ const TitleWithBackground = ({
       text-align: ${textAlign};
     `}
   >
-    {HeadingComponent}
+    {TitleComponent}
   </Wrapper>
 );
 
 TitleWithBackground.defaultProps = {
   backgroundColor: "grey",
   textAlign: "center",
-  HeadingComponent: <Heading1>Testing</Heading1>
+  TitleComponent: <Heading1>Testing</Heading1>
 };
 
 TitleWithBackground.propTypes = {
   backgroundColor: PropTypes.string,
   textAlign: PropTypes.string,
-  HeadingComponent: PropTypes.element
+  TitleComponent: PropTypes.element
 };
 
 export default TitleWithBackground;

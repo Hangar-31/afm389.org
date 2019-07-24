@@ -14,10 +14,9 @@ const BackgroundImage = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  img {
+  .gatsby-image-wrapper {
     width: 100%;
     height: 100%;
-    outline-fit: cover;
   }
 `;
 
@@ -25,12 +24,20 @@ const ContainerContent = styled.section`
   position: relative;
   width: 100%;
   height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 `;
 
 const WrapperContent = styled.section`
-  position: relative;
-  max-width: 1440px;
-  margin: 0 auto;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  max-width: 700px;
+`;
+
+const Spacer = styled.div`
+  width: 15px;
+  height: 15px;
 `;
 
 const Masthead1 = ({
@@ -45,6 +52,7 @@ const Masthead1 = ({
       <ContainerContent>
         <WrapperContent>
           {TitleComponent}
+          <Spacer />
           {ParagraphComponent}
         </WrapperContent>
       </ContainerContent>
@@ -54,6 +62,7 @@ const Masthead1 = ({
       <ContainerContent>
         <WrapperContent>
           {TitleComponent}
+          <Spacer />
           {ParagraphComponent}
         </WrapperContent>
       </ContainerContent>

@@ -38,7 +38,7 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Roboto Slab", "Sarpanch"]
+          families: ["Roboto Slab", "Sarpanch", "Staatliches"]
         }
       }
     },

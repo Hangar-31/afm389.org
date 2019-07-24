@@ -10,6 +10,7 @@ import {
   H31ButtonBright,
   H31ButtonHollow,
   H31Title1,
+  H31Title2,
   H31Link1,
   H31Text1,
   H31Text2,
@@ -20,52 +21,7 @@ import {
 
 import ImgLogo from "./images/ImgLogo";
 import SocialIcons from "./h31/socials/SocialIcons";
-
-const links = [
-  {
-    name: "Home",
-    to: "/"
-  },
-  {
-    name: "About Us",
-    to: "/about"
-  },
-  {
-    name: "Member Benefits",
-    to: "/member-benefits"
-  },
-  {
-    name: "News And Events",
-    to: "/news-&-events"
-  },
-  {
-    name: "Contact",
-    to: "/contact"
-  },
-  {
-    name: "Rehearsal Hall",
-    to: "/rehearsal-hall"
-  }
-];
-
-const socials = [
-  {
-    social: "facebook",
-    link: ""
-  },
-  {
-    social: "instagram",
-    link: ""
-  },
-  {
-    social: "twitter",
-    link: ""
-  }
-];
-
-const colorDarkGreen = "#164F4B";
-const colorLightGreen = "#6DA55F";
-const colorOrange = "#F39508";
+import _config from "./_config";
 
 const Layout = ({ children }) => (
   <>
@@ -75,41 +31,48 @@ const Layout = ({ children }) => (
           margin: 0;
         }
         .main-link-active {
-          color: ${colorDarkGreen} !important;
+          color: ${_config.colorSecondary} !important;
         }
         .main-link-active + div {
           width: 100%;
-          background-color: ${colorDarkGreen};
+          background-color: ${_config.colorSecondary};
         }
         ${H31Title1} {
-          color: #ffffff;
+          color: ${_config.colorWhite};
           font-family: Sarpanch;
           font-weight: 300;
           text-transform: uppercase;
         }
+        ${H31Title2} {
+          color: ${_config.colorWhite};
+          font-size: 2.5rem;
+          font-family: Sarpanch;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
         ${H31Link1} {
-          color: #ffffff;
+          color: ${_config.colorWhite};
           font-family: Roboto Slab;
           font-size: 0.8rem;
           text-transform: uppercase;
         }
         ${H31Text1} {
-          color: #ffffff;
+          color: ${_config.colorWhite};
           font-family: Roboto Slab;
           text-transform: uppercase;
           font-weight: bold;
           font-size: 0.8rem;
         }
         ${H31Text2} {
-          color: #ffffff;
+          color: ${_config.colorWhite};
           font-family: Roboto Slab;
           font-size: 1.25rem;
         }
       `}
     />
     <H31MainNavbarSplitActions
-      topBarColor={colorLightGreen}
-      bottomBarColor={colorDarkGreen}
+      topBarColor={_config.colorPrimary}
+      bottomBarColor={_config.colorSecondary}
       TitleComponent={
         <H31Title1
           css={css`
@@ -137,13 +100,13 @@ const Layout = ({ children }) => (
       LogoComponent={<ImgLogo />}
       LinkBarComponent={
         <H31LinkBarHorizontal
-          linkComponents={links.map(link => (
+          linkComponents={_config.mainNav.map(link => (
             <H31LinkTallUnderline
               key="main-links-for-hangar-31"
-              linkColor="#ffffff"
-              linkHoverColor={colorDarkGreen}
-              underlineColor={colorDarkGreen}
-              underlineHoverColor={colorDarkGreen}
+              linkColor={_config.colorWhite}
+              linkHoverColor={_config.colorSecondary}
+              underlineColor={_config.colorSecondary}
+              underlineHoverColor={_config.colorSecondary}
               LinkComponent={
                 <H31Link1 activeClassName="main-link-active" to={link.to}>
                   {link.name}
@@ -155,9 +118,9 @@ const Layout = ({ children }) => (
       }
       SocialBarComponent={
         <H31SocialBarHorizontal
-          socialComponents={socials.map(social => (
+          socialComponents={_config.socials.map(social => (
             <SocialIcons
-              color="#ffffff"
+              color={_config.colorWhite}
               social={social.social}
               link={social.link}
             />
@@ -167,15 +130,15 @@ const Layout = ({ children }) => (
       TextComponent={<H31Text2>Don&apos;t Go It Alone</H31Text2>}
       ButtonComponentTop={
         <H31ButtonHollow
-          buttonColor="#ffffff"
-          hoverColor={colorOrange}
+          buttonColor={_config.colorWhite}
+          hoverColor={_config.colorTertiary}
           TextComponent={<H31Text1>Member Log In</H31Text1>}
         />
       }
       ButtonComponentBottom={
         <H31ButtonBright
-          borderColor="#ffffff"
-          backgroundColor={colorOrange}
+          borderColor={_config.colorWhite}
+          backgroundColor={_config.colorTertiary}
           TextComponent={<H31Text1>Join Now!</H31Text1>}
         />
       }

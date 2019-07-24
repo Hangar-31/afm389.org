@@ -10,10 +10,12 @@ import {
   H31CallToAction,
   H31Testimonials,
   H31Masthead1,
+  H31Title2,
   H31Paragraph1,
   H31TitleWithBackground
 } from "../components/h31";
 import ImgMastheadHome from "../components/images/ImgMastheadHome";
+import _config from "../components/_config";
 
 export default () => (
   <Layout>
@@ -21,9 +23,10 @@ export default () => (
     <H31Masthead1
       ImageComponent={<ImgMastheadHome />}
       TitleComponent={
-        <H31TitleWithBackground>
-          Your Path to a Musical Career
-        </H31TitleWithBackground>
+        <H31TitleWithBackground
+          backgroundColor={_config.colorPrimary}
+          TitleComponent={<H31Title2>Your Path to a Musical Career</H31Title2>}
+        />
       }
       ParagraphComponent={
         <H31Paragraph1>
