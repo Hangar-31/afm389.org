@@ -4,6 +4,8 @@
 export { default as H31FormError1 } from "./base-elements/Error1";
 export { default as H31FormLabel1 } from "./base-elements/Label1";
 export { default as H31FormLabel2 } from "./base-elements/Label2";
+export { default as H31Button1 } from "./base-elements/Button1";
+export { default as H31Button2 } from "./base-elements/Button2";
 export { default as H31Link1 } from "./base-elements/Link1";
 export { default as H31Link2 } from "./base-elements/Link2";
 export { default as H31Link3 } from "./base-elements/Link3";
@@ -12,10 +14,12 @@ export { default as H31Text2 } from "./base-elements/Text2";
 export { default as H31Text3 } from "./base-elements/Text3";
 export { default as H31Text4 } from "./base-elements/Text4";
 export { default as H31Text5 } from "./base-elements/Text5";
-export { default as H31Title1 } from "./base-elements/Title1";
-export { default as H31Title2 } from "./base-elements/Title2";
+export { default as H31Title1A } from "./base-elements/Title1A";
+export { default as H31Title1B } from "./base-elements/Title1B";
+export { default as H31Title2A } from "./base-elements/Title2A";
+export { default as H31Title2B } from "./base-elements/Title2B";
+export { default as H31Title2C } from "./base-elements/Title2C";
 export { default as H31Title3 } from "./base-elements/Title3";
-export { default as H31Title4 } from "./base-elements/Title4";
 
 // Buttons
 export { default as H31ButtonBright } from "./buttons/ButtonBright";
@@ -26,6 +30,9 @@ export { default as H31ContentBlock1 } from "./content-block/ContentBlock1";
 
 // Call To Action
 export { default as H31CallToAction } from "./call-to-action/CallToAction";
+
+// Layout
+export { default as H31Layout3Col } from "./layout/Layout3Col";
 
 // Link Bars
 export { default as H31LinkBarHorizontal } from "./link-bars/LinkBarHorizontal";
@@ -63,6 +70,9 @@ export { default as H31Testimonials } from "./testimonials/Testimonials";
 // Text Blocks
 export { default as H31TextBlock1 } from "./text-blocks/TextBlock1";
 export { default as H31TextBlock2 } from "./text-blocks/TextBlock2";
+
+// Time Indicators
+export { default as H31SimpleTime } from "./time-indicators/SimpleTime";
 
 // Titles
 export {

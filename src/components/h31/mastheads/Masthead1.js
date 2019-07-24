@@ -6,7 +6,7 @@ const Container = styled.section`
   position: relative;
   display: flex;
   border-box: content;
-  height: 500px;
+  height: 600px;
   width: 100%;
 `;
 

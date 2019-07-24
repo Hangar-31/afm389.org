@@ -3,9 +3,6 @@ import { PropTypes } from "prop-types";
 import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
 
-// Components
-import Heading1 from "../base-elements/Title1";
-
 const Wrapper = styled.section`
   width: 100%;
   box-sizing: border-box;
@@ -28,15 +25,15 @@ const TitleWithBackground = ({
 );
 
 TitleWithBackground.defaultProps = {
+  TitleComponent: <h1>Title 1</h1>,
   backgroundColor: "grey",
-  textAlign: "center",
-  TitleComponent: <Heading1>Testing</Heading1>
+  textAlign: "center"
 };
 
 TitleWithBackground.propTypes = {
+  TitleComponent: PropTypes.element,
   backgroundColor: PropTypes.string,
-  textAlign: PropTypes.string,
-  TitleComponent: PropTypes.element
+  textAlign: PropTypes.string
 };
 
 export default TitleWithBackground;

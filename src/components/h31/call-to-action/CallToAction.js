@@ -1,34 +1,59 @@
 import PropTypes from "prop-types";
 /** @jsx jsx */
 import styled from "@emotion/styled";
-import { jsx } from "@emotion/core";
+import { css, jsx } from "@emotion/core";
 
-const BigContainer = styled.section`
+const Container = styled.section`
   display: flex;
   flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
 `;
 
-const ParagraphContainer = styled.div`
+const Wrapper = styled.div`
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 120px 0;
+`;
+
+const TextContainer = styled.div`
   line-height: 1.25em;
   padding: 5px 0px 10px 0px;
+  margin-bottom: 30px;
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
+  button {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 `;
 
-const CallToAction = ({ TitleComponent, TextComponent, ButtonComponent }) => (
-  <BigContainer>
-    <div>{TitleComponent}</div>
+const CallToAction = ({
+  backgroundColor,
+  TitleComponent,
+  TextComponent,
+  ButtonComponent
+}) => (
+  <Container
+    css={css`
+      background-color: ${backgroundColor};
+    `}
+  >
+    <Wrapper>
+      <div>{TitleComponent}</div>
 
-    <ParagraphContainer>{TextComponent}</ParagraphContainer>
+      <TextContainer>{TextComponent}</TextContainer>
 
-    <ButtonContainer>{ButtonComponent}</ButtonContainer>
-  </BigContainer>
+      <ButtonContainer>{ButtonComponent}</ButtonContainer>
+    </Wrapper>
+  </Container>
 );
 
 CallToAction.defaultProps = {
+  backgroundColor: "transparent",
   TitleComponent: <h2>This Title is a Test</h2>,
   TextComponent: (
     <p>
@@ -45,6 +70,7 @@ CallToAction.defaultProps = {
 };
 
 CallToAction.propTypes = {
+  backgroundColor: PropTypes.string,
   TitleComponent: PropTypes.element,
   TextComponent: PropTypes.element,
   ButtonComponent: PropTypes.element

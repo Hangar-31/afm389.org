@@ -28,7 +28,7 @@ const ParagraphContainer = styled.div`
 
 const Testimonials = ({
   TitleComponent,
-  ParagraphComponent,
+  TextComponent,
   fontColor,
   titleColor,
   borderColor
@@ -52,7 +52,7 @@ const Testimonials = ({
           color: ${fontColor};
         `}
       >
-        {ParagraphComponent}
+        {TextComponent}
       </ParagraphContainer>
     </Container>
   </BigContainer>
@@ -60,7 +60,7 @@ const Testimonials = ({
 
 Testimonials.defaultProps = {
   TitleComponent: <h2>Test</h2>,
-  ParagraphComponent: (
+  TextComponent: (
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium mi a
       quam molestie, vel ultricies libero faucibus. Lorem ipsum dolor sit amet,
@@ -82,7 +82,7 @@ Testimonials.defaultProps = {
 
 Testimonials.propTypes = {
   TitleComponent: PropTypes.element,
-  ParagraphComponent: PropTypes.element,
+  TextComponent: PropTypes.element,
   fontColor: PropTypes.string,
   titleColor: PropTypes.string,
   borderColor: PropTypes.string

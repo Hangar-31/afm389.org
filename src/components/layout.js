@@ -9,17 +9,25 @@ import {
   H31MainNavbarSplitActions,
   H31ButtonBright,
   H31ButtonHollow,
-  H31Title1,
-  H31Title2,
+  H31Button1,
+  H31Button2,
+  H31Title1A,
+  H31Title1B,
+  H31Title2A,
+  H31Title2B,
+  H31Title2C,
+  H31Title3,
   H31Link1,
   H31Text1,
   H31Text2,
+  H31Text3,
+  H31Text4,
   H31LinkBarHorizontal,
   H31LinkTallUnderline,
   H31SocialBarHorizontal
 } from "./h31/index";
 
-import ImgLogo from "./images/ImgLogo";
+import ImgLogo from "./images/logos/ImgLogo";
 import SocialIcons from "./h31/socials/SocialIcons";
 import _config from "./_config";
 
@@ -37,18 +45,52 @@ const Layout = ({ children }) => (
           width: 100%;
           background-color: ${_config.colorSecondary};
         }
-        ${H31Title1} {
+        ${H31Title1A} {
           color: ${_config.colorWhite};
           font-family: ${_config.fontSecondary};
           font-weight: 300;
           text-transform: uppercase;
         }
-        ${H31Title2} {
+        ${H31Title1B} {
+          color: ${_config.colorWhite};
+          font-size: 3.75rem;
+          font-family: ${_config.fontTertiary};
+          font-weight: 300;
+          text-transform: uppercase;
+        }
+        ${H31Title1B} {
+          color: ${_config.colorWhite};
+          font-size: 3.75rem;
+          font-family: ${_config.fontTertiary};
+          font-weight: 300;
+          text-transform: uppercase;
+        }
+        ${H31Title2A} {
           color: ${_config.colorWhite};
           font-size: 2.5rem;
-          font-family: ${_config.fontSecondary};
-          font-weight: bold;
+          font-family: ${_config.fontTertiary};
+          font-weight: 300;
           text-transform: uppercase;
+        }
+        ${H31Title2B} {
+          color: ${_config.colorSecondary};
+          font-size: 1.25rem;
+          font-family: ${_config.fontTertiary};
+          font-weight: 300;
+          text-transform: uppercase;
+        }
+        ${H31Title2C} {
+          color: ${_config.colorSecondary};
+          font-size: 3.75rem;
+          font-family: ${_config.fontTertiary};
+          font-weight: 300;
+          text-transform: uppercase;
+        }
+        ${H31Title3} {
+          color: ${_config.colorWhite};
+          font-family: ${_config.fontPrimary};
+          font-weight: bold;
+          font-size: 1.25rem;
         }
         ${H31Link1} {
           color: ${_config.colorWhite};
@@ -58,15 +100,43 @@ const Layout = ({ children }) => (
         }
         ${H31Text1} {
           color: ${_config.colorWhite};
-          font-family: ${_config.fontPrimary};
+          font-family: ${_config.fontTertiary};
           text-transform: uppercase;
-          font-weight: bold;
-          font-size: 0.8rem;
+          font-weight: regular;
+          font-size: 1.5rem;
+          line-height: 1.5;
         }
         ${H31Text2} {
           color: ${_config.colorWhite};
           font-family: ${_config.fontPrimary};
           font-size: 1.25rem;
+          line-height: 1.5;
+        }
+        ${H31Text3} {
+          color: ${_config.colorLightGrey};
+          font-family: ${_config.fontQuintery};
+          font-size: 1.125rem;
+          line-height: 1.5;
+        }
+        ${H31Text4} {
+          color: ${_config.colorDarkGrey};
+          font-family: ${_config.fontQuintery};
+          font-size: 1.125rem;
+          line-height: 1.5;
+        }
+        ${H31Button1} {
+          color: ${_config.colorWhite};
+          font-family: ${_config.fontPrimary};
+          font-size: 0.8rem;
+          font-weight: 300;
+          text-transform: uppercase;
+        }
+        ${H31Button2} {
+          color: ${_config.colorWhite};
+          font-family: ${_config.fontPrimary};
+          font-size: 0.875rem;
+          font-weight: bold;
+          text-transform: uppercase;
         }
       `}
     />
@@ -74,7 +144,7 @@ const Layout = ({ children }) => (
       topBarColor={_config.colorPrimary}
       bottomBarColor={_config.colorSecondary}
       TitleComponent={
-        <H31Title1
+        <H31Title1A
           css={css`
             position: relative;
             text-align: center;
@@ -95,7 +165,7 @@ const Layout = ({ children }) => (
           >
             Central FL Musicians Association
           </span>
-        </H31Title1>
+        </H31Title1A>
       }
       LogoComponent={<ImgLogo />}
       LinkBarComponent={
@@ -123,6 +193,7 @@ const Layout = ({ children }) => (
               color={_config.colorWhite}
               social={social.social}
               link={social.link}
+              colorHover={_config.colorTertiary}
             />
           ))}
         />
@@ -132,14 +203,14 @@ const Layout = ({ children }) => (
         <H31ButtonHollow
           buttonColor={_config.colorWhite}
           hoverColor={_config.colorTertiary}
-          TextComponent={<H31Text1>Member Log In</H31Text1>}
+          ButtonComponent={<H31Button1>Member Log In</H31Button1>}
         />
       }
       ButtonComponentBottom={
         <H31ButtonBright
           borderColor={_config.colorWhite}
           backgroundColor={_config.colorTertiary}
-          TextComponent={<H31Text1>Join Now!</H31Text1>}
+          ButtonComponent={<H31Button2>Join Now</H31Button2>}
         />
       }
     />

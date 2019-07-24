@@ -14,13 +14,13 @@ const Button = styled.button`
 `;
 
 const ButtonHollow = ({
-  handleClick,
+  ButtonComponent,
+  onClick,
   buttonColor,
-  hoverColor,
-  TextComponent
+  hoverColor
 }) => (
   <Button
-    onClick={handleClick}
+    onClick={onClick}
     css={css`
       border: 1px solid ${buttonColor};
       > * {
@@ -34,22 +34,22 @@ const ButtonHollow = ({
       }
     `}
   >
-    {TextComponent}
+    {ButtonComponent}
   </Button>
 );
 
 ButtonHollow.defaultProps = {
-  handleClick: () => console.log("ButtonHollow"),
+  ButtonComponent: <span>Button</span>,
+  onClick: () => console.log("ButtonHollow"),
   hoverColor: "#999999",
-  buttonColor: "#000000",
-  TextComponent: <span>Button</span>
+  buttonColor: "#000000"
 };
 
 ButtonHollow.propTypes = {
-  handleClick: PropTypes.func,
+  ButtonComponent: PropTypes.element,
+  onClick: PropTypes.func,
   hoverColor: PropTypes.string,
-  buttonColor: PropTypes.string,
-  TextComponent: PropTypes.element
+  buttonColor: PropTypes.string
 };
 
 export default ButtonHollow;

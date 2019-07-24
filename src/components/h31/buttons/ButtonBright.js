@@ -25,7 +25,7 @@ const ButtonBright = ({
   handleClick,
   backgroundColor,
   borderColor,
-  TextComponent
+  ButtonComponent
 }) => (
   <WhiteBox>
     <Button
@@ -35,7 +35,7 @@ const ButtonBright = ({
         border: 1px solid ${borderColor};
       `}
     >
-      {TextComponent}
+      {ButtonComponent}
     </Button>
   </WhiteBox>
 );
@@ -44,14 +44,14 @@ ButtonBright.defaultProps = {
   handleClick: () => console.log("ButtonBright"),
   backgroundColor: "transparent",
   borderColor: "#000000",
-  TextComponent: <span>Button</span>
+  ButtonComponent: <span>Button</span>
 };
 
 ButtonBright.propTypes = {
   handleClick: PropTypes.func,
   backgroundColor: PropTypes.string,
   borderColor: PropTypes.string,
-  TextComponent: PropTypes.element
+  ButtonComponent: PropTypes.element
 };
 
 export default ButtonBright;

@@ -6,7 +6,7 @@ import styled from "@emotion/styled";
 const Wrapper = styled.section`
   width: 100%;
   box-sizing: border-box;
-  padding: 5px;
+  padding: 15px;
 `;
 
 const Paragraph1 = ({ TextComponent, backgroundColor }) => (

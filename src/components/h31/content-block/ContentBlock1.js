@@ -1,85 +1,103 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import styled from "@emotion/styled";
+import { css } from "@emotion/core";
 
 const Container = styled.section`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto 60px auto;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+`;
+
+const ContentContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 50%;
+  height: 100%;
+`;
+
+const ContentWrapper = styled.div`
+  max-width: 400px;
+`;
+
+const TitleWrapper = styled.div`
+  margin-bottom: 30px;
 `;
 
 const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
-  img {
-    width: 100%;
-    height: 100%;
-    outline-fit: cover;
+  width: 50%;
+  .gatsby-image-wrapper {
+    width: 600px;
   }
-`;
-
-const TextWrapper = styled.div`
-  display: flex;
-  justify-content: start;
-  align-items: left;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-`;
-
-const TitleWrapper = styled.div`
-  padding: 40px 100px 20px;
-`;
-
-const ParagraphWrapper = styled.div`
-  height: 100%;
-  padding: 0px 100px;
-  line-height: 1.5em;
-`;
-
-const ObjectWrapper = styled.div`
-  padding: 30px;
 `;
 
 const ContentBlock = ({
   ImageComponent,
   TitleComponent,
   TextComponent,
-  textRight
+  textRight,
+  backgroundColor
 }) => (
-  <Container>
-    {!textRight && (
-      <>
-        <TextWrapper>
-          <ObjectWrapper>
-            <TitleWrapper>{TitleComponent}</TitleWrapper>
+  <Container
+    css={css`
+      background-color: ${backgroundColor};
+    `}
+  >
+    <Wrapper>
+      {!textRight && (
+        <>
+          <ContentContainer>
+            <ContentWrapper>
+              <TitleWrapper>{TitleComponent}</TitleWrapper>
 
-            <ParagraphWrapper>{TextComponent}</ParagraphWrapper>
-          </ObjectWrapper>
-        </TextWrapper>
-        <ImageWrapper>{ImageComponent}</ImageWrapper>
-      </>
-    )}
+              {TextComponent}
+            </ContentWrapper>
+          </ContentContainer>
+          <ImageWrapper>{ImageComponent}</ImageWrapper>
+        </>
+      )}
 
-    {textRight && (
-      <>
-        <ImageWrapper>{ImageComponent}</ImageWrapper>
-        <TextWrapper>
-          <ObjectWrapper>
-            <TitleWrapper>{TitleComponent}</TitleWrapper>
+      {textRight && (
+        <>
+          <ImageWrapper>{ImageComponent}</ImageWrapper>
+          <ContentContainer>
+            <ContentWrapper>
+              <TitleWrapper
+                css={css`
+                  text-align: center;
+                `}
+              >
+                {TitleComponent}
+              </TitleWrapper>
 
-            <ParagraphWrapper>{TextComponent}</ParagraphWrapper>
-          </ObjectWrapper>
-        </TextWrapper>
-      </>
-    )}
+              {TextComponent}
+            </ContentWrapper>
+          </ContentContainer>
+        </>
+      )}
+    </Wrapper>
   </Container>
 );
 
 ContentBlock.defaultProps = {
   textRight: false,
+  backgroundColor: "transparent",
   ImageComponent: <span>Put an image here</span>,
   TitleComponent: <span>Test Title</span>,
   TextComponent: (
@@ -96,6 +114,7 @@ ContentBlock.defaultProps = {
 
 ContentBlock.propTypes = {
   textRight: PropTypes.bool,
+  backgroundColor: PropTypes.string,
   TitleComponent: PropTypes.element,
   TextComponent: PropTypes.element,
   ImageComponent: PropTypes.element

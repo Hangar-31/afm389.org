@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import { css, jsx } from "@emotion/core";
 
-import Text1 from "../base-elements/Text1";
-
 const Container = styled.section`
   display: flex;
   align-items: center;
@@ -28,6 +26,7 @@ const Button = styled.button`
 `;
 
 const ButtonFillArrow = ({
+  ButtonComponent,
   handleClick,
   primaryColor,
   secondaryColor,
@@ -39,16 +38,15 @@ const ButtonFillArrow = ({
       css={css`
         background-color: ${primaryColor};
         border: 1px solid ${secondaryColor};
-        transition: 0s;
+        transition: 0.2s;
 
         &:hover {
           color: ${primaryColor};
           background-color: ${secondaryColor};
-          transition: 0s;
         }
       `}
     >
-      <Text1>Button</Text1>
+      {ButtonComponent}
     </Button>
     <Carrot
       css={css`
@@ -59,6 +57,7 @@ const ButtonFillArrow = ({
 );
 
 ButtonFillArrow.defaultProps = {
+  ButtonComponent: <span>Button</span>,
   handleClick: () => console.log("ButtonFillArrow"),
   secondaryColor: "#000000",
   primaryColor: "#FFFFFF",
@@ -66,6 +65,7 @@ ButtonFillArrow.defaultProps = {
 };
 
 ButtonFillArrow.propTypes = {
+  ButtonComponent: PropTypes.element,
   handleClick: PropTypes.func,
   secondaryColor: PropTypes.string,
   primaryColor: PropTypes.string,

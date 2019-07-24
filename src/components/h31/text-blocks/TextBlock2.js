@@ -5,38 +5,35 @@ import styled from "@emotion/styled";
 
 const Container = styled.section`
   display: flex;
-  height: 100%;
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto 60px auto;
 `;
 
 const Block = styled.section`
-  height: 180px;
-  width: 170px;
+  width: 90px;
+  margin-right: 100px;
 `;
 
 const ContentWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 10px 30px 20px;
+  padding: 60px 30px;
+  max-width: 70%;
 `;
 
-const Titles = styled.section`
+const TitleWrapper = styled.section`
   align-items: center;
-  padding-bottom: 10px;
+  margin-bottom: 30px;
 `;
 
 const TextBlock2 = ({
   TitleComponent,
   SubTitleComponent,
   TextComponent,
-  lineColor,
   backgroundColor
 }) => (
-  <Container
-    css={css`
-      border: 1px solid ${lineColor};
-    `}
-  >
+  <Container>
     <Block
       css={css`
         background-color: ${backgroundColor};
@@ -44,10 +41,10 @@ const TextBlock2 = ({
     />
 
     <ContentWrapper>
-      <Titles>
+      <TitleWrapper>
         {SubTitleComponent}
         {TitleComponent}
-      </Titles>
+      </TitleWrapper>
 
       {TextComponent}
     </ContentWrapper>
@@ -55,6 +52,8 @@ const TextBlock2 = ({
 );
 
 TextBlock2.defaultProps = {
+  TitleComponent: <h2>Test</h2>,
+  SubTitleComponent: <h4>Test</h4>,
   TextComponent: (
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium mi a
@@ -68,9 +67,6 @@ TextBlock2.defaultProps = {
       libero faucibus.
     </p>
   ),
-  TitleComponent: <h2>Test</h2>,
-  SubTitleComponent: <h4>Test</h4>,
-  lineColor: "grey",
   backgroundColor: "black"
 };
 
@@ -78,7 +74,6 @@ TextBlock2.propTypes = {
   TitleComponent: PropTypes.element,
   SubTitleComponent: PropTypes.element,
   TextComponent: PropTypes.element,
-  lineColor: PropTypes.string,
   backgroundColor: PropTypes.string
 };
 
