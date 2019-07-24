@@ -35,12 +35,12 @@ module.exports = {
     },
     // Loads web fonts from Google as specified
     {
-      resolve: "gatsby-plugin-web-font-loader"
-      // options: {
-      //   google: {
-      //     families: []
-      //   },
-      // },
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["Roboto Slab", "Sarpanch"]
+        }
+      }
     },
     // Emotion plugin for Gatsby
     `gatsby-plugin-emotion`,
