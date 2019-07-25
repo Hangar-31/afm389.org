@@ -3,12 +3,13 @@ import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import { css, jsx } from "@emotion/core";
 
-const BigContainer = styled.section`
+const Container = styled.section`
   display: flex;
   padding: 20px;
+  margin-bottom: 60px;
 `;
 
-const Container = styled.section`
+const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,13 +34,13 @@ const Testimonials = ({
   titleColor,
   borderColor
 }) => (
-  <BigContainer
+  <Container
     css={css`
       border-top: ${borderColor};
       border-bottom: ${borderColor};
     `}
   >
-    <Container>
+    <Wrapper>
       <TitleContainer
         css={css`
           background-color: ${titleColor};
@@ -54,8 +55,8 @@ const Testimonials = ({
       >
         {TextComponent}
       </ParagraphContainer>
-    </Container>
-  </BigContainer>
+    </Wrapper>
+  </Container>
 );
 
 Testimonials.defaultProps = {

@@ -21,6 +21,9 @@ export { default as H31Title2B } from "./base-elements/Title2B";
 export { default as H31Title2C } from "./base-elements/Title2C";
 export { default as H31Title3 } from "./base-elements/Title3";
 
+// Blog Cards
+export { default as H31BlogCard1 } from "./blog-cards/BlogCard1";
+
 // Buttons
 export { default as H31ButtonBright } from "./buttons/ButtonBright";
 export { default as H31ButtonHollow } from "./buttons/ButtonHollow";

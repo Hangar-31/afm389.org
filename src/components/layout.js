@@ -58,13 +58,6 @@ const Layout = ({ children }) => (
           font-weight: 300;
           text-transform: uppercase;
         }
-        ${H31Title1B} {
-          color: ${_config.colorWhite};
-          font-size: 3.75rem;
-          font-family: ${_config.fontTertiary};
-          font-weight: 300;
-          text-transform: uppercase;
-        }
         ${H31Title2A} {
           color: ${_config.colorWhite};
           font-size: 2.5rem;
@@ -140,6 +133,7 @@ const Layout = ({ children }) => (
         }
       `}
     />
+
     <H31MainNavbarSplitActions
       topBarColor={_config.colorPrimary}
       bottomBarColor={_config.colorSecondary}
@@ -214,6 +208,7 @@ const Layout = ({ children }) => (
         />
       }
     />
+
     {children}
   </>
 );

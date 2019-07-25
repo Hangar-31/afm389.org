@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { css } from "@emotion/core";
 import moment from "moment";
 
-const SimpleTime = ({ TextComponent, color }) => (
+const SimpleTime = ({ color, TextComponent }) => (
   <>
     <svg
       css={css`

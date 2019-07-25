@@ -251,7 +251,7 @@ export default () => (
     />
     <H31SectionTitleFullWidth
       backgroundColor={_config.colorWhite}
-      TitleComponent1={<H31Title2B>Recent News And Events</H31Title2B>}
+      TitleComponent1={<H31Title2B>Testimonials</H31Title2B>}
     />
     <H31Layout3Col>
       {reviews.map(review => (
