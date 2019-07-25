@@ -1,13 +1,20 @@
-import React from "react";
 import PropTypes from "prop-types";
-import { css } from "@emotion/core";
+/** @jsx jsx */
+import { css, jsx } from "@emotion/core";
+import styled from "@emotion/styled";
 import moment from "moment";
 
+const SimpleFlexContainer = styled.section`
+  display: flex;
+  align-items: center;
+`;
+
 const SimpleTime = ({ color, TextComponent }) => (
-  <>
+  <SimpleFlexContainer>
     <svg
       css={css`
-        margin-right: 10px;
+        margin-right: 7px;
+        margin-left: 14px;
       `}
       width="25"
       height="25"
@@ -33,7 +40,7 @@ const SimpleTime = ({ color, TextComponent }) => (
       </defs>
     </svg>
     {TextComponent}
-  </>
+  </SimpleFlexContainer>
 );
 
 SimpleTime.defaultProps = {
