@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import { Link } from "gatsby";
 import { H31SimpleTime } from "..";
 
-const OrangeOverlay = styled.div`
+const OrangeOverlay = styled.section`
   z-index: 1;
   position: absolute;
   opacity: 0;
@@ -13,6 +13,23 @@ const OrangeOverlay = styled.div`
   width: 100%;
   background-color: orange;
   transition: 0.2s;
+`;
+
+const OrangeOverlayContent = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+`;
+
+const OrangeTitle = styled.div`
+  margin-top: 190px;
+`;
+
+const OrangeUnderlinedText = styled.div`
+  margin-top: 25px;
+  text-decoration: underline;
 `;
 
 const ImageContainer = styled.div`
@@ -101,7 +118,12 @@ const BlogCard1 = ({
   titleColor
 }) => (
   <Container>
-    <OrangeOverlay />
+    <OrangeOverlay>
+      <OrangeOverlayContent>
+        <OrangeTitle>{TitleComponent}</OrangeTitle>
+        <OrangeUnderlinedText>{TitleComponent}</OrangeUnderlinedText>
+      </OrangeOverlayContent>
+    </OrangeOverlay>
 
     <ImageContainer>{ImageComponent}</ImageContainer>
 
