@@ -1,11 +1,14 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable import/prefer-default-export */
 
 // Base Elements
 export { default as H31FormError1 } from "./base-elements/Error1";
-export { default as H31FormLabel1 } from "./base-elements/Label1";
-export { default as H31FormLabel2 } from "./base-elements/Label2";
+export { default as H31Label1 } from "./base-elements/Label1";
+export { default as H31Label2 } from "./base-elements/Label2";
 export { default as H31Button1 } from "./base-elements/Button1";
 export { default as H31Button2 } from "./base-elements/Button2";
+export { default as H31Button3 } from "./base-elements/Button3";
+export { default as H31Input1 } from "./base-elements/Input1";
 export { default as H31Link1 } from "./base-elements/Link1";
 export { default as H31Link2 } from "./base-elements/Link2";
 export { default as H31Link3 } from "./base-elements/Link3";
@@ -19,7 +22,8 @@ export { default as H31Title1B } from "./base-elements/Title1B";
 export { default as H31Title2A } from "./base-elements/Title2A";
 export { default as H31Title2B } from "./base-elements/Title2B";
 export { default as H31Title2C } from "./base-elements/Title2C";
-export { default as H31Title3 } from "./base-elements/Title3";
+export { default as H31Title3A } from "./base-elements/Title3A";
+export { default as H31Title3B } from "./base-elements/Title3B";
 
 // Blog Cards
 export { default as H31BlogCard1 } from "./blog-cards/BlogCard1";
@@ -34,6 +38,9 @@ export { default as H31ContentBlock1 } from "./content-block/ContentBlock1";
 // Call To Action
 export { default as H31CallToAction } from "./call-to-action/CallToAction";
 
+// Forms
+export { default as H31Form1 } from "./forms/Form1";
+
 // Layout
 export { default as H31Layout3Col } from "./layout/Layout3Col";
 
@@ -45,13 +52,14 @@ export { default as H31LinkTallUnderline } from "./links/LinkTallUnderline";
 
 // Loading Indicators
 export {
-  default as H31SpinningCircle
-} from "./loading-indicators/SpinningCircle";
+  default as H31LoadingIndicator1
+} from "./loading-indicators/LoadingIndicator1";
+
+// Main Footers
+export { default as H31MainFooter1 } from "./main-footers/MainFooter1";
 
 // Main Navbars
-export {
-  default as H31MainNavbarSplitActions
-} from "./main-navbars/MainNavbarSplitActions";
+export { default as H31MainNavbar1 } from "./main-navbars/MainNavbar1";
 
 // Mastheads
 export { default as H31Masthead1 } from "./mastheads/Masthead1";

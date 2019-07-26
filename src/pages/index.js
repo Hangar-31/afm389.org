@@ -2,6 +2,9 @@
 import React from "react";
 import { css } from "@emotion/core";
 
+// Config
+import _config from "../components/_config";
+
 // Components
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -14,7 +17,7 @@ import {
   H31Title1B,
   H31Title2B,
   H31Title2C,
-  H31Title3,
+  H31Title3A,
   H31Paragraph1,
   H31TitleWithBackground,
   H31TextBlock2,
@@ -28,9 +31,6 @@ import {
   H31Layout3Col
 } from "../components/h31";
 import ImgMastheadHome from "../components/images/mastheads/ImgMastheadHome";
-
-// Config
-import _config from "../components/_config";
 
 // Images
 import ImgHome1 from "../components/images/_home/ImgHome1";
@@ -257,7 +257,7 @@ export default () => (
       {reviews.map(review => (
         <H31Testimonials
           titleColor={_config.colorSecondary}
-          TitleComponent={<H31Title3>{review.name}</H31Title3>}
+          TitleComponent={<H31Title3A>{review.name}</H31Title3A>}
           TextComponent={<H31Text4>{review.text}</H31Text4>}
         />
       ))}

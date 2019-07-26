@@ -6,17 +6,18 @@ import PropTypes from "prop-types";
 import { Global, css, jsx } from "@emotion/core";
 
 import {
-  H31MainNavbarSplitActions,
+  H31MainNavbar1,
   H31ButtonBright,
   H31ButtonHollow,
   H31Button1,
   H31Button2,
+  H31Label1,
   H31Title1A,
   H31Title1B,
   H31Title2A,
   H31Title2B,
   H31Title2C,
-  H31Title3,
+  H31Title3A,
   H31Link1,
   H31Text1,
   H31Text2,
@@ -24,12 +25,15 @@ import {
   H31Text4,
   H31LinkBarHorizontal,
   H31LinkTallUnderline,
-  H31SocialBarHorizontal
+  H31SocialBarHorizontal,
+  H31MainFooter1,
+  H31Form1
 } from "./h31/index";
 
 import ImgLogo from "./images/logos/ImgLogo";
 import SocialIcons from "./h31/socials/SocialIcons";
 import _config from "./_config";
+import ImgFooterBackground from "./images/footer/ImgFooterBackground";
 
 const Layout = ({ children }) => (
   <>
@@ -44,6 +48,11 @@ const Layout = ({ children }) => (
         .main-link-active + div {
           width: 100%;
           background-color: ${_config.colorSecondary};
+        }
+        ${H31Label1} {
+          color: ${_config.colorLightGrey};
+          font-family: ${_config.fontPrimary};
+          font-weight: 300;
         }
         ${H31Title1A} {
           color: ${_config.colorWhite};
@@ -79,7 +88,7 @@ const Layout = ({ children }) => (
           font-weight: 300;
           text-transform: uppercase;
         }
-        ${H31Title3} {
+        ${H31Title3A} {
           color: ${_config.colorWhite};
           font-family: ${_config.fontPrimary};
           font-weight: bold;
@@ -134,7 +143,7 @@ const Layout = ({ children }) => (
       `}
     />
 
-    <H31MainNavbarSplitActions
+    <H31MainNavbar1
       topBarColor={_config.colorPrimary}
       bottomBarColor={_config.colorSecondary}
       TitleComponent={
@@ -210,6 +219,20 @@ const Layout = ({ children }) => (
     />
 
     {children}
+
+    <H31MainFooter1
+      TitleComponent={
+        <H31Title2B
+          css={css`
+            color: #ffffff;
+          `}
+        >
+          Get In Touch
+        </H31Title2B>
+      }
+      ImageComponent={<ImgFooterBackground />}
+      FormComponent={<H31Form1 />}
+    />
   </>
 );
 
