@@ -14,6 +14,7 @@ import _config from "../../_config";
 const Form = styled.form`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
   grid-gap: 30px;
 `;
 
@@ -176,6 +177,7 @@ export default class Form1 extends React.Component {
             <textarea
               css={css`
                 grid-column: span ${data.size};
+                grid-row: span full;
               `}
               id={data.name}
               defaultValue={data.text}

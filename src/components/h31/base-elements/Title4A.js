@@ -1,8 +1,6 @@
 import styled from "@emotion/styled";
 import _config from "./_config";
 
-export default styled.input`
-  width: 100%;
-  box-sizing: border-box;
+export default styled.h4`
   ${_config}
 `;

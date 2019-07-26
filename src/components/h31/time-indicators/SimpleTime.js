@@ -14,7 +14,6 @@ const SimpleTime = ({ color, TextComponent }) => (
     <svg
       css={css`
         margin-right: 7px;
-        margin-left: 14px;
       `}
       width="25"
       height="25"

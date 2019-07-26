@@ -5,38 +5,34 @@ import styled from "@emotion/styled";
 import { Link } from "gatsby";
 import { H31SimpleTime } from "..";
 
-const OrangeOverlay = styled.section`
+const Overlay = styled.section`
   z-index: 1;
   position: absolute;
   opacity: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   height: 100%;
   width: 100%;
-  background-color: orange;
   transition: 0.2s;
 `;
 
-const OrangeOverlayContent = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
+const OverlayTitle = styled.div`
   width: 100%;
+  margin-bottom: 30px;
+  text-align: center;
+  > * {
+    color: #ffffff;
+    text-decoration: none;
+  }
 `;
 
-const OrangeTitle = styled.div`
-  margin-top: 190px;
-`;
-
-const OrangeUnderlinedText = styled.div`
-  margin-top: 25px;
-  text-decoration: underline;
-`;
+const Group = styled.div``;
 
 const ImageContainer = styled.div`
   height: 45%;
   width: 100%;
-  object-fit: cover;
-  background-color: black;
   transition: 0.5s;
   > .gatsby-image-wrapper {
     height: 100%;
@@ -44,39 +40,22 @@ const ImageContainer = styled.div`
   }
 `;
 
-const InfoContainer = styled.div`
+const ContentContainer = styled.article`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  height: 45%;
-  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 100%;
+  padding: 15px 30px;
 `;
 
 const TitleContainer = styled.div`
-  text-decoration: underline;
-  padding: 0px 20px;
-  margin-top: 5px;
-  margin-bottom: -5px;
-  font-size: 1.25em;
-`;
-
-const ParagraphContainer = styled.div`
-  display: flex;
-  align-items: center;
-  text-align: left;
-  line-height: 1.5em;
-  font-size: 1.15em;
-  padding: 0px 36px;
-  height: 100%;
-  margin-top: -25px;
-  margin-bottom: -10px;
+  text-align: center;
+  margin-bottom: 15px;
 `;
 
 const DateContainer = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  height: 10%;
-  font-size: 1.3em;
+  margin-left: -15px;
 `;
 
 const Container = styled(Link)`
@@ -87,69 +66,75 @@ const Container = styled(Link)`
   display: flex;
   flex-direction: column;
   padding: 0px;
-  width: 330px;
+  max-width: 330px;
   height: 420px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border: none;
   overflow: hidden;
   &:hover {
     pointer: cursor;
-    background-color: orange;
     opacity: 0.75;
-    ${OrangeOverlay} {
-      opacity: 0.8;
+    ${Overlay} {
+      opacity: 1;
     }
     ${ImageContainer} {
       position: absolute;
       height: 100%;
       width: 100%;
     }
-    ${InfoContainer}, ${TitleContainer}, ${ParagraphContainer}, ${DateContainer} {
+    ${ContentContainer}, ${TitleContainer}, ${DateContainer} {
       opacity: 0;
     }
   }
 `;
 
 const BlogCard1 = ({
+  overlayColor,
   ImageComponent,
-  TitleComponent,
+  TitleComponent1,
+  TitleComponent2,
+  TitleComponent3,
   TextComponent1,
-  TextComponent2,
-  titleColor
+  TextComponent2
 }) => (
-  <Container>
-    <OrangeOverlay>
-      <OrangeOverlayContent>
-        <OrangeTitle>{TitleComponent}</OrangeTitle>
-        <OrangeUnderlinedText>{TitleComponent}</OrangeUnderlinedText>
-      </OrangeOverlayContent>
-    </OrangeOverlay>
+  <Container
+    css={css`
+      &:hover {
+        ${Overlay} {
+          background-color: ${overlayColor};
+        }
+      }
+    `}
+  >
+    <Overlay>
+      <Group>
+        <OverlayTitle>{TitleComponent2}</OverlayTitle>
+        {TitleComponent3}
+      </Group>
+    </Overlay>
 
     <ImageContainer>{ImageComponent}</ImageContainer>
 
-    <InfoContainer>
-      <TitleContainer
-        css={css`
-          color: ${titleColor};
-        `}
-      >
-        {TitleComponent}
-      </TitleContainer>
+    <ContentContainer>
+      <Group>
+        <TitleContainer>{TitleComponent1}</TitleContainer>
+        {TextComponent1}
+      </Group>
 
-      <ParagraphContainer>{TextComponent1}</ParagraphContainer>
-    </InfoContainer>
-
-    <DateContainer>
-      <H31SimpleTime TextComponent={TextComponent2} />
-    </DateContainer>
+      <DateContainer>
+        <H31SimpleTime TextComponent={TextComponent2} />
+      </DateContainer>
+    </ContentContainer>
   </Container>
 );
 
 BlogCard1.defaultProps = {
   // handleClick: () => console.log("BlogCard1"),
-  titleColor: "#595959",
+  overlayColor: "#595959",
   ImageComponent: <img alt="" src="https://placeimg.com/1000/1000/any" />,
-  TitleComponent: <h3>Title 3</h3>,
+  TitleComponent1: <h3>Title 3</h3>,
+  TitleComponent2: <h3>Overlay Title 3</h3>,
+  TitleComponent3: <h4>Overlay Title 4</h4>,
   TextComponent1: (
     <p>
       Consectetur veniam et nisi do culpa non. Elit eiusmod anim ipsum est ex
@@ -163,9 +148,11 @@ BlogCard1.defaultProps = {
 
 BlogCard1.propTypes = {
   // handleClick: PropTypes.func,
-  titleColor: PropTypes.string,
+  overlayColor: PropTypes.string,
   ImageComponent: PropTypes.element,
-  TitleComponent: PropTypes.element,
+  TitleComponent1: PropTypes.element,
+  TitleComponent2: PropTypes.element,
+  TitleComponent3: PropTypes.element,
   TextComponent1: PropTypes.element,
   TextComponent2: PropTypes.element
 };

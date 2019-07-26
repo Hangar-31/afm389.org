@@ -24,6 +24,7 @@ export { default as H31Title2B } from "./base-elements/Title2B";
 export { default as H31Title2C } from "./base-elements/Title2C";
 export { default as H31Title3A } from "./base-elements/Title3A";
 export { default as H31Title3B } from "./base-elements/Title3B";
+export { default as H31Title4A } from "./base-elements/Title4A";
 
 // Blog Cards
 export { default as H31BlogCard1 } from "./blog-cards/BlogCard1";

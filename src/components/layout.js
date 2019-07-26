@@ -12,12 +12,15 @@ import {
   H31Button1,
   H31Button2,
   H31Label1,
+  H31Input1,
   H31Title1A,
   H31Title1B,
   H31Title2A,
   H31Title2B,
   H31Title2C,
   H31Title3A,
+  H31Title3B,
+  H31Title4A,
   H31Link1,
   H31Text1,
   H31Text2,
@@ -48,6 +51,10 @@ const Layout = ({ children }) => (
         .main-link-active + div {
           width: 100%;
           background-color: ${_config.colorSecondary};
+        }
+        ${H31Input1} {
+          border-radius: 5px;
+          border: none;
         }
         ${H31Label1} {
           color: ${_config.colorLightGrey};
@@ -93,6 +100,20 @@ const Layout = ({ children }) => (
           font-family: ${_config.fontPrimary};
           font-weight: bold;
           font-size: 1.25rem;
+        }
+        ${H31Title3B} {
+          color: ${_config.colorDarkGrey};
+          font-family: ${_config.fontPrimary};
+          font-weight: bold;
+          font-size: 1rem;
+          text-decoration: underline;
+        }
+        ${H31Title4A} {
+          color: ${_config.colorWhite};
+          font-family: ${_config.fontPrimary};
+          font-weight: 300;
+          font-size: 1.125rem;
+          text-decoration: underline;
         }
         ${H31Link1} {
           color: ${_config.colorWhite};
