@@ -28,8 +28,17 @@ const OverlayTitle = styled.div`
   }
 `;
 
+const OverlayClick = styled.div`
+  width: 100%;
+  text-align: center;
+`;
+
 const Group = styled.div``;
 
+const ContentGroup = styled.div`
+  overflow: hidden;
+  height: 170px;
+`;
 const ImageContainer = styled.div`
   height: 45%;
   width: 100%;
@@ -65,6 +74,7 @@ const Container = styled(Link)`
   position: relative;
   display: flex;
   flex-direction: column;
+  background-color: #ffffff;
   padding: 0px;
   max-width: 330px;
   height: 420px;
@@ -73,7 +83,6 @@ const Container = styled(Link)`
   overflow: hidden;
   &:hover {
     pointer: cursor;
-    opacity: 0.75;
     ${Overlay} {
       opacity: 1;
     }
@@ -109,17 +118,17 @@ const BlogCard1 = ({
     <Overlay>
       <Group>
         <OverlayTitle>{TitleComponent2}</OverlayTitle>
-        {TitleComponent3}
+        <OverlayClick>{TitleComponent3}</OverlayClick>
       </Group>
     </Overlay>
 
     <ImageContainer>{ImageComponent}</ImageContainer>
 
     <ContentContainer>
-      <Group>
+      <ContentGroup>
         <TitleContainer>{TitleComponent1}</TitleContainer>
         {TextComponent1}
-      </Group>
+      </ContentGroup>
 
       <DateContainer>
         <H31SimpleTime TextComponent={TextComponent2} />

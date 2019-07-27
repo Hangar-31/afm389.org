@@ -21,7 +21,7 @@ const Item = styled.li`
 const SocialBarHorizontal = ({ socialComponents }) => (
   <List>
     {socialComponents.map(item => (
-      <Item key="social-bar-horizontal-item">{item}</Item>
+      <Item key={item.props.social}>{item}</Item>
     ))}
   </List>
 );

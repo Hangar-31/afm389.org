@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import baseConfig from "./_config";
 import siteConfig from "../../_config";
 
-export default styled.input`
+export default styled.textarea`
   width: 100%;
   height: 100%;
   box-sizing: border-box;

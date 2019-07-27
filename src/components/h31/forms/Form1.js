@@ -7,14 +7,16 @@ import {
   H31LoadingIndicator1,
   H31Label1,
   H31Input1,
-  H31Button3
+  H31Button3,
+  H31ButtonBrightSubmit,
+  H31Select1,
+  H31Textarea1
 } from "../index";
 import _config from "../../_config";
 
 const Form = styled.form`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
   grid-gap: 30px;
 `;
 
@@ -23,15 +25,31 @@ const Column = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   box-sizing: border-box;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 30px;
   grid-gap: 30px;
 `;
+
+const Required = (
+  <span
+    css={css`
+      position: absolute;
+      top: -17px;
+      left: 0;
+      color: ${_config.colorLightGrey};
+      font-size: 0.675rem;
+    `}
+  >
+    * Required
+  </span>
+);
 
 const formData = [
   {
     type: "select",
     name: "Regarding",
     text: "Select What This Inquiry is About",
+    options: ["Work Enquiry", "Joining CFMA"],
     size: 6,
     required: true
   },
@@ -162,31 +180,65 @@ export default class Form1 extends React.Component {
         case "text":
           this.formLeft.push(
             <H31Label1
+              key={data.name}
               htmlFor={data.name}
               css={css`
                 grid-column: span ${data.size};
               `}
             >
-              {data.text}
-              <H31Input1 id={data.name} type="text" />
+              {data.required && Required}
+              <H31Input1 id={data.name} placeholder={data.text} type="text" />
+            </H31Label1>
+          );
+          break;
+        case "select":
+          this.formLeft.push(
+            <H31Label1
+              key={data.name}
+              htmlFor={data.name}
+              css={css`
+                grid-column: span ${data.size};
+              `}
+            >
+              {data.required && Required}
+              <H31Select1 defaultValue={data.options[0]}>
+                <option
+                  value=""
+                  css={css`
+                    color: #eeeeee;
+                  `}
+                  disabled
+                >
+                  {data.text}
+                </option>
+                {data.options.map(option => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </H31Select1>
             </H31Label1>
           );
           break;
         case "textbox":
           this.formRight.push(
-            <textarea
+            <div
+              key={data.name}
               css={css`
+                position: relative;
                 grid-column: span ${data.size};
-                grid-row: span full;
+                grid-row: span 3;
               `}
-              id={data.name}
-              defaultValue={data.text}
-            />
+            >
+              <H31Textarea1 id={data.name} placeholder={data.text} />
+              {data.required && Required}
+            </div>
           );
           break;
         case "button":
           this.formRight.push(
-            <button
+            <H31ButtonBrightSubmit
+              key={data.type}
               type="submit"
               css={css`
                 ${
@@ -200,26 +252,15 @@ export default class Form1 extends React.Component {
                     : ``
                 }
                 grid-column: span ${data.size};
+                grid-row: span 1;
               `}
             >
-              {this.state.submitting === 0 && "Send"}
-              {this.state.submitting === 1 && <H31LoadingIndicator1 />}
-              {this.state.submitting === 2 && (
-                <H31Button3>
-                  Sent
-                  <span
-                    css={css`
-                      line-height: 1.25;
-                      font-size: 1.25rem;
-                      margin-left: 5px;
-                    `}
-                  >
-                    &#10003;
-                  </span>
-                  <span>&#10003;</span>
-                </H31Button3>
-              )}
-            </button>
+              <H31Button3>
+                {this.state.submitting === 0 && "Send"}
+                {this.state.submitting === 1 && <H31LoadingIndicator1 />}
+                {this.state.submitting === 2 && "Sent"}
+              </H31Button3>
+            </H31ButtonBrightSubmit>
           );
           break;
         default:
@@ -273,9 +314,13 @@ export default class Form1 extends React.Component {
         netlify-honeypot="bot-field"
       >
         {this.state.errors.length > 0 && (
-          <ul>
+          <ul
+            css={css`
+              grid-column: span 2;
+            `}
+          >
             {this.state.errors.map(error => (
-              <li key={`error-item-${error}`}>{error}</li>
+              <li key={error}>{error}</li>
             ))}
           </ul>
         )}

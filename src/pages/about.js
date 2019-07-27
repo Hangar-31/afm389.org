@@ -21,7 +21,7 @@ export default () => (
       ImageComponent={<ImgHome1 />}
       TitleComponent1={<H31Title3B>Hello World</H31Title3B>}
       TitleComponent2={<H31Title3B>Hello World</H31Title3B>}
-      TitleComponent3={<H31Title4A>Click Here!</H31Title4A>}
+      TitleComponent3={<H31Title4A>Read More!</H31Title4A>}
       TextComponent1={
         <H31Text3>This is a test blog element for testing purposes</H31Text3>
       }

@@ -2,24 +2,26 @@ import styled from "@emotion/styled";
 import baseConfig from "./_config";
 import siteConfig from "../../_config";
 
-export default styled.input`
+export default styled.select`
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  border: 1px solid #e5e5e5;
   border-radius: 3px;
   ${baseConfig}
   padding: 5px 5px;
 
-  color: ${siteConfig.colorDarkGrey};
+  color: ${siteConfig.colorLightGrey};
   font-family: ${siteConfig.fontPrimary};
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   font-weight: 300;
 
-  &::placeholder {
-    color: ${siteConfig.colorLightGrey};
+  option {
+    color: ${siteConfig.colorDarkGrey};
     font-family: ${siteConfig.fontPrimary};
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     font-weight: 300;
   }
 `;

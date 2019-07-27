@@ -42,6 +42,100 @@ export default {
     }
   ],
 
+  // Sitemap Navigation
+  sitemapNav: [
+    {
+      title: "PARTNERS",
+      links: [
+        {
+          name: "American Federation of Musicians",
+          to: "/"
+        }
+      ]
+    },
+    {
+      title: "ABOUT US",
+      links: [
+        {
+          name: "CFMA History",
+          to: "/"
+        },
+        {
+          name: "The Team at CFMA",
+          to: "/"
+        }
+      ]
+    },
+    {
+      title: "MEMBER BENEFITS",
+      links: [
+        {
+          name: "Benefits",
+          to: "/"
+        },
+        {
+          name: "(CBA) Partners",
+          to: "/"
+        }
+      ]
+    },
+    {
+      title: "EVENTS",
+      links: [
+        {
+          name: "2019 Disney Open Call Auditions",
+          to: "/"
+        },
+        {
+          name: "Orlando Musicians Conference",
+          to: "/"
+        },
+        {
+          name: "10 Tips For Live Performances",
+          to: "/"
+        },
+        {
+          name: "CFMA May 12th Musicians Social",
+          to: "/"
+        }
+      ]
+    },
+    {
+      title: "CONTACT",
+      links: [
+        {
+          name: "Contact",
+          to: "/"
+        }
+      ]
+    },
+    {
+      title: "REHEARSAL HALL CALENDAR",
+      links: [
+        {
+          name: "Rehearsal Hall",
+          to: "/"
+        },
+        {
+          name: "Calendar",
+          to: "/"
+        }
+      ]
+    }
+  ],
+
+  // Footer Navigation
+  footerNav: [
+    {
+      name: "Privacy Policy",
+      to: "/privacy-policy"
+    },
+    {
+      name: "Terms of Service",
+      to: "/terms-of-service"
+    }
+  ],
+
   // Socials
   socials: [
     {

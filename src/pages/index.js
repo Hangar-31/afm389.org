@@ -18,6 +18,8 @@ import {
   H31Title2B,
   H31Title2C,
   H31Title3A,
+  H31Title3B,
+  H31Title4A,
   H31Paragraph1,
   H31TitleWithBackground,
   H31TextBlock2,
@@ -28,7 +30,9 @@ import {
   H31Text4,
   H31Title2A,
   H31ButtonBright,
-  H31Layout3Col
+  H31Layout3Col,
+  H31Layout4Col,
+  H31BlogCard1
 } from "../components/h31";
 import ImgMastheadHome from "../components/images/mastheads/ImgMastheadHome";
 
@@ -39,9 +43,44 @@ import ImgHome3 from "../components/images/_home/ImgHome3";
 import ImgHome4 from "../components/images/_home/ImgHome4";
 
 // Data
+const blogs = [
+  {
+    image: "",
+    title: "2019 DISNEY OPEN CALL AUDITIONS",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex tempor, placerat sapien a.",
+    date: "May 15, 2019",
+    to: "/"
+  },
+  {
+    image: "",
+    title: "ORLANDO MUSICIANS CONFERENCE",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex tempor, placerat sapien a.",
+    date: "May 15, 2019",
+    to: "/"
+  },
+  {
+    image: "",
+    title: "10 TIPS FOR LIVE PERFORMANCES",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex tempor, placerat sapien a.",
+    date: "May 15, 2019",
+    to: "/"
+  },
+  {
+    image: "",
+    title: "CFMA MAY 12th MUSICIANS SOCIAL",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex tempor, placerat sapien a.",
+    date: "May 15, 2019",
+    to: "/"
+  }
+];
+
 const reviews = [
   {
-    name: "Noel MacFarland",
+    name: "Terrance Armstrong",
     text:
       "I had a problem with an individual at work. When I approached management, the Union was beside me all the way and supported me through a difficult time. Thank you!"
   },
@@ -51,7 +90,7 @@ const reviews = [
       "I had a problem with an individual at work. When I approached management, the Union was beside me all the way and supported me through a difficult time. Thank you!"
   },
   {
-    name: "Noel MacFarland",
+    name: "David Copperfield",
     text:
       "I had a problem with an individual at work. When I approached management, the Union was beside me all the way and supported me through a difficult time. Thank you!"
   }
@@ -89,6 +128,20 @@ export default () => (
       TitleComponent1={<H31Title2B>Recent News And Events</H31Title2B>}
     />
 
+    <H31Layout4Col>
+      {blogs.map(blog => (
+        <H31BlogCard1
+          overlayColor="rgba(243, 149, 8, 0.64)"
+          ImageComponent={<ImgHome1 />}
+          TitleComponent1={<H31Title3B>{blog.title}</H31Title3B>}
+          TitleComponent2={<H31Title3B>{blog.title}</H31Title3B>}
+          TitleComponent3={<H31Title4A>Read More!</H31Title4A>}
+          TextComponent1={<H31Text3>{blog.text}</H31Text3>}
+          TextComponent2={<H31Text3>{blog.date}</H31Text3>}
+        />
+      ))}
+    </H31Layout4Col>
+
     <H31TextBlock2
       TitleComponent={
         <H31Title2C
@@ -104,9 +157,9 @@ export default () => (
         <H31Text3>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non
           leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex tempor,
-          placerat sapien a, porttitor justo. Donec nec iaculis libero. Mauris
-          ornare auctor dui at tincidunt. Pellentesque sollicitudin venenatis
-          neque. Nunc pulvinar ut ante ut dapibus.
+          placerat sapien a. Donec nec iaculis libero. Mauris ornare auctor dui
+          at tincidunt. Pellentesque sollicitudin venenatis neque. Nunc pulvinar
+          ut ante ut dapibus.
         </H31Text3>
       }
       backgroundColor={_config.colorSecondary}
@@ -236,9 +289,9 @@ export default () => (
         <H31Text2>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non
           leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex tempor,
-          placerat sapien a, porttitor justo. Donec nec iaculis libero. Mauris
-          ornare auctor dui at tincidunt. Pellentesque sollicitudin venenatis
-          neque. Nunc pulvinar ut ante ut dapibus.
+          placerat sapien a. Donec nec iaculis libero. Mauris ornare auctor dui
+          at tincidunt. Pellentesque sollicitudin venenatis neque. Nunc pulvinar
+          ut ante ut dapibus.
         </H31Text2>
       }
       ButtonComponent={
@@ -254,13 +307,16 @@ export default () => (
       TitleComponent1={<H31Title2B>Testimonials</H31Title2B>}
     />
     <H31Layout3Col>
-      {reviews.map(review => (
-        <H31Testimonials
-          titleColor={_config.colorSecondary}
-          TitleComponent={<H31Title3A>{review.name}</H31Title3A>}
-          TextComponent={<H31Text4>{review.text}</H31Text4>}
-        />
-      ))}
+      <>
+        {reviews.map(review => (
+          <H31Testimonials
+            key={review.name}
+            titleColor={_config.colorSecondary}
+            TitleComponent={<H31Title3A>{review.name}</H31Title3A>}
+            TextComponent={<H31Text4>{review.text}</H31Text4>}
+          />
+        ))}
+      </>
     </H31Layout3Col>
   </Layout>
 );

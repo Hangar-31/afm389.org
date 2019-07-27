@@ -5,12 +5,15 @@ import PropTypes from "prop-types";
 /** @jsx jsx */
 import { Global, css, jsx } from "@emotion/core";
 
+import _config from "./_config";
+
 import {
   H31MainNavbar1,
   H31ButtonBright,
   H31ButtonHollow,
   H31Button1,
   H31Button2,
+  H31Button3,
   H31Label1,
   H31Input1,
   H31Title1A,
@@ -21,7 +24,10 @@ import {
   H31Title3A,
   H31Title3B,
   H31Title4A,
+  H31Title4B,
+  H31Title4C,
   H31Link1,
+  H31Link2,
   H31Text1,
   H31Text2,
   H31Text3,
@@ -30,12 +36,13 @@ import {
   H31LinkTallUnderline,
   H31SocialBarHorizontal,
   H31MainFooter1,
-  H31Form1
+  H31Form1,
+  H31SocialIcons,
+  H31Sitemap1
 } from "./h31/index";
 
+// Images
 import ImgLogo from "./images/logos/ImgLogo";
-import SocialIcons from "./h31/socials/SocialIcons";
-import _config from "./_config";
 import ImgFooterBackground from "./images/footer/ImgFooterBackground";
 
 const Layout = ({ children }) => (
@@ -115,11 +122,27 @@ const Layout = ({ children }) => (
           font-size: 1.125rem;
           text-decoration: underline;
         }
+        ${H31Title4B} {
+          color: ${_config.colorTertiary};
+          font-family: ${_config.fontPrimary};
+          font-weight: 300;
+          font-size: 0.875rem;
+        }
+        ${H31Title4C} {
+          color: ${_config.colorWhite};
+          font-family: ${_config.fontPrimary};
+          font-size: 0.8rem;
+        }
         ${H31Link1} {
           color: ${_config.colorWhite};
           font-family: ${_config.fontPrimary};
           font-size: 0.8rem;
           text-transform: uppercase;
+        }
+        ${H31Link2} {
+          color: ${_config.colorWhite};
+          font-family: ${_config.fontPrimary};
+          font-size: 0.8rem;
         }
         ${H31Text1} {
           color: ${_config.colorWhite};
@@ -155,6 +178,13 @@ const Layout = ({ children }) => (
           text-transform: uppercase;
         }
         ${H31Button2} {
+          color: ${_config.colorWhite};
+          font-family: ${_config.fontPrimary};
+          font-size: 0.875rem;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+        ${H31Button3} {
           color: ${_config.colorWhite};
           font-family: ${_config.fontPrimary};
           font-size: 0.875rem;
@@ -213,7 +243,7 @@ const Layout = ({ children }) => (
       SocialBarComponent={
         <H31SocialBarHorizontal
           socialComponents={_config.socials.map(social => (
-            <SocialIcons
+            <H31SocialIcons
               color={_config.colorWhite}
               social={social.social}
               link={social.link}
@@ -253,6 +283,49 @@ const Layout = ({ children }) => (
       }
       ImageComponent={<ImgFooterBackground />}
       FormComponent={<H31Form1 />}
+      topBarColor={_config.colorPrimary}
+      bottomBarColor={_config.colorSecondary}
+      LinkBarComponent={
+        <H31LinkBarHorizontal
+          linkComponents={_config.footerNav.map(link => (
+            <H31LinkTallUnderline
+              key="main-links-for-hangar-31"
+              linkColor={_config.colorWhite}
+              linkHoverColor={_config.colorSecondary}
+              underlineColor={_config.colorSecondary}
+              underlineHoverColor={_config.colorSecondary}
+              LinkComponent={
+                <H31Link1 activeClassName="main-link-active" to={link.to}>
+                  {link.name}
+                </H31Link1>
+              }
+            />
+          ))}
+        />
+      }
+      SitemapComponent={<H31Sitemap1 />}
+      SocialBarComponent={
+        <H31SocialBarHorizontal
+          socialComponents={_config.socials.map(social => (
+            <H31SocialIcons
+              color={_config.colorWhite}
+              social={social.social}
+              link={social.link}
+              colorHover={_config.colorTertiary}
+            />
+          ))}
+        />
+      }
+      CopyrightComponent={
+        <H31Title4C
+          css={css`
+            cursor: initial;
+          `}
+        >
+          CENTRAL FLORIDA MUSICIANS ASSOCIATION COPYRIGHT&nbsp;
+          {new Date().getFullYear()}
+        </H31Title4C>
+      }
     />
   </>
 );

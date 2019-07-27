@@ -19,14 +19,13 @@ const List = styled.ul`
 
 const Item = styled.li`
   margin: 0 20px;
-
   height: 100%;
 `;
 
 const LinkBarHorizontal = ({ linkComponents }) => (
   <List>
-    {linkComponents.map((item, i) => (
-      <Item key={`link-bar-horizontal-links-${i}`}>{item}</Item>
+    {linkComponents.map(item => (
+      <Item key={item.props.LinkComponent.props.children}>{item}</Item>
     ))}
   </List>
 );
@@ -40,7 +39,7 @@ LinkBarHorizontal.defaultProps = {
 };
 
 LinkBarHorizontal.propTypes = {
-  linkComponents: PropTypes.arrayOf(PropTypes.elem)
+  linkComponents: PropTypes.arrayOf(PropTypes.element)
 };
 
 export default LinkBarHorizontal;

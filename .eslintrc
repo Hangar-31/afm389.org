@@ -2,6 +2,7 @@
   "extends": ["airbnb", "plugin:prettier/recommended"],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "import/no-cycle": "off"
+    "import/no-cycle": "off",
+    "react/no-array-index-key": "off"
   }
 }
