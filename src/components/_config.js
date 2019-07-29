@@ -14,6 +14,13 @@ export default {
   fontTertiary: "Staatliches",
   fontQuintery: "Assistant",
 
+  // BreakPoints
+  breakXl: "1440px",
+  breakLg: "1200px",
+  breakMd: "992px",
+  breakSm: "768px",
+  breakXs: "500px",
+
   // Main Navigation
   mainNav: [
     {
