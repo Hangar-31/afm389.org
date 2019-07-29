@@ -9,6 +9,12 @@ const SimpleFlexContainer = styled.section`
   align-items: center;
 `;
 
+const FontContainer = styled.p`
+  p {
+    font-size: 1em;
+  }
+`;
+
 const SimpleTime = ({ color, TextComponent }) => (
   <SimpleFlexContainer>
     <svg
@@ -38,7 +44,7 @@ const SimpleTime = ({ color, TextComponent }) => (
         </clipPath>
       </defs>
     </svg>
-    {TextComponent}
+    <FontContainer>{TextComponent}</FontContainer>
   </SimpleFlexContainer>
 );
 
