@@ -7,7 +7,7 @@ const Container = styled.section`
   display: flex;
   width: 100%;
   max-width: 1440px;
-  margin: 0 auto 60px auto;
+  margin: 0 auto 120px auto;
 `;
 
 const Block = styled.section`
