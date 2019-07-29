@@ -63,8 +63,5 @@ module.exports = {
 
     // Gives additional image processing functions
     "gatsby-plugin-sharp",
-
-    // Gatsby Plugin for linting -- Using AirBNB
-    "gatsby-plugin-eslint"
   ]
 };
