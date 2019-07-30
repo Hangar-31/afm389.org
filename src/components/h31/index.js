@@ -41,6 +41,7 @@ export { default as H31ButtonFillArrow } from "./buttons/ButtonFillArrow";
 
 // Content Blocks
 export { default as H31ContentBlock1 } from "./content-block/ContentBlock1";
+export { default as H31ContentBlock2 } from "./content-block/ContentBlock2";
 
 // Call To Action
 export { default as H31CallToAction } from "./call-to-action/CallToAction";
