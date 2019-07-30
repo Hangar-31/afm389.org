@@ -26,6 +26,7 @@ export default () => (
           TitleComponent={<H31Title1B>From The Team At CFMA</H31Title1B>}
         />
       }
+      ParagraphComponent={<></>}
     />
   </Layout>
 );

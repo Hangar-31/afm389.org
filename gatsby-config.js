@@ -3,7 +3,7 @@ module.exports = {
     title: "[]",
     description: "[]",
     author: "[]",
-    siteurl: "[]",
+    siteUrl: "https://afm389.org",
     social: [
       {
         name: "facebook",
