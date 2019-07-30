@@ -4,6 +4,7 @@ import React from "react";
 // Components
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import H31ContentBlock2 from "../components/h31/content-block/ContentBlock2";
 
 // Images
 import ImgMastheadAbout from "../components/images/mastheads/ImgMastheadAbout";
@@ -28,5 +29,7 @@ export default () => (
       }
       ParagraphComponent={<></>}
     />
+
+    <H31ContentBlock2 />
   </Layout>
 );
