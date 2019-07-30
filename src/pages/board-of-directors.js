@@ -11,6 +11,7 @@ import {
 } from "../components/h31";
 import ImgMastheadAbout from "../components/images/mastheads/ImgMastheadAbout";
 import _config from "../components/_config";
+import Bio1 from "../components/h31/bios/Bio1";
 
 export default () => (
   <Layout>
@@ -26,5 +27,8 @@ export default () => (
       )}
       ParagraphComponent={<></>}
     />
+
+    <Bio1 />
+
   </Layout>
 );

@@ -48,9 +48,12 @@ export { default as H31CallToAction } from "./call-to-action/CallToAction";
 // Forms
 export { default as H31Form1 } from "./forms/Form1";
 
-// Layout
-export { default as H31Layout3Col } from "./layout/Layout3Col";
-export { default as H31Layout4Col } from "./layout/Layout4Col";
+// Layouts
+export { default as H31Layout3Col } from "./layouts/Layout3Col";
+export { default as H31Layout4Col } from "./layouts/Layout4Col";
+export { default as H31LayoutContainer } from "./layouts/LayoutContainer";
+export { default as H31LayoutRow } from "./layouts/LayoutRow";
+export { default as H31LayoutCol } from "./layouts/LayoutCol";
 
 // Link Bars
 export { default as H31LinkBarHorizontal } from "./link-bars/LinkBarHorizontal";
