@@ -17,8 +17,6 @@ import _config from "../../_config";
 
 const ParagraphWrapper = styled.div``;
 
-// Components
-
 export default class Bio1 extends React.Component {
   constructor() {
     super();
@@ -36,10 +34,13 @@ export default class Bio1 extends React.Component {
   }
 
   render() {
-    const { name, email, bio } = this.props;
-    console.log(this.state);
+    const { name, email, bios } = this.props;
     return (
-      <Container>
+      <Container
+        css={css`
+          margin: 30px 0;
+        `}
+      >
         <Row>
           <Col xs={2}>
             <ImgBioMikeAvila />
@@ -75,7 +76,16 @@ export default class Bio1 extends React.Component {
                       this.bioContainer = bioContainer;
                     }}
                   >
-                    <H31Text3>{bio}</H31Text3>
+                    {bios.map(bio => (
+                      <H31Text3
+                        css={css`
+                          margin-bottom: 15px;
+                        `}
+                        key={bio}
+                      >
+                        {bio}
+                      </H31Text3>
+                    ))}
                   </ParagraphWrapper>
                 </Col>
                 <Col
@@ -100,12 +110,14 @@ export default class Bio1 extends React.Component {
 Bio1.defaultProps = {
   name: "John Doe",
   email: "JohnDoe@Gmail.com",
-  bio:
+  bios: [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed leo id orci tincidunt blandit vel ut eros. Nunc iaculis eleifend nisi, sit amet sagittis ex tempus a. Morbi efficitur tortor at leo iaculis malesuada. Sed vehicula, nunc eget hendrerit venenatis, metus eros sollicitudin purus, vitae interdum felis diam eu erat. Suspendisse congue diam risus, ut aliquet erat volutpat sit amet. Suspendisse at dignissim ex. Aenean mollis, elit non pretium efficitur, arcu magna porta leo, ac porta massa enim ac nunc. Integer a ligula pellentesque lectus auctor ultrices.",
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed leo id orci tincidunt blandit vel ut eros. Nunc iaculis eleifend nisi, sit amet sagittis ex tempus a. Morbi efficitur tortor at leo iaculis malesuada. Sed vehicula, nunc eget hendrerit venenatis, metus eros sollicitudin purus, vitae interdum felis diam eu erat. Suspendisse congue diam risus, ut aliquet erat volutpat sit amet. Suspendisse at dignissim ex. Aenean mollis, elit non pretium efficitur, arcu magna porta leo, ac porta massa enim ac nunc. Integer a ligula pellentesque lectus auctor ultrices."
+  ]
 };
 
 Bio1.propTypes = {
   name: PropTypes.string,
   email: PropTypes.string,
-  bio: PropTypes.string
+  bios: PropTypes.arrayOf(PropTypes.string)
 };

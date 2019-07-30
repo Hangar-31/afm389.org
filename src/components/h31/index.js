@@ -30,6 +30,9 @@ export { default as H31Title4A } from "./base-elements/Title4A";
 export { default as H31Title4B } from "./base-elements/Title4B";
 export { default as H31Title4C } from "./base-elements/Title4C";
 
+// Bios
+export { default as H31Bio1 } from "./bios/Bio1";
+
 // Blog Cards
 export { default as H31BlogCard1 } from "./blog-cards/BlogCard1";
 
