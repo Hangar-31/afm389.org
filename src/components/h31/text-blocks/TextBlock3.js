@@ -23,3 +23,5 @@ const TextBlock3 = () => (
 TextBlock3.defaultProps = {};
 
 TextBlock3.propTypes = {};
+
+export default TextBlock3;
