@@ -5,6 +5,7 @@ export default {
   colorTertiary: "#F39508",
   colorWhite: "#ffffff",
   colorDarkGrey: "#595959",
+  colorGrey: "#4D4D4D",
   colorLightGrey: "#959595",
   colorBlack: "#000000",
 
