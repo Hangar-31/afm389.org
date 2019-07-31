@@ -37,7 +37,7 @@ const Group = styled.div``;
 
 const ContentGroup = styled.div`
   overflow: hidden;
-  height: 170px;
+  min-height: 170px;
 `;
 const ImageContainer = styled.div`
   height: 45%;
@@ -76,8 +76,8 @@ const Container = styled(Link)`
   flex-direction: column;
   background-color: #ffffff;
   padding: 0px;
-  max-width: 330px;
-  height: 420px;
+  width: 100%;
+  min-height: 350px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border: none;
   overflow: hidden;
@@ -137,9 +137,11 @@ const BlogCard1 = ({
         <H31Text3>{text}</H31Text3>
       </ContentGroup>
 
-      <DateContainer>
-        <H31SimpleTime TextComponent={<H31Text3>{date}</H31Text3>} />
-      </DateContainer>
+      {date && (
+        <DateContainer>
+          <H31SimpleTime TextComponent={<H31Text3>{date}</H31Text3>} />
+        </DateContainer>
+      )}
     </ContentContainer>
   </Container>
 );
@@ -159,7 +161,7 @@ BlogCard1.defaultProps = {
   ),
   link: <h4>Overlay Title 4</h4>,
   linkText: <h4>Overlay Title 4</h4>,
-  date: "May 20, 2019"
+  date: null
 };
 
 BlogCard1.propTypes = {

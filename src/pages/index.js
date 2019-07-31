@@ -14,12 +14,9 @@ import {
   H31CallToAction,
   H31Testimonials,
   H31Masthead1,
-  H31Title1B,
   H31Title2B,
   H31Title2C,
   H31Title3A,
-  H31Title3B,
-  H31Title4A,
   H31Paragraph1,
   H31TitleWithBackground,
   H31TextBlock2,
@@ -45,36 +42,36 @@ import ImgHome4 from "../components/images/_home/ImgHome4";
 // Data
 const blogs = [
   {
-    image: "",
+    image: <ImgHome1 />,
     title: "2019 DISNEY OPEN CALL AUDITIONS",
     text:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex tempor, placerat sapien a.",
     date: "May 15, 2019",
-    to: "/"
+    link: "/"
   },
   {
-    image: "",
+    image: <ImgHome2 />,
     title: "ORLANDO MUSICIANS CONFERENCE",
     text:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex tempor, placerat sapien a.",
     date: "May 15, 2019",
-    to: "/"
+    link: "/"
   },
   {
-    image: "",
+    image: <ImgHome3 />,
     title: "10 TIPS FOR LIVE PERFORMANCES",
     text:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex tempor, placerat sapien a.",
     date: "May 15, 2019",
-    to: "/"
+    link: "/"
   },
   {
-    image: "",
+    image: <ImgHome4 />,
     title: "CFMA MAY 12th MUSICIANS SOCIAL",
     text:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex tempor, placerat sapien a.",
     date: "May 15, 2019",
-    to: "/"
+    link: "/"
   }
 ];
 
@@ -105,9 +102,7 @@ export default () => (
       TitleComponent={
         <H31TitleWithBackground
           backgroundColor={_config.colorPrimary}
-          TitleComponent={
-            <H31Title1B>Your Path to a Musical Career</H31Title1B>
-          }
+          title="Your Path to a Musical Career"
         />
       }
       ParagraphComponent={
@@ -131,13 +126,13 @@ export default () => (
     <H31Layout4Col>
       {blogs.map(blog => (
         <H31BlogCard1
-          overlayColor="rgba(243, 149, 8, 0.64)"
-          ImageComponent={<ImgHome1 />}
-          TitleComponent1={<H31Title3B>{blog.title}</H31Title3B>}
-          TitleComponent2={<H31Title3B>{blog.title}</H31Title3B>}
-          TitleComponent3={<H31Title4A>Read More!</H31Title4A>}
-          TextComponent1={<H31Text3>{blog.text}</H31Text3>}
-          TextComponent2={<H31Text3>{blog.date}</H31Text3>}
+          overlayColor="rgba(243, 149, 8, 0.84)"
+          ImageComponent={blog.image}
+          title={blog.title}
+          text={blog.text}
+          link={blog.link}
+          linkText="Read More"
+          date={blog.date}
         />
       ))}
     </H31Layout4Col>

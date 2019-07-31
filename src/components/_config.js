@@ -23,6 +23,7 @@ export default {
   sizeMd: 992,
   sizeSm: 768,
   sizeXs: 500,
+  sizeXXs: 375,
 
   // Main Navigation
   mainNav: [
