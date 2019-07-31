@@ -19,6 +19,7 @@ import {
   H31Input1,
   H31Title1A,
   H31Title1B,
+  H31Title1C,
   H31Title2A,
   H31Title2B,
   H31Title2C,
@@ -84,9 +85,16 @@ const Layout = ({ children }) => (
           font-weight: 300;
           text-transform: uppercase;
         }
+        ${H31Title1C} {
+          color: ${_config.colorWhite};
+          font-size: 3.75rem;
+          font-family: ${_config.fontTertiary};
+          font-weight: 300;
+          text-transform: uppercase;
+        }
         ${H31Title2A} {
           color: ${_config.colorWhite};
-          font-size: 2.5rem;
+          font-size: 4.25rem;
           font-family: ${_config.fontTertiary};
           font-weight: 300;
           text-transform: uppercase;
@@ -99,8 +107,8 @@ const Layout = ({ children }) => (
           text-transform: uppercase;
         }
         ${H31Title2C} {
-          color: ${_config.colorSecondary};
-          font-size: 3.75rem;
+          color: ${_config.colorWhite};
+          font-size: 2.5rem;
           font-family: ${_config.fontTertiary};
           font-weight: 300;
           text-transform: uppercase;

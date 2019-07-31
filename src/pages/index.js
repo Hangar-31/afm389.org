@@ -16,17 +16,8 @@ import {
   H31Masthead1,
   H31Title2B,
   H31Title2C,
-  H31Title3A,
-  H31Paragraph1,
-  H31TitleWithBackground,
   H31TextBlock2,
-  H31Button2,
-  H31Text1,
-  H31Text2,
   H31Text3,
-  H31Text4,
-  H31Title2A,
-  H31ButtonBright,
   H31Layout3Col,
   H31Layout4Col,
   H31BlogCard1
@@ -45,7 +36,7 @@ const blogs = [
     image: <ImgHome1 />,
     title: "2019 DISNEY OPEN CALL AUDITIONS",
     text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex tempor, placerat sapien a.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex.",
     date: "May 15, 2019",
     link: "/"
   },
@@ -53,7 +44,7 @@ const blogs = [
     image: <ImgHome2 />,
     title: "ORLANDO MUSICIANS CONFERENCE",
     text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex tempor, placerat sapien a.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex.",
     date: "May 15, 2019",
     link: "/"
   },
@@ -61,7 +52,7 @@ const blogs = [
     image: <ImgHome3 />,
     title: "10 TIPS FOR LIVE PERFORMANCES",
     text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex tempor, placerat sapien a.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex.",
     date: "May 15, 2019",
     link: "/"
   },
@@ -69,7 +60,7 @@ const blogs = [
     image: <ImgHome4 />,
     title: "CFMA MAY 12th MUSICIANS SOCIAL",
     text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex tempor, placerat sapien a.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex.",
     date: "May 15, 2019",
     link: "/"
   }
@@ -99,28 +90,13 @@ export default () => (
 
     <H31Masthead1
       ImageComponent={<ImgMastheadHome />}
-      TitleComponent={
-        <H31TitleWithBackground
-          backgroundColor={_config.colorPrimary}
-          title="Your Path to a Musical Career"
-        />
-      }
-      ParagraphComponent={
-        <H31Paragraph1
-          TextComponent={
-            <H31Text1>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id
-              rhoncus ligula. Quisque commodo, eros auctor elementum aliquam,
-              urna turpis dapibus dolor, non feugiat tortor lectus.
-            </H31Text1>
-          }
-        />
-      }
+      title="Your Path to a Musical Career"
+      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id rhoncus ligula. Quisque commodo, eros auctor elementum aliquam, urna turpis dapibus dolor, non feugiat tortor lectus."
     />
 
     <H31SectionTitleFullWidth
       backgroundColor={_config.colorWhite}
-      TitleComponent1={<H31Title2B>Recent News And Events</H31Title2B>}
+      titleSmall="Recent News And Events"
     />
 
     <H31Layout4Col>
@@ -163,13 +139,13 @@ export default () => (
     <H31ContentBlock1
       ImageComponent={<ImgHome1 />}
       TitleComponent={
-        <H31Title2A
+        <H31Title2C
           css={css`
             color: ${_config.colorPrimary};
           `}
         >
           Your Legal Support
-        </H31Title2A>
+        </H31Title2C>
       }
       TextComponent={
         <H31Text3>
@@ -186,13 +162,13 @@ export default () => (
     <H31ContentBlock1
       ImageComponent={<ImgHome2 />}
       TitleComponent={
-        <H31Title2A
+        <H31Title2C
           css={css`
             color: ${_config.colorSecondary};
           `}
         >
           Keeping You Informed
-        </H31Title2A>
+        </H31Title2C>
       }
       TextComponent={
         <H31Text3>
@@ -209,13 +185,13 @@ export default () => (
     <H31ContentBlock1
       ImageComponent={<ImgHome3 />}
       TitleComponent={
-        <H31Title2A
+        <H31Title2C
           css={css`
             color: ${_config.colorPrimary};
           `}
         >
           A Vibrant Community
-        </H31Title2A>
+        </H31Title2C>
       }
       TextComponent={
         <H31Text3>
@@ -232,13 +208,13 @@ export default () => (
     <H31ContentBlock1
       ImageComponent={<ImgHome4 />}
       TitleComponent={
-        <H31Title2A
+        <H31Title2C
           css={css`
             color: ${_config.colorSecondary};
           `}
         >
           Ready For A Rehearsal
-        </H31Title2A>
+        </H31Title2C>
       }
       TextComponent={
         <H31Text3>
@@ -253,65 +229,22 @@ export default () => (
       backgroundColor="#F9F9F9"
     />
 
-    <H31CallToAction
-      backgroundColor={_config.colorPrimary}
-      TitleComponent={
-        <H31Title2C
-          css={css`
-            color: ${_config.colorWhite};
-          `}
-        >
-          Your Path To A Musical Career
-          <br />
-          <span
-            css={css`
-              color: ${_config.colorSecondary};
-            `}
-          >
-            Starts
-          </span>
-          &nbsp;
-          <span
-            css={css`
-              color: ${_config.colorTertiary};
-            `}
-          >
-            Here
-          </span>
-        </H31Title2C>
-      }
-      TextComponent={
-        <H31Text2>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non
-          leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex tempor,
-          placerat sapien a. Donec nec iaculis libero. Mauris ornare auctor dui
-          at tincidunt. Pellentesque sollicitudin venenatis neque. Nunc pulvinar
-          ut ante ut dapibus.
-        </H31Text2>
-      }
-      ButtonComponent={
-        <H31ButtonBright
-          borderColor={_config.colorWhite}
-          backgroundColor={_config.colorTertiary}
-          ButtonComponent={<H31Button2>Join Now</H31Button2>}
-        />
-      }
-    />
+    <H31CallToAction />
+
     <H31SectionTitleFullWidth
       backgroundColor={_config.colorWhite}
-      TitleComponent1={<H31Title2B>Testimonials</H31Title2B>}
+      titleSmall="Testimonials"
     />
+
     <H31Layout3Col>
-      <>
-        {reviews.map(review => (
-          <H31Testimonials
-            key={review.name}
-            titleColor={_config.colorSecondary}
-            TitleComponent={<H31Title3A>{review.name}</H31Title3A>}
-            TextComponent={<H31Text4>{review.text}</H31Text4>}
-          />
-        ))}
-      </>
+      {reviews.map(review => (
+        <H31Testimonials
+          key={review.name}
+          titleColor={_config.colorSecondary}
+          title={review.name}
+          text={review.text}
+        />
+      ))}
     </H31Layout3Col>
   </Layout>
 );

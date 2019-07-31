@@ -10,15 +10,15 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import ImgMastheadMemberBenefits from "../components/images/mastheads/ImgMastheadMemberBenefits";
 import {
-  H31TitleWithBackground,
-  H31Title1B,
   H31Masthead1,
   H31SectionTitleFullWidth,
-  H31Title2B,
-  H31Title2A,
   H31ToggleInfo1,
-  H31Layout3Col,
-  H31BlogCard1
+  H31BlogCard1,
+  H31LayoutContainer,
+  H31LayoutRow,
+  H31LayoutCol,
+  H31Text3,
+  H31CallToAction
 } from "../components/h31";
 
 // Images
@@ -118,67 +118,84 @@ export default () => (
 
     <H31Masthead1
       ImageComponent={<ImgMastheadMemberBenefits />}
-      TitleComponent={(
-        <H31TitleWithBackground
-          backgroundColor={_config.colorPrimary}
-          TitleComponent={<H31Title1B>How We Support Musicians</H31Title1B>}
-        />
-        )}
-      ParagraphComponent={<></>}
+      title="How We Support Musicians"
+      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id rhoncus ligula. Quisque commodo, eros auctor elementum aliquam, urna turpis dapibus dolor, non feugiat tortor lectus."
     />
 
     <H31SectionTitleFullWidth
       backgroundColor={_config.colorPrimary}
-      TitleComponent1={<H31Title2B>Central FL Musicians Association</H31Title2B>}
-      TitleComponent2={(
-        <H31Title2A
-          css={css`
-              color: ${_config.colorWhite};
-            `}
-        >
-        Member Benefits
-        </H31Title2A>
-      )}
+      titleSmall="Central FL Musicians Association"
+      titleLarge="Member Benefits"
     />
 
-    {benefits.map(benefit => (
-      <H31ToggleInfo1 name={benefit.name} info={benefit.info} />
-    ))}
-
+    <H31LayoutContainer>
+      <H31LayoutRow css={css`
+        padding: 45px 0 100px 0;
+      `}
+      >
+        <H31LayoutCol xs={12}>
+          {benefits.map(benefit => (
+            <H31ToggleInfo1 name={benefit.name} info={benefit.info} />
+          ))}
+        </H31LayoutCol>
+      </H31LayoutRow>
+    </H31LayoutContainer>
 
     <H31SectionTitleFullWidth
       backgroundColor={_config.colorSecondary}
-      TitleComponent1={(
-        <H31Title2B css={css`
-          color: ${_config.colorPrimary}
-        `}
-        >
-          Central FL Musicians Association
-        </H31Title2B>
-      )}
-      TitleComponent2={(
-        <H31Title2A
-          css={css`
-              color: ${_config.colorWhite};
-            `}
-        >
-        Board of Directors
-        </H31Title2A>
-      )}
+      titleSmall="Central FL Musicians Association"
+      titleSmallColor={_config.colorPrimary}
+      titleLarge="Member Benefits"
     />
 
-    <H31Layout3Col>
-      {partners.map(partner => (
-        <H31BlogCard1
-          overlayColor="rgba(243, 149, 8, 0.84)"
-          ImageComponent={partner.image}
-          title={partner.title}
-          text={partner.text}
-          link={partner.link}
-          linkText="Visit Site"
-        />
-      ))}
-    </H31Layout3Col>
+    <H31LayoutContainer
+      css={css`
+        height: 350px;
+        margin-bottom: 30px;
+        background: linear-gradient(
+          90deg,
+          #6da55f calc(0% + 15px),
+          #164f4b calc(100% - 30px)
+        );
+      `}
+      fluid
+      as="section"
+    >
+      <H31LayoutRow>
+        {partners.map(partner => (
+          <H31LayoutCol xs={4}>
+            <H31BlogCard1
+              overlayColor="rgba(243, 149, 8, 0.84)"
+              ImageComponent={partner.image}
+              title={partner.title}
+              text={partner.text}
+              link={partner.link}
+              linkText="Visit Site"
+            />
+          </H31LayoutCol>
+        ))}
+      </H31LayoutRow>
+    </H31LayoutContainer>
+
+    <H31LayoutContainer 
+      css={css`
+          padding: 60px 0 !important;
+      `}
+      fluid 
+      as="section"
+    >
+      <H31LayoutRow>
+        <H31LayoutCol md={3} />
+        <H31LayoutCol md={6}>
+          <H31Text3>
+              A collective bargaining agreement enables you to have a voice in every area of your employment. This includes your wages and all of your working conditions (from break times to health benefits).
+          </H31Text3>
+        </H31LayoutCol>
+        <H31LayoutCol md={3} />
+      </H31LayoutRow>
+    </H31LayoutContainer>
+
+    <H31CallToAction />
 
   </Layout>
 );

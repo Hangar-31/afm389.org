@@ -1,79 +1,84 @@
-import PropTypes from "prop-types";
 /** @jsx jsx */
-import styled from "@emotion/styled";
 import { css, jsx } from "@emotion/core";
 
-const Container = styled.section`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin: 0 auto;
-`;
+// Config
+import _config from "../../_config";
 
-const Wrapper = styled.div`
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 120px 0;
-`;
+// Components
+import {
+  H31Text2,
+  H31ButtonBright,
+  H31Button2,
+  H31Title2C,
+  H31LayoutContainer,
+  H31LayoutRow,
+  H31LayoutCol
+} from "..";
 
-const TextContainer = styled.div`
-  line-height: 1.25em;
-  padding: 5px 0px 10px 0px;
-  margin-bottom: 30px;
-`;
-
-const ButtonContainer = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  button {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-`;
-
-const CallToAction = ({
-  backgroundColor,
-  TitleComponent,
-  TextComponent,
-  ButtonComponent
-}) => (
-  <Container
+export default () => (
+  <H31LayoutContainer
+    fluid
+    as="section"
     css={css`
-      background-color: ${backgroundColor};
+      padding-top: 100px !important;
+      padding-bottom: 100px !important;
+      background-color: ${_config.colorPrimary};
     `}
   >
-    <Wrapper>
-      <div>{TitleComponent}</div>
+    <H31LayoutRow>
+      <H31LayoutCol md={3} />
+      <H31LayoutCol md={6}>
+        <div>
+          <H31Title2C
+            css={css`
+              margin-bottom: 30px;
+              color: ${_config.colorWhite};
+            `}
+          >
+            Your Path To A Musical Career
+            <br />
+            <span
+              css={css`
+                color: ${_config.colorSecondary};
+              `}
+            >
+              Starts
+            </span>
+            &nbsp;
+            <span
+              css={css`
+                color: ${_config.colorTertiary};
+              `}
+            >
+              Here
+            </span>
+          </H31Title2C>
+        </div>
 
-      <TextContainer>{TextComponent}</TextContainer>
+        <H31Text2
+          css={css`
+            margin-bottom: 30px;
+          `}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+          dictum ullamcorper nulla iaculis pretium. Donec eros massa,
+          sollicitudin sit amet condimentum cursus, cursus ut ante. Vivamus
+          interdum lectus sit amet varius mattis.
+        </H31Text2>
 
-      <ButtonContainer>{ButtonComponent}</ButtonContainer>
-    </Wrapper>
-  </Container>
+        <div
+          css={css`
+            text-align: right;
+          `}
+        >
+          <H31ButtonBright
+            borderColor={_config.colorWhite}
+            backgroundColor={_config.colorTertiary}
+            ButtonComponent={<H31Button2>Join Now</H31Button2>}
+          />
+        </div>
+      </H31LayoutCol>
+      <H31LayoutCol md={3} />
+    </H31LayoutRow>
+  </H31LayoutContainer>
 );
-
-CallToAction.defaultProps = {
-  backgroundColor: "transparent",
-  TitleComponent: <h2>This Title is a Test</h2>,
-  TextComponent: (
-    <p>
-      Sed ac neque ac sem iaculis commodo. Aenean accumsan in neque non tempus.
-      Aenean euismod metus leo, at euismod libero pharetra eu. Cras ultrices
-      imperdiet tortor. Sed mollis eros id arcu auctor, sit amet posuere arcu
-      facilisis. Aliquam et euismod neque, in rhoncus lectus. Aenean euismod
-      metus leo, at euismod libero pharetra eu. Cras ultrices imperdiet tortor.
-      Aenean euismod metus leo, at euismod libero pharetra eu. Cras ultrices
-      imperdiet tortor.
-    </p>
-  ),
-  ButtonComponent: <button type="button">Button</button>
-};
-
-CallToAction.propTypes = {
-  backgroundColor: PropTypes.string,
-  TitleComponent: PropTypes.element,
-  TextComponent: PropTypes.element,
-  ButtonComponent: PropTypes.element
-};
-
-export default CallToAction;

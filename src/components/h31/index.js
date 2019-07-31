@@ -21,6 +21,7 @@ export { default as H31Text5 } from "./base-elements/Text5";
 export { default as H31Textarea1 } from "./base-elements/Textarea1";
 export { default as H31Title1A } from "./base-elements/Title1A";
 export { default as H31Title1B } from "./base-elements/Title1B";
+export { default as H31Title1C } from "./base-elements/Title1C";
 export { default as H31Title2A } from "./base-elements/Title2A";
 export { default as H31Title2B } from "./base-elements/Title2B";
 export { default as H31Title2C } from "./base-elements/Title2C";
@@ -82,6 +83,11 @@ export { default as H31Masthead1 } from "./mastheads/Masthead1";
 // Paragraphs
 export { default as H31Paragraph1 } from "./paragraphs/Paragraph1";
 
+// Section Titles
+export {
+  default as H31SectionTitleFullWidth
+} from "./section-titles/SectionTitleFullWidth";
+
 // Sitemaps
 export { default as H31Sitemap1 } from "./sitemaps/Sitemap1";
 
@@ -102,14 +108,6 @@ export { default as H31TextBlock2 } from "./text-blocks/TextBlock2";
 
 // Time Indicators
 export { default as H31SimpleTime } from "./time-indicators/SimpleTime";
-
-// Titles
-export {
-  default as H31TitleWithBackground
-} from "./titles/TitleWithBackground";
-export {
-  default as H31SectionTitleFullWidth
-} from "./section-titles/SectionTitleFullWidth";
 
 // Toggle Info
 export { default as H31ToggleInfo1 } from "./toggle-info/ToggleInfo1";

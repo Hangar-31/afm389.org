@@ -40,7 +40,7 @@ const ContentGroup = styled.div`
   min-height: 170px;
 `;
 const ImageContainer = styled.div`
-  height: 45%;
+  height: 50%;
   width: 100%;
   transition: 0.5s;
   > .gatsby-image-wrapper {
@@ -56,6 +56,7 @@ const ContentContainer = styled.article`
   justify-content: space-between;
   height: 100%;
   padding: 15px 30px;
+  overflow: hidden;
 `;
 
 const TitleContainer = styled.div`
@@ -64,7 +65,9 @@ const TitleContainer = styled.div`
 `;
 
 const DateContainer = styled.div`
-  margin-left: -15px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
 `;
 
 const Container = styled(Link)`
@@ -77,7 +80,7 @@ const Container = styled(Link)`
   background-color: #ffffff;
   padding: 0px;
   width: 100%;
-  min-height: 350px;
+  height: 420px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border: none;
   overflow: hidden;
@@ -108,6 +111,7 @@ const BlogCard1 = ({
 }) => (
   <Container
     css={css`
+      height: ${date ? "420px" : "350px"};
       &:hover {
         ${Overlay} {
           background-color: ${overlayColor};
@@ -136,13 +140,12 @@ const BlogCard1 = ({
         </TitleContainer>
         <H31Text3>{text}</H31Text3>
       </ContentGroup>
-
-      {date && (
-        <DateContainer>
-          <H31SimpleTime TextComponent={<H31Text3>{date}</H31Text3>} />
-        </DateContainer>
-      )}
     </ContentContainer>
+    {date && (
+      <DateContainer>
+        <H31SimpleTime date={date} />
+      </DateContainer>
+    )}
   </Container>
 );
 

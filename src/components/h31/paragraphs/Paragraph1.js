@@ -2,6 +2,7 @@ import { PropTypes } from "prop-types";
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
+import { H31Text2 } from "..";
 
 const Wrapper = styled.section`
   width: 100%;
@@ -9,34 +10,25 @@ const Wrapper = styled.section`
   padding: 15px;
 `;
 
-const Paragraph1 = ({ TextComponent, backgroundColor }) => (
+const Paragraph1 = ({ text, backgroundColor }) => (
   <Wrapper
     css={css`
       background-color: ${backgroundColor};
     `}
   >
-    {TextComponent}
+    <H31Text2>{text}</H31Text2>
   </Wrapper>
 );
 
 Paragraph1.defaultProps = {
-  backgroundColor: "rgba(0,0,0,0.6)",
-  TextComponent: (
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium mi a
-      quam molestie, vel ultricies libero faucibus. Duis dignissim ligula quis
-      auctor lacinia. Donec porttitor blandit mauris, ac laoreet diam vehicula
-      in. In tortor nunc, egestas eu consectetur sed, efficitur et massa.
-      Pellentesque consectetur lorem vel neque tristique fringilla. Fusce
-      condimentum convallis est sed tincidunt. Cras eget velit at justo
-      ullamcorper gravida.
-    </p>
-  )
+  backgroundColor: "rgba(0,0,0,0.8)",
+  text:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium mi a quam molestie, vel ultricies libero faucibus. Duis dignissim ligula quis auctor lacinia. Donec porttitor blandit mauris, ac laoreet diam vehicula in. In tortor nunc, egestas eu consectetur sed, efficitur et massa. Pellentesque consectetur lorem vel neque tristique fringilla. Fusce condimentum convallis est sed tincidunt. Cras eget velit at justo ullamcorper gravida."
 };
 
 Paragraph1.propTypes = {
   backgroundColor: PropTypes.string,
-  TextComponent: PropTypes.element
+  text: PropTypes.string
 };
 
 export default Paragraph1;

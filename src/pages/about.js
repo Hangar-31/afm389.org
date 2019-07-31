@@ -10,9 +10,10 @@ import H31ContentBlock2 from "../components/h31/content-block/ContentBlock2";
 import ImgMastheadAbout from "../components/images/mastheads/ImgMastheadAbout";
 import {
   H31Masthead1,
-  H31TitleWithBackground,
-  H31Title1B,
-  H31Text3
+  H31Text3,
+  H31Layout3Col,
+  H31Testimonials,
+  H31SectionTitleFullWidth
 } from "../components/h31";
 import _config from "../components/_config";
 import ImgAbout1 from "../components/images/_about/ImgAbout1";
@@ -41,23 +42,23 @@ const data = [
   </H31Text3>
 ];
 
-// const reviews = [
-//   {
-//     name: "Terrance Armstrong",
-//     text:
-//       "I had a problem with an individual at work. When I approached management, the Union was beside me all the way and supported me through a difficult time. Thank you!"
-//   },
-//   {
-//     name: "Noel MacFarland",
-//     text:
-//       "I had a problem with an individual at work. When I approached management, the Union was beside me all the way and supported me through a difficult time. Thank you!"
-//   },
-//   {
-//     name: "David Copperfield",
-//     text:
-//       "I had a problem with an individual at work. When I approached management, the Union was beside me all the way and supported me through a difficult time. Thank you!"
-//   }
-// ];
+const reviews = [
+  {
+    name: "Terrance Armstrong",
+    text:
+      "I had a problem with an individual at work. When I approached management, the Union was beside me all the way and supported me through a difficult time. Thank you!"
+  },
+  {
+    name: "Noel MacFarland",
+    text:
+      "I had a problem with an individual at work. When I approached management, the Union was beside me all the way and supported me through a difficult time. Thank you!"
+  },
+  {
+    name: "David Copperfield",
+    text:
+      "I had a problem with an individual at work. When I approached management, the Union was beside me all the way and supported me through a difficult time. Thank you!"
+  }
+];
 
 export default () => (
   <Layout>
@@ -65,28 +66,33 @@ export default () => (
 
     <H31Masthead1
       ImageComponent={<ImgMastheadAbout />}
-      TitleComponent={
-        <H31TitleWithBackground
-          backgroundColor={_config.colorPrimary}
-          TitleComponent={<H31Title1B>From The Team At CFMA</H31Title1B>}
-        />
-      }
-      ParagraphComponent={<></>}
+      title="From The Team At CFMA"
+      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id rhoncus ligula. Quisque commodo, eros auctor elementum aliquam, urna turpis dapibus dolor, non feugiat tortor lectus."
     />
 
-    <H31ContentBlock2>{data}</H31ContentBlock2>
+    <H31SectionTitleFullWidth
+      backgroundColor={_config.colorPrimary}
+      titleSmall="Central FL Musicians Association"
+      titleSmallColor={_config.colorSecondary}
+      titleLarge="CFMA Local 389 - History"
+    />
 
-    {/* <H31Layout3Col>
-      <>
-        {reviews.map(review => (
-          <H31Testimonials
-            key={review.name}
-            titleColor={_config.colorSecondary}
-            TitleComponent={<H31Title3A>{review.name}</H31Title3A>}
-            TextComponent={<H31Text4>{review.text}</H31Text4>}
-          />
-        ))}
-      </>
-    </H31Layout3Col> */}
+    <H31ContentBlock2 title="We Work For Musicians">{data}</H31ContentBlock2>
+
+    <H31SectionTitleFullWidth
+      backgroundColor={_config.colorWhite}
+      titleSmall="Testimonials"
+    />
+
+    <H31Layout3Col>
+      {reviews.map(review => (
+        <H31Testimonials
+          key={review.name}
+          titleColor={_config.colorSecondary}
+          title={review.name}
+          text={review.text}
+        />
+      ))}
+    </H31Layout3Col>
   </Layout>
 );

@@ -2,20 +2,14 @@ import PropTypes from "prop-types";
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
-import moment from "moment";
+import { H31Text3 } from "..";
 
 const SimpleFlexContainer = styled.section`
   display: flex;
   align-items: center;
 `;
 
-const FontContainer = styled.p`
-  p {
-    font-size: 1em;
-  }
-`;
-
-const SimpleTime = ({ color, TextComponent }) => (
+const SimpleTime = ({ color, date }) => (
   <SimpleFlexContainer>
     <svg
       css={css`
@@ -44,24 +38,24 @@ const SimpleTime = ({ color, TextComponent }) => (
         </clipPath>
       </defs>
     </svg>
-    <FontContainer>{TextComponent}</FontContainer>
+    <H31Text3
+      css={css`
+        margin-bottom: 0;
+      `}
+    >
+      {date}
+    </H31Text3>
   </SimpleFlexContainer>
 );
 
 SimpleTime.defaultProps = {
   color: "grey",
-  TextComponent: (
-    <span>
-      {moment("2019-07-15T18:59:50.858Z")
-        .startOf("day")
-        .calendar()}
-    </span>
-  )
+  date: ""
 };
 
 SimpleTime.propTypes = {
   color: PropTypes.string,
-  TextComponent: PropTypes.element
+  date: PropTypes.string
 };
 
 export default SimpleTime;

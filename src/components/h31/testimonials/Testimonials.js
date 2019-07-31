@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 /** @jsx jsx */
 import styled from "@emotion/styled";
 import { css, jsx } from "@emotion/core";
+import { H31Title3A, H31Text4 } from "..";
 
 const Container = styled.section`
   display: flex;
@@ -27,13 +28,7 @@ const ParagraphContainer = styled.div`
   padding: 20px 0px;
 `;
 
-const Testimonials = ({
-  TitleComponent,
-  TextComponent,
-  fontColor,
-  titleColor,
-  borderColor
-}) => (
+const Testimonials = ({ title, text, fontColor, titleColor, borderColor }) => (
   <Container
     css={css`
       border-top: ${borderColor};
@@ -46,22 +41,22 @@ const Testimonials = ({
           background-color: ${titleColor};
         `}
       >
-        {TitleComponent}
+        <H31Title3A>{title}</H31Title3A>
       </TitleContainer>
       <ParagraphContainer
         css={css`
           color: ${fontColor};
         `}
       >
-        {TextComponent}
+        <H31Text4>{text}</H31Text4>
       </ParagraphContainer>
     </Wrapper>
   </Container>
 );
 
 Testimonials.defaultProps = {
-  TitleComponent: <h2>Test</h2>,
-  TextComponent: (
+  title: <h2>Test</h2>,
+  text: (
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium mi a
       quam molestie, vel ultricies libero faucibus. Lorem ipsum dolor sit amet,
@@ -82,8 +77,8 @@ Testimonials.defaultProps = {
 };
 
 Testimonials.propTypes = {
-  TitleComponent: PropTypes.element,
-  TextComponent: PropTypes.element,
+  title: PropTypes.element,
+  text: PropTypes.element,
   fontColor: PropTypes.string,
   titleColor: PropTypes.string,
   borderColor: PropTypes.string
