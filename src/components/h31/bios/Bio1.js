@@ -94,8 +94,26 @@ export default class Bio1 extends React.Component {
                     padding-right: 0 !important;
                   `}
                 >
-                  <ButtonToggle onClick={this.onClick}>
-                    <H31Button1>Full Bio</H31Button1>
+                  <ButtonToggle
+                    css={css`
+                      border-color: ${this.state.visible
+                        ? _config.colorTertiary
+                        : _config.colorWhite};
+                      background-color: ${this.state.visible
+                        ? _config.colorWhite
+                        : _config.colorTertiary};
+                    `}
+                    onClick={this.onClick}
+                  >
+                    <H31Button1
+                      css={css`
+                        color: ${this.state.visible
+                          ? _config.colorTertiary
+                          : _config.colorWhite};
+                      `}
+                    >
+                      Full Bio
+                    </H31Button1>
                   </ButtonToggle>
                 </Col>
               </Row>

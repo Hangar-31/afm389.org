@@ -110,3 +110,6 @@ export {
 export {
   default as H31SectionTitleFullWidth
 } from "./section-titles/SectionTitleFullWidth";
+
+// Toggle Info
+export { default as H31ToggleInfo1 } from "./toggle-info/ToggleInfo1";

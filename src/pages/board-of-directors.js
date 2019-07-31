@@ -18,6 +18,8 @@ import ImgMastheadAbout from "../components/images/mastheads/ImgMastheadAbout";
 import _config from "../components/_config";
 import Bio1 from "../components/h31/bios/Bio1";
 
+// Data
+
 const bios = [
   {
     name: "Mike Avila",
@@ -66,6 +68,5 @@ export default () => (
       />
     ))}
     <Bio1 />
-
   </Layout>
 );

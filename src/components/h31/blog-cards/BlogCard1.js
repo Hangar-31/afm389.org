@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
-import { H31SimpleTime } from "..";
+import { H31SimpleTime, H31Title3B, H31Title4A, H31Text3 } from "..";
 
 const Overlay = styled.section`
   z-index: 1;
@@ -100,11 +100,11 @@ const Container = styled(Link)`
 const BlogCard1 = ({
   overlayColor,
   ImageComponent,
-  TitleComponent1,
-  TitleComponent2,
-  TitleComponent3,
-  TextComponent1,
-  TextComponent2
+  title,
+  text,
+  link,
+  linkText,
+  date
 }) => (
   <Container
     css={css`
@@ -114,11 +114,16 @@ const BlogCard1 = ({
         }
       }
     `}
+    to={link}
   >
     <Overlay>
       <Group>
-        <OverlayTitle>{TitleComponent2}</OverlayTitle>
-        <OverlayClick>{TitleComponent3}</OverlayClick>
+        <OverlayTitle>
+          <H31Title3B>{title}</H31Title3B>
+        </OverlayTitle>
+        <OverlayClick>
+          <H31Title4A>{linkText}</H31Title4A>
+        </OverlayClick>
       </Group>
     </Overlay>
 
@@ -126,12 +131,14 @@ const BlogCard1 = ({
 
     <ContentContainer>
       <ContentGroup>
-        <TitleContainer>{TitleComponent1}</TitleContainer>
-        {TextComponent1}
+        <TitleContainer>
+          <H31Title3B>{title}</H31Title3B>
+        </TitleContainer>
+        <H31Text3>{text}</H31Text3>
       </ContentGroup>
 
       <DateContainer>
-        <H31SimpleTime TextComponent={TextComponent2} />
+        <H31SimpleTime TextComponent={<H31Text3>{date}</H31Text3>} />
       </DateContainer>
     </ContentContainer>
   </Container>
@@ -141,10 +148,8 @@ BlogCard1.defaultProps = {
   // handleClick: () => console.log("BlogCard1"),
   overlayColor: "#595959",
   ImageComponent: <img alt="" src="https://placeimg.com/1000/1000/any" />,
-  TitleComponent1: <h3>Title 3</h3>,
-  TitleComponent2: <h3>Overlay Title 3</h3>,
-  TitleComponent3: <h4>Overlay Title 4</h4>,
-  TextComponent1: (
+  title: <h3>Title 3</h3>,
+  text: (
     <p>
       Consectetur veniam et nisi do culpa non. Elit eiusmod anim ipsum est ex
       nisi id occaecat adipisicing occaecat exercitation velit occaecat. Aliquip
@@ -152,18 +157,20 @@ BlogCard1.defaultProps = {
       cillum fugiat.
     </p>
   ),
-  TextComponent2: "May 20, 2019"
+  link: <h4>Overlay Title 4</h4>,
+  linkText: <h4>Overlay Title 4</h4>,
+  date: "May 20, 2019"
 };
 
 BlogCard1.propTypes = {
   // handleClick: PropTypes.func,
   overlayColor: PropTypes.string,
   ImageComponent: PropTypes.element,
-  TitleComponent1: PropTypes.element,
-  TitleComponent2: PropTypes.element,
-  TitleComponent3: PropTypes.element,
-  TextComponent1: PropTypes.element,
-  TextComponent2: PropTypes.element
+  title: PropTypes.string,
+  text: PropTypes.string,
+  link: PropTypes.string,
+  linkText: PropTypes.string,
+  date: PropTypes.string
 };
 
 export default BlogCard1;
