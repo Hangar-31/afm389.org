@@ -2,6 +2,7 @@ import { PropTypes } from "prop-types";
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
+import { H31Title1B } from "..";
 
 const Wrapper = styled.section`
   width: 100%;
@@ -9,29 +10,25 @@ const Wrapper = styled.section`
   padding: 5px;
 `;
 
-const TitleWithBackground = ({
-  TitleComponent,
-  backgroundColor,
-  textAlign
-}) => (
+const TitleWithBackground = ({ title, backgroundColor, textAlign }) => (
   <Wrapper
     css={css`
       background-color: ${backgroundColor};
       text-align: ${textAlign};
     `}
   >
-    {TitleComponent}
+    <H31Title1B>{title}</H31Title1B>
   </Wrapper>
 );
 
 TitleWithBackground.defaultProps = {
-  TitleComponent: <h1>Title 1</h1>,
+  title: "Testing",
   backgroundColor: "grey",
   textAlign: "center"
 };
 
 TitleWithBackground.propTypes = {
-  TitleComponent: PropTypes.element,
+  title: PropTypes.string,
   backgroundColor: PropTypes.string,
   textAlign: PropTypes.string
 };

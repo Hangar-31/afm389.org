@@ -18,8 +18,7 @@ import {
   H31Title2A,
   H31ToggleInfo1,
   H31Layout3Col,
-  H31BlogCard1,
-  H31Title3B,
+  H31BlogCard1
 } from "../components/h31";
 
 // Images
@@ -171,12 +170,12 @@ export default () => (
     <H31Layout3Col>
       {partners.map(partner => (
         <H31BlogCard1
-          overlayColor="rgba(243, 149, 8, 0.64)"
+          overlayColor="rgba(243, 149, 8, 0.84)"
           ImageComponent={partner.image}
-          title={<H31Title3B>{partner.title}</H31Title3B>}
+          title={partner.title}
           text={partner.text}
-          link="/"
-          linkText="Click Here"
+          link={partner.link}
+          linkText="Visit Site"
         />
       ))}
     </H31Layout3Col>
