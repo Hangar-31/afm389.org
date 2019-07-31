@@ -3,12 +3,19 @@ import { PropTypes } from "prop-types";
 import styled from "@emotion/styled";
 // import { css } from "@emotion/core";
 
+// Images
+import ImgAbout1 from "../../images/_about/ImgAbout1";
+
+// Styled Components
 const Container = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
   width: 690px;
+  .gatsby-image-wrapper {
+    max-width: 100%;
+  }
 `;
 
 const TitleContainer = styled.div`
@@ -20,13 +27,9 @@ const TitleContainer = styled.div`
   background: #164f4b;
 `;
 
-const ImgContainer = styled.div``;
-
 const ContentBlock2 = ({ TitleComponent, children }) => (
   <Container>
     <TitleContainer>{TitleComponent}</TitleContainer>
-    {children}
-    <ImgContainer />
     {children}
   </Container>
 );
@@ -34,12 +37,21 @@ const ContentBlock2 = ({ TitleComponent, children }) => (
 ContentBlock2.defaultProps = {
   TitleComponent: <h3>Title Test</h3>,
   children: (
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
-      amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-      labore et dolore magna aliqua.
-    </p>
+    <>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor
+        sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+        ut labore et dolore magna aliqua.
+      </p>
+      <ImgAbout1 />
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor
+        sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+        ut labore et dolore magna aliqua.
+      </p>
+    </>
   )
 };
 

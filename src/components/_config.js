@@ -14,6 +14,16 @@ export default {
   fontTertiary: "Staatliches",
   fontQuintery: "Assistant",
 
+  // Default Padding
+  padding: 30,
+
+  // Sizes
+  sizeXl: 1440,
+  sizeLg: 1200,
+  sizeMd: 992,
+  sizeSm: 768,
+  sizeXs: 500,
+
   // Main Navigation
   mainNav: [
     {

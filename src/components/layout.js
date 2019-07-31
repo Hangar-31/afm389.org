@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-wrap-multilines */
 // eslint-disable-next-line no-unused-vars
 import React from "react";
+import Helmet from "react-helmet";
 import PropTypes from "prop-types";
 /** @jsx jsx */
 import { Global, css, jsx } from "@emotion/core";
@@ -28,6 +29,7 @@ import {
   H31Title4C,
   H31Link1,
   H31Link2,
+  H31Link3,
   H31Text1,
   H31Text2,
   H31Text3,
@@ -71,6 +73,7 @@ const Layout = ({ children }) => (
         ${H31Title1A} {
           color: ${_config.colorWhite};
           font-family: ${_config.fontSecondary};
+          font-size: 1.5rem;
           font-weight: 300;
           text-transform: uppercase;
         }
@@ -138,11 +141,25 @@ const Layout = ({ children }) => (
           font-family: ${_config.fontPrimary};
           font-size: 0.8rem;
           text-transform: uppercase;
+          &:hover {
+            text-decoration: none;
+          }
         }
         ${H31Link2} {
           color: ${_config.colorWhite};
           font-family: ${_config.fontPrimary};
           font-size: 0.8rem;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        ${H31Link3} {
+          color: ${_config.colorTertiary};
+          font-family: ${_config.fontPrimary};
+          font-size: 0.8rem;
+          &:hover {
+            text-decoration: none;
+          }
         }
         ${H31Text1} {
           color: ${_config.colorWhite};
@@ -193,6 +210,15 @@ const Layout = ({ children }) => (
         }
       `}
     />
+
+    <Helmet>
+      <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossOrigin="anonymous"
+      />
+    </Helmet>
 
     <H31MainNavbar1
       topBarColor={_config.colorPrimary}

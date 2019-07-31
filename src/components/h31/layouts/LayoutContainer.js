@@ -1,0 +1,15 @@
+// Style Library
+import styled from "@emotion/styled";
+
+// Bootstrap Layout Components for Overwritting
+import bContainer from "react-bootstrap/Container";
+import _config from "../../_config";
+
+// ------ Layout Styles
+
+export default styled(bContainer)`
+  padding: ${_config.padding / 2}px 0px !important;
+  @media (max-width: ${_config.sizeMd}px) {
+    padding: ${_config.padding / 2}px 0px !important;
+  }
+`;
