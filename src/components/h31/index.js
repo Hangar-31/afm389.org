@@ -105,6 +105,7 @@ export { default as H31Testimonials } from "./testimonials/Testimonials";
 // Text Blocks
 export { default as H31TextBlock1 } from "./text-blocks/TextBlock1";
 export { default as H31TextBlock2 } from "./text-blocks/TextBlock2";
+export { default as H31TextBlock3 } from "./text-blocks/TextBlock3";
 
 // Time Indicators
 export { default as H31SimpleTime } from "./time-indicators/SimpleTime";
