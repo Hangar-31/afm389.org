@@ -40,7 +40,7 @@ const FormWrapper = styled.div`
 `;
 
 const TitleContainer = styled.div`
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 `;
 
 const SitemapContainer = styled.section`
