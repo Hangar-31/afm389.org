@@ -59,6 +59,9 @@ export { default as H31CallToAction } from "./call-to-action/CallToAction";
 // Forms
 export { default as H31Form1 } from "./forms/Form1";
 
+// Google Maps
+export { default as H31GoogleMap1 } from "./google-maps/GoogleMap1";
+
 // Layouts
 export { default as H31Layout3Col } from "./layouts/Layout3Col";
 export { default as H31Layout4Col } from "./layouts/Layout4Col";

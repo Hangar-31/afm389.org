@@ -10,8 +10,8 @@ import {
   H31SectionTitleFullWidth,
   H31Bio1
 } from "../components/h31";
-import ImgMastheadAbout from "../components/images/mastheads/ImgMastheadAbout";
 import _config from "../components/_config";
+import ImgMastheadBoardOfDirectors from "../components/images/mastheads/ImgMastheadBoardOfDirectors";
 
 // Data
 const bios = [
@@ -30,7 +30,7 @@ export default () => (
     <SEO title="" description="" />
 
     <H31Masthead1
-      ImageComponent={<ImgMastheadAbout />}
+      ImageComponent={<ImgMastheadBoardOfDirectors />}
       title="Your Path to a Musical Career"
       text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id rhoncus ligula. Quisque commodo, eros auctor elementum aliquam, urna turpis dapibus dolor, non feugiat tortor lectus."
     />
