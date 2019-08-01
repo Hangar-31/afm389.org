@@ -11,14 +11,14 @@ import {
   H31Masthead1,
   H31BlogCardLoader1
 } from "../components/h31";
-import ImgMastheadHome from "../components/images/mastheads/ImgMastheadHome";
+import ImgMastheadNewsAndEvents from "../components/images/mastheads/ImgMastheadNewsAndEvents";
 
 export default () => (
   <Layout>
     <SEO title="" description="" />
 
     <H31Masthead1
-      ImageComponent={<ImgMastheadHome />}
+      ImageComponent={<ImgMastheadNewsAndEvents />}
       title="Your Path to a Musical Career"
       text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id rhoncus ligula. Quisque commodo, eros auctor elementum aliquam, urna turpis dapibus dolor, non feugiat tortor lectus."
     />

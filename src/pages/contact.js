@@ -3,11 +3,15 @@ import React from "react";
 // Components
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+<<<<<<< HEAD
 import {
   H31TextBlock3,
   H31Masthead1,
   H31SectionTitleFullWidth
 } from "../components/h31";
+=======
+import { H31TextBlock3, H31GoogleMap1 } from "../components/h31";
+>>>>>>> 78d2acb3a1e768a8e4cdc1451f39dd2f3b6a9452
 
 export default () => (
   <Layout>
@@ -32,5 +36,7 @@ export default () => (
       text="Local389@afm.org"
       link="mailto::Local389@afm.org"
     />
+
+    <H31GoogleMap1 />
   </Layout>
 );
