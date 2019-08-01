@@ -37,7 +37,7 @@ export default class Bio1 extends React.Component {
         css={css`
           margin: 0;
           padding: 0px !important;
-          border-bottom: 1px solid ${_config.colorLightGrey};
+          border-bottom: 1px solid #dadada;
         `}
       >
         <Row

@@ -13,6 +13,7 @@ export { default as H31Select1 } from "./base-elements/Select1";
 export { default as H31Link1 } from "./base-elements/Link1";
 export { default as H31Link2 } from "./base-elements/Link2";
 export { default as H31Link3 } from "./base-elements/Link3";
+export { default as H31Link4 } from "./base-elements/Link4";
 export { default as H31Text1 } from "./base-elements/Text1";
 export { default as H31Text2 } from "./base-elements/Text2";
 export { default as H31Text3 } from "./base-elements/Text3";
@@ -36,6 +37,11 @@ export { default as H31Bio1 } from "./bios/Bio1";
 
 // Blog Cards
 export { default as H31BlogCard1 } from "./blog-cards/BlogCard1";
+
+// Blog Card Loader
+export {
+  default as H31BlogCardLoader1
+} from "./blog-card-loader/BlogCardLoader1";
 
 // Buttons
 export { default as H31ButtonBrightSubmit } from "./buttons/ButtonBrightSubmit";

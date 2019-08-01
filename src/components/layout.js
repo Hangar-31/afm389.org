@@ -31,6 +31,7 @@ import {
   H31Link1,
   H31Link2,
   H31Link3,
+  H31Link4,
   H31Text1,
   H31Text2,
   H31Text3,
@@ -123,7 +124,7 @@ const Layout = ({ children }) => (
           color: ${_config.colorDarkGrey};
           font-family: ${_config.fontPrimary};
           font-weight: bold;
-          font-size: 1rem;
+          font-size: 0.925rem;
           text-decoration: underline;
         }
         ${H31Title4A} {
@@ -163,6 +164,14 @@ const Layout = ({ children }) => (
         }
         ${H31Link3} {
           color: ${_config.colorTertiary};
+          font-family: ${_config.fontPrimary};
+          font-size: 0.8rem;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        ${H31Link4} {
+          color: ${_config.colorGrey};
           font-family: ${_config.fontPrimary};
           font-size: 0.8rem;
           &:hover {

@@ -145,7 +145,7 @@ export default () => (
       backgroundColor={_config.colorSecondary}
       titleSmall="Central FL Musicians Association"
       titleSmallColor={_config.colorPrimary}
-      titleLarge="Member Benefits"
+      titleLarge="Collective Bargaining Agreement (CBA) Partners"
     />
 
     <H31LayoutContainer

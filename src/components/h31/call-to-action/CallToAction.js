@@ -9,10 +9,10 @@ import {
   H31Text2,
   H31ButtonBright,
   H31Button2,
-  H31Title2C,
   H31LayoutContainer,
   H31LayoutRow,
-  H31LayoutCol
+  H31LayoutCol,
+  H31Title1B
 } from "..";
 
 export default () => (
@@ -29,7 +29,8 @@ export default () => (
       <H31LayoutCol md={3} />
       <H31LayoutCol md={6}>
         <div>
-          <H31Title2C
+          <H31Title1B
+            as="h2"
             css={css`
               margin-bottom: 30px;
               color: ${_config.colorWhite};
@@ -52,7 +53,7 @@ export default () => (
             >
               Here
             </span>
-          </H31Title2C>
+          </H31Title1B>
         </div>
 
         <H31Text2
