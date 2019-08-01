@@ -7,12 +7,11 @@ import _config from "../../_config";
 // Components
 import {
   H31Text2,
-  H31ButtonBright,
-  H31Button2,
   H31LayoutContainer,
   H31LayoutRow,
   H31LayoutCol,
-  H31Title1B
+  H31Title1B,
+  H31Link5
 } from "..";
 
 export default () => (
@@ -72,11 +71,7 @@ export default () => (
             text-align: right;
           `}
         >
-          <H31ButtonBright
-            borderColor={_config.colorWhite}
-            backgroundColor={_config.colorTertiary}
-            ButtonComponent={<H31Button2>Join Now</H31Button2>}
-          />
+          <H31Link5 href="">Join Now</H31Link5>
         </div>
       </H31LayoutCol>
       <H31LayoutCol md={3} />

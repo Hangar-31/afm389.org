@@ -11,7 +11,6 @@ import ImgBioMikeAvila from "../../images/bios/ImgBioMikeAvila";
 import Container from "../layouts/LayoutContainer";
 import Row from "../layouts/LayoutRow";
 import Col from "../layouts/LayoutCol";
-import ButtonToggle from "../buttons/ButtonToggle";
 import { H31Button1, H31Link3, H31Title2B, H31Text3 } from "../index";
 import _config from "../../_config";
 
@@ -94,7 +93,7 @@ export default class Bio1 extends React.Component {
                     padding-right: 0 !important;
                   `}
                 >
-                  <ButtonToggle
+                  <H31Button1
                     css={css`
                       border-color: ${this.state.visible
                         ? _config.colorTertiary
@@ -102,19 +101,14 @@ export default class Bio1 extends React.Component {
                       background-color: ${this.state.visible
                         ? _config.colorWhite
                         : _config.colorTertiary};
+                      color: ${this.state.visible
+                        ? _config.colorTertiary
+                        : _config.colorWhite};
                     `}
                     onClick={this.onClick}
                   >
-                    <H31Button1
-                      css={css`
-                        color: ${this.state.visible
-                          ? _config.colorTertiary
-                          : _config.colorWhite};
-                      `}
-                    >
-                      Full Bio
-                    </H31Button1>
-                  </ButtonToggle>
+                    Full Bio
+                  </H31Button1>
                 </Col>
               </Row>
             </Container>

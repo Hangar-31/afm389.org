@@ -1,25 +1,19 @@
 /* eslint-disable prettier/prettier */
 import React from "react";
-import { css } from "@emotion/core";
 
 // Components
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import {
   H31Masthead1,
-  H31TitleWithBackground,
-  H31Title1B,
-  H31Title2A,
-  H31Title2B,
+
   H31SectionTitleFullWidth,
   H31Bio1
 } from "../components/h31";
 import ImgMastheadAbout from "../components/images/mastheads/ImgMastheadAbout";
 import _config from "../components/_config";
-import Bio1 from "../components/h31/bios/Bio1";
 
 // Data
-
 const bios = [
   {
     name: "Mike Avila",
@@ -37,27 +31,14 @@ export default () => (
 
     <H31Masthead1
       ImageComponent={<ImgMastheadAbout />}
-      TitleComponent={(
-        <H31TitleWithBackground
-          backgroundColor={_config.colorPrimary}
-          TitleComponent={<H31Title1B>From The Team At CFMA</H31Title1B>}
-        />
-      )}
-      ParagraphComponent={<></>}
+      title="Your Path to a Musical Career"
+      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id rhoncus ligula. Quisque commodo, eros auctor elementum aliquam, urna turpis dapibus dolor, non feugiat tortor lectus."
     />
 
     <H31SectionTitleFullWidth
       backgroundColor={_config.colorPrimary}
-      TitleComponent1={<H31Title2B>Central FL Musicians Association</H31Title2B>}
-      TitleComponent2={(
-        <H31Title2A
-          css={css`
-              color: ${_config.colorWhite};
-            `}
-        >
-        Board of Directors
-        </H31Title2A>
-      )}
+      titleSmall="Central FL Musicians Association"
+      titleLarge="Board of Directors"
     />
 
     {bios.map(bio => (
@@ -67,6 +48,5 @@ export default () => (
         bios={bio.bios}
       />
     ))}
-    <Bio1 />
   </Layout>
 );

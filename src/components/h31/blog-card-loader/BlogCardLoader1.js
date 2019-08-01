@@ -9,12 +9,141 @@ import {
   H31LayoutContainer,
   H31LayoutRow,
   H31LayoutCol,
-  H31BlogCard1
+  H31BlogCard1,
+  H31Button1
 } from "..";
 import _config from "../../_config";
 
 // Data
 const blogs = [
+  {
+    image: <ImgHome1 />,
+    title: "2019 DISNEY OPEN CALL AUDITIONS",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet.",
+    date: "May 15, 2019",
+    link: "/"
+  },
+  {
+    image: <ImgHome2 />,
+    title: "ORLANDO MUSICIANS CONFERENCE",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet.",
+    date: "May 15, 2019",
+    link: "/"
+  },
+  {
+    image: <ImgHome3 />,
+    title: "10 TIPS FOR LIVE PERFORMANCES",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet.",
+    date: "May 15, 2019",
+    link: "/"
+  },
+  {
+    image: <ImgHome4 />,
+    title: "CFMA MAY 12th MUSICIANS SOCIAL",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet.",
+    date: "May 15, 2019",
+    link: "/"
+  },
+  {
+    image: <ImgHome1 />,
+    title: "2019 DISNEY OPEN CALL AUDITIONS",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet.",
+    date: "May 15, 2019",
+    link: "/"
+  },
+  {
+    image: <ImgHome2 />,
+    title: "ORLANDO MUSICIANS CONFERENCE",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet.",
+    date: "May 15, 2019",
+    link: "/"
+  },
+  {
+    image: <ImgHome3 />,
+    title: "10 TIPS FOR LIVE PERFORMANCES",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet.",
+    date: "May 15, 2019",
+    link: "/"
+  },
+  {
+    image: <ImgHome4 />,
+    title: "CFMA MAY 12th MUSICIANS SOCIAL",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet.",
+    date: "May 15, 2019",
+    link: "/"
+  },
+  {
+    image: <ImgHome1 />,
+    title: "2019 DISNEY OPEN CALL AUDITIONS",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet.",
+    date: "May 15, 2019",
+    link: "/"
+  },
+  {
+    image: <ImgHome2 />,
+    title: "ORLANDO MUSICIANS CONFERENCE",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet.",
+    date: "May 15, 2019",
+    link: "/"
+  },
+  {
+    image: <ImgHome3 />,
+    title: "10 TIPS FOR LIVE PERFORMANCES",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet.",
+    date: "May 15, 2019",
+    link: "/"
+  },
+  {
+    image: <ImgHome4 />,
+    title: "CFMA MAY 12th MUSICIANS SOCIAL",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet.",
+    date: "May 15, 2019",
+    link: "/"
+  },
+  {
+    image: <ImgHome1 />,
+    title: "2019 DISNEY OPEN CALL AUDITIONS",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet.",
+    date: "May 15, 2019",
+    link: "/"
+  },
+  {
+    image: <ImgHome2 />,
+    title: "ORLANDO MUSICIANS CONFERENCE",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet.",
+    date: "May 15, 2019",
+    link: "/"
+  },
+  {
+    image: <ImgHome3 />,
+    title: "10 TIPS FOR LIVE PERFORMANCES",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet.",
+    date: "May 15, 2019",
+    link: "/"
+  },
+  {
+    image: <ImgHome4 />,
+    title: "CFMA MAY 12th MUSICIANS SOCIAL",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet.",
+    date: "May 15, 2019",
+    link: "/"
+  },
   {
     image: <ImgHome1 />,
     title: "2019 DISNEY OPEN CALL AUDITIONS",
@@ -88,11 +217,13 @@ export default class BlogCardLoader1 extends React.Component {
     this.state = {
       loadAmount: 7
     };
+
+    this.onClickLoadMore = this.onClickLoadMore.bind(this);
   }
 
   onClickLoadMore() {
     let { loadAmount } = this.state;
-    loadAmount += 7;
+    loadAmount += 8;
     this.setState({ loadAmount });
   }
 
@@ -121,7 +252,25 @@ export default class BlogCardLoader1 extends React.Component {
                   date={blog.date}
                 />
               </H31LayoutCol>
-              {/* {i === loadAmount && <H31LayoutCol md={3} />} */}
+              {i + 1 === loadAmount && (
+                <H31LayoutCol
+                  css={css`
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  `}
+                  md={3}
+                >
+                  <H31Button1
+                    css={css`
+                      max-width: 150px;
+                    `}
+                    onClick={this.onClickLoadMore}
+                  >
+                    More Stories
+                  </H31Button1>
+                </H31LayoutCol>
+              )}
 
               {(i + 1) % 4 === 0 && i + 1 !== blogs.length && (
                 <H31LayoutCol md={12}>

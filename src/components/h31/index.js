@@ -14,6 +14,8 @@ export { default as H31Link1 } from "./base-elements/Link1";
 export { default as H31Link2 } from "./base-elements/Link2";
 export { default as H31Link3 } from "./base-elements/Link3";
 export { default as H31Link4 } from "./base-elements/Link4";
+export { default as H31Link5 } from "./base-elements/Link5";
+export { default as H31Link6 } from "./base-elements/Link6";
 export { default as H31Text1 } from "./base-elements/Text1";
 export { default as H31Text2 } from "./base-elements/Text2";
 export { default as H31Text3 } from "./base-elements/Text3";
@@ -45,8 +47,6 @@ export {
 
 // Buttons
 export { default as H31ButtonBrightSubmit } from "./buttons/ButtonBrightSubmit";
-export { default as H31ButtonBright } from "./buttons/ButtonBright";
-export { default as H31ButtonHollow } from "./buttons/ButtonHollow";
 export { default as H31ButtonFillArrow } from "./buttons/ButtonFillArrow";
 
 // Content Blocks

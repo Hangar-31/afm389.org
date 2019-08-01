@@ -10,8 +10,6 @@ import _config from "./_config";
 
 import {
   H31MainNavbar1,
-  H31ButtonBright,
-  H31ButtonHollow,
   H31Button1,
   H31Button2,
   H31Button3,
@@ -32,6 +30,7 @@ import {
   H31Link2,
   H31Link3,
   H31Link4,
+  H31Link5,
   H31Text1,
   H31Text2,
   H31Text3,
@@ -42,7 +41,8 @@ import {
   H31MainFooter1,
   H31Form1,
   H31SocialIcons,
-  H31Sitemap1
+  H31Sitemap1,
+  H31Link6
 } from "./h31/index";
 
 // Images
@@ -178,6 +178,17 @@ const Layout = ({ children }) => (
             text-decoration: none;
           }
         }
+        ${H31Link5} {
+          color: ${_config.colorWhite};
+          font-family: ${_config.fontPrimary};
+          font-weight: bold;
+          text-transform: uppercase;
+          font-size: 0.8rem;
+          &:hover {
+            color: ${_config.colorWhite};
+            text-decoration: none;
+          }
+        }
         ${H31Text1} {
           color: ${_config.colorWhite};
           font-family: ${_config.fontTertiary};
@@ -296,20 +307,8 @@ const Layout = ({ children }) => (
         />
       }
       TextComponent={<H31Text2>Don&apos;t Go It Alone</H31Text2>}
-      ButtonComponentTop={
-        <H31ButtonHollow
-          buttonColor={_config.colorWhite}
-          hoverColor={_config.colorTertiary}
-          ButtonComponent={<H31Button1>Member Log In</H31Button1>}
-        />
-      }
-      ButtonComponentBottom={
-        <H31ButtonBright
-          borderColor={_config.colorWhite}
-          backgroundColor={_config.colorTertiary}
-          ButtonComponent={<H31Button2>Join Now</H31Button2>}
-        />
-      }
+      ButtonComponentTop={<H31Link6 href="/">Member Log In</H31Link6>}
+      ButtonComponentBottom={<H31Link5 href="/">Join Now</H31Link5>}
     />
 
     {children}

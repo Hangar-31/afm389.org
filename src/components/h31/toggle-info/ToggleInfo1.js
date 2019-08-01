@@ -8,7 +8,6 @@ import styled from "@emotion/styled";
 import Container from "../layouts/LayoutContainer";
 import Row from "../layouts/LayoutRow";
 import Col from "../layouts/LayoutCol";
-import ButtonToggle from "../buttons/ButtonToggle";
 import { H31Button1, H31Title2B, H31Text3 } from "../index";
 import _config from "../../_config";
 
@@ -68,7 +67,7 @@ export default class Bio1 extends React.Component {
             `}
           >
             {this.props.info.length > 0 && (
-              <ButtonToggle
+              <H31Button1
                 css={css`
                   width: 45px;
                   border-color: ${this.state.visible
@@ -77,20 +76,15 @@ export default class Bio1 extends React.Component {
                   background-color: ${this.state.visible
                     ? _config.colorWhite
                     : _config.colorTertiary};
+                  font-size: 1.5rem;
+                  color: ${this.state.visible
+                    ? _config.colorTertiary
+                    : _config.colorWhite};
                 `}
                 onClick={this.onClick}
               >
-                <H31Button1
-                  css={css`
-                    font-size: 1.5rem;
-                    color: ${this.state.visible
-                      ? _config.colorTertiary
-                      : _config.colorWhite};
-                  `}
-                >
-                  +
-                </H31Button1>
-              </ButtonToggle>
+                +
+              </H31Button1>
             )}
             {this.props.info.length === 0 && (
               <div
