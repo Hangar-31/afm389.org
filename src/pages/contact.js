@@ -3,12 +3,18 @@ import React from "react";
 // Components
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { H31TextBlock3 } from "../components/h31";
+import {
+  H31TextBlock3,
+  H31Masthead1,
+  H31SectionTitleFullWidth
+} from "../components/h31";
 
 export default () => (
   <Layout>
     <SEO title="" description="" />
 
+    <H31Masthead1 />
+    <H31SectionTitleFullWidth />
     <H31TextBlock3
       title="Mailing Address"
       text="3020 East Robinson Street Orlando, FL 32803"
