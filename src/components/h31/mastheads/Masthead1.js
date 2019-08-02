@@ -1,7 +1,12 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import styled from "@emotion/styled";
 import { css } from "@emotion/core";
+import styled from "@emotion/styled";
+
+// Style Config File
+import _config from "../../_config";
+
+// Components
 import {
   H31LayoutContainer,
   H31LayoutRow,
@@ -9,16 +14,6 @@ import {
   H31Paragraph1,
   H31Title1B
 } from "..";
-import _config from "../../_config";
-// import _config from "../../_config";
-
-// const Container = styled.section`
-//   position: relative;
-//   display: flex;
-//   border-box: content;
-//   height: 600px;
-//   width: 100%;
-// `;
 
 const BackgroundImage = styled.div`
   position: absolute;
@@ -28,26 +23,6 @@ const BackgroundImage = styled.div`
     width: 100%;
     height: 100%;
   }
-`;
-
-// const ContainerContent = styled.section`
-//   position: relative;
-//   width: 100%;
-//   height: 100%;
-//   max-width: 1440px;
-//   margin: 0 auto;
-// `;
-
-// const WrapperContent = styled.section`
-//   position: absolute;
-//   bottom: 30px;
-//   left: 0;
-//   max-width: 700px;
-// `;
-
-const Spacer = styled.div`
-  width: 15px;
-  height: 15px;
 `;
 
 const Masthead1 = ({ ImageComponent, title, text }) => (
@@ -72,13 +47,14 @@ const Masthead1 = ({ ImageComponent, title, text }) => (
       <H31LayoutCol md={7}>
         <H31Title1B
           css={css`
+            margin-bottom: 15px;
             text-align: center;
             background-color: ${_config.colorPrimary};
           `}
         >
           {title}
         </H31Title1B>
-        <Spacer />
+
         <H31Paragraph1 text={text} />
       </H31LayoutCol>
     </H31LayoutRow>
@@ -87,14 +63,14 @@ const Masthead1 = ({ ImageComponent, title, text }) => (
 
 Masthead1.defaultProps = {
   ImageComponent: <span>Put an image here</span>,
-  title: <span>Put an image here</span>,
-  text: <span>Test Title</span>
+  title: "Title",
+  text: "Text"
 };
 
 Masthead1.propTypes = {
   ImageComponent: PropTypes.element,
-  title: PropTypes.element,
-  text: PropTypes.element
+  title: PropTypes.string,
+  text: PropTypes.string
 };
 
 export default Masthead1;

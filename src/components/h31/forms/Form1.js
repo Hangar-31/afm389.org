@@ -10,25 +10,14 @@ import {
   H31Button3,
   H31ButtonBrightSubmit,
   H31Select1,
-  H31Textarea1
+  H31Textarea1,
+  H31LayoutCol,
+  H31LayoutRow,
+  H31LayoutContainer
 } from "../index";
 import _config from "../../_config";
 
-const Form = styled.form`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 30px;
-`;
-
-const Column = styled.div`
-  display: grid;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-  grid-auto-columns: 1fr;
-  grid-auto-rows: 30px;
-  grid-gap: 30px;
-`;
+const Form = styled.form``;
 
 const Required = (
   <span
@@ -50,35 +39,35 @@ const formData = [
     name: "Regarding",
     text: "Select What This Inquiry is About",
     options: ["Work Enquiry", "Joining CFMA"],
-    size: 6,
+    size: 12,
     required: true
   },
   {
     type: "text",
     name: "FirstName",
     text: "First Name",
-    size: 3,
+    size: 6,
     required: true
   },
   {
     type: "text",
     name: "LastName",
     text: "Last Name",
-    size: 3,
+    size: 6,
     required: true
   },
   {
     type: "text",
     name: "Email",
     text: "Email Address",
-    size: 6,
+    size: 12,
     required: true
   },
   {
     type: "text",
     name: "City",
     text: "City",
-    size: 4,
+    size: 10,
     required: true
   },
   {
@@ -92,13 +81,13 @@ const formData = [
     type: "textbox",
     name: "Message",
     text: "Message",
-    size: 6,
+    size: 12,
     required: true
   },
   {
     type: "button",
     text: "SEND",
-    size: 6
+    size: 12
   }
 ];
 
@@ -179,88 +168,69 @@ export default class Form1 extends React.Component {
       switch (data.type) {
         case "text":
           this.formLeft.push(
-            <H31Label1
-              key={data.name}
-              htmlFor={data.name}
-              css={css`
-                grid-column: span ${data.size};
-              `}
-            >
-              {data.required && Required}
-              <H31Input1 id={data.name} placeholder={data.text} type="text" />
-            </H31Label1>
+            <H31LayoutCol md={data.size}>
+              <H31Label1 key={data.name} htmlFor={data.name}>
+                {data.required && Required}
+                <H31Input1 id={data.name} placeholder={data.text} type="text" />
+              </H31Label1>
+            </H31LayoutCol>
           );
           break;
         case "select":
           this.formLeft.push(
-            <H31Label1
-              key={data.name}
-              htmlFor={data.name}
-              css={css`
-                grid-column: span ${data.size};
-              `}
-            >
-              {data.required && Required}
-              <H31Select1 defaultValue={data.options[0]}>
-                <option
-                  value=""
-                  css={css`
-                    color: #eeeeee;
-                  `}
-                  disabled
-                >
-                  {data.text}
-                </option>
-                {data.options.map(option => (
-                  <option key={option} value={option}>
-                    {option}
+            <H31LayoutCol md={data.size}>
+              <H31Label1 key={data.name} htmlFor={data.name}>
+                {data.required && Required}
+                <H31Select1 defaultValue={data.options[0]}>
+                  <option
+                    value=""
+                    css={css`
+                      color: #eeeeee;
+                    `}
+                    disabled
+                  >
+                    {data.text}
                   </option>
-                ))}
-              </H31Select1>
-            </H31Label1>
+                  {data.options.map(option => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </H31Select1>
+              </H31Label1>
+            </H31LayoutCol>
           );
           break;
         case "textbox":
           this.formRight.push(
-            <div
-              key={data.name}
-              css={css`
-                position: relative;
-                grid-column: span ${data.size};
-                grid-row: span 3;
-              `}
-            >
+            <H31LayoutCol md={data.size} key={data.name}>
               <H31Textarea1 id={data.name} placeholder={data.text} />
               {data.required && Required}
-            </div>
+            </H31LayoutCol>
           );
           break;
         case "button":
           this.formRight.push(
-            <H31ButtonBrightSubmit
-              key={data.type}
-              type="submit"
-              css={css`
-                ${
-                  this.state.submitting === 2
+            <H31LayoutCol md={data.size}>
+              <H31ButtonBrightSubmit
+                key={data.type}
+                type="submit"
+                css={css`
+                  ${this.state.submitting === 2
                     ? `background: ${_config.colorSecondary};`
-                    : ``
-                }
-                ${
-                  this.state.submitting === 2
+                    : ``}
+                  ${this.state.submitting === 2
                     ? `border: 1px solid ${_config.colorSecondary};`
-                    : ``
-                }
-                grid-column: span ${data.size};
-                grid-row: span 1;
-              `}
-            >
-              <H31Button3>
-                {this.state.submitting === 0 && "Send"}
-                {this.state.submitting === 1 && <H31LoadingIndicator1 />}
-                {this.state.submitting === 2 && "Sent"}
-              </H31Button3>
-            </H31ButtonBrightSubmit>
+                    : ``}
+                `}
+              >
+                <H31Button3>
+                  {this.state.submitting === 0 && "Send"}
+                  {this.state.submitting === 1 && <H31LoadingIndicator1 />}
+                  {this.state.submitting === 2 && "Sent"}
+                </H31Button3>
+              </H31ButtonBrightSubmit>
+            </H31LayoutCol>
           );
           break;
         default:
@@ -313,31 +283,40 @@ export default class Form1 extends React.Component {
         data-netlify="true"
         netlify-honeypot="bot-field"
       >
-        {this.state.errors.length > 0 && (
-          <ul
-            css={css`
-              grid-column: span 2;
-            `}
-          >
-            {this.state.errors.map(error => (
-              <li key={error}>{error}</li>
-            ))}
-          </ul>
-        )}
+        <H31LayoutContainer fluid>
+          {this.state.errors.length > 0 && (
+            <H31LayoutRow>
+              <ul>
+                {this.state.errors.map(error => (
+                  <li key={error}>{error}</li>
+                ))}
+              </ul>
+            </H31LayoutRow>
+          )}
 
-        <Column>{this.formLeft}</Column>
+          <H31LayoutRow>
+            <H31LayoutCol md={6}>
+              <H31LayoutContainer fluid>
+                <H31LayoutRow>{this.formLeft}</H31LayoutRow>
+              </H31LayoutContainer>
+            </H31LayoutCol>
+            <H31LayoutCol md={6}>
+              <H31LayoutContainer fluid>
+                <H31LayoutRow>{this.formRight}</H31LayoutRow>
+              </H31LayoutContainer>
+            </H31LayoutCol>
 
-        <Column>{this.formRight}</Column>
-
-        <H31Label1
-          htmlFor="BotMessage"
-          css={css`
-            display: none;
-          `}
-        >
-          If you are human don&#39;t fill this form out
-          <input name="bot-field" onChange={this.onChange} required />
-        </H31Label1>
+            <H31Label1
+              htmlFor="BotMessage"
+              css={css`
+                display: none;
+              `}
+            >
+              If you are human don&#39;t fill this form out
+              <input name="bot-field" onChange={this.onChange} required />
+            </H31Label1>
+          </H31LayoutRow>
+        </H31LayoutContainer>
       </Form>
     );
   }

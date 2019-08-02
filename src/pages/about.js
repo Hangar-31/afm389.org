@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-wrap-multilines */
 import React from "react";
+import { css } from "@emotion/core";
 
 // Components
 import Layout from "../components/layout";
@@ -13,7 +14,10 @@ import {
   H31Text3,
   H31Layout3Col,
   H31Testimonials,
-  H31SectionTitleFullWidth
+  H31SectionTitleFullWidth,
+  H31LayoutCol,
+  H31LayoutRow,
+  H31LayoutContainer
 } from "../components/h31";
 import _config from "../components/_config";
 import ImgAbout1 from "../components/images/_about/ImgAbout1";
@@ -77,7 +81,23 @@ export default () => (
       titleLarge="CFMA Local 389 - History"
     />
 
-    <H31ContentBlock2 title="We Work For Musicians">{data}</H31ContentBlock2>
+    <H31LayoutContainer
+      fluid
+      as="section"
+      css={css`
+        margin: 45px 0;
+      `}
+    >
+      <H31LayoutRow>
+        <H31LayoutCol md={3} />
+        <H31LayoutCol md={6}>
+          <H31ContentBlock2 title="We Work For Musicians">
+            {data}
+          </H31ContentBlock2>
+        </H31LayoutCol>
+        <H31LayoutCol md={3} />
+      </H31LayoutRow>
+    </H31LayoutContainer>
 
     <H31SectionTitleFullWidth
       backgroundColor={_config.colorWhite}

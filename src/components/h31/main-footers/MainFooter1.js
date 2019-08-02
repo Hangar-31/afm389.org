@@ -1,19 +1,20 @@
+import React from "react";
 import { PropTypes } from "prop-types";
-/** @jsx jsx */
-import { css, jsx } from "@emotion/core";
+import { css } from "@emotion/core";
 import styled from "@emotion/styled";
+import { H31LayoutContainer, H31LayoutRow, H31LayoutCol } from "..";
 
-const Container = styled.section`
-  position: relative;
-  box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-`;
+// const Container = styled.section`
+//   position: relative;
+//   box-sizing: border-box;
+//   display: flex;
+//   flex-wrap: wrap;
+//   width: 100%;
+// `;
 
-const WrapperTop = styled.section`
-  width: 100%;
-`;
+// const WrapperTop = styled.section`
+//   width: 100%;
+// `;
 
 const BackgroundImage = styled.div`
   z-index: -1;
@@ -26,59 +27,59 @@ const BackgroundImage = styled.div`
   }
 `;
 
-const FormContainer = styled.section`
-  width: 100%;
-  max-width: 1440px;
-  margin: 120px auto 60px auto;
-  padding: 60px 0 120px 0;
-  background: rgba(0, 0, 0, 0.4);
-`;
+// const FormContainer = styled.section`
+// width: 100%;
+// max-width: 1440px;
+// margin: 120px auto 60px auto;
+// padding: 60px 0 120px 0;
+// background: rgba(0, 0, 0, 0.4);
+// `;
 
-const FormWrapper = styled.div`
-  max-width: 900px;
-  margin: 0 auto;
-`;
+// const FormWrapper = styled.div`
+//   max-width: 900px;
+//   margin: 0 auto;
+// `;
 
-const TitleContainer = styled.div`
-  margin-bottom: 60px;
-`;
+// const TitleContainer = styled.div`
+//   margin-bottom: 60px;
+// `;
 
-const SitemapContainer = styled.section`
-  margin: 0 auto 120px auto;
-  max-width: 1440px;
-`;
+// const SitemapContainer = styled.section`
+//   margin: 0 auto 120px auto;
+//   max-width: 1440px;
+// `;
 
-const WrapperBottom = styled.section`
-  height: 150px;
-  width: 100%;
-`;
+// const WrapperBottom = styled.section`
+//   height: 150px;
+//   width: 100%;
+// `;
 
-const TopBar = styled.nav`
-  position: relative;
-  box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+// const TopBar = styled.nav`
+//   position: relative;
+//   box-sizing: border-box;
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+//   align-items: center;
 
-  height: 50%;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-`;
+//   height: 50%;
+//   width: 100%;
+//   max-width: 1440px;
+//   margin: 0 auto;
+// `;
 
-const BottomBar = styled.section`
-  position: relative;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+// const BottomBar = styled.section`
+// position: relative;
+// box-sizing: border-box;
+// display: flex;
+// justify-content: center;
+// align-items: center;
 
-  height: 50%;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-`;
+//   height: 50%;
+//   width: 100%;
+//   max-width: 1440px;
+//   margin: 0 auto;
+// `;
 
 const MainFooter1 = ({
   topBarColor,
@@ -91,36 +92,75 @@ const MainFooter1 = ({
   SocialBarComponent,
   CopyrightComponent
 }) => (
-  <Container>
-    <WrapperTop>
+  <>
+    <H31LayoutContainer fluid as="section">
       <BackgroundImage>{ImageComponent}</BackgroundImage>
 
-      <FormContainer>
-        <FormWrapper>
-          <TitleContainer>{TitleComponent}</TitleContainer>
-          {FormComponent}
-        </FormWrapper>
-      </FormContainer>
+      <H31LayoutRow
+        css={css`
+          padding: 60px 0 120px 0;
+          background: rgba(0, 0, 0, 0.4);
+        `}
+      >
+        <H31LayoutCol md={2} />
+        <H31LayoutCol md={8}>{TitleComponent}</H31LayoutCol>
+        <H31LayoutCol md={2} />
+        <H31LayoutCol md={2} />
+        <H31LayoutCol md={8}>{FormComponent}</H31LayoutCol>
+        <H31LayoutCol md={2} />
+      </H31LayoutRow>
 
-      <SitemapContainer>{SitemapComponent}</SitemapContainer>
-    </WrapperTop>
-
-    <WrapperBottom
-      css={css`
-        background: linear-gradient(
-          180deg,
-          ${topBarColor} 50%,
-          ${bottomBarColor} 50.0001%
-        );
-      `}
-    >
-      <TopBar>
-        {LinkBarComponent}
-        {SocialBarComponent}
-      </TopBar>
-      <BottomBar>{CopyrightComponent}</BottomBar>
-    </WrapperBottom>
-  </Container>
+      <H31LayoutRow>
+        <H31LayoutCol md={12}>{SitemapComponent}</H31LayoutCol>
+      </H31LayoutRow>
+    </H31LayoutContainer>
+    <H31LayoutContainer>
+      <H31LayoutRow
+        css={css`
+          background: linear-gradient(
+            180deg,
+            ${topBarColor} 50%,
+            ${bottomBarColor} 50.0001%
+          );
+        `}
+      >
+        <H31LayoutCol
+          md={6}
+          css={css`
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 80px;
+          `}
+        >
+          {LinkBarComponent}
+        </H31LayoutCol>
+        <H31LayoutCol
+          md={6}
+          css={css`
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 80px;
+          `}
+        >
+          {SocialBarComponent}
+        </H31LayoutCol>
+        <H31LayoutCol
+          md={12}
+          css={css`
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+          `}
+        >
+          {CopyrightComponent}
+        </H31LayoutCol>
+      </H31LayoutRow>
+    </H31LayoutContainer>
+  </>
 );
 
 MainFooter1.defaultProps = {
