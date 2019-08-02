@@ -23,8 +23,22 @@ const Required = (
   <span
     css={css`
       position: absolute;
-      top: -17px;
+      top: -19px;
       left: 0;
+      color: ${_config.colorLightGrey};
+      font-size: 0.675rem;
+    `}
+  >
+    * Required
+  </span>
+);
+
+const Required2 = (
+  <span
+    css={css`
+      position: absolute;
+      top: -19px;
+      left: 15px;
       color: ${_config.colorLightGrey};
       font-size: 0.675rem;
     `}
@@ -168,7 +182,13 @@ export default class Form1 extends React.Component {
       switch (data.type) {
         case "text":
           this.formLeft.push(
-            <H31LayoutCol md={data.size}>
+            <H31LayoutCol
+              css={css`
+                padding-left: 0 !important;
+                margin-bottom: 25px;
+              `}
+              md={data.size}
+            >
               <H31Label1 key={data.name} htmlFor={data.name}>
                 {data.required && Required}
                 <H31Input1 id={data.name} placeholder={data.text} type="text" />
@@ -178,7 +198,13 @@ export default class Form1 extends React.Component {
           break;
         case "select":
           this.formLeft.push(
-            <H31LayoutCol md={data.size}>
+            <H31LayoutCol
+              css={css`
+                padding-left: 0 !important;
+                margin-bottom: 25px;
+              `}
+              md={data.size}
+            >
               <H31Label1 key={data.name} htmlFor={data.name}>
                 {data.required && Required}
                 <H31Select1 defaultValue={data.options[0]}>
@@ -203,15 +229,28 @@ export default class Form1 extends React.Component {
           break;
         case "textbox":
           this.formRight.push(
-            <H31LayoutCol md={data.size} key={data.name}>
+            <H31LayoutCol
+              css={css`
+                height: 143px;
+                padding-right: 0 !important;
+                margin-bottom: 15px;
+              `}
+              md={data.size}
+              key={data.name}
+            >
               <H31Textarea1 id={data.name} placeholder={data.text} />
-              {data.required && Required}
+              {data.required && Required2}
             </H31LayoutCol>
           );
           break;
         case "button":
           this.formRight.push(
-            <H31LayoutCol md={data.size}>
+            <H31LayoutCol
+              css={css`
+                padding-right: 0 !important;
+              `}
+              md={data.size}
+            >
               <H31ButtonBrightSubmit
                 key={data.type}
                 type="submit"
@@ -295,12 +334,24 @@ export default class Form1 extends React.Component {
           )}
 
           <H31LayoutRow>
-            <H31LayoutCol md={6}>
+            <H31LayoutCol
+              css={css`
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+              `}
+              md={6}
+            >
               <H31LayoutContainer fluid>
                 <H31LayoutRow>{this.formLeft}</H31LayoutRow>
               </H31LayoutContainer>
             </H31LayoutCol>
-            <H31LayoutCol md={6}>
+            <H31LayoutCol
+              css={css`
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+              `}
+              md={6}
+            >
               <H31LayoutContainer fluid>
                 <H31LayoutRow>{this.formRight}</H31LayoutRow>
               </H31LayoutContainer>

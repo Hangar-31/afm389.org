@@ -103,7 +103,14 @@ const MainFooter1 = ({
         `}
       >
         <H31LayoutCol md={2} />
-        <H31LayoutCol md={8}>{TitleComponent}</H31LayoutCol>
+        <H31LayoutCol
+          md={8}
+          css={css`
+            margin-bottom: 30px;
+          `}
+        >
+          {TitleComponent}
+        </H31LayoutCol>
         <H31LayoutCol md={2} />
         <H31LayoutCol md={2} />
         <H31LayoutCol md={8}>{FormComponent}</H31LayoutCol>
