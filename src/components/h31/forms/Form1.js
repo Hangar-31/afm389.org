@@ -13,7 +13,8 @@ import {
   H31Textarea1,
   H31LayoutCol,
   H31LayoutRow,
-  H31LayoutContainer
+  H31LayoutContainer,
+  H31Error1
 } from "../index";
 import _config from "../../_config";
 
@@ -115,12 +116,14 @@ function encode(data) {
 export default class Form1 extends React.Component {
   constructor(props) {
     super(props);
+    const formFields = [];
+    formData.forEach(form => {
+      formFields[form.name] = "";
+    });
+
     this.state = {
       Subject: "Website Contact Form",
-      FName: "",
-      LName: "",
-      Email: "",
-      Message: "",
+      ...formFields,
 
       errors: [],
       submitting: 0
@@ -161,7 +164,7 @@ export default class Form1 extends React.Component {
         if (elem.nodeName.toLowerCase() !== "button") {
           if (!elem.validity.valid) {
             errors.push(
-              `Error on field ${elem.previousSibling.innerHTML}: ${elem.validationMessage}`
+              `Error on field ${elem.placeholder}: ${elem.validationMessage}`
             );
           }
         }
@@ -191,7 +194,13 @@ export default class Form1 extends React.Component {
             >
               <H31Label1 key={data.name} htmlFor={data.name}>
                 {data.required && Required}
-                <H31Input1 id={data.name} placeholder={data.text} type="text" />
+                <H31Input1
+                  id={data.name}
+                  name={data.name}
+                  placeholder={data.text}
+                  type="text"
+                  required={data.required}
+                />
               </H31Label1>
             </H31LayoutCol>
           );
@@ -207,7 +216,11 @@ export default class Form1 extends React.Component {
             >
               <H31Label1 key={data.name} htmlFor={data.name}>
                 {data.required && Required}
-                <H31Select1 defaultValue={data.options[0]}>
+                <H31Select1
+                  required={data.required}
+                  name={data.name}
+                  defaultValue={data.options[0]}
+                >
                   <option
                     value=""
                     css={css`
@@ -238,7 +251,12 @@ export default class Form1 extends React.Component {
               md={data.size}
               key={data.name}
             >
-              <H31Textarea1 id={data.name} placeholder={data.text} />
+              <H31Textarea1
+                id={data.name}
+                name={data.name}
+                placeholder={data.text}
+                required={data.required}
+              />
               {data.required && Required2}
             </H31LayoutCol>
           );
@@ -280,6 +298,8 @@ export default class Form1 extends React.Component {
   onSubmit(e) {
     e.preventDefault();
     this.setState({ submitting: 1 });
+
+    console.log(this.state);
 
     if (this.validate()) {
       const form = e.target;
@@ -325,9 +345,18 @@ export default class Form1 extends React.Component {
         <H31LayoutContainer fluid>
           {this.state.errors.length > 0 && (
             <H31LayoutRow>
-              <ul>
+              <ul
+                css={css`
+                  padding: 0;
+                  color: red;
+                `}
+              >
                 {this.state.errors.map(error => (
-                  <li key={error}>{error}</li>
+                  <H31LayoutCol md={12}>
+                    <li key={error}>
+                      <H31Error1>{error}</H31Error1>
+                    </li>
+                  </H31LayoutCol>
                 ))}
               </ul>
             </H31LayoutRow>

@@ -2,7 +2,7 @@
 /* eslint-disable import/prefer-default-export */
 
 // Base Elements
-export { default as H31FormError1 } from "./base-elements/Error1";
+export { default as H31Error1 } from "./base-elements/Error1";
 export { default as H31Label1 } from "./base-elements/Label1";
 export { default as H31Label2 } from "./base-elements/Label2";
 export { default as H31Button1 } from "./base-elements/Button1";
