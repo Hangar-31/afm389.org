@@ -44,7 +44,7 @@ TextBlock3.defaultProps = {
 };
 
 TextBlock3.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.element,
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   link: PropTypes.string,
   ImageComponent: PropTypes.element

@@ -1,10 +1,8 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import { css } from "@emotion/core";
-// import styled from "@emotion/styled";
 
 // Components
-
 import {
   H31Title2B,
   H31Title2C,
@@ -12,21 +10,6 @@ import {
   H31LayoutRow,
   H31LayoutCol
 } from "..";
-
-// const Section = styled.section`
-//   height: 120px;
-// `;
-
-// const Wrapper = styled.section`
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   flex-wrap: wrap;
-
-//   height: 100%;
-//   max-width: 1440px;
-//   margin: 0 auto;
-// `;
 
 const SectionTitleFullWidth = ({
   backgroundColor,
@@ -81,9 +64,9 @@ SectionTitleFullWidth.defaultProps = {
 
 SectionTitleFullWidth.propTypes = {
   backgroundColor: PropTypes.string,
-  titleSmall: PropTypes.string,
+  titleSmall: PropTypes.element,
   titleSmallColor: PropTypes.string,
-  titleLarge: PropTypes.string
+  titleLarge: PropTypes.number
 };
 
 export default SectionTitleFullWidth;
