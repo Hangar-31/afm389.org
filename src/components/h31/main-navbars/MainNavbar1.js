@@ -1,16 +1,37 @@
+/* eslint-disable prettier/prettier */
 import { PropTypes } from "prop-types";
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
 
+// Config
+import _config from "../../_config";
+
+// Components
+import {
+  H31SocialBarHorizontal,
+  H31SocialIcons,
+  H31LinkBarHorizontal,
+  H31LinkTallUnderline,
+  H31Link1,
+  H31Title1A,
+  H31Text2,
+  H31Link6,
+  H31Link5
+} from "..";
+
+// Images
+import ImgLogo from "../../images/logos/ImgLogo";
+
+// Styled Components
 const Container = styled.section`
   position: relative;
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-
   height: 150px;
+  padding: 0 15px;
 `;
 
 const ContainerNav = styled.nav`
@@ -71,14 +92,7 @@ const LogoSpace = styled.div`
 
 const MainNavbarSplitActions = ({
   topBarColor,
-  bottomBarColor,
-  LogoComponent,
-  TitleComponent,
-  LinkBarComponent,
-  SocialBarComponent,
-  ButtonComponentTop,
-  TextComponent,
-  ButtonComponentBottom
+  bottomBarColor
 }) => (
   <Container
     css={css`
@@ -91,23 +105,78 @@ const MainNavbarSplitActions = ({
   >
     <ContainerNav>
       <Group>
-        <WrapperLogo>{LogoComponent}</WrapperLogo>
+        <WrapperLogo><ImgLogo /></WrapperLogo>
+        
         <LogoSpace />
-        {TitleComponent}
+
+        <H31Title1A
+          css={css`
+            position: relative;
+            text-align: center;
+          `}
+        >
+          CFMA Local 389
+          <br />
+          <span
+            css={css`
+              position: absolute;
+              font-size: 0.625rem;
+              white-space: none;
+              width: 120%;
+              left: -10%;
+              right: 0;
+              margin: 0 auto;
+            `}
+          >
+            Central FL Musicians Association
+          </span>
+        </H31Title1A>
+
         <Space />
         <Space />
-        {LinkBarComponent}
+
+        <H31LinkBarHorizontal
+          linkComponents={_config.mainNav.map(link => (
+            <H31LinkTallUnderline
+              key="main-links-for-hangar-31"
+              linkColor={_config.colorWhite}
+              linkHoverColor={_config.colorSecondary}
+              underlineColor={_config.colorSecondary}
+              underlineHoverColor={_config.colorSecondary}
+              LinkComponent={(
+                <H31Link1 activeClassName="main-link-active" to={link.to}>
+                  {link.name}
+                </H31Link1>
+              )}
+            />
+          ))}
+        />
       </Group>
+
       <Group>
-        {SocialBarComponent}
+        <H31SocialBarHorizontal
+          socialComponents={_config.socials.map(social => (
+            <H31SocialIcons
+              color={_config.colorWhite}
+              social={social.social}
+              link={social.link}
+              colorHover={_config.colorTertiary}
+            />
+          ))}
+        />
+
         <Space />
-        {ButtonComponentTop}
+
+        <H31Link6 href="/">Member Log In</H31Link6>
       </Group>
     </ContainerNav>
+
     <ContainerAction>
-      {TextComponent}
+      <H31Text2>Don&apos;t Go It Alone</H31Text2>
+
       <Space />
-      {ButtonComponentBottom}
+
+      <H31Link5 href="/">Join Now</H31Link5>
     </ContainerAction>
   </Container>
 );
@@ -115,25 +184,11 @@ const MainNavbarSplitActions = ({
 MainNavbarSplitActions.defaultProps = {
   topBarColor: "#999999",
   bottomBarColor: "#BBBBBB",
-  LogoComponent: <span>Logo</span>,
-  TitleComponent: <span>Title</span>,
-  LinkBarComponent: <span>LinkBar</span>,
-  SocialBarComponent: <span>SocialBar</span>,
-  ButtonComponentTop: <span>Button</span>,
-  TextComponent: <span>Text</span>,
-  ButtonComponentBottom: <span>Button</span>
 };
 
 MainNavbarSplitActions.propTypes = {
   topBarColor: PropTypes.string,
   bottomBarColor: PropTypes.string,
-  LogoComponent: PropTypes.element,
-  TitleComponent: PropTypes.element,
-  LinkBarComponent: PropTypes.element,
-  SocialBarComponent: PropTypes.element,
-  ButtonComponentTop: PropTypes.element,
-  TextComponent: PropTypes.element,
-  ButtonComponentBottom: PropTypes.element
 };
 
 export default MainNavbarSplitActions;

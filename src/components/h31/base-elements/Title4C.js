@@ -1,6 +1,11 @@
 import styled from "@emotion/styled";
-import _config from "./_config";
+import baseConfig from "./_config";
+import siteConfig from "../../_config";
 
 export default styled.h4`
-  ${_config}
+  color: ${siteConfig.colorWhite};
+  font-family: ${siteConfig.fontPrimary};
+  font-size: 0.8rem;
+
+  ${baseConfig}
 `;

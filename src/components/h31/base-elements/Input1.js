@@ -8,6 +8,8 @@ export default styled.input`
   box-sizing: border-box;
   border: 1px solid #e5e5e5;
   border-radius: 3px;
+  border-radius: 5px;
+  border: none;
   ${baseConfig}
   padding: 5px 5px;
 

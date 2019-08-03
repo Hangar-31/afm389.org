@@ -1,6 +1,12 @@
 import styled from "@emotion/styled";
-import _config from "./_config";
+import baseConfig from "./_config";
+import siteConfig from "../../_config";
 
 export default styled.h1`
-  ${_config}
+  color: ${siteConfig.colorWhite};
+  font-family: ${siteConfig.fontSecondary};
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  ${baseConfig}
 `;

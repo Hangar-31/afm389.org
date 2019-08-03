@@ -1,26 +1,27 @@
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
-import _configBase from "./_config";
-import _configStyles from "../../_config";
+import baseConfig from "./_config";
+import siteConfig from "../../_config";
 
 export default styled(Link)`
-  color: ${_configStyles.colorWhite};
-  background-color: ${_configStyles.colorTertiary};
-  border: 1px solid ${_configStyles.colorWhite};
+  color: ${siteConfig.colorWhite};
+  background-color: ${siteConfig.colorTertiary};
+  border: 1px solid ${siteConfig.colorWhite};
   border-radius: 3px;
-  ${_configBase}
-  padding: 15px 15px;
   transition: 0.2s;
 
-  font-family: ${_configStyles.fontPrimary};
+  font-family: ${siteConfig.fontPrimary};
   font-size: 0.875rem;
+  font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
-
   &:hover {
     box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
-    border-color: ${_configStyles.colorWhite};
-    color: ${_configStyles.colorWhite};
+    border-color: ${siteConfig.colorWhite};
+    color: ${siteConfig.colorWhite};
     text-decoration: none;
   }
+
+  ${baseConfig}
+  padding: 15px 15px;
 `;
