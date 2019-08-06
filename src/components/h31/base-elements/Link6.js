@@ -1,9 +1,8 @@
 import styled from "@emotion/styled";
-import { Link } from "gatsby";
 import _configBase from "./_config";
 import _configStyles from "../../_config";
 
-export default styled(Link)`
+export default styled.a`
   color: ${_configStyles.colorWhite};
   border: 1px solid ${_configStyles.colorWhite};
   border-radius: 3px;

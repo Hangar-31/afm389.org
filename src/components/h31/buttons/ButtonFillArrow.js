@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 /** @jsx jsx */
 import styled from "@emotion/styled";
 import { css, jsx } from "@emotion/core";
+import { Link as gLink } from "gatsby";
 import { H31Button1 } from "..";
 import _config from "../../_config";
 
@@ -27,7 +28,7 @@ const CarrotLeft = styled.div`
   margin-right: 10px;
 `;
 
-const Button = styled.button`
+const Link = styled(gLink)`
   ${H31Button1.__emotion_styles}
 
   cursor: pointer;
@@ -54,7 +55,7 @@ const ButtonFillArrow = ({
         `}
       />
     )}
-    <Button
+    <Link
       to={link}
       css={css`
         background-color: ${primaryColor};
@@ -73,7 +74,7 @@ const ButtonFillArrow = ({
       `}
     >
       See All News
-    </Button>
+    </Link>
     {arrowDirection === "right" && (
       <CarrotRight
         css={css`

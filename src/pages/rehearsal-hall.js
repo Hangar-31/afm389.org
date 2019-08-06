@@ -49,27 +49,58 @@ export default () => (
       `}
     >
       <H31LayoutRow>
-        <H31LayoutCol md={6}>
-          <H31ContentBlock2 title="Our Facility">{content}</H31ContentBlock2>
+        <H31LayoutCol md={12} lg={6}>
+          <H31ContentBlock2 title="Our Facility">
+            <H31LayoutContainer fluid>
+              <H31LayoutRow>
+                <H31LayoutCol
+                  css={css`
+                    padding: 0 !important;
+                  `}
+                  lg={12}
+                  xs={6}
+                >
+                  {content}
+                </H31LayoutCol>
+
+                <H31LayoutCol
+                  className="d-lg-none"
+                  css={css`
+                    .gatsby-image-wrapper {
+                      margin-bottom: 30px;
+                    }
+                  `}
+                  xs={6}
+                >
+                  <ImgHome1 />
+                  <ImgHome1 />
+                </H31LayoutCol>
+              </H31LayoutRow>
+            </H31LayoutContainer>
+          </H31ContentBlock2>
         </H31LayoutCol>
+
         <H31LayoutCol
+          className="d-none d-lg-block"
           css={css`
             .gatsby-image-wrapper {
               margin-bottom: 30px;
             }
           `}
-          md={3}
+          lg={3}
         >
           <ImgHome1 />
           <ImgHome1 />
         </H31LayoutCol>
+
         <H31LayoutCol
+          className="d-none d-lg-block"
           css={css`
             .gatsby-image-wrapper {
               margin-bottom: 30px;
             }
           `}
-          md={3}
+          lg={3}
         >
           <ImgHome1 />
           <ImgHome1 />

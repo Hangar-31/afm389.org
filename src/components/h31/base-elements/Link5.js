@@ -1,9 +1,8 @@
 import styled from "@emotion/styled";
-import { Link } from "gatsby";
 import baseConfig from "./_config";
 import siteConfig from "../../_config";
 
-export default styled(Link)`
+export default styled.a`
   color: ${siteConfig.colorWhite};
   background-color: ${siteConfig.colorTertiary};
   border: 1px solid ${siteConfig.colorWhite};

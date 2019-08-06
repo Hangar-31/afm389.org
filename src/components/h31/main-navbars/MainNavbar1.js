@@ -167,7 +167,7 @@ const MainNavbarSplitActions = ({
 
         <Space />
 
-        <H31Link6 href="/">Member Log In</H31Link6>
+        <H31Link6 href="https://afmquartet.org/wp-content/plugins/afmorg/loginform.php?client_token=898909860">Member Log In</H31Link6>
       </Group>
     </ContainerNav>
 
@@ -176,7 +176,7 @@ const MainNavbarSplitActions = ({
 
       <Space />
 
-      <H31Link5 href="/">Join Now</H31Link5>
+      <H31Link5 href="https://members.afm.org/join/step1/c/en_US">Join Now</H31Link5>
     </ContainerAction>
   </Container>
 );

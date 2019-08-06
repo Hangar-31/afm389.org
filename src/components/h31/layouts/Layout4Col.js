@@ -51,6 +51,7 @@ const Layout4Col = ({ children }) => (
     <BlogWrapper>{children}</BlogWrapper>
     <ButtonWrapper>
       <H31ButtonFillArrow
+        link="/news-&-events"
         primaryColor={_config.colorWhite}
         secondaryColor={_config.colorTertiary}
         carrotColor={_config.colorTertiary}

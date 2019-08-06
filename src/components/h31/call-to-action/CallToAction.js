@@ -60,18 +60,19 @@ export default () => (
             margin-bottom: 30px;
           `}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-          dictum ullamcorper nulla iaculis pretium. Donec eros massa,
-          sollicitudin sit amet condimentum cursus, cursus ut ante. Vivamus
-          interdum lectus sit amet varius mattis.
+          Are you ready to become a member of the largest organization in the
+          world representing the interests of musicians?
         </H31Text2>
 
         <div
           css={css`
-            text-align: right;
+            display: flex;
+            justify-content: flex-end;
           `}
         >
-          <H31Link5 href="">Join Now</H31Link5>
+          <H31Link5 href="https://members.afm.org/join/step1/c/en_US">
+            Join Now
+          </H31Link5>
         </div>
       </H31LayoutCol>
       <H31LayoutCol md={3} />

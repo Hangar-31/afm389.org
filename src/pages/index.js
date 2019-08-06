@@ -126,11 +126,9 @@ export default () => (
       SubTitleComponent={<H31Title2B>Helping Musicians Succeed</H31Title2B>}
       TextComponent={
         <H31Text3>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non
-          leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex tempor,
-          placerat sapien a. Donec nec iaculis libero. Mauris ornare auctor dui
-          at tincidunt. Pellentesque sollicitudin venenatis neque. Nunc pulvinar
-          ut ante ut dapibus.
+          As part of the American Federation of Musicians — the largest
+          organization in the world representing musicians — we are committed to
+          raising industry standards in Central Florida. How can we help you?
         </H31Text3>
       }
       backgroundColor={_config.colorSecondary}
@@ -149,11 +147,9 @@ export default () => (
       }
       TextComponent={
         <H31Text3>
-          Sed ac neque ac sem iaculis commodo. Aenean accumsan in neque non
-          tempus. Aenean euismod metus leo, at euismod libero pharetra eu. Cras
-          ultrices imperdiet tortor. Sed mollis eros id arcu auctor, sit amet
-          posuere arcu facilisis. Aliquam et euismod neque, in rhoncus lectus.
-          Suspendisse dictum vitae massa sed lacinia.
+          Having a contract is one thing, but having a contract backed by the
+          union is another. We work with the finest attorneys in the business.
+          We have recovered thousands of dollars for our members.
         </H31Text3>
       }
       backgroundColor="#F9F9F9"
@@ -172,11 +168,9 @@ export default () => (
       }
       TextComponent={
         <H31Text3>
-          Sed ac neque ac sem iaculis commodo. Aenean accumsan in neque non
-          tempus. Aenean euismod metus leo, at euismod libero pharetra eu. Cras
-          ultrices imperdiet tortor. Sed mollis eros id arcu auctor, sit amet
-          posuere arcu facilisis. Aliquam et euismod neque, in rhoncus lectus.
-          Suspendisse dictum vitae massa sed lacinia.
+          The local music scene is ever-changing. Our member-ship is a great
+          resource to help navigate that scene. Quarterly membership meetings,
+          newsletters and social media can help keep you informed.
         </H31Text3>
       }
       textRight
@@ -195,11 +189,8 @@ export default () => (
       }
       TextComponent={
         <H31Text3>
-          Sed ac neque ac sem iaculis commodo. Aenean accumsan in neque non
-          tempus. Aenean euismod metus leo, at euismod libero pharetra eu. Cras
-          ultrices imperdiet tortor. Sed mollis eros id arcu auctor, sit amet
-          posuere arcu facilisis. Aliquam et euismod neque, in rhoncus lectus.
-          Suspendisse dictum vitae massa sed lacinia.
+          Nearly 600 musicians call themselves CFMA members. From Jazz to
+          Classical, Latin to Rock, R&B to Hip-Hop, our members play it all.
         </H31Text3>
       }
       backgroundColor="#F9F9F9"
@@ -218,11 +209,8 @@ export default () => (
       }
       TextComponent={
         <H31Text3>
-          Sed ac neque ac sem iaculis commodo. Aenean accumsan in neque non
-          tempus. Aenean euismod metus leo, at euismod libero pharetra eu. Cras
-          ultrices imperdiet tortor. Sed mollis eros id arcu auctor, sit amet
-          posuere arcu facilisis. Aliquam et euismod neque, in rhoncus lectus.
-          Suspendisse dictum vitae massa sed lacinia.
+          Use of the Rehearsal Hall is free for our members! More details can be
+          found here.
         </H31Text3>
       }
       textRight
