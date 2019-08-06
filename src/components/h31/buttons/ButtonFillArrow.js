@@ -1,14 +1,17 @@
+/* eslint-disable no-underscore-dangle */
 import PropTypes from "prop-types";
 /** @jsx jsx */
 import styled from "@emotion/styled";
 import { css, jsx } from "@emotion/core";
+import { H31Button1 } from "..";
+import _config from "../../_config";
 
 const Container = styled.section`
   display: flex;
   align-items: center;
 `;
 
-const Carrot = styled.div`
+const CarrotRight = styled.div`
   width: 0;
   height: 0;
   border-top: 8px solid transparent;
@@ -16,10 +19,20 @@ const Carrot = styled.div`
   margin-left: 10px;
 `;
 
+const CarrotLeft = styled.div`
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-right: 10px;
+`;
+
 const Button = styled.button`
+  ${H31Button1.__emotion_styles}
+
   cursor: pointer;
   padding: 8px 25px;
-  font-size: 1em;
+  color: ${_config.colorTertiary};
   font-weight: 500;
   transition: 0.2s;
   border-radius: 2px;
@@ -31,9 +44,16 @@ const ButtonFillArrow = ({
   primaryColor,
   secondaryColor,
   carrotColor,
-  ButtonComponent
+  arrowDirection
 }) => (
   <Container>
+    {arrowDirection === "left" && (
+      <CarrotLeft
+        css={css`
+          border-right: 8px solid ${carrotColor};
+        `}
+      />
+    )}
     <Button
       onClick={handleClick}
       css={css`
@@ -52,13 +72,15 @@ const ButtonFillArrow = ({
         }
       `}
     >
-      {ButtonComponent}
+      See All News
     </Button>
-    <Carrot
-      css={css`
-        border-left: 8px solid ${carrotColor};
-      `}
-    />
+    {arrowDirection === "right" && (
+      <CarrotRight
+        css={css`
+          border-left: 8px solid ${carrotColor};
+        `}
+      />
+    )}
   </Container>
 );
 
@@ -66,8 +88,8 @@ ButtonFillArrow.defaultProps = {
   handleClick: () => console.log("ButtonFillArrow"),
   secondaryColor: "#000000",
   primaryColor: "#FFFFFF",
-  carrotColor: "8px solid #000000",
-  ButtonComponent: <span>Button</span>
+  carrotColor: "#000000",
+  arrowDirection: "right"
 };
 
 ButtonFillArrow.propTypes = {
@@ -75,7 +97,7 @@ ButtonFillArrow.propTypes = {
   secondaryColor: PropTypes.string,
   primaryColor: PropTypes.string,
   carrotColor: PropTypes.string,
-  ButtonComponent: PropTypes.element
+  arrowDirection: PropTypes.string
 };
 
 export default ButtonFillArrow;

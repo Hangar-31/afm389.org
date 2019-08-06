@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 import { jsx } from "@emotion/core";
 import styled from "@emotion/styled";
 
-import { H31Button1, H31ButtonFillArrow } from "../index";
+import { H31ButtonFillArrow } from "../index";
 
 import _config from "../../_config";
 
@@ -54,7 +54,7 @@ const Layout4Col = ({ children }) => (
         primaryColor={_config.colorWhite}
         secondaryColor={_config.colorTertiary}
         carrotColor={_config.colorTertiary}
-        ButtonComponent={<H31Button1>See All News</H31Button1>}
+        arrowDirection="right"
       />
     </ButtonWrapper>
   </Container>

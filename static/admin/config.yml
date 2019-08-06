@@ -5,12 +5,19 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: folder-name
-    label: Collection Label
-    folder: static/folder-name
+  - name: news-and-events
+    label: News and Events
+    folder: static/news-and-events
     create: true
     fields:
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: image, label: Post Image, widget: image }
       - { name: body, label: Body, widget: markdown }
+  - name: testimonials
+    label: Testimonials
+    folder: static/testimonials
+    create: true
+    fields:
+      - { name: name, label: Name }
+      - { name: text, label: text, widget: text }

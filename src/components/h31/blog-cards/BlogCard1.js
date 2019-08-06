@@ -3,8 +3,14 @@ import PropTypes from "prop-types";
 import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
+
+// Config
+import _config from "../../_config";
+
+// Components
 import { H31SimpleTime, H31Title3B, H31Title4A, H31Text3 } from "..";
 
+// Styled Components
 const Overlay = styled.section`
   z-index: 1;
   position: absolute;
@@ -71,19 +77,19 @@ const DateContainer = styled.div`
 `;
 
 const Container = styled(Link)`
-  text-decoration: none;
-  color: initial;
-
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
   padding: 0px;
   width: 100%;
   height: 420px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border: none;
   overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+  color: initial;
+  text-decoration: none;
+  background-color: #ffffff;
   &:hover {
     pointer: cursor;
     ${Overlay} {
@@ -123,7 +129,14 @@ const BlogCard1 = ({
     <Overlay>
       <Group>
         <OverlayTitle>
-          <H31Title3B>{title}</H31Title3B>
+          <H31Title3B
+            css={css`
+              color: ${_config.colorWhite};
+              text-decoration: none;
+            `}
+          >
+            {title}
+          </H31Title3B>
         </OverlayTitle>
         <OverlayClick>
           <H31Title4A>{linkText}</H31Title4A>

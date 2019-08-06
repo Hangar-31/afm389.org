@@ -6,8 +6,10 @@ import PropTypes from "prop-types";
 /** @jsx jsx */
 import { Global, css, jsx } from "@emotion/core";
 
+// Config
 import _config from "./_config";
 
+// Components
 import {
   H31MainNavbar1,
   H31Title2B,

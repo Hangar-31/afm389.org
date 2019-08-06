@@ -20,6 +20,20 @@ module.exports = {
         path: `${__dirname}/src/images`
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `news-and-events`,
+        path: `${__dirname}/static/news-and-events`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `testimonials`,
+        path: `${__dirname}/static/testimonials`
+      }
+    },
     // Creates a manifest for the website
     {
       resolve: "gatsby-plugin-manifest",
@@ -40,6 +54,20 @@ module.exports = {
         google: {
           families: ["Roboto Slab", "Sarpanch", "Staatliches", "Assistant"]
         }
+      }
+    },
+    // Makes field "markdownRemark" queryable
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 600
+            }
+          }
+        ]
       }
     },
     // Emotion plugin for Gatsby
