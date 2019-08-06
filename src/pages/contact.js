@@ -62,11 +62,12 @@ export default () => (
             text="Local389@afm.org"
             link="mailto::Local389@afm.org"
           />
+          <H31LayoutCol sm={1} />
           <H31LayoutCol sm={7}>
             <H31GoogleMap1 />
           </H31LayoutCol>
 
-          <h31LayoutCol sm={1} />
+          <H31LayoutCol sm={1} />
         </H31LayoutCol>
       </H31LayoutRow>
     </H31LayoutContainer>
