@@ -40,7 +40,7 @@ const Button = styled.button`
 `;
 
 const ButtonFillArrow = ({
-  handleClick,
+  link,
   primaryColor,
   secondaryColor,
   carrotColor,
@@ -55,7 +55,7 @@ const ButtonFillArrow = ({
       />
     )}
     <Button
-      onClick={handleClick}
+      to={link}
       css={css`
         background-color: ${primaryColor};
         border: 1px solid ${secondaryColor};
@@ -85,7 +85,7 @@ const ButtonFillArrow = ({
 );
 
 ButtonFillArrow.defaultProps = {
-  handleClick: () => console.log("ButtonFillArrow"),
+  link: "/",
   secondaryColor: "#000000",
   primaryColor: "#FFFFFF",
   carrotColor: "#000000",
@@ -93,7 +93,7 @@ ButtonFillArrow.defaultProps = {
 };
 
 ButtonFillArrow.propTypes = {
-  handleClick: PropTypes.func,
+  link: PropTypes.string,
   secondaryColor: PropTypes.string,
   primaryColor: PropTypes.string,
   carrotColor: PropTypes.string,

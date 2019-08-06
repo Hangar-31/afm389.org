@@ -36,11 +36,14 @@ export default class Bio1 extends React.Component {
     const { name, email, bios } = this.props;
     return (
       <Container
+        fluid
+        as="section"
         css={css`
           margin: 30px 0;
         `}
       >
         <Row>
+          <Col xs={1} />
           <Col xs={2}>
             <ImgBioMikeAvila />
           </Col>
@@ -107,12 +110,14 @@ export default class Bio1 extends React.Component {
                     `}
                     onClick={this.onClick}
                   >
-                    Full Bio
+                    {!this.state.visible && "Full Bio"}
+                    {this.state.visible && "Hide Bio"}
                   </H31Button1>
                 </Col>
               </Row>
             </Container>
           </Col>
+          <Col xs={1} />
         </Row>
       </Container>
     );

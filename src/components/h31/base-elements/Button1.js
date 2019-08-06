@@ -3,10 +3,13 @@ import baseConfig from "./_config";
 import siteConfig from "../../_config";
 
 export default styled.button`
+  ${baseConfig}
+
+  display: inline-block;
   cursor: pointer;
   width: 100%;
-  padding: 3px;
-  border-radius: 2px;
+  padding: 7px 3px;
+  border-radius: 3px;
   background-color: ${siteConfig.colorTertiary};
   border-color: transparent;
   transition: 0.2s;
@@ -22,6 +25,4 @@ export default styled.button`
     border-color: ${siteConfig.colorTertiary};
     color: ${siteConfig.colorTertiary};
   }
-
-  ${baseConfig}
 `;
