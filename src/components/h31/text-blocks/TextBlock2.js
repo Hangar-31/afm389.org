@@ -12,8 +12,8 @@ import {
   H31LayoutContainer,
   H31LayoutRow,
   H31Title2B,
-  H31Title2C,
-  H31Text3
+  H31Text3,
+  H31Title1B
 } from "..";
 
 // Styled Components
@@ -29,7 +29,13 @@ const TitleWrapper = styled.section`
 `;
 
 const TextBlock2 = ({ title, subtitle, text }) => (
-  <H31LayoutContainer fluid as="section">
+  <H31LayoutContainer
+    css={css`
+      margin-bottom: 90px;
+    `}
+    fluid
+    as="section"
+  >
     <H31LayoutRow>
       <H31LayoutCol md={1}>
         <ColorBlock />
@@ -43,13 +49,13 @@ const TextBlock2 = ({ title, subtitle, text }) => (
       >
         <TitleWrapper>
           <H31Title2B>{subtitle}</H31Title2B>
-          <H31Title2C
+          <H31Title1B
             css={css`
               color: ${_config.colorDarkGrey};
             `}
           >
             {title}
-          </H31Title2C>
+          </H31Title1B>
         </TitleWrapper>
         <H31Text3>{text}</H31Text3>
       </H31LayoutCol>

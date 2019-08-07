@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+import { Link } from "gatsby";
 import { PropTypes } from "prop-types";
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
@@ -24,7 +25,7 @@ import {
 import ImgLogo from "../../images/logos/ImgLogo";
 
 // Styled Components
-const WrapperLogo = styled.div`
+const WrapperLogo = styled(Link)`
   z-index: 1;
   position: absolute;
   top: 15px;
@@ -65,17 +66,22 @@ const MainNavbarSplitActions = ({
           align-items: center;
         `}
       >
-        <WrapperLogo><ImgLogo /></WrapperLogo>
+        <WrapperLogo to="/"><ImgLogo /></WrapperLogo>
         
         <H31Title1A
+          as={Link}
+          to="/"
           css={css`
             position: relative;
             margin-left: 145px;
             text-align: center;
+            &:hover {
+              color: ${_config.colorWhite};
+              text-decoration: none;
+            }
           `}
         >
           CFMA Local 389
-          <br />
           <span
             css={css`
               position: absolute;
@@ -83,6 +89,7 @@ const MainNavbarSplitActions = ({
               white-space: none;
               width: 120%;
               left: -10%;
+              top: 25px;
               right: 0;
               margin: 0 auto;
             `}
@@ -126,7 +133,7 @@ const MainNavbarSplitActions = ({
           colorHover={_config.colorTertiary}
         />
 
-        <H31Link6 css={css`margin-left: 15px;`} href="https://afmquartet.org/wp-content/plugins/afmorg/loginform.php?client_token=898909860">Member Log In</H31Link6>
+        <H31Link6 css={css`margin-left: 30px;`} href="https://afmquartet.org/wp-content/plugins/afmorg/loginform.php?client_token=898909860">Member Log In</H31Link6>
       </H31LayoutCol>
     </H31LayoutRow>
 

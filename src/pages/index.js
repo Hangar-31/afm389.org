@@ -168,6 +168,7 @@ export default () => (
           md={12}
         >
           <H31ButtonFillArrow
+            link="/news-&-events"
             text="See All News"
             carrotColor={_config.colorTertiary}
             secondaryColor={_config.colorTertiary}

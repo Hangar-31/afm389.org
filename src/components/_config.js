@@ -153,14 +153,6 @@ export default {
     {
       social: "facebook",
       link: ""
-    },
-    {
-      social: "instagram",
-      link: ""
-    },
-    {
-      social: "twitter",
-      link: ""
     }
   ]
 };

@@ -7,7 +7,7 @@ export default styled.button`
 
   display: inline-block;
   cursor: pointer;
-  padding: 7px 3px;
+  padding: 7px;
   border-radius: 3px;
   background-color: ${siteConfig.colorTertiary};
   border-color: transparent;

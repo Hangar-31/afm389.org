@@ -10,8 +10,8 @@ import {
   H31LayoutContainer,
   H31LayoutRow,
   H31LayoutCol,
-  H31Title1B,
-  H31Link5
+  H31Link5,
+  H31Title2D
 } from "..";
 
 export default () => (
@@ -28,7 +28,7 @@ export default () => (
       <H31LayoutCol md={3} />
       <H31LayoutCol md={6}>
         <div>
-          <H31Title1B
+          <H31Title2D
             as="h2"
             css={css`
               margin-bottom: 30px;
@@ -52,7 +52,7 @@ export default () => (
             >
               Here
             </span>
-          </H31Title1B>
+          </H31Title2D>
         </div>
 
         <H31Text2

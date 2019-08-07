@@ -1,10 +1,13 @@
 import React from "react";
 import { css } from "@emotion/core";
 
+// Images
 import ImgHome1 from "../../images/_home/ImgHome1";
 import ImgHome2 from "../../images/_home/ImgHome2";
 import ImgHome3 from "../../images/_home/ImgHome3";
 import ImgHome4 from "../../images/_home/ImgHome4";
+
+// Components
 import {
   H31LayoutContainer,
   H31LayoutRow,
@@ -12,6 +15,8 @@ import {
   H31BlogCard1,
   H31Button1
 } from "..";
+
+// Config
 import _config from "../../_config";
 
 // Data
@@ -252,6 +257,7 @@ export default class BlogCardLoader1 extends React.Component {
                   date={blog.date}
                 />
               </H31LayoutCol>
+
               {i + 1 === loadAmount && (
                 <H31LayoutCol
                   css={css`
@@ -261,12 +267,7 @@ export default class BlogCardLoader1 extends React.Component {
                   `}
                   md={3}
                 >
-                  <H31Button1
-                    css={css`
-                      max-width: 150px;
-                    `}
-                    onClick={this.onClickLoadMore}
-                  >
+                  <H31Button1 onClick={this.onClickLoadMore}>
                     More Stories
                   </H31Button1>
                 </H31LayoutCol>

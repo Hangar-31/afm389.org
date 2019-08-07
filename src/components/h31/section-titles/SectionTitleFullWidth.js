@@ -23,13 +23,13 @@ const SectionTitleFullWidth = ({
     css={css`
       display: flex;
       align-items: center;
-      height: 120px;
+      height: 130px;
       background-color: ${backgroundColor};
     `}
   >
     <H31LayoutRow
       css={css`
-        height: 65px;
+        height: auto;
         width: 100%;
       `}
     >
@@ -57,7 +57,7 @@ const SectionTitleFullWidth = ({
 
 SectionTitleFullWidth.defaultProps = {
   backgroundColor: "grey",
-  titleSmall: <h2>Title 2</h2>,
+  titleSmall: "Small Title",
   titleSmallColor: "",
   titleLarge: null
 };

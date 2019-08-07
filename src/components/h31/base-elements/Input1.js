@@ -15,13 +15,13 @@ export default styled.input`
 
   color: ${siteConfig.colorDarkGrey};
   font-family: ${siteConfig.fontPrimary};
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 300;
 
   &::placeholder {
     color: ${siteConfig.colorLightGrey};
     font-family: ${siteConfig.fontPrimary};
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 300;
   }
 `;

@@ -36,7 +36,7 @@ const ContentBlock2 = ({ title, children }) => (
 );
 
 ContentBlock2.defaultProps = {
-  title: <h3>Title Test</h3>,
+  title: "Test Title",
   children: (
     <>
       <p>

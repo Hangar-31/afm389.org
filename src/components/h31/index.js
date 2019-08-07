@@ -28,6 +28,7 @@ export { default as H31Title1C } from "./base-elements/Title1C";
 export { default as H31Title2A } from "./base-elements/Title2A";
 export { default as H31Title2B } from "./base-elements/Title2B";
 export { default as H31Title2C } from "./base-elements/Title2C";
+export { default as H31Title2D } from "./base-elements/Title2D";
 export { default as H31Title3A } from "./base-elements/Title3A";
 export { default as H31Title3B } from "./base-elements/Title3B";
 export { default as H31Title4A } from "./base-elements/Title4A";

@@ -4,8 +4,20 @@ import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 
 // Components
+import {
+  H31LayoutContainer,
+  H31LayoutRow,
+  H31LayoutCol,
+  H31SocialIcons,
+  H31LinkTallUnderline,
+  H31Title4C,
+  H31Title2B,
+  H31Form1,
+  H31Sitemap1
+} from "..";
 
-import { H31LayoutContainer, H31LayoutRow, H31LayoutCol } from "..";
+// Config
+import _config from "../../_config";
 
 const BackgroundImage = styled.div`
   z-index: -1;
@@ -20,17 +32,7 @@ const BackgroundImage = styled.div`
   }
 `;
 
-const MainFooter1 = ({
-  topBarColor,
-  bottomBarColor,
-  ImageComponent,
-  TitleComponent,
-  FormComponent,
-  SitemapComponent,
-  LinkBarComponent,
-  SocialBarComponent,
-  CopyrightComponent
-}) => (
+const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
   <>
     <H31LayoutContainer
       css={css`
@@ -49,33 +51,46 @@ const MainFooter1 = ({
         `}
       >
         <H31LayoutCol md={2} />
+
         <H31LayoutCol
           md={8}
           css={css`
             margin-bottom: 30px;
           `}
         >
-          {TitleComponent}
+          <H31Title2B
+            css={css`
+              color: #ffffff;
+            `}
+          >
+            Get In Touch
+          </H31Title2B>
         </H31LayoutCol>
+
         <H31LayoutCol md={2} />
         <H31LayoutCol md={2} />
-        <H31LayoutCol md={8}>{FormComponent}</H31LayoutCol>
+        <H31LayoutCol md={8}>
+          <H31Form1 />
+        </H31LayoutCol>
         <H31LayoutCol md={2} />
       </H31LayoutRow>
 
       <H31LayoutRow>
         <H31LayoutCol
+          md={12}
           css={css`
             position: relative;
             padding: 60px 0 90px 0 !important;
           `}
-          md={12}
         >
-          {SitemapComponent}
+          <H31Sitemap1 />
         </H31LayoutCol>
       </H31LayoutRow>
     </H31LayoutContainer>
+
     <H31LayoutContainer
+      fluid
+      as="section"
       css={css`
         position: relative;
         padding: 0 !important;
@@ -85,8 +100,6 @@ const MainFooter1 = ({
           ${bottomBarColor} 50.0001%
         );
       `}
-      fluid
-      as="section"
     >
       <H31LayoutRow>
         <H31LayoutCol
@@ -94,34 +107,61 @@ const MainFooter1 = ({
           css={css`
             position: relative;
             display: flex;
-            justify-content: flex-start;
             align-items: center;
-            height: 80px;
+            > div {
+              margin-right: 30px;
+            }
           `}
         >
-          {LinkBarComponent}
+          {_config.footerNav.map(link => (
+            <H31LinkTallUnderline
+              key="main-links-for-hangar-31"
+              linkColor={_config.colorWhite}
+              linkHoverColor={_config.colorSecondary}
+              underlineColor={_config.colorSecondary}
+              underlineHoverColor={_config.colorSecondary}
+              link={link.to}
+              text={link.name}
+            />
+          ))}
         </H31LayoutCol>
+
         <H31LayoutCol
           md={6}
           css={css`
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            height: 80px;
+            height: 75px;
           `}
         >
-          {SocialBarComponent}
+          {_config.socials.map(social => (
+            <H31SocialIcons
+              color={_config.colorWhite}
+              social={social.social}
+              link={social.link}
+              colorHover={_config.colorTertiary}
+            />
+          ))}
         </H31LayoutCol>
+
         <H31LayoutCol
           md={12}
           css={css`
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 80px;
+            height: 75px;
           `}
         >
-          {CopyrightComponent}
+          <H31Title4C
+            css={css`
+              cursor: initial;
+            `}
+          >
+            CENTRAL FLORIDA MUSICIANS ASSOCIATION COPYRIGHT&nbsp;
+            {new Date().getFullYear()}
+          </H31Title4C>
         </H31LayoutCol>
       </H31LayoutRow>
     </H31LayoutContainer>
@@ -131,25 +171,13 @@ const MainFooter1 = ({
 MainFooter1.defaultProps = {
   topBarColor: "#999999",
   bottomBarColor: "#BBBBBB",
-  ImageComponent: <img alt="" src="https://placeimg.com/1920/1080/any" />,
-  TitleComponent: <h2>Button</h2>,
-  FormComponent: <form />,
-  SitemapComponent: <span>Sitemap</span>,
-  LinkBarComponent: <span>LinkBar</span>,
-  SocialBarComponent: <span>SocialBar</span>,
-  CopyrightComponent: <span>Copyright</span>
+  ImageComponent: <img alt="" src="https://placeimg.com/1920/1080/any" />
 };
 
 MainFooter1.propTypes = {
   topBarColor: PropTypes.string,
   bottomBarColor: PropTypes.string,
-  ImageComponent: PropTypes.element,
-  TitleComponent: PropTypes.element,
-  FormComponent: PropTypes.element,
-  SitemapComponent: PropTypes.element,
-  LinkBarComponent: PropTypes.element,
-  SocialBarComponent: PropTypes.element,
-  CopyrightComponent: PropTypes.element
+  ImageComponent: PropTypes.element
 };
 
 export default MainFooter1;

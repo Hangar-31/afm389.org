@@ -24,10 +24,10 @@ const Required = (
   <span
     css={css`
       position: absolute;
-      top: -19px;
+      top: -17px;
       left: 0;
       color: ${_config.colorLightGrey};
-      font-size: 0.675rem;
+      font-size: 0.625rem;
     `}
   >
     * Required
@@ -38,10 +38,10 @@ const Required2 = (
   <span
     css={css`
       position: absolute;
-      top: -19px;
+      top: -17px;
       left: 15px;
       color: ${_config.colorLightGrey};
-      font-size: 0.675rem;
+      font-size: 0.625rem;
     `}
   >
     * Required
@@ -52,8 +52,14 @@ const formData = [
   {
     type: "select",
     name: "Regarding",
-    text: "Select What This Inquiry is About",
-    options: ["Work Enquiry", "Joining CFMA"],
+    text: "Select What This Inquiry is About...",
+    options: [
+      "Joining CFMA",
+      "Career Coaching",
+      "Audition and Giggin Questions",
+      "Questions About Benefits",
+      "Others"
+    ],
     size: 12,
     required: true
   },
@@ -117,8 +123,8 @@ export default class Form1 extends React.Component {
   constructor(props) {
     super(props);
     const formFields = [];
-    formData.forEach(form => {
-      formFields[form.name] = "";
+    formData.forEach(element => {
+      formFields[element.name] = "";
     });
 
     this.state = {
@@ -129,27 +135,12 @@ export default class Form1 extends React.Component {
       submitting: 0
     };
 
+    this.handleChange = this.handleChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
   handleChange(e) {
     const { target } = e;
-
-    if (target.value.length > 0) {
-      if (target.nextSibling.style.color.length > 0) {
-        target.nextSibling.removeAttribute("style");
-      }
-      if (target.localName === "input") {
-        target.nextSibling.style.top = "3px";
-        target.nextSibling.style.fontSize = "0.725em";
-      }
-      if (target.localName === "textarea") {
-        target.nextSibling.style.top = "3px";
-        target.nextSibling.style.fontSize = "0.725em";
-      }
-    } else {
-      target.nextSibling.removeAttribute("style");
-    }
 
     this.setState({ [target.name]: target.value });
   }
@@ -196,6 +187,7 @@ export default class Form1 extends React.Component {
                 {data.required && Required}
                 <H31Input1
                   id={data.name}
+                  onChange={this.handleChange}
                   name={data.name}
                   placeholder={data.text}
                   type="text"
@@ -217,6 +209,7 @@ export default class Form1 extends React.Component {
               <H31Label1 key={data.name} htmlFor={data.name}>
                 {data.required && Required}
                 <H31Select1
+                  onChange={this.handleChange}
                   required={data.required}
                   name={data.name}
                   defaultValue={data.options[0]}
@@ -244,15 +237,17 @@ export default class Form1 extends React.Component {
           this.formRight.push(
             <H31LayoutCol
               css={css`
-                height: 143px;
+                height: calc(100% - 76px);
                 padding-right: 0 !important;
-                margin-bottom: 15px;
+                margin-bottom: 25px;
+                flex: none !important;
               `}
               md={data.size}
               key={data.name}
             >
               <H31Textarea1
                 id={data.name}
+                onChange={this.handleChange}
                 name={data.name}
                 placeholder={data.text}
                 required={data.required}
@@ -265,7 +260,9 @@ export default class Form1 extends React.Component {
           this.formRight.push(
             <H31LayoutCol
               css={css`
+                height: 26px;
                 padding-right: 0 !important;
+                flex: none !important;
               `}
               md={data.size}
             >
@@ -273,15 +270,27 @@ export default class Form1 extends React.Component {
                 key={data.type}
                 type="submit"
                 css={css`
-                  ${this.state.submitting === 2
-                    ? `background: ${_config.colorSecondary};`
-                    : ``}
-                  ${this.state.submitting === 2
-                    ? `border: 1px solid ${_config.colorSecondary};`
-                    : ``}
+                  ${
+                    this.state.submitting === 2
+                      ? `background: ${_config.colorSecondary};`
+                      : ``
+                  }
+                  ${
+                    this.state.submitting === 2
+                      ? `border: 1px solid ${_config.colorWhite};`
+                      : ``
+                  }
+                  ${this.state.submitting === 2 ? "pointer-events: none;" : ""}
                 `}
               >
-                <H31Button3>
+                <H31Button3
+                  css={css`
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 0.75rem;
+                  `}
+                >
                   {this.state.submitting === 0 && "Send"}
                   {this.state.submitting === 1 && <H31LoadingIndicator1 />}
                   {this.state.submitting === 2 && "Sent"}
@@ -298,8 +307,6 @@ export default class Form1 extends React.Component {
   onSubmit(e) {
     e.preventDefault();
     this.setState({ submitting: 1 });
-
-    console.log(this.state);
 
     if (this.validate()) {
       const form = e.target;
@@ -381,8 +388,20 @@ export default class Form1 extends React.Component {
               `}
               md={6}
             >
-              <H31LayoutContainer fluid>
-                <H31LayoutRow>{this.formRight}</H31LayoutRow>
+              <H31LayoutContainer
+                css={css`
+                  height: 100%;
+                `}
+                fluid
+              >
+                <H31LayoutRow
+                  css={css`
+                    flex-flow: column;
+                    height: 100%;
+                  `}
+                >
+                  {this.formRight}
+                </H31LayoutRow>
               </H31LayoutContainer>
             </H31LayoutCol>
 
@@ -393,7 +412,7 @@ export default class Form1 extends React.Component {
               `}
             >
               If you are human don&#39;t fill this form out
-              <input name="bot-field" onChange={this.onChange} required />
+              <input name="bot-field" onChange={this.onChange} />
             </H31Label1>
           </H31LayoutRow>
         </H31LayoutContainer>
