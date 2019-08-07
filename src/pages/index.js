@@ -14,13 +14,13 @@ import {
   H31CallToAction,
   H31Testimonials,
   H31Masthead1,
-  H31Title2B,
-  H31Title2C,
   H31TextBlock2,
-  H31Text3,
   H31Layout3Col,
-  H31Layout4Col,
-  H31BlogCard1
+  H31BlogCard1,
+  H31LayoutContainer,
+  H31LayoutRow,
+  H31LayoutCol,
+  H31ButtonFillArrow
 } from "../components/h31";
 import ImgMastheadHome from "../components/images/mastheads/ImgMastheadHome";
 
@@ -66,6 +66,35 @@ const blogs = [
   }
 ];
 
+const contentBlocks = [
+  {
+    title: "Your Legal Support",
+    text: `Having a contract is one thing, but having a contract backed by the
+      union is another. We work with the finest attorneys in the business.
+      We have recovered thousands of dollars for our members.`,
+    image: <ImgHome1 />
+  },
+  {
+    title: "Keeping You Informed",
+    text: `The local music scene is ever-changing. Our member-ship is a great
+      resource to help navigate that scene. Quarterly membership meetings,
+      newsletters and social media can help keep you informed.`,
+    image: <ImgHome2 />
+  },
+  {
+    title: "A Vibrant Community",
+    text: `Nearly 600 musicians call themselves CFMA members. From Jazz to
+      Classical, Latin to Rock, R&B to Hip-Hop, our members play it all.`,
+    image: <ImgHome3 />
+  },
+  {
+    title: "Ready For A Rehearsal",
+    text: `Use of the Rehearsal Hall is free for our members! More details can be
+      found here.`,
+    image: <ImgHome4 />
+  }
+];
+
 const reviews = [
   {
     name: "Terrance Armstrong",
@@ -99,123 +128,72 @@ export default () => (
       titleSmall="Recent News And Events"
     />
 
-    <H31Layout4Col>
-      {blogs.map(blog => (
-        <H31BlogCard1
-          overlayColor="rgba(243, 149, 8, 0.84)"
-          ImageComponent={blog.image}
-          title={blog.title}
-          text={blog.text}
-          link={blog.link}
-          linkText="Read More"
-          date={blog.date}
-        />
-      ))}
-    </H31Layout4Col>
+    <H31LayoutContainer fluid as="section">
+      <div
+        css={css`
+          position: absolute;
+          width: 100%;
+          top: 30px;
+          height: calc(100% - 60px);
+          background: linear-gradient(
+            90deg,
+            #6da55f calc(0% + 15px),
+            #164f4b calc(100% - 15px)
+          );
+        `}
+      />
+      <H31LayoutRow>
+        {blogs.map(blog => (
+          <H31LayoutCol md={3}>
+            <H31BlogCard1
+              overlayColor="rgba(243, 149, 8, 0.84)"
+              ImageComponent={blog.image}
+              title={blog.title}
+              text={blog.text}
+              link={blog.link}
+              linkText="Read More"
+              date={blog.date}
+            />
+          </H31LayoutCol>
+        ))}
+      </H31LayoutRow>
+    </H31LayoutContainer>
+
+    <H31LayoutContainer fluid as="section">
+      <H31LayoutRow>
+        <H31LayoutCol
+          css={css`
+            text-align: right;
+          `}
+          md={12}
+        >
+          <H31ButtonFillArrow
+            text="See All News"
+            carrotColor={_config.colorTertiary}
+            secondaryColor={_config.colorTertiary}
+          />
+        </H31LayoutCol>
+      </H31LayoutRow>
+    </H31LayoutContainer>
 
     <H31TextBlock2
-      TitleComponent={
-        <H31Title2C
-          css={css`
-            color: ${_config.colorDarkGrey};
-          `}
-        >
-          We Work For Musicians
-        </H31Title2C>
-      }
-      SubTitleComponent={<H31Title2B>Helping Musicians Succeed</H31Title2B>}
-      TextComponent={
-        <H31Text3>
-          As part of the American Federation of Musicians — the largest
-          organization in the world representing musicians — we are committed to
-          raising industry standards in Central Florida. How can we help you?
-        </H31Text3>
-      }
-      backgroundColor={_config.colorSecondary}
+      title="We Work For Musicians"
+      subtitle="Helping Musicians Succeed"
+      text="As part of the American Federation of Musicians — the largest
+      organization in the world representing musicians — we are committed to
+      raising industry standards in Central Florida. How can we help you?"
     />
 
-    <H31ContentBlock1
-      ImageComponent={<ImgHome1 />}
-      TitleComponent={
-        <H31Title2C
-          css={css`
-            color: ${_config.colorPrimary};
-          `}
-        >
-          Your Legal Support
-        </H31Title2C>
-      }
-      TextComponent={
-        <H31Text3>
-          Having a contract is one thing, but having a contract backed by the
-          union is another. We work with the finest attorneys in the business.
-          We have recovered thousands of dollars for our members.
-        </H31Text3>
-      }
-      backgroundColor="#F9F9F9"
-    />
-
-    <H31ContentBlock1
-      ImageComponent={<ImgHome2 />}
-      TitleComponent={
-        <H31Title2C
-          css={css`
-            color: ${_config.colorSecondary};
-          `}
-        >
-          Keeping You Informed
-        </H31Title2C>
-      }
-      TextComponent={
-        <H31Text3>
-          The local music scene is ever-changing. Our member-ship is a great
-          resource to help navigate that scene. Quarterly membership meetings,
-          newsletters and social media can help keep you informed.
-        </H31Text3>
-      }
-      textRight
-    />
-
-    <H31ContentBlock1
-      ImageComponent={<ImgHome3 />}
-      TitleComponent={
-        <H31Title2C
-          css={css`
-            color: ${_config.colorPrimary};
-          `}
-        >
-          A Vibrant Community
-        </H31Title2C>
-      }
-      TextComponent={
-        <H31Text3>
-          Nearly 600 musicians call themselves CFMA members. From Jazz to
-          Classical, Latin to Rock, R&B to Hip-Hop, our members play it all.
-        </H31Text3>
-      }
-      backgroundColor="#F9F9F9"
-    />
-
-    <H31ContentBlock1
-      ImageComponent={<ImgHome4 />}
-      TitleComponent={
-        <H31Title2C
-          css={css`
-            color: ${_config.colorSecondary};
-          `}
-        >
-          Ready For A Rehearsal
-        </H31Title2C>
-      }
-      TextComponent={
-        <H31Text3>
-          Use of the Rehearsal Hall is free for our members! More details can be
-          found here.
-        </H31Text3>
-      }
-      textRight
-      backgroundColor="#F9F9F9"
-    />
+    {contentBlocks.map((contentBlock, i) => (
+      <H31ContentBlock1
+        ImageComponent={contentBlock.image}
+        title={contentBlock.title}
+        text={contentBlock.text}
+        backgroundColor={i % 2 === 0 ? "#F9F9F9" : "transparent"}
+        titleColor={i % 2 === 0 ? _config.colorPrimary : _config.colorSecondary}
+        textRight={i % 2 !== 0}
+      />
+    ))}
 
     <H31CallToAction />
 

@@ -8,7 +8,7 @@ import { H31Button1 } from "..";
 import _config from "../../_config";
 
 const Container = styled.section`
-  display: flex;
+  display: inline-flex;
   align-items: center;
 `;
 
@@ -38,10 +38,14 @@ const Link = styled(gLink)`
   transition: 0.2s;
   border-radius: 2px;
   border-radius: 3px;
+  &:hover {
+    text-decoration: none;
+  }
 `;
 
 const ButtonFillArrow = ({
   link,
+  text,
   primaryColor,
   secondaryColor,
   carrotColor,
@@ -73,7 +77,7 @@ const ButtonFillArrow = ({
         }
       `}
     >
-      See All News
+      {text}
     </Link>
     {arrowDirection === "right" && (
       <CarrotRight
@@ -87,6 +91,7 @@ const ButtonFillArrow = ({
 
 ButtonFillArrow.defaultProps = {
   link: "/",
+  text: "Test Button",
   secondaryColor: "#000000",
   primaryColor: "#FFFFFF",
   carrotColor: "#000000",
@@ -95,6 +100,7 @@ ButtonFillArrow.defaultProps = {
 
 ButtonFillArrow.propTypes = {
   link: PropTypes.string,
+  text: PropTypes.string,
   secondaryColor: PropTypes.string,
   primaryColor: PropTypes.string,
   carrotColor: PropTypes.string,

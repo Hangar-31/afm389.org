@@ -3,23 +3,24 @@ import { PropTypes } from "prop-types";
 import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
 
-const Container = styled.section`
-  display: flex;
+// Config
+import _config from "../../_config";
+
+// Components
+import {
+  H31LayoutCol,
+  H31LayoutContainer,
+  H31LayoutRow,
+  H31Title2B,
+  H31Title2C,
+  H31Text3
+} from "..";
+
+// Styled Components
+const ColorBlock = styled.div`
+  height: 100%;
   width: 100%;
-  max-width: 1440px;
-  margin: 0 auto 120px auto;
-`;
-
-const Block = styled.section`
-  width: 90px;
-  margin-right: 100px;
-`;
-
-const ContentWrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  padding: 60px 30px;
-  max-width: 70%;
+  background-color: ${_config.colorSecondary};
 `;
 
 const TitleWrapper = styled.section`
@@ -27,54 +28,46 @@ const TitleWrapper = styled.section`
   margin-bottom: 30px;
 `;
 
-const TextBlock2 = ({
-  TitleComponent,
-  SubTitleComponent,
-  TextComponent,
-  backgroundColor
-}) => (
-  <Container>
-    <Block
-      css={css`
-        background-color: ${backgroundColor};
-      `}
-    />
-
-    <ContentWrapper>
-      <TitleWrapper>
-        {SubTitleComponent}
-        {TitleComponent}
-      </TitleWrapper>
-
-      {TextComponent}
-    </ContentWrapper>
-  </Container>
+const TextBlock2 = ({ title, subtitle, text }) => (
+  <H31LayoutContainer fluid as="section">
+    <H31LayoutRow>
+      <H31LayoutCol md={1}>
+        <ColorBlock />
+      </H31LayoutCol>
+      <H31LayoutCol md={1} />
+      <H31LayoutCol
+        css={css`
+          padding: 90px 0;
+        `}
+        md={8}
+      >
+        <TitleWrapper>
+          <H31Title2B>{subtitle}</H31Title2B>
+          <H31Title2C
+            css={css`
+              color: ${_config.colorDarkGrey};
+            `}
+          >
+            {title}
+          </H31Title2C>
+        </TitleWrapper>
+        <H31Text3>{text}</H31Text3>
+      </H31LayoutCol>
+      <H31LayoutCol md={2} />
+    </H31LayoutRow>
+  </H31LayoutContainer>
 );
 
 TextBlock2.defaultProps = {
-  TitleComponent: <h2>Test</h2>,
-  SubTitleComponent: <h4>Test</h4>,
-  TextComponent: (
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium mi a
-      quam molestie, vel ultricies libero faucibus. Lorem ipsum dolor sit amet,
-      consectetur adipiscing elit. Ut pretium mi a quam molestie, vel ultricies
-      libero faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Ut pretium mi a quam molestie, vel ultricies libero faucibus. Lorem ipsum
-      dolor sit amet, consectetur adipiscing elit. Ut pretium mi a quam
-      molestie, vel ultricies libero faucibus. Lorem ipsum dolor sit amet,
-      consectetur adipiscing elit. Ut pretium mi a quam molestie, vel ultricies
-      libero faucibus.
-    </p>
-  ),
-  backgroundColor: "black"
+  title: "Test Title",
+  subtitle: "Test Subtitle",
+  text: "Test Paragraph"
 };
 
 TextBlock2.propTypes = {
-  TitleComponent: PropTypes.element,
-  SubTitleComponent: PropTypes.element,
-  TextComponent: PropTypes.element,
-  backgroundColor: PropTypes.string
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  text: PropTypes.string
 };
 
 export default TextBlock2;

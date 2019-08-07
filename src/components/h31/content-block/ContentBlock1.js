@@ -3,36 +3,16 @@ import { PropTypes } from "prop-types";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 
-const Container = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto 60px auto;
-`;
+// Components
+import {
+  H31Title2C,
+  H31Text3,
+  H31LayoutContainer,
+  H31LayoutRow,
+  H31LayoutCol
+} from "..";
 
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 1440px;
-  width: 100%;
-  margin: 0 auto;
-`;
-
-const ContentContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  width: 50%;
-  height: 100%;
-`;
-
-const ContentWrapper = styled.div`
-  max-width: 400px;
-`;
-
+// Styled Components
 const TitleWrapper = styled.div`
   margin-bottom: 30px;
 `;
@@ -41,7 +21,7 @@ const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 100%;
   .gatsby-image-wrapper {
     width: 600px;
   }
@@ -49,75 +29,78 @@ const ImageWrapper = styled.div`
 
 const ContentBlock = ({
   ImageComponent,
-  TitleComponent,
-  TextComponent,
-  textRight,
-  backgroundColor
+  title,
+  text,
+  titleColor,
+  backgroundColor,
+  textRight
 }) => (
-  <Container
+  <H31LayoutContainer
+    fluid
+    as="section"
     css={css`
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      margin-bottom: 90px;
       background-color: ${backgroundColor};
     `}
   >
-    <Wrapper>
-      {!textRight && (
-        <>
-          <ContentContainer>
-            <ContentWrapper>
-              <TitleWrapper>{TitleComponent}</TitleWrapper>
+    <H31LayoutRow>
+      <H31LayoutCol md={textRight ? { order: 2 } : 1} />
 
-              {TextComponent}
-            </ContentWrapper>
-          </ContentContainer>
-          <ImageWrapper>{ImageComponent}</ImageWrapper>
-        </>
-      )}
+      <H31LayoutCol
+        css={css`
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        `}
+        md={textRight ? { span: 4, order: 3 } : 4}
+      >
+        <TitleWrapper>
+          <H31Title2C
+            css={css`
+              color: ${titleColor};
+            `}
+          >
+            {title}
+          </H31Title2C>
+        </TitleWrapper>
 
-      {textRight && (
-        <>
-          <ImageWrapper>{ImageComponent}</ImageWrapper>
-          <ContentContainer>
-            <ContentWrapper>
-              <TitleWrapper
-                css={css`
-                  text-align: center;
-                `}
-              >
-                {TitleComponent}
-              </TitleWrapper>
+        <H31Text3>{text}</H31Text3>
+      </H31LayoutCol>
 
-              {TextComponent}
-            </ContentWrapper>
-          </ContentContainer>
-        </>
-      )}
-    </Wrapper>
-  </Container>
+      <H31LayoutCol md={textRight ? { order: 5 } : 1} />
+
+      <H31LayoutCol md={textRight ? { order: 1 } : 6}>
+        <ImageWrapper>{ImageComponent}</ImageWrapper>
+      </H31LayoutCol>
+    </H31LayoutRow>
+  </H31LayoutContainer>
 );
 
 ContentBlock.defaultProps = {
-  textRight: false,
+  title: "Title",
+  text: `
+  Sed ac neque ac sem iaculis commodo. Aenean accumsan in neque non tempus.
+  Aenean euismod metus leo, at euismod libero pharetra eu. Cras ultrices
+  imperdiet tortor. Sed mollis eros id arcu auctor, sit amet posuere arcu
+  facilisis. Aliquam et euismod neque, in rhoncus lectus. Suspendisse dictum
+  vitae massa sed lacinia. Aliquam et euismod neque, in rhoncus lectus.
+  Suspendisse dictum vitae massa sed lacinia.
+  `,
+  ImageComponent: <img alt="" src="https://via.placeholder.com/1200x1200" />,
+  titleColor: "#000000",
   backgroundColor: "transparent",
-  ImageComponent: <span>Put an image here</span>,
-  TitleComponent: <span>Test Title</span>,
-  TextComponent: (
-    <p>
-      Sed ac neque ac sem iaculis commodo. Aenean accumsan in neque non tempus.
-      Aenean euismod metus leo, at euismod libero pharetra eu. Cras ultrices
-      imperdiet tortor. Sed mollis eros id arcu auctor, sit amet posuere arcu
-      facilisis. Aliquam et euismod neque, in rhoncus lectus. Suspendisse dictum
-      vitae massa sed lacinia. Aliquam et euismod neque, in rhoncus lectus.
-      Suspendisse dictum vitae massa sed lacinia.
-    </p>
-  )
+  textRight: false
 };
 
 ContentBlock.propTypes = {
-  textRight: PropTypes.bool,
+  ImageComponent: PropTypes.element,
+  title: PropTypes.string,
+  text: PropTypes.string,
+  titleColor: PropTypes.string,
   backgroundColor: PropTypes.string,
-  TitleComponent: PropTypes.element,
-  TextComponent: PropTypes.element,
-  ImageComponent: PropTypes.element
+  textRight: PropTypes.bool
 };
 
 export default ContentBlock;

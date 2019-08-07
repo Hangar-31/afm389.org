@@ -83,7 +83,8 @@ export default class Bio1 extends React.Component {
                 `}
                 onClick={this.onClick}
               >
-                +
+                {!this.state.visible && "+"}
+                {this.state.visible && "-"}
               </H31Button1>
             )}
             {this.props.info.length === 0 && (

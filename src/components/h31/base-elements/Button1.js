@@ -7,7 +7,6 @@ export default styled.button`
 
   display: inline-block;
   cursor: pointer;
-  width: 100%;
   padding: 7px 3px;
   border-radius: 3px;
   background-color: ${siteConfig.colorTertiary};

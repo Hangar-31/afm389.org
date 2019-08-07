@@ -15,7 +15,7 @@ export default styled.a`
   text-transform: uppercase;
   text-decoration: none;
   &:hover {
-    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
     border-color: ${siteConfig.colorWhite};
     color: ${siteConfig.colorWhite};
     text-decoration: none;

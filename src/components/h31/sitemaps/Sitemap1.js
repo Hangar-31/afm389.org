@@ -28,6 +28,7 @@ const List = styled.ul`
 
 const Item = styled.li`
   margin-bottom: 15px;
+  line-height: 1.25;
 `;
 
 const Sitemap1 = () => (
