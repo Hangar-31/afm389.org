@@ -126,12 +126,14 @@ const MainNavbarSplitActions = ({
           justify-content: flex-end;
         `}
       >
-        <H31SocialIcons
-          color={_config.colorWhite}
-          social="facebook"
-          link="/"
-          colorHover={_config.colorTertiary}
-        />
+        {_config.socials.map(social => (
+          <H31SocialIcons
+            color={_config.colorWhite}
+            social={social.social}
+            link={social.link}
+            colorHover={_config.colorTertiary}
+          />
+        ))}
 
         <H31Link6 css={css`margin-left: 30px;`} href="https://afmquartet.org/wp-content/plugins/afmorg/loginform.php?client_token=898909860">Member Log In</H31Link6>
       </H31LayoutCol>

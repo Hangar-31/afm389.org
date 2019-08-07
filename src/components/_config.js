@@ -152,7 +152,7 @@ export default {
   socials: [
     {
       social: "facebook",
-      link: ""
+      link: "https://www.facebook.com/CentralFloridaMusiciansAssociation/"
     }
   ]
 };
