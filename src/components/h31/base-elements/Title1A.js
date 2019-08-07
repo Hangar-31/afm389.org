@@ -5,7 +5,7 @@ import siteConfig from "../../_config";
 export default styled.h1`
   color: ${siteConfig.colorWhite};
   font-family: ${siteConfig.fontSecondary};
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 300;
   text-transform: uppercase;
   ${baseConfig}

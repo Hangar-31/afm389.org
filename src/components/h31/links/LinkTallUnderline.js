@@ -3,11 +3,12 @@ import styled from "@emotion/styled";
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 
-import Link1 from "../base-elements/Link1";
+// Components
+import { H31Link1 } from "..";
 
 const Wrapper = styled.div`
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   height: 100%;
   min-height: 25px;
@@ -25,11 +26,12 @@ const Underline = styled.div`
 `;
 
 const LinkTallUnderline = ({
+  link,
+  text,
   linkColor,
   linkHoverColor,
   underlineColor,
-  underlineHoverColor,
-  LinkComponent
+  underlineHoverColor
 }) => (
   <Wrapper
     css={css`
@@ -46,7 +48,9 @@ const LinkTallUnderline = ({
       }
     `}
   >
-    {LinkComponent}
+    <H31Link1 activeClassName="main-link-active" to={link}>
+      {text}
+    </H31Link1>
     <Underline
       css={css`
         background-color: ${underlineColor};
@@ -56,19 +60,21 @@ const LinkTallUnderline = ({
 );
 
 LinkTallUnderline.defaultProps = {
+  link: "/",
+  text: "Link",
   linkColor: "#000000",
   linkHoverColor: "#000000",
   underlineColor: "#000000",
-  underlineHoverColor: "#000000",
-  LinkComponent: <Link1 href="https://google.com">Link</Link1>
+  underlineHoverColor: "#000000"
 };
 
 LinkTallUnderline.propTypes = {
+  link: PropTypes.string,
+  text: PropTypes.string,
   linkColor: PropTypes.string,
   linkHoverColor: PropTypes.string,
   underlineColor: PropTypes.string,
-  underlineHoverColor: PropTypes.string,
-  LinkComponent: PropTypes.element
+  underlineHoverColor: PropTypes.string
 };
 
 export default LinkTallUnderline;

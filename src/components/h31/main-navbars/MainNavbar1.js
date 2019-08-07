@@ -9,63 +9,26 @@ import _config from "../../_config";
 
 // Components
 import {
-  H31SocialBarHorizontal,
   H31SocialIcons,
-  H31LinkBarHorizontal,
   H31LinkTallUnderline,
-  H31Link1,
   H31Title1A,
   H31Text2,
   H31Link6,
-  H31Link5
+  H31Link5,
+  H31LayoutContainer,
+  H31LayoutRow,
+  H31LayoutCol
 } from "..";
 
 // Images
 import ImgLogo from "../../images/logos/ImgLogo";
 
 // Styled Components
-const Container = styled.section`
-  position: relative;
-  box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  height: 150px;
-  padding: 0 15px;
-`;
-
-const ContainerNav = styled.nav`
-  position: relative;
-  box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-
-  height: 50%;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-`;
-
-const ContainerAction = styled.section`
-  position: relative;
-  box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-
-  height: 50%;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-`;
-
 const WrapperLogo = styled.div`
   z-index: 1;
   position: absolute;
   top: 15px;
+  left: 15px;
   width: 115px;
   height: 115px;
   img {
@@ -74,28 +37,16 @@ const WrapperLogo = styled.div`
   }
 `;
 
-const Group = styled.div`
-  display: flex;
-  align-items: center;
-  height: 100%;
-`;
-
-const Space = styled.div`
-  width: 15px;
-`;
-
-const logoWidth = 115;
-
-const LogoSpace = styled.div`
-  width: ${logoWidth + 30}px;
-`;
-
 const MainNavbarSplitActions = ({
   topBarColor,
   bottomBarColor
 }) => (
-  <Container
+  <H31LayoutContainer
+    fluid
+    as="section"
     css={css`
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
       background: linear-gradient(
         180deg,
         ${topBarColor} 50%,
@@ -103,15 +54,23 @@ const MainNavbarSplitActions = ({
       );
     `}
   >
-    <ContainerNav>
-      <Group>
+    <H31LayoutRow css={css`
+      height: 75px;
+    `}
+    >
+      <H31LayoutCol
+        md={3}
+        css={css`
+          display: flex;
+          align-items: center;
+        `}
+      >
         <WrapperLogo><ImgLogo /></WrapperLogo>
         
-        <LogoSpace />
-
         <H31Title1A
           css={css`
             position: relative;
+            margin-left: 145px;
             text-align: center;
           `}
         >
@@ -128,57 +87,72 @@ const MainNavbarSplitActions = ({
               margin: 0 auto;
             `}
           >
-            Central FL Musicians Association
+            Central FL Musicians&#x27; Association
           </span>
         </H31Title1A>
+      </H31LayoutCol>
 
-        <Space />
-        <Space />
-
-        <H31LinkBarHorizontal
-          linkComponents={_config.mainNav.map(link => (
-            <H31LinkTallUnderline
-              key="main-links-for-hangar-31"
-              linkColor={_config.colorWhite}
-              linkHoverColor={_config.colorSecondary}
-              underlineColor={_config.colorSecondary}
-              underlineHoverColor={_config.colorSecondary}
-              LinkComponent={(
-                <H31Link1 activeClassName="main-link-active" to={link.to}>
-                  {link.name}
-                </H31Link1>
-              )}
-            />
-          ))}
+      <H31LayoutCol
+        md={6}
+        css={css`
+          display: flex;
+          justify-content: space-between;
+        `}
+      >
+        {_config.mainNav.map(link => (
+          <H31LinkTallUnderline
+            link={link.to}
+            text={link.name}
+            linkColor={_config.colorWhite}
+            linkHoverColor={_config.colorSecondary}
+            underlineColor={_config.colorSecondary}
+            underlineHoverColor={_config.colorSecondary}
+          />
+        ))}
+      </H31LayoutCol>
+      
+      <H31LayoutCol
+        md={3}
+        css={css`
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+        `}
+      >
+        <H31SocialIcons
+          color={_config.colorWhite}
+          social="facebook"
+          link="/"
+          colorHover={_config.colorTertiary}
         />
-      </Group>
 
-      <Group>
-        <H31SocialBarHorizontal
-          socialComponents={_config.socials.map(social => (
-            <H31SocialIcons
-              color={_config.colorWhite}
-              social={social.social}
-              link={social.link}
-              colorHover={_config.colorTertiary}
-            />
-          ))}
-        />
+        <H31Link6 css={css`margin-left: 15px;`} href="https://afmquartet.org/wp-content/plugins/afmorg/loginform.php?client_token=898909860">Member Log In</H31Link6>
+      </H31LayoutCol>
+    </H31LayoutRow>
 
-        <Space />
+    <H31LayoutRow css={css`
+      height: 75px;
+    `}
+    >
+      <H31LayoutCol md={3} />
+      <H31LayoutCol
+        css={css`
+          display: flex;
+          align-items: center;
+        `}
+      >
+        <H31Text2 
+          css={css`
+            margin-right: 15px;
+          `}
+        >
+          Don&apos;t Go It Alone
+        </H31Text2>
 
-        <H31Link6 href="https://afmquartet.org/wp-content/plugins/afmorg/loginform.php?client_token=898909860">Member Log In</H31Link6>
-      </Group>
-    </ContainerNav>
-
-    <ContainerAction>
-      <H31Text2>Don&apos;t Go It Alone</H31Text2>
-
-      <Space />
-
-      <H31Link5 href="https://members.afm.org/join/step1/c/en_US">Join Now</H31Link5>
-    </ContainerAction>
-  </Container>
+        <H31Link5 href="https://members.afm.org/join/step1/c/en_US">Join Now</H31Link5>
+      </H31LayoutCol>
+    </H31LayoutRow>
+  </H31LayoutContainer>
 );
 
 MainNavbarSplitActions.defaultProps = {
