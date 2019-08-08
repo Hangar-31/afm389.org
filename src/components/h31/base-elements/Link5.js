@@ -3,6 +3,9 @@ import baseConfig from "./_config";
 import siteConfig from "../../_config";
 
 export default styled.a`
+  ${baseConfig}
+  padding: 15px 15px;
+
   color: ${siteConfig.colorWhite};
   background-color: ${siteConfig.colorTertiary};
   border: 1px solid ${siteConfig.colorWhite};
@@ -21,6 +24,11 @@ export default styled.a`
     text-decoration: none;
   }
 
-  ${baseConfig}
-  padding: 15px 15px;
+  @media (max-width: 1370px) {
+    font-size: 0.725rem;
+  }
+  @media(max-width: 1100px) {
+    padding 8px;
+    font-size: 0.625rem;
+  }
 `;

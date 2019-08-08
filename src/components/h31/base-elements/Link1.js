@@ -14,4 +14,11 @@ export default styled(Link)`
   }
 
   ${baseConfig}
+
+  @media(max-width: 1370px) {
+    font-size: 0.725rem;
+  }
+  @media (max-width: 1100px) {
+    font-size: 0.625rem;
+  }
 `;

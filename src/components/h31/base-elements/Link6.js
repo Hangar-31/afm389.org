@@ -3,10 +3,11 @@ import _configBase from "./_config";
 import _configStyles from "../../_config";
 
 export default styled.a`
+  ${_configBase}
+
   color: ${_configStyles.colorWhite};
   border: 1px solid ${_configStyles.colorWhite};
   border-radius: 3px;
-  ${_configBase}
   padding: 10px 8px;
   transition: 0.2s;
 
@@ -19,5 +20,13 @@ export default styled.a`
     border-color: ${_configStyles.colorTertiary};
     color: ${_configStyles.colorTertiary};
     text-decoration: none;
+  }
+
+  @media (max-width: 1370px) {
+    font-size: 0.725rem;
+  }
+  @media(max-width: 1100px) {
+    font-size: 0.625rem;
+    padding: 8px 6px;
   }
 `;

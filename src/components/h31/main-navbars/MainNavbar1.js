@@ -1,9 +1,11 @@
 /* eslint-disable prettier/prettier */
+import React from "react";
 import { Link } from "gatsby";
 import { PropTypes } from "prop-types";
-/** @jsx jsx */
-import { css, jsx } from "@emotion/core";
+import { css } from "@emotion/core";
 import styled from "@emotion/styled";
+import MediaQuery from 'react-responsive';
+
 
 // Config
 import _config from "../../_config";
@@ -18,7 +20,8 @@ import {
   H31Link5,
   H31LayoutContainer,
   H31LayoutRow,
-  H31LayoutCol
+  H31LayoutCol,
+  H31MobileNav1
 } from "..";
 
 // Images
@@ -35,6 +38,14 @@ const WrapperLogo = styled(Link)`
   img {
     width: 100%;
     height: 100%;
+  }
+  @media(max-width: 1200px) {
+    width: 90px;
+    height: 90px;
+  }
+  @media(max-width: 1100px) {
+    width: 75px;
+    height: 75px;
   }
 `;
 
@@ -57,10 +68,17 @@ const MainNavbarSplitActions = ({
   >
     <H31LayoutRow css={css`
       height: 75px;
+      @media(max-width: 1200px) {
+        height: 60px;
+      }
+      @media(max-width: 1100px) {
+        height: 53px;
+      }
     `}
     >
       <H31LayoutCol
-        md={3}
+        xs={10}
+        lg={3}
         css={css`
           display: flex;
           align-items: center;
@@ -79,6 +97,18 @@ const MainNavbarSplitActions = ({
               color: ${_config.colorWhite};
               text-decoration: none;
             }
+            @media(max-width: 1370px) {
+              width: 100%;
+              margin-left: 130px;
+            }
+            @media(max-width: 1200px) {
+              width: 100%;
+              margin-left: 105px;
+            }
+            @media(max-width: 1100px) {
+              width: 100%;
+              margin-left: 90px;
+            }
           `}
         >
           CFMA Local 389
@@ -92,58 +122,102 @@ const MainNavbarSplitActions = ({
               top: 25px;
               right: 0;
               margin: 0 auto;
+              @media(max-width: 1370px) {
+                font-size: 0.425rem;
+              }
+              @media(max-width: 1100px) {
+                font-size: 7px;
+                top: 20px;
+              }
             `}
           >
             Central FL Musicians&#x27; Association
           </span>
         </H31Title1A>
       </H31LayoutCol>
-
-      <H31LayoutCol
-        md={6}
-        css={css`
+        
+      <MediaQuery query="(min-width: 993px)">
+        <H31LayoutCol
+          xs={7}
+          lg={7}
+          xl={6}
+          css={css`
           display: flex;
           justify-content: space-between;
         `}
-      >
-        {_config.mainNav.map(link => (
-          <H31LinkTallUnderline
-            link={link.to}
-            text={link.name}
-            linkColor={_config.colorWhite}
-            linkHoverColor={_config.colorSecondary}
-            underlineColor={_config.colorSecondary}
-            underlineHoverColor={_config.colorSecondary}
-          />
+        >
+          {_config.mainNav.map(link => (
+            <H31LinkTallUnderline
+              link={link.to}
+              text={link.name}
+              linkColor={_config.colorWhite}
+              linkHoverColor={_config.colorSecondary}
+              underlineColor={_config.colorSecondary}
+              underlineHoverColor={_config.colorSecondary}
+            />
         ))}
-      </H31LayoutCol>
+        </H31LayoutCol>
       
-      <H31LayoutCol
-        md={3}
-        css={css`
+        <H31LayoutCol
+          xs={3}
+          lg={2}
+          xl={3}
+          css={css`
           display: flex;
           align-items: center;
           justify-content: flex-end;
         `}
-      >
-        {_config.socials.map(social => (
-          <H31SocialIcons
-            color={_config.colorWhite}
-            social={social.social}
-            link={social.link}
-            colorHover={_config.colorTertiary}
-          />
+        >
+          {_config.socials.map(social => (
+            <H31SocialIcons
+              color={_config.colorWhite}
+              social={social.social}
+              link={social.link}
+              colorHover={_config.colorTertiary}
+            />
         ))}
 
-        <H31Link6 css={css`margin-left: 30px;`} href="https://afmquartet.org/wp-content/plugins/afmorg/loginform.php?client_token=898909860">Member Log In</H31Link6>
-      </H31LayoutCol>
+          <H31Link6 
+            css={css`
+            margin-left: 30px; 
+            @media (max-width: 1370px) {
+              margin-left: 15px; 
+            }
+          `} 
+            href="https://afmquartet.org/wp-content/plugins/afmorg/loginform.php?client_token=898909860"
+          >
+          Member Log In
+
+          </H31Link6>
+        </H31LayoutCol>
+      </MediaQuery>
+
+      <MediaQuery query="(max-width: 992px)">
+        <H31LayoutCol
+          xs={2}
+          css={css`
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+        `}
+        >
+          <H31MobileNav1 />
+        </H31LayoutCol>
+      </MediaQuery>
+
     </H31LayoutRow>
 
     <H31LayoutRow css={css`
       height: 75px;
+      @media(max-width: 1200px) {
+        height: 60px;
+      }
+      @media(max-width: 1100px) {
+        height: 53px;
+      }
     `}
     >
-      <H31LayoutCol md={3} />
+      <H31LayoutCol xs={3} />
       <H31LayoutCol
         css={css`
           display: flex;

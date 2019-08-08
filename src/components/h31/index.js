@@ -89,6 +89,9 @@ export { default as H31MainNavbar1 } from "./main-navbars/MainNavbar1";
 // Mastheads
 export { default as H31Masthead1 } from "./mastheads/Masthead1";
 
+// Mobile Navs
+export { default as H31MobileNav1 } from "./mobile-navs/MobileNav1";
+
 // Paragraphs
 export { default as H31Paragraph1 } from "./paragraphs/Paragraph1";
 
