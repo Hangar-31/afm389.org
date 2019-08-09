@@ -21,6 +21,7 @@ export { default as H31Text2 } from "./base-elements/Text2";
 export { default as H31Text3 } from "./base-elements/Text3";
 export { default as H31Text4 } from "./base-elements/Text4";
 export { default as H31Text5 } from "./base-elements/Text5";
+export { default as H31Text6 } from "./base-elements/Text6";
 export { default as H31Textarea1 } from "./base-elements/Textarea1";
 export { default as H31Title1A } from "./base-elements/Title1A";
 export { default as H31Title1B } from "./base-elements/Title1B";

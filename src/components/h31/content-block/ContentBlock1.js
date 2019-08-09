@@ -55,10 +55,14 @@ const ContentBlock = ({
     `}
   >
     <H31LayoutRow>
-      <H31LayoutCol xs={1} />
+      <H31LayoutCol
+        xs={textRight ? { span: 1, order: 2 } : 1}
+        lg={textRight ? { span: 1, order: 2 } : { span: 1, order: 1 }}
+      />
 
       <H31LayoutCol
         xs={textRight ? { span: 6, order: 2 } : 6}
+        lg={textRight ? { span: 4, order: 3 } : { span: 4, order: 2 }}
         css={css`
           display: flex;
           flex-direction: column;
@@ -94,11 +98,17 @@ const ContentBlock = ({
         </H31Text3>
       </H31LayoutCol>
 
-      <H31LayoutCol xs={textRight ? { span: 4, order: 1 } : 4}>
+      <H31LayoutCol
+        xs={textRight ? { span: 4, order: 1 } : 4}
+        lg={textRight ? { span: 6, order: 1 } : { span: 6, order: 4 }}
+      >
         <ImageWrapper>{ImageComponent}</ImageWrapper>
       </H31LayoutCol>
 
-      <H31LayoutCol xs={textRight ? { span: 1, order: 3 } : 1} />
+      <H31LayoutCol
+        xs={textRight ? { span: 1, order: 3 } : 1}
+        lg={textRight ? { span: 1, order: 4 } : { span: 1, order: 3 }}
+      />
     </H31LayoutRow>
   </H31LayoutContainer>
 );

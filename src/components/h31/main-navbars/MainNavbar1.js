@@ -361,6 +361,7 @@ const MainNavbarSplitActions = ({
                 @media (max-width: 720px) {
                   font-weight: 800;
                   font-size: 1.125rem;
+                  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
                 }
               `}
             >

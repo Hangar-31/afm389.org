@@ -21,22 +21,24 @@ const Container = styled.section`
 
 const ContentBlock2 = ({ title, children }) => (
   <Container>
-    <H31Title2C
-      css={css`
-        padding: 15px 0;
-        margin-bottom: 15px;
-        text-align: center;
-        background-color: ${_config.colorSecondary};
-      `}
-    >
-      {title}
-    </H31Title2C>
+    {title !== null && (
+      <H31Title2C
+        css={css`
+          padding: 15px 0;
+          margin-bottom: 15px;
+          text-align: center;
+          background-color: ${_config.colorSecondary};
+        `}
+      >
+        {title}
+      </H31Title2C>
+    )}
     {children}
   </Container>
 );
 
 ContentBlock2.defaultProps = {
-  title: "Test Title",
+  title: null,
   children: (
     <>
       <p>
