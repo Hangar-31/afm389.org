@@ -50,7 +50,7 @@ export default () => (
                 color: ${_config.colorSecondary};
                 font-size: inherit;
                 @media (max-width: 576px) {
-                  font-size: 3.75rem;
+                  font-size: 3.825rem;
                 }
               `}
             >
@@ -62,7 +62,7 @@ export default () => (
                 color: ${_config.colorTertiary};
                 font-size: inherit;
                 @media (max-width: 576px) {
-                  font-size: 3.75rem;
+                  font-size: 3.825rem;
                 }
               `}
             >

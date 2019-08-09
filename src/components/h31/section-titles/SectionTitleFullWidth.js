@@ -32,7 +32,7 @@ const SectionTitleFullWidth = ({
         height: 75px;
       }
       @media (max-width: 576px) {
-        height: 30px;
+        height: 50px;
       }
     `}
   >

@@ -69,6 +69,16 @@ const ContentBlock = ({
           <H31Title2C
             css={css`
               color: ${titleColor};
+              text-align: ${textRight ? "center" : "left"};
+              @media (max-width: 992px) {
+                font-size: 2rem;
+              }
+              @media (max-width: 768px) {
+                font-size: 1.25rem;
+              }
+              @media (max-width: 576px) {
+                font-size: 0.875rem;
+              }
             `}
           >
             {title}

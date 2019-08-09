@@ -352,17 +352,32 @@ const MainNavbarSplitActions = ({
               display: flex;
               align-items: center;
               justify-content: center;
+              padding-top: 15px !important;
             `}
           >
             <H31Text2 
               css={css`
                 margin-right: 15px;
+                @media (max-width: 720px) {
+                  font-weight: 800;
+                  font-size: 1.125rem;
+                }
               `}
             >
               Don&apos;t Go It Alone
             </H31Text2>
 
-            <H31Link5 href="https://members.afm.org/join/step1/c/en_US">Join Now</H31Link5>
+            <H31Link5
+              css={css`
+                @media (max-width: 720px) {
+                  font-size: 0.4375rem;
+                  padding: 5px 10px;
+                }
+              `}
+              href="https://members.afm.org/join/step1/c/en_US"
+            >
+              Join Now
+            </H31Link5>
           </H31LayoutCol>
         </H31LayoutRow>
       </H31LayoutContainer>

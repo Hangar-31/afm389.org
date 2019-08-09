@@ -54,6 +54,9 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
         css={css`
           padding: 30px 0 60px 0;
           background: rgba(0, 0, 0, 0.4);
+          @media (max-width: 576px) {
+            padding: 30px 0 0 0;
+          }
         `}
       >
         <H31LayoutCol md={2} />

@@ -19,7 +19,10 @@ const Wrapper = styled.section`
 const TitleContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding: 5px 25px;
+  padding: 5px 0;
+  @media (max-width: 992px) {
+    padding: 15px 0;
+  }
 `;
 
 const ParagraphContainer = styled.div`

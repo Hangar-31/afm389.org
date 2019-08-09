@@ -34,7 +34,7 @@ const TextBlock2 = ({ title, subtitle, text }) => (
       margin-bottom: 90px;
       @media (max-width: 992px) {
         margin-top: 30px;
-        margin-bottom: 120px;
+        margin-bottom: 30px;
       }
     `}
     fluid
