@@ -22,17 +22,25 @@ export default () => (
       padding-top: 100px !important;
       padding-bottom: 100px !important;
       background-color: ${_config.colorPrimary};
+      @media (max-width: 576px) {
+        padding-top: 45px !important;
+        padding-bottom: 45px !important;
+      }
     `}
   >
     <H31LayoutRow>
-      <H31LayoutCol md={3} />
-      <H31LayoutCol md={6}>
+      <H31LayoutCol xs={1} md={3} />
+      <H31LayoutCol xs={10} md={6}>
         <div>
           <H31Title2D
             as="h2"
             css={css`
               margin-bottom: 30px;
               color: ${_config.colorWhite};
+              @media (max-width: 576px) {
+                margin-bottom: 15px;
+                text-align: center;
+              }
             `}
           >
             Your Path To A Musical Career
@@ -40,6 +48,10 @@ export default () => (
             <span
               css={css`
                 color: ${_config.colorSecondary};
+                font-size: inherit;
+                @media (max-width: 576px) {
+                  font-size: 3.75rem;
+                }
               `}
             >
               Starts
@@ -48,6 +60,10 @@ export default () => (
             <span
               css={css`
                 color: ${_config.colorTertiary};
+                font-size: inherit;
+                @media (max-width: 576px) {
+                  font-size: 3.75rem;
+                }
               `}
             >
               Here
@@ -58,6 +74,12 @@ export default () => (
         <H31Text2
           css={css`
             margin-bottom: 30px;
+            @media (max-width: 576px) {
+              margin-left: auto;
+              margin-right: auto;
+              max-width: 275px;
+              text-align: center;
+            }
           `}
         >
           Are you ready to become a member of the largest organization in the
@@ -68,14 +90,25 @@ export default () => (
           css={css`
             display: flex;
             justify-content: flex-end;
+            @media (max-width: 576px) {
+              justify-content: center;
+            }
           `}
         >
-          <H31Link5 href="https://members.afm.org/join/step1/c/en_US">
+          <H31Link5
+            css={css`
+              @media (max-width: 576px) {
+                font-size: 1.125rem;
+                padding: 15px 30px;
+              }
+            `}
+            href="https://members.afm.org/join/step1/c/en_US"
+          >
             Join Now
           </H31Link5>
         </div>
       </H31LayoutCol>
-      <H31LayoutCol md={3} />
+      <H31LayoutCol xs={1} md={3} />
     </H31LayoutRow>
   </H31LayoutContainer>
 );

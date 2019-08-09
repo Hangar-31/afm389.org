@@ -31,4 +31,8 @@ export default styled.a`
     padding 8px;
     font-size: 0.625rem;
   }
+  @media(max-width: 720px) {
+    padding 8px;
+    font-size: 0.875rem;
+  }
 `;

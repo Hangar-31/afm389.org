@@ -21,4 +21,7 @@ export default styled(Link)`
   @media (max-width: 1100px) {
     font-size: 0.625rem;
   }
+  @media (max-width: 720px) {
+    font-size: 1.25rem;
+  }
 `;

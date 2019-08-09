@@ -32,20 +32,30 @@ const TextBlock2 = ({ title, subtitle, text }) => (
   <H31LayoutContainer
     css={css`
       margin-bottom: 90px;
+      @media (max-width: 992px) {
+        margin-top: 30px;
+        margin-bottom: 120px;
+      }
     `}
     fluid
     as="section"
   >
     <H31LayoutRow>
-      <H31LayoutCol md={1}>
+      <H31LayoutCol className="d-xs-block d-md-none" xs={1} md={0} />
+      <H31LayoutCol xs={2} md={1}>
         <ColorBlock />
       </H31LayoutCol>
-      <H31LayoutCol md={1} />
+      <H31LayoutCol className="d-none d-lg-block" xs={0} lg={1} />
       <H31LayoutCol
         css={css`
           padding: 90px 0;
+          @media (max-width: 992px) {
+            padding: 30px 0;
+          }
         `}
-        md={8}
+        xs={8}
+        md={10}
+        lg={8}
       >
         <TitleWrapper>
           <H31Title2B>{subtitle}</H31Title2B>
@@ -59,7 +69,7 @@ const TextBlock2 = ({ title, subtitle, text }) => (
         </TitleWrapper>
         <H31Text3>{text}</H31Text3>
       </H31LayoutCol>
-      <H31LayoutCol md={2} />
+      <H31LayoutCol xs={1} lg={2} />
     </H31LayoutRow>
   </H31LayoutContainer>
 );

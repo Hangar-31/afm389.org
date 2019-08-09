@@ -15,6 +15,9 @@ import {
 // Styled Components
 const TitleWrapper = styled.div`
   margin-bottom: 30px;
+  @media (max-width: 576px) {
+    margin-bottom: 15px;
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -24,6 +27,12 @@ const ImageWrapper = styled.div`
   width: 100%;
   .gatsby-image-wrapper {
     width: 600px;
+  }
+  @media (max-width: 576px) {
+    height: 180px;
+    .gatsby-image-wrapper {
+      height: 100%;
+    }
   }
 `;
 
@@ -46,15 +55,15 @@ const ContentBlock = ({
     `}
   >
     <H31LayoutRow>
-      <H31LayoutCol md={textRight ? { order: 2 } : 1} />
+      <H31LayoutCol xs={1} />
 
       <H31LayoutCol
+        xs={textRight ? { span: 6, order: 2 } : 6}
         css={css`
           display: flex;
           flex-direction: column;
           justify-content: center;
         `}
-        md={textRight ? { span: 4, order: 3 } : 4}
       >
         <TitleWrapper>
           <H31Title2C
@@ -66,14 +75,20 @@ const ContentBlock = ({
           </H31Title2C>
         </TitleWrapper>
 
-        <H31Text3>{text}</H31Text3>
+        <H31Text3
+          css={css`
+            margin-bottom: 0;
+          `}
+        >
+          {text}
+        </H31Text3>
       </H31LayoutCol>
 
-      <H31LayoutCol md={textRight ? { order: 5 } : 1} />
-
-      <H31LayoutCol md={textRight ? { order: 1 } : 6}>
+      <H31LayoutCol xs={textRight ? { span: 4, order: 1 } : 4}>
         <ImageWrapper>{ImageComponent}</ImageWrapper>
       </H31LayoutCol>
+
+      <H31LayoutCol xs={textRight ? { span: 1, order: 3 } : 1} />
     </H31LayoutRow>
   </H31LayoutContainer>
 );

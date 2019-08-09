@@ -38,6 +38,12 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
       css={css`
         position: relative;
         padding: 90px 0 !important;
+        @media (max-width: 768px) {
+          padding: 30px 15px !important;
+        }
+        @media (max-width: 576px) {
+          padding: 15px !important;
+        }
       `}
       fluid
       as="section"
@@ -61,6 +67,7 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
           <H31Title2B
             css={css`
               color: #ffffff;
+              font-size: 1.5rem !important;
             `}
           >
             Get In Touch
@@ -77,6 +84,7 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
 
       <H31LayoutRow>
         <H31LayoutCol
+          className="d-none d-md-block"
           md={12}
           css={css`
             position: relative;
@@ -103,7 +111,8 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
     >
       <H31LayoutRow>
         <H31LayoutCol
-          md={6}
+          className="d-none d-xs-none d-sm-block"
+          sm={6}
           css={css`
             position: relative;
             display: flex;
@@ -127,12 +136,16 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
         </H31LayoutCol>
 
         <H31LayoutCol
-          md={6}
+          xs={12}
+          sm={6}
           css={css`
             display: flex;
             justify-content: flex-end;
             align-items: center;
             height: 75px;
+            @media (max-width: 576px) {
+              justify-content: center;
+            }
           `}
         >
           {_config.socials.map(social => (

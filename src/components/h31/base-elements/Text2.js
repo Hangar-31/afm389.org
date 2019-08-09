@@ -10,8 +10,13 @@ export default styled.p`
   font-size: 1.25rem;
   line-height: 1.5;
 
-  @media(max-width: 1100px) {
+  @media (max-width: 992px) {
     font-size: 1rem;
   }
-
+  @media (max-width: 768px) {
+    font-size: 0.75rem;
+  }
+  @media (max-width: 576px) {
+    font-size: 0.625rem;
+  }
 `;

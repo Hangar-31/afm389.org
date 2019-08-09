@@ -2,16 +2,15 @@ import React, { Component } from "react";
 // import PropTypes from "prop-types";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
+import { H31LayoutContainer, H31LayoutCol, H31Link1, H31LayoutRow } from "..";
+import _config from "../../_config";
 
-const Container = styled.nav`
-  z-index: 10;
+const Overlay = styled.div`
+  z-index: -1;
   position: fixed;
-  right: -300px;
-  top: 0;
-  width: 300px;
+  width: 100vw;
   height: 100vh;
-  background-color: black;
-  transition: 0.5s;
+  transition: 0.4s;
 `;
 
 export default class MobileNav1 extends Component {
@@ -21,10 +20,10 @@ export default class MobileNav1 extends Component {
       visible: false
     };
 
-    this.onClickShowMenu = this.onClickShowMenu.bind(this);
+    this.onClickToggleMenu = this.onClickToggleMenu.bind(this);
   }
 
-  onClickShowMenu() {
+  onClickToggleMenu() {
     const { visible } = this.state;
     this.setState({ visible: !visible });
   }
@@ -34,10 +33,18 @@ export default class MobileNav1 extends Component {
 
     return (
       <>
-        <button type="button" onClick={this.onClickShowMenu}>
+        <button
+          css={css`
+            padding: 0;
+            margin: 0;
+          `}
+          type="button"
+          onClick={this.onClickToggleMenu}
+        >
           <svg
             css={css`
-              cursor: pointer;
+              padding: 0;
+              margin: 0;
             `}
             width="40"
             height="40"
@@ -63,12 +70,63 @@ export default class MobileNav1 extends Component {
             />
           </svg>
         </button>
-        <Container
+
+        <Overlay
+          onClick={this.onClickToggleMenu}
           css={css`
+            z-index: ${visible ? "9" : "-1"};
+            background-color: ${visible
+              ? "rgba(0, 0, 0, 0.4)"
+              : "rgba(0, 0, 0, 0)"};
+          `}
+        />
+
+        <H31LayoutContainer
+          css={css`
+            z-index: 10;
+            position: fixed;
+            right: -300px;
+            top: 0;
+            width: 300px !important;
+            height: 100vh;
+            background-color: ${_config.colorSecondary};
+            transition: 0.5s;
+
             transform: translateX(${visible ? "-300px" : "0px"});
           `}
-          onClick={visible}
-        />
+        >
+          <H31LayoutRow>
+            <H31LayoutCol
+              css={css`
+                margin-bottom: 30px;
+              `}
+              xs={12}
+            >
+              <button
+                onClick={this.onClickToggleMenu}
+                type="button"
+                aria-label="Close Mobile Nav"
+                css={css`
+                  font-size: 2rem;
+                  color: ${_config.colorWhite};
+                `}
+              >
+                &times;
+              </button>
+            </H31LayoutCol>
+            {_config.mainNav.map(link => (
+              <H31LayoutCol
+                css={css`
+                  text-align: center;
+                  margin-bottom: 30px;
+                `}
+                xs={12}
+              >
+                <H31Link1 to={link.to}>{link.name}</H31Link1>
+              </H31LayoutCol>
+            ))}
+          </H31LayoutRow>
+        </H31LayoutContainer>
       </>
     );
   }

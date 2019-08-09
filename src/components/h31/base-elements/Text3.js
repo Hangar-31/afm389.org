@@ -10,4 +10,14 @@ export default styled.p`
   font-family: ${siteConfig.fontQuintery};
   font-size: 1.25rem;
   line-height: 1.5;
+
+  @media (max-width: 992px) {
+    font-size: 0.875rem;
+  }
+  @media (max-width: 768px) {
+    font-size: 0.75rem;
+  }
+  @media (max-width: 576px) {
+    font-size: 0.625;
+  }
 `;

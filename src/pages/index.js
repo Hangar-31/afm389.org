@@ -15,7 +15,6 @@ import {
   H31Testimonials,
   H31Masthead1,
   H31TextBlock2,
-  H31Layout3Col,
   H31BlogCard1,
   H31LayoutContainer,
   H31LayoutRow,
@@ -203,15 +202,23 @@ export default () => (
       titleSmall="Testimonials"
     />
 
-    <H31Layout3Col>
-      {reviews.map(review => (
-        <H31Testimonials
-          key={review.name}
-          titleColor={_config.colorSecondary}
-          title={review.name}
-          text={review.text}
-        />
-      ))}
-    </H31Layout3Col>
+    <H31LayoutContainer>
+      <H31LayoutRow>
+        {reviews.map(review => (
+          <>
+            <H31LayoutCol sm={1} md={0} />
+            <H31LayoutCol sm={10} md={4}>
+              <H31Testimonials
+                key={review.name}
+                titleColor={_config.colorSecondary}
+                title={review.name}
+                text={review.text}
+              />
+            </H31LayoutCol>
+            <H31LayoutCol sm={1} md={0} />
+          </>
+        ))}
+      </H31LayoutRow>
+    </H31LayoutContainer>
   </Layout>
 );

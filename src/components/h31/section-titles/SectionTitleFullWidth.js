@@ -25,6 +25,15 @@ const SectionTitleFullWidth = ({
       align-items: center;
       height: 130px;
       background-color: ${backgroundColor};
+      @media (max-width: 992px) {
+        height: 90px;
+      }
+      @media (max-width: 768px) {
+        height: 75px;
+      }
+      @media (max-width: 576px) {
+        height: 30px;
+      }
     `}
   >
     <H31LayoutRow
@@ -33,12 +42,14 @@ const SectionTitleFullWidth = ({
         width: 100%;
       `}
     >
+      <H31LayoutCol xs={1} md={0} />
       <H31LayoutCol
         css={css`
           display: flex;
           align-items: center;
           flex-wrap: wrap;
         `}
+        xs={10}
         md={12}
       >
         <H31Title2B
@@ -51,6 +62,7 @@ const SectionTitleFullWidth = ({
         </H31Title2B>
         {titleLarge !== null && <H31Title2C>{titleLarge}</H31Title2C>}
       </H31LayoutCol>
+      <H31LayoutCol xs={1} md={0} />
     </H31LayoutRow>
   </H31LayoutContainer>
 );

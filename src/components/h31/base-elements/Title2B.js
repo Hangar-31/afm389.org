@@ -10,4 +10,14 @@ export default styled.h2`
   font-family: ${siteConfig.fontTertiary};
   font-weight: 300;
   text-transform: uppercase;
+
+  @media (max-width: 992px) {
+    font-size: 1.25rem;
+  }
+  @media (max-width: 768px) {
+    font-size: 1.125rem;
+  }
+  @media (max-width: 576px) {
+    font-size: 0.875rem;
+  }
 `;
