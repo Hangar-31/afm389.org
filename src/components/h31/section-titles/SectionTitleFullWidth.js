@@ -25,13 +25,13 @@ const SectionTitleFullWidth = ({
       align-items: center;
       height: 130px;
       background-color: ${backgroundColor};
-      @media (max-width: 992px) {
+      @media (max-width: 991px) {
         height: 90px;
       }
-      @media (max-width: 768px) {
+      @media (max-width: 767px) {
         height: 75px;
       }
-      @media (max-width: 576px) {
+      @media (max-width: 575px) {
         height: 50px;
       }
     `}

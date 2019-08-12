@@ -65,7 +65,6 @@ export { default as H31Form1 } from "./forms/Form1";
 export { default as H31GoogleMap1 } from "./google-maps/GoogleMap1";
 
 // Layouts
-export { default as H31Layout3Col } from "./layouts/Layout3Col";
 export { default as H31LayoutContainer } from "./layouts/LayoutContainer";
 export { default as H31LayoutRow } from "./layouts/LayoutRow";
 export { default as H31LayoutCol } from "./layouts/LayoutCol";

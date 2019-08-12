@@ -24,14 +24,14 @@ export default styled.a`
     text-decoration: none;
   }
 
-  @media (max-width: 1370px) {
+  @media (max-width: 1369px) {
     font-size: 0.725rem;
   }
-  @media(max-width: 1100px) {
+  @media(max-width: 1099px) {
     padding 8px;
     font-size: 0.625rem;
   }
-  @media(max-width: 720px) {
+  @media(max-width: 719px) {
     padding 8px;
     font-size: 0.875rem;
   }

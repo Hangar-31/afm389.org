@@ -10,10 +10,10 @@ export default styled.h1`
   text-transform: uppercase;
   ${baseConfig}
 
-  @media(max-width: 1370px) {
+  @media(max-width: 1369px) {
     font-size: 1rem;
   }
-  @media (max-width: 1100px) {
+  @media (max-width: 1099px) {
     font-size: 0.875rem;
   }
 `;

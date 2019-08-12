@@ -147,7 +147,7 @@ export default () => (
       as="section"
       css={css`
         margin: 45px 0;
-        @media (max-width: 576px) {
+        @media (max-width: 575px) {
           margin: 15px 0;
         }
       `}
@@ -155,12 +155,12 @@ export default () => (
       <H31LayoutRow>
         <H31LayoutCol xs={1} md={3} />
         <H31LayoutCol xs={10} md={6}>
-          <MediaQuery query="(min-width: 577px)">
+          <MediaQuery query="(min-width: 576px)">
             <H31ContentBlock2 title="We Work For Musicians">
               {data}
             </H31ContentBlock2>
           </MediaQuery>
-          <MediaQuery query="(max-width: 576px)">
+          <MediaQuery query="(max-width: 575px)">
             <H31ContentBlock2>{data}</H31ContentBlock2>
           </MediaQuery>
         </H31LayoutCol>
@@ -188,8 +188,8 @@ export default () => (
       <H31LayoutRow>
         {reviews.map(review => (
           <>
-            <H31LayoutCol sm={1} md={0} />
-            <H31LayoutCol sm={10} md={4}>
+            <H31LayoutCol className="d-xs-block d-md-none" xs={1} md={0} />
+            <H31LayoutCol xs={10} md={4}>
               <H31Testimonials
                 key={review.name}
                 titleColor={_config.colorSecondary}
@@ -197,7 +197,7 @@ export default () => (
                 text={review.text}
               />
             </H31LayoutCol>
-            <H31LayoutCol sm={1} md={0} />
+            <H31LayoutCol className="d-xs-block d-md-none" xs={1} md={0} />
           </>
         ))}
       </H31LayoutRow>

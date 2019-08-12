@@ -43,7 +43,7 @@ const Group = styled.div``;
 
 const ContentGroup = styled.div`
   overflow: hidden;
-  min-height: 170px;
+  height: 150px;
 `;
 const ImageContainer = styled.div`
   height: 50%;
@@ -60,8 +60,6 @@ const ContentContainer = styled.article`
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
-  height: 100%;
-  padding: 15px 30px;
   overflow: hidden;
 `;
 
@@ -77,12 +75,10 @@ const DateContainer = styled.div`
 `;
 
 const Container = styled(Link)`
+  display: block;
   position: relative;
-  display: flex;
-  flex-direction: column;
   padding: 0px;
   width: 100%;
-  height: 420px;
   border: none;
   overflow: hidden;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -146,7 +142,12 @@ const BlogCard1 = ({
 
     <ImageContainer>{ImageComponent}</ImageContainer>
 
-    <ContentContainer>
+    <ContentContainer
+      css={css`
+        height: ${date ? "163px" : "100%"};
+        padding: ${date ? "15px 30px 0 30px;" : "15px 30px;"};
+      `}
+    >
       <ContentGroup>
         <TitleContainer>
           <H31Title3B>{title}</H31Title3B>

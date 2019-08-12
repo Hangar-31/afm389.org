@@ -70,9 +70,11 @@ export default class Bio1 extends React.Component {
               <H31Button1
                 css={css`
                   width: 45px;
-                  border-color: ${this.state.visible
-                    ? _config.colorTertiary
-                    : _config.colorWhite};
+                  height: 45px;
+                  border: 1px solid
+                    ${this.state.visible
+                      ? _config.colorTertiary
+                      : _config.colorWhite};
                   background-color: ${this.state.visible
                     ? _config.colorWhite
                     : _config.colorTertiary};

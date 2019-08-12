@@ -11,13 +11,13 @@ export default styled.p`
   font-size: 1.25rem;
   line-height: 1.5;
 
-  @media (max-width: 992px) {
+  @media (max-width: 991px) {
     font-size: 0.875rem;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     font-size: 0.75rem;
   }
-  @media (max-width: 576px) {
+  @media (max-width: 575px) {
     font-size: 0.625;
   }
 `;

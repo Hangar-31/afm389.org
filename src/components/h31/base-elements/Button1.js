@@ -20,6 +20,7 @@ export default styled.button`
   font-weight: 300;
   line-height: 0;
   text-transform: uppercase;
+  outline: none !important;
 
   &:hover {
     background-color: ${siteConfig.colorWhite};

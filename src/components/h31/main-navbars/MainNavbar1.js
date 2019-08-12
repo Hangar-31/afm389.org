@@ -39,15 +39,15 @@ const WrapperLogo = styled(Link)`
     width: 100%;
     height: 100%;
   }
-  @media(max-width: 1200px) {
+  @media(max-width: 1199px) {
     width: 90px;
     height: 90px;
   }
-  @media(max-width: 1100px) {
+  @media(max-width: 1099px) {
     width: 75px;
     height: 75px;
   }
-  @media(max-width: 992px) {
+  @media(max-width: 991px) {
     width: 57px;
     height: 57px;
     top: 5px;
@@ -70,7 +70,7 @@ const MainNavbarSplitActions = ({
           ${topBarColor} 50%,
           ${bottomBarColor} 50.0001%
         );
-        @media(max-width: 992px) {
+        @media(max-width: 991px) {
           background: linear-gradient(
             180deg,
             ${topBarColor} 53px,
@@ -81,15 +81,15 @@ const MainNavbarSplitActions = ({
     >
       <H31LayoutRow css={css`
         height: 75px;
-        @media(max-width: 1200px) {
+        @media(max-width: 1199px) {
           height: 60px;
         }
-        @media(max-width: 1100px) {
+        @media(max-width: 1099px) {
           height: 53px;
         }
       `}
       >
-        <MediaQuery query="(min-width: 721px)">
+        <MediaQuery query="(min-width: 720px)">
           <H31LayoutCol
             xs={4}
             lg={3}
@@ -111,19 +111,19 @@ const MainNavbarSplitActions = ({
                   color: ${_config.colorWhite};
                   text-decoration: none;
                 }
-                @media(max-width: 1370px) {
+                @media(max-width: 1369px) {
                   width: 100%;
                   margin-left: 130px;
                 }
-                @media(max-width: 1200px) {
+                @media(max-width: 1199px) {
                   width: 100%;
                   margin-left: 105px;
                 }
-                @media(max-width: 1100px) {
+                @media(max-width: 1099px) {
                   width: 100%;
                   margin-left: 90px;
                 }
-                @media(max-width: 992px) {
+                @media(max-width: 991px) {
                   width: 120px;
                   margin-left: 72px;
                 }
@@ -140,10 +140,10 @@ const MainNavbarSplitActions = ({
                   top: 25px;
                   right: 0;
                   margin: 0 auto;
-                  @media(max-width: 1370px) {
+                  @media(max-width: 1369px) {
                     font-size: 0.425rem;
                   }
-                  @media(max-width: 1100px) {
+                  @media(max-width: 1099px) {
                     font-size: 7px;
                     top: 20px;
                   }
@@ -155,7 +155,7 @@ const MainNavbarSplitActions = ({
           </H31LayoutCol>
         </MediaQuery>
 
-        <MediaQuery query="(max-width: 720px)">
+        <MediaQuery query="(max-width: 719px)">
           <H31LayoutCol
             xs={10}
             css={css`
@@ -198,7 +198,7 @@ const MainNavbarSplitActions = ({
           </H31LayoutCol>
         </MediaQuery>
           
-        <MediaQuery query="(min-width: 993px)">
+        <MediaQuery query="(min-width: 992px)">
           <H31LayoutCol
             xs={7}
             lg={7}
@@ -254,7 +254,7 @@ const MainNavbarSplitActions = ({
           </H31LayoutCol>
         </MediaQuery>
 
-        <MediaQuery query="(max-width: 992px) and (min-width: 720px)">
+        <MediaQuery query="(max-width: 991px) and (min-width: 720px)">
           <H31LayoutCol
             xs={4}
             css={css`
@@ -286,7 +286,7 @@ const MainNavbarSplitActions = ({
           </H31LayoutCol>
         </MediaQuery>
 
-        <MediaQuery query="(max-width: 720px)">
+        <MediaQuery query="(max-width: 719px)">
           <H31LayoutCol
             xs={2}
             css={css`
@@ -309,12 +309,12 @@ const MainNavbarSplitActions = ({
         @media(max-width: 1100px) {
           height: 53px;
         }
-        @media(max-width: 992px) {
+        @media(max-width: 991px) {
           height: 15px;
         }
       `}
       >
-        <MediaQuery query="(min-width: 993px)">
+        <MediaQuery query="(min-width: 992px)">
           <H31LayoutCol xs={3} />
           <H31LayoutCol
             css={css`
@@ -336,7 +336,7 @@ const MainNavbarSplitActions = ({
       </H31LayoutRow>
     </H31LayoutContainer>
 
-    <MediaQuery query="(max-width: 720px)">
+    <MediaQuery query="(max-width: 719px)">
       <H31LayoutContainer 
         fluid
         as="section"
@@ -358,7 +358,7 @@ const MainNavbarSplitActions = ({
             <H31Text2 
               css={css`
                 margin-right: 15px;
-                @media (max-width: 720px) {
+                @media (max-width: 719px) {
                   font-weight: 800;
                   font-size: 1.125rem;
                   text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
@@ -370,7 +370,7 @@ const MainNavbarSplitActions = ({
 
             <H31Link5
               css={css`
-                @media (max-width: 720px) {
+                @media (max-width: 719px) {
                   font-size: 0.4375rem;
                   padding: 5px 10px;
                 }

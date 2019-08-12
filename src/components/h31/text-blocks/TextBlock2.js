@@ -32,7 +32,7 @@ const TextBlock2 = ({ title, subtitle, text }) => (
   <H31LayoutContainer
     css={css`
       margin-bottom: 90px;
-      @media (max-width: 992px) {
+      @media (max-width: 991px) {
         margin-top: 30px;
         margin-bottom: 30px;
       }
@@ -49,7 +49,7 @@ const TextBlock2 = ({ title, subtitle, text }) => (
       <H31LayoutCol
         css={css`
           padding: 90px 0;
-          @media (max-width: 992px) {
+          @media (max-width: 991px) {
             padding: 30px 0;
           }
         `}

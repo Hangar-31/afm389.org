@@ -20,7 +20,7 @@ const TitleContainer = styled.div`
   display: flex;
   justify-content: center;
   padding: 5px 0;
-  @media (max-width: 992px) {
+  @media (max-width: 991px) {
     padding: 15px 0;
   }
 `;
@@ -29,6 +29,9 @@ const ParagraphContainer = styled.div`
   display: flex;
   flex-direction: start;
   padding: 20px 0px;
+  @media (max-width: 575px) {
+    text-align: center;
+  }
 `;
 
 const Testimonials = ({ title, text, fontColor, titleColor, borderColor }) => (

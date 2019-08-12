@@ -11,19 +11,19 @@ export default styled.h1`
   font-weight: 300;
   text-transform: uppercase;
 
-  @media (max-width: 1400px) {
+  @media (max-width: 1399px) {
     font-size: 3.75rem;
   }
-  @media (max-width: 1200px) {
+  @media (max-width: 1199px) {
     font-size: 3rem;
   }
-  @media (max-width: 992px) {
+  @media (max-width: 991px) {
     font-size: 2.5rem;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     font-size: 2.25rem;
   }
-  @media (max-width: 576px) {
+  @media (max-width: 575px) {
     font-size: 1.5rem;
   }
 `;

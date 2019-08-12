@@ -8,10 +8,10 @@ export default styled.h4`
   font-family: ${siteConfig.fontPrimary};
   font-size: 0.8rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     font-size: 0.725rem;
   }
-  @media (max-width: 576px) {
+  @media (max-width: 575px) {
     font-size: 0.625rem;
   }
 

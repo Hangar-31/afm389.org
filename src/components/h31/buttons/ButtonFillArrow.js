@@ -62,8 +62,10 @@ const ButtonFillArrow = ({
     <Link
       to={link}
       css={css`
+        padding: 20px 20px;
         background-color: ${primaryColor};
         border: 1px solid ${secondaryColor};
+        font-weight: bold;
         transition: 0.2s;
         span {
           color: ${carrotColor};

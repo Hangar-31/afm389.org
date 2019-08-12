@@ -80,11 +80,9 @@ export default class Bio1 extends React.Component {
                     overflow: hidden;
                     transition: 0.2s;
                     padding-left: 0 !important;
-                    @media (max-width: 1200px) {
-                      max-height: ${this.state.visible
-                        ? `${this.bioContainer.scrollHeight}px`
-                        : "90px"};
-                    }
+                    max-height: ${this.state.visible
+                      ? `${this.bioContainer.scrollHeight}px`
+                      : "90px"};
                     @media (max-width: 768px) {
                       max-height: ${this.state.visible
                         ? `${this.bioContainer.scrollHeight}px`
@@ -153,11 +151,11 @@ export default class Bio1 extends React.Component {
                     `}
                     onClick={this.onClick}
                   >
-                    <MediaQuery query="(min-width: 993px)">
+                    <MediaQuery query="(min-width: 992px)">
                       {!this.state.visible && "Full Bio"}
                       {this.state.visible && "Hide Bio"}
                     </MediaQuery>
-                    <MediaQuery query="(max-width: 992px)">
+                    <MediaQuery query="(max-width: 991px)">
                       {!this.state.visible && "+"}
                       {this.state.visible && "-"}
                     </MediaQuery>

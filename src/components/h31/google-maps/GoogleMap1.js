@@ -12,11 +12,12 @@ const GoogleMap1 = props => {
     <H31LayoutContainer
       css={css`
         padding: 0 !important;
+        height: 100%;
       `}
       as="section"
       fluid
     >
-      <div style={{ height: "500px", width: "100%" }}>
+      <div style={{ height: "100%", width: "100%" }}>
         <GoogleMapReact
           bootstrapURLKeys={{
             key: "AIzaSyA1Bv9KOS95RNxflm54fgkIENFb-dB-k9w"

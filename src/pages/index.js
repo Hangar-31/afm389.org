@@ -36,7 +36,7 @@ const blogs = [
     title: "2019 DISNEY OPEN CALL AUDITIONS",
     text:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex.",
-    date: "May 15, 2019",
+    date: "2013-01-01T00:00:00.000",
     link: "/"
   },
   {
@@ -44,7 +44,7 @@ const blogs = [
     title: "ORLANDO MUSICIANS CONFERENCE",
     text:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex.",
-    date: "May 15, 2019",
+    date: "2013-01-01T00:00:00.000",
     link: "/"
   },
   {
@@ -52,7 +52,7 @@ const blogs = [
     title: "10 TIPS FOR LIVE PERFORMANCES",
     text:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex.",
-    date: "May 15, 2019",
+    date: "2013-01-01T00:00:00.000",
     link: "/"
   },
   {
@@ -60,7 +60,7 @@ const blogs = [
     title: "CFMA MAY 12th MUSICIANS SOCIAL",
     text:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex.",
-    date: "May 15, 2019",
+    date: "2013-01-01T00:00:00.000",
     link: "/"
   }
 ];
@@ -206,8 +206,8 @@ export default () => (
       <H31LayoutRow>
         {reviews.map(review => (
           <>
-            <H31LayoutCol sm={1} md={0} />
-            <H31LayoutCol sm={10} md={4}>
+            <H31LayoutCol className="d-xs-block d-md-none" xs={1} md={0} />
+            <H31LayoutCol xs={10} md={4}>
               <H31Testimonials
                 key={review.name}
                 titleColor={_config.colorSecondary}
@@ -215,7 +215,7 @@ export default () => (
                 text={review.text}
               />
             </H31LayoutCol>
-            <H31LayoutCol sm={1} md={0} />
+            <H31LayoutCol className="d-xs-block d-md-none" xs={1} md={0} />
           </>
         ))}
       </H31LayoutRow>

@@ -22,10 +22,10 @@ export default styled.a`
     text-decoration: none;
   }
 
-  @media (max-width: 1370px) {
+  @media (max-width: 1369px) {
     font-size: 0.725rem;
   }
-  @media(max-width: 1100px) {
+  @media(max-width: 1099px) {
     font-size: 0.625rem;
     padding: 8px 6px;
   }

@@ -11,10 +11,10 @@ export default styled.h2`
   font-weight: 300;
   text-transform: uppercase;
 
-  @media (max-width: 992px) {
+  @media (max-width: 991px) {
     font-size: 2.25rem;
   }
-  @media (max-width: 576px) {
+  @media (max-width: 575px) {
     font-size: 1.5rem;
   }
 `;

@@ -267,7 +267,16 @@ export default class BlogCardLoader1 extends React.Component {
                   `}
                   md={3}
                 >
-                  <H31Button1 onClick={this.onClickLoadMore}>
+                  <H31Button1
+                    css={css`
+                      padding: 15px 20px;
+                      border: 1px solid ${_config.colorTertiary};
+                      &:hover {
+                        border-color: ${_config.colorTertiary};
+                      }
+                    `}
+                    onClick={this.onClickLoadMore}
+                  >
                     More Stories
                   </H31Button1>
                 </H31LayoutCol>

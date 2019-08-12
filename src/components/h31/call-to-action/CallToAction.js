@@ -22,7 +22,7 @@ export default () => (
       padding-top: 100px !important;
       padding-bottom: 100px !important;
       background-color: ${_config.colorPrimary};
-      @media (max-width: 576px) {
+      @media (max-width: 575px) {
         padding-top: 45px !important;
         padding-bottom: 45px !important;
       }
@@ -37,7 +37,7 @@ export default () => (
             css={css`
               margin-bottom: 30px;
               color: ${_config.colorWhite};
-              @media (max-width: 576px) {
+              @media (max-width: 575px) {
                 margin-bottom: 15px;
                 text-align: center;
               }
@@ -49,7 +49,7 @@ export default () => (
               css={css`
                 color: ${_config.colorSecondary};
                 font-size: inherit;
-                @media (max-width: 576px) {
+                @media (max-width: 575px) {
                   font-size: 3.825rem;
                 }
               `}
@@ -61,7 +61,7 @@ export default () => (
               css={css`
                 color: ${_config.colorTertiary};
                 font-size: inherit;
-                @media (max-width: 576px) {
+                @media (max-width: 575px) {
                   font-size: 3.825rem;
                 }
               `}
@@ -74,7 +74,7 @@ export default () => (
         <H31Text2
           css={css`
             margin-bottom: 30px;
-            @media (max-width: 576px) {
+            @media (max-width: 575px) {
               margin-left: auto;
               margin-right: auto;
               max-width: 275px;
@@ -90,14 +90,14 @@ export default () => (
           css={css`
             display: flex;
             justify-content: flex-end;
-            @media (max-width: 576px) {
+            @media (max-width: 575px) {
               justify-content: center;
             }
           `}
         >
           <H31Link5
             css={css`
-              @media (max-width: 576px) {
+              @media (max-width: 575px) {
                 font-size: 1.125rem;
                 padding: 15px 30px;
               }

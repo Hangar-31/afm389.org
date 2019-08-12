@@ -15,7 +15,7 @@ import {
 // Styled Components
 const TitleWrapper = styled.div`
   margin-bottom: 30px;
-  @media (max-width: 576px) {
+  @media (max-width: 575px) {
     margin-bottom: 15px;
   }
 `;
@@ -28,7 +28,7 @@ const ImageWrapper = styled.div`
   .gatsby-image-wrapper {
     width: 600px;
   }
-  @media (max-width: 576px) {
+  @media (max-width: 575px) {
     height: 180px;
     .gatsby-image-wrapper {
       height: 100%;
@@ -74,13 +74,13 @@ const ContentBlock = ({
             css={css`
               color: ${titleColor};
               text-align: ${textRight ? "center" : "left"};
-              @media (max-width: 992px) {
+              @media (max-width: 991px) {
                 font-size: 2rem;
               }
-              @media (max-width: 768px) {
+              @media (max-width: 767px) {
                 font-size: 1.25rem;
               }
-              @media (max-width: 576px) {
+              @media (max-width: 575px) {
                 font-size: 0.875rem;
               }
             `}
