@@ -10,7 +10,7 @@ import _config from "../../_config";
 export default styled(Container)`
   position: relative;
   padding: ${_config.padding / 2}px 0px !important;
-  @media (max-width: 576px) {
+  @media (max-width: 575px) {
     padding: 0px !important;
   }
 `;

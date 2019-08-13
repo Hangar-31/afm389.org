@@ -38,10 +38,10 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
       css={css`
         position: relative;
         padding: 90px 0 !important;
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
           padding: 30px 15px !important;
         }
-        @media (max-width: 576px) {
+        @media (max-width: 575px) {
           padding: 15px !important;
         }
       `}
@@ -54,7 +54,7 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
         css={css`
           padding: 30px 0 60px 0;
           background: rgba(0, 0, 0, 0.4);
-          @media (max-width: 576px) {
+          @media (max-width: 575px) {
             padding: 30px 0 0 0;
           }
         `}
@@ -146,7 +146,7 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
             justify-content: flex-end;
             align-items: center;
             height: 75px;
-            @media (max-width: 576px) {
+            @media (max-width: 575px) {
               justify-content: center;
             }
           `}
