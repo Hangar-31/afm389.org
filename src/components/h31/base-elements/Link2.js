@@ -13,6 +13,12 @@ export default styled(Link)`
     text-decoration: none;
     opacity: 0.7;
   }
+  @media (max-width: 1199px) {
+    font-size: 0.725rem;
+  }
+  @media (max-width: 991px) {
+    font-size: 0.675rem;
+  }
 
   ${baseConfig}
 `;

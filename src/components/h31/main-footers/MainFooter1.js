@@ -13,7 +13,8 @@ import {
   H31Title4C,
   H31Title2B,
   H31Form1,
-  H31Sitemap1
+  H31Link2,
+  H31Title4B
 } from "..";
 
 // Config
@@ -29,6 +30,30 @@ const BackgroundImage = styled.div`
   .gatsby-image-wrapper {
     width: 100%;
     height: 100%;
+  }
+`;
+
+const Wrapper = styled.nav`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 2fr;
+  grid-gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 0;
+`;
+
+const List = styled.ul`
+  grid-column: 1fr;
+  list-style: none;
+  padding: 0;
+`;
+
+const Item = styled.li`
+  margin-bottom: 15px;
+  line-height: 1.25;
+  @media (max-width: 1199px) {
+    line-height: 1;
+    font-size: 0.775rem;
   }
 `;
 
@@ -52,9 +77,11 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
 
       <H31LayoutRow
         css={css`
+          margin-bottom: 60px;
           padding: 30px 0 60px 0;
           background: rgba(0, 0, 0, 0.4);
-          @media (max-width: 575px) {
+          @media (max-width: 767px) {
+            margin-bottom: 0;
             padding: 30px 0 0 0;
           }
         `}
@@ -94,17 +121,33 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
         <H31LayoutCol className="d-xs-none d-md-block" md={1} lg={2} />
       </H31LayoutRow>
 
-      <H31LayoutRow>
-        <H31LayoutCol
-          className="d-none d-md-block"
-          md={12}
-          css={css`
-            position: relative;
-            padding: 60px 0 90px 0 !important;
-          `}
-        >
-          <H31Sitemap1 />
+      <H31LayoutRow
+        css={css`
+          border-top: 1px solid #ffffff;
+          border-bottom: 1px solid #ffffff;
+          @media (max-width: 767px) {
+            display: none !important;
+          }
+        `}
+      >
+        <H31LayoutCol className="d-none d-lg-block" xl={1} />
+        <H31LayoutCol xs={12} xl={10}>
+          <Wrapper>
+            {_config.sitemapNav.map(item => (
+              <List key={item.title}>
+                <Item>
+                  <H31Title4B>{item.title}</H31Title4B>
+                </Item>
+                {item.links.map(link => (
+                  <Item key={link.name}>
+                    <H31Link2 to={link.to}>{link.name}</H31Link2>
+                  </Item>
+                ))}
+              </List>
+            ))}
+          </Wrapper>
         </H31LayoutCol>
+        <H31LayoutCol className="d-none d-lg-block" xl={1} />
       </H31LayoutRow>
     </H31LayoutContainer>
 

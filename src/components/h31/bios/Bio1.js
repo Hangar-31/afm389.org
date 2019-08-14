@@ -5,9 +5,6 @@ import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
 import MediaQuery from "react-responsive";
 
-// Images
-import ImgBioMikeAvila from "../../images/bios/ImgBioMikeAvila";
-
 // Components
 import {
   H31Button1,
@@ -39,7 +36,7 @@ export default class Bio1 extends React.Component {
   }
 
   render() {
-    const { name, title, bios } = this.props;
+    const { name, title, image, bios } = this.props;
     return (
       <H31LayoutContainer
         fluid
@@ -51,7 +48,7 @@ export default class Bio1 extends React.Component {
         <H31LayoutRow>
           <H31LayoutCol xs={1} sm={1} />
           <H31LayoutCol xs={3} sm={2}>
-            <ImgBioMikeAvila />
+            {image}
           </H31LayoutCol>
           <H31LayoutCol xs={7} sm={8}>
             <H31Title2B
@@ -175,6 +172,7 @@ export default class Bio1 extends React.Component {
 Bio1.defaultProps = {
   name: "John Doe",
   title: "President",
+  image: <img alt="" src="https://via.placeholder.com/500" />,
   bios: [
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed leo id orci tincidunt blandit vel ut eros. Nunc iaculis eleifend nisi, sit amet sagittis ex tempus a. Morbi efficitur tortor at leo iaculis malesuada. Sed vehicula, nunc eget hendrerit venenatis, metus eros sollicitudin purus, vitae interdum felis diam eu erat. Suspendisse congue diam risus, ut aliquet erat volutpat sit amet. Suspendisse at dignissim ex. Aenean mollis, elit non pretium efficitur, arcu magna porta leo, ac porta massa enim ac nunc. Integer a ligula pellentesque lectus auctor ultrices.",
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed leo id orci tincidunt blandit vel ut eros. Nunc iaculis eleifend nisi, sit amet sagittis ex tempus a. Morbi efficitur tortor at leo iaculis malesuada. Sed vehicula, nunc eget hendrerit venenatis, metus eros sollicitudin purus, vitae interdum felis diam eu erat. Suspendisse congue diam risus, ut aliquet erat volutpat sit amet. Suspendisse at dignissim ex. Aenean mollis, elit non pretium efficitur, arcu magna porta leo, ac porta massa enim ac nunc. Integer a ligula pellentesque lectus auctor ultrices."
@@ -184,5 +182,6 @@ Bio1.defaultProps = {
 Bio1.propTypes = {
   name: PropTypes.string,
   title: PropTypes.string,
+  image: PropTypes.element,
   bios: PropTypes.arrayOf(PropTypes.string)
 };
