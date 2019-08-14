@@ -59,10 +59,11 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
           }
         `}
       >
-        <H31LayoutCol md={2} />
-
+        <H31LayoutCol className="d-none d-xs-none d-lg-block" xs={1} lg={2} />
         <H31LayoutCol
-          md={8}
+          className=""
+          xs={10}
+          lg={8}
           css={css`
             margin-bottom: 30px;
           `}
@@ -76,13 +77,21 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
             Get In Touch
           </H31Title2B>
         </H31LayoutCol>
+        <H31LayoutCol className="d-none d-xs-none d-lg-block" xs={1} lg={2} />
 
-        <H31LayoutCol md={2} />
-        <H31LayoutCol md={2} />
-        <H31LayoutCol md={8}>
+        <H31LayoutCol className="d-xs-none d-md-block" md={1} lg={2} />
+        <H31LayoutCol
+          css={css`
+            @media (max-width: 767px) {
+              padding: 0 !important;
+            }
+          `}
+          xs={12}
+          lg={8}
+        >
           <H31Form1 />
         </H31LayoutCol>
-        <H31LayoutCol md={2} />
+        <H31LayoutCol className="d-xs-none d-md-block" md={1} lg={2} />
       </H31LayoutRow>
 
       <H31LayoutRow>

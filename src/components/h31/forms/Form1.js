@@ -60,55 +60,79 @@ const formData = [
       "Questions About Benefits",
       "Others"
     ],
-    size: 12,
+    sizeXs: 12,
+    sizeSm: 12,
+    sizeMd: 12,
+    sizeLg: 12,
     required: true
   },
   {
     type: "text",
     name: "FirstName",
     text: "First Name",
-    size: 6,
+    sizeXs: 6,
+    sizeSm: 6,
+    sizeMd: 6,
+    sizeLg: 6,
     required: true
   },
   {
     type: "text",
     name: "LastName",
     text: "Last Name",
-    size: 6,
+    sizeXs: 6,
+    sizeSm: 6,
+    sizeMd: 6,
+    sizeLg: 6,
     required: true
   },
   {
     type: "text",
     name: "Email",
     text: "Email Address",
-    size: 12,
+    sizeXs: 12,
+    sizeSm: 12,
+    sizeMd: 12,
+    sizeLg: 12,
     required: true
   },
   {
     type: "text",
     name: "City",
     text: "City",
-    size: 10,
+    sizeXs: 8,
+    sizeSm: 9,
+    sizeMd: 9,
+    sizeLg: 9,
     required: true
   },
   {
     type: "text",
     name: "State",
     text: "State",
-    size: 2,
+    sizeXs: 4,
+    sizeSm: 3,
+    sizeMd: 3,
+    sizeLg: 3,
     required: true
   },
   {
     type: "textbox",
     name: "Message",
     text: "Message",
-    size: 12,
+    sizeXs: 12,
+    sizeSm: 12,
+    sizeMd: 12,
+    sizeLg: 12,
     required: true
   },
   {
     type: "button",
     text: "SEND",
-    size: 12
+    sizeXs: 12,
+    sizeSm: 12,
+    sizeMd: 12,
+    sizeLg: 12
   }
 ];
 
@@ -177,11 +201,17 @@ export default class Form1 extends React.Component {
         case "text":
           this.formLeft.push(
             <H31LayoutCol
+              xs={data.sizeXs}
+              sm={data.sizeSm}
+              md={data.sizeMd}
+              lg={data.sizeLg}
               css={css`
                 padding-left: 0 !important;
                 margin-bottom: 25px;
+                @media (max-width: 767px) {
+                  padding-left: 15px !important;
+                }
               `}
-              md={data.size}
             >
               <H31Label1 key={data.name} htmlFor={data.name}>
                 {data.required && Required}
@@ -200,11 +230,17 @@ export default class Form1 extends React.Component {
         case "select":
           this.formLeft.push(
             <H31LayoutCol
+              xs={data.sizeXs}
+              sm={data.sizeSm}
+              md={data.size}
+              lgmd={data.siLg}
               css={css`
                 padding-left: 0 !important;
                 margin-bottom: 25px;
+                @media (max-width: 767px) {
+                  padding-left: 15px !important;
+                }
               `}
-              md={data.size}
             >
               <H31Label1 key={data.name} htmlFor={data.name}>
                 {data.required && Required}
@@ -236,13 +272,20 @@ export default class Form1 extends React.Component {
         case "textbox":
           this.formRight.push(
             <H31LayoutCol
+              xs={data.sizeXs}
+              sm={data.sizeSm}
+              md={data.sizeMd}
+              lg={data.sizeLg}
               css={css`
                 height: calc(100% - 76px);
                 padding-right: 0 !important;
                 margin-bottom: 25px;
                 flex: none !important;
+                @media (max-width: 767px) {
+                  padding-right: 15px !important;
+                  height: 150px;
+                }
               `}
-              md={data.size}
               key={data.name}
             >
               <H31Textarea1
@@ -259,12 +302,18 @@ export default class Form1 extends React.Component {
         case "button":
           this.formRight.push(
             <H31LayoutCol
+              xs={data.sizeXs}
+              sm={data.sizeSm}
+              md={data.sizeMd}
+              lg={data.sizeLg}
               css={css`
                 height: 26px;
                 padding-right: 0 !important;
                 flex: none !important;
+                @media (max-width: 767px) {
+                  padding-right: 15px !important;
+                }
               `}
-              md={data.size}
             >
               <H31ButtonBrightSubmit
                 key={data.type}
@@ -354,8 +403,8 @@ export default class Form1 extends React.Component {
             <H31LayoutRow>
               <ul
                 css={css`
-                  padding: 0;
                   color: red;
+                  margin-bottom: 30px;
                 `}
               >
                 {this.state.errors.map(error => (
@@ -369,7 +418,13 @@ export default class Form1 extends React.Component {
             </H31LayoutRow>
           )}
 
-          <H31LayoutRow>
+          <H31LayoutRow
+            css={css`
+              @media (max-width: 767px) {
+                padding-bottom: 30px;
+              }
+            `}
+          >
             <H31LayoutCol
               css={css`
                 padding-left: 0 !important;
@@ -377,7 +432,14 @@ export default class Form1 extends React.Component {
               `}
               md={6}
             >
-              <H31LayoutContainer fluid>
+              <H31LayoutContainer
+                css={css`
+                  @media (max-width: 767px) {
+                    padding: 0 !important;
+                  }
+                `}
+                fluid
+              >
                 <H31LayoutRow>{this.formLeft}</H31LayoutRow>
               </H31LayoutContainer>
             </H31LayoutCol>
@@ -391,6 +453,9 @@ export default class Form1 extends React.Component {
               <H31LayoutContainer
                 css={css`
                   height: 100%;
+                  @media (max-width: 767px) {
+                    padding: 0 !important;
+                  }
                 `}
                 fluid
               >
