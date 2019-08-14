@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-wrap-multilines */
 import React from "react";
+import MediaQuery from "react-responsive";
 import { css } from "@emotion/core";
 
 // Config
@@ -94,7 +95,7 @@ const contentBlocks = [
   }
 ];
 
-const reviews = [
+const testimonials = [
   {
     name: "Terrance Armstrong",
     text:
@@ -142,19 +143,38 @@ export default () => (
         `}
       />
       <H31LayoutRow>
-        {blogs.map(blog => (
-          <H31LayoutCol md={3}>
-            <H31BlogCard1
-              overlayColor="rgba(243, 149, 8, 0.84)"
-              ImageComponent={blog.image}
-              title={blog.title}
-              text={blog.text}
-              link={blog.link}
-              linkText="Read More"
-              date={blog.date}
-            />
-          </H31LayoutCol>
-        ))}
+        {/* <H31LayoutCol className="d-lg-block d-xl-none" xs={1} /> */}
+        <MediaQuery query="(min-width: 1200px)">
+          {blogs.map(blog => (
+            <H31LayoutCol xl={3}>
+              <H31BlogCard1
+                overlayColor="rgba(243, 149, 8, 0.84)"
+                ImageComponent={blog.image}
+                title={blog.title}
+                text={blog.text}
+                link={blog.link}
+                linkText="Read More"
+                date={blog.date}
+              />
+            </H31LayoutCol>
+          ))}
+        </MediaQuery>
+        <MediaQuery query="(max-width: 1199px)">
+          {blogs.slice(0, 3).map(blog => (
+            <H31LayoutCol xs={4}>
+              <H31BlogCard1
+                overlayColor="rgba(243, 149, 8, 0.84)"
+                ImageComponent={blog.image}
+                title={blog.title}
+                text={blog.text}
+                link={blog.link}
+                linkText="Read More"
+                date={blog.date}
+              />
+            </H31LayoutCol>
+          ))}
+        </MediaQuery>
+        {/* <H31LayoutCol className="d-lg-block d-xl-none" xs={1} /> */}
       </H31LayoutRow>
     </H31LayoutContainer>
 
@@ -213,23 +233,6 @@ export default () => (
       titleSmall="Testimonials"
     />
 
-    <H31LayoutContainer fluid as="section">
-      <H31LayoutRow>
-        {reviews.map(review => (
-          <>
-            <H31LayoutCol className="d-xs-block d-lg-none" xs={1} lg={0} />
-            <H31LayoutCol xs={10} lg={4}>
-              <H31Testimonials
-                key={review.name}
-                titleColor={_config.colorSecondary}
-                title={review.name}
-                text={review.text}
-              />
-            </H31LayoutCol>
-            <H31LayoutCol className="d-xs-block d-lg-none" xs={1} lg={0} />
-          </>
-        ))}
-      </H31LayoutRow>
-    </H31LayoutContainer>
+    <H31Testimonials testimonials={testimonials} />
   </Layout>
 );
