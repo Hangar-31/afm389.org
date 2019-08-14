@@ -167,7 +167,7 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
       <H31LayoutRow>
         <H31LayoutCol
           className="d-none d-xs-none d-sm-block"
-          sm={6}
+          sm={8}
           css={css`
             position: relative;
             display: flex;
@@ -192,7 +192,7 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
 
         <H31LayoutCol
           xs={12}
-          sm={6}
+          sm={4}
           css={css`
             display: flex;
             justify-content: flex-end;

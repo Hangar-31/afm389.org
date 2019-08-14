@@ -107,6 +107,16 @@ const testimonials = [
       "I had a problem with an individual at work. When I approached management, the Union was beside me all the way and supported me through a difficult time. Thank you!"
   },
   {
+    name: "Noel MacFarland",
+    text:
+      "I had a problem with an individual at work. When I approached management, the Union was beside me all the way and supported me through a difficult time. Thank you!"
+  },
+  {
+    name: "Noel MacFarland",
+    text:
+      "I had a problem with an individual at work. When I approached management, the Union was beside me all the way and supported me through a difficult time. Thank you!"
+  },
+  {
     name: "David Copperfield",
     text:
       "I had a problem with an individual at work. When I approached management, the Union was beside me all the way and supported me through a difficult time. Thank you!"
