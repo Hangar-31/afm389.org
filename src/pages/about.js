@@ -169,9 +169,9 @@ export default () => (
       `}
     >
       <H31LayoutRow>
-        <H31LayoutCol xs={1} md={3} />
-        <H31LayoutCol xs={10} md={6}>
-          <MediaQuery query="(min-width: 576px)">
+        <H31LayoutCol xs={1} md={2} xl={3} />
+        <H31LayoutCol xs={10} md={8} xl={6}>
+          <MediaQuery query="(min-width: 575px)">
             <H31ContentBlock2 title="We Work For Musicians">
               {data}
             </H31ContentBlock2>
@@ -180,7 +180,7 @@ export default () => (
             <H31ContentBlock2>{data}</H31ContentBlock2>
           </MediaQuery>
         </H31LayoutCol>
-        <H31LayoutCol xs={1} md={3} />
+        <H31LayoutCol xs={1} md={2} xl={3} />
       </H31LayoutRow>
     </H31LayoutContainer>
 

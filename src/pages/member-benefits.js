@@ -169,7 +169,7 @@ export default () => (
 
     <H31LayoutContainer
       css={css`
-        height: 330px;
+        height: 340px;
         margin-bottom: 30px;
         background: linear-gradient(
           90deg,
@@ -177,7 +177,7 @@ export default () => (
           #164f4b calc(100% - 30px)
         );
         @media(max-width: 991px) {
-          height: 1090px;
+          height: 1100px;
         }
         @media(max-width: 575px) {
           padding-top: 30px !important;
@@ -226,7 +226,13 @@ export default () => (
       <H31LayoutRow>
         <H31LayoutCol xs={1} sm={2} md={3} />
         <H31LayoutCol xs={10} sm={8} md={6}>
-          <H31Text3>
+          <H31Text3
+            css={css`
+              @media(max-width: 767px) {
+                font-size: 1rem;
+              }
+            `}
+          >
               A collective bargaining agreement enables you to have a voice in every area of your employment. This includes your wages and all of your working conditions (from break times to health benefits).
           </H31Text3>
         </H31LayoutCol>

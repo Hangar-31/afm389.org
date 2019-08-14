@@ -12,12 +12,12 @@ export default styled.p`
   line-height: 1.5;
 
   @media (max-width: 991px) {
-    font-size: 0.875rem;
+    font-size: 1rem;
   }
   @media (max-width: 767px) {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
   }
   @media (max-width: 575px) {
-    font-size: 0.625;
+    font-size: 0.775rem;
   }
 `;

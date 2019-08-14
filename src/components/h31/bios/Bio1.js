@@ -80,12 +80,12 @@ export default class Bio1 extends React.Component {
                     max-height: ${this.state.visible
                       ? `${this.bioContainer.scrollHeight}px`
                       : "90px"};
-                    @media (max-width: 768px) {
+                    @media (max-width: 767px) {
                       max-height: ${this.state.visible
                         ? `${this.bioContainer.scrollHeight}px`
                         : "65px"};
                     }
-                    @media (max-width: 768px) {
+                    @media (max-width: 575px) {
                       max-height: ${this.state.visible
                         ? `${this.bioContainer.scrollHeight}px`
                         : "74px"};

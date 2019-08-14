@@ -46,6 +46,9 @@ export default () => (
       as="section"
       css={css`
         margin: 45px 0;
+        @media (max-width: 767px) {
+          margin: 0 0 30px 0;
+        }
       `}
     >
       <H31LayoutRow>
