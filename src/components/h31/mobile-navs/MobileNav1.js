@@ -2,7 +2,14 @@ import React, { Component } from "react";
 // import PropTypes from "prop-types";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
-import { H31LayoutContainer, H31LayoutCol, H31Link1, H31LayoutRow } from "..";
+import {
+  H31LayoutContainer,
+  H31LayoutCol,
+  H31Link1,
+  H31LayoutRow,
+  H31Link6,
+  H31SocialIcons
+} from "..";
 import _config from "../../_config";
 
 const Overlay = styled.div`
@@ -114,7 +121,65 @@ export default class MobileNav1 extends Component {
                 &times;
               </button>
             </H31LayoutCol>
+
             {_config.mainNav.map(link => (
+              <H31LayoutCol
+                css={css`
+                  text-align: center;
+                  margin-bottom: 30px;
+                `}
+                xs={12}
+              >
+                <H31Link1 to={link.to}>{link.name}</H31Link1>
+              </H31LayoutCol>
+            ))}
+
+            <H31LayoutCol
+              css={css`
+                text-align: center;
+                margin-bottom: 30px;
+              `}
+              xs={12}
+            >
+              <H31Link6
+                css={css`
+                  @media (max-width: 991px) {
+                    font-size: 0.875rem;
+                    padding: 10px 20px;
+                  }
+                  @media (max-width: 767px) {
+                    font-size: 0.75rem;
+                    padding: 10px 20px;
+                  }
+                  @media (max-width: 575px) {
+                    font-size: 0.675rem;
+                    padding: 10px 20px;
+                  }
+                `}
+                href="https://afmquartet.org/wp-content/plugins/afmorg/loginform.php?client_token=898909860"
+              >
+                Member Log In
+              </H31Link6>
+            </H31LayoutCol>
+
+            {_config.socials.map(social => (
+              <H31LayoutCol
+                css={css`
+                  text-align: center;
+                  margin-bottom: 30px;
+                `}
+                xs={12}
+              >
+                <H31SocialIcons
+                  color={_config.colorWhite}
+                  social={social.social}
+                  link={social.link}
+                  colorHover={_config.colorTertiary}
+                />
+              </H31LayoutCol>
+            ))}
+
+            {_config.footerNav.map(link => (
               <H31LayoutCol
                 css={css`
                   text-align: center;

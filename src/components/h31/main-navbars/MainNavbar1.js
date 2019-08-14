@@ -6,7 +6,6 @@ import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import MediaQuery from 'react-responsive';
 
-
 // Config
 import _config from "../../_config";
 
@@ -54,7 +53,7 @@ const WrapperLogo = styled(Link)`
   }
 `;
 
-const MainNavbarSplitActions = ({
+const MainNavbar1 = ({
   topBarColor,
   bottomBarColor
 }) => (
@@ -237,7 +236,7 @@ const MainNavbarSplitActions = ({
                 link={social.link}
                 colorHover={_config.colorTertiary}
               />
-          ))}
+            ))}
 
             <H31Link6 
               css={css`
@@ -248,7 +247,7 @@ const MainNavbarSplitActions = ({
             `} 
               href="https://afmquartet.org/wp-content/plugins/afmorg/loginform.php?client_token=898909860"
             >
-            Member Log In
+              Member Log In
 
             </H31Link6>
           </H31LayoutCol>
@@ -386,14 +385,14 @@ const MainNavbarSplitActions = ({
   </>
 );
 
-MainNavbarSplitActions.defaultProps = {
+MainNavbar1.defaultProps = {
   topBarColor: "#999999",
   bottomBarColor: "#BBBBBB",
 };
 
-MainNavbarSplitActions.propTypes = {
+MainNavbar1.propTypes = {
   topBarColor: PropTypes.string,
   bottomBarColor: PropTypes.string,
 };
 
-export default MainNavbarSplitActions;
+export default MainNavbar1;

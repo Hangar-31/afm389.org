@@ -158,11 +158,22 @@ export default () => (
       </H31LayoutRow>
     </H31LayoutContainer>
 
-    <H31LayoutContainer fluid as="section">
+    <H31LayoutContainer
+      css={css`
+        @media (max-width: 575px) {
+          display: none;
+        }
+      `}
+      fluid
+      as="section"
+    >
       <H31LayoutRow>
         <H31LayoutCol
           css={css`
             text-align: right;
+            @media (max-width: 575px) {
+              margin-top: 30px;
+            }
           `}
           md={12}
         >
@@ -202,12 +213,12 @@ export default () => (
       titleSmall="Testimonials"
     />
 
-    <H31LayoutContainer>
+    <H31LayoutContainer fluid as="section">
       <H31LayoutRow>
         {reviews.map(review => (
           <>
-            <H31LayoutCol className="d-xs-block d-md-none" xs={1} md={0} />
-            <H31LayoutCol xs={10} md={4}>
+            <H31LayoutCol className="d-xs-block d-lg-none" xs={1} lg={0} />
+            <H31LayoutCol xs={10} lg={4}>
               <H31Testimonials
                 key={review.name}
                 titleColor={_config.colorSecondary}
@@ -215,7 +226,7 @@ export default () => (
                 text={review.text}
               />
             </H31LayoutCol>
-            <H31LayoutCol className="d-xs-block d-md-none" xs={1} md={0} />
+            <H31LayoutCol className="d-xs-block d-lg-none" xs={1} lg={0} />
           </>
         ))}
       </H31LayoutRow>

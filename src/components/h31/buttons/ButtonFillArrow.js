@@ -36,10 +36,13 @@ const Link = styled(gLink)`
   color: ${_config.colorTertiary};
   font-weight: 500;
   transition: 0.2s;
-  border-radius: 2px;
   border-radius: 3px;
   &:hover {
     text-decoration: none;
+  }
+  @media (max-width: 767px) {
+    padding: 15px 20px;
+    font-size: 0.675rem;
   }
 `;
 
