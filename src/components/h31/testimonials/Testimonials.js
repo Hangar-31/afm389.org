@@ -17,7 +17,7 @@ const Container = styled.section`
   display: flex;
 
   max-width: 1440px;
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
 
   -webkit-overflow-scrolling: touch;
 
@@ -190,7 +190,7 @@ class Testimonials extends React.Component {
           ))}
         </Container>
 
-        {this.testimonialComponents.length + 1 > amount && (
+        {this.testimonialComponents.length > amount && (
           <ListButtons>
             {this.testimonialComponents
               .splice(0, this.testimonialComponents.length - amount + 1)
