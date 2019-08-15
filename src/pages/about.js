@@ -151,7 +151,6 @@ export default () => (
     <H31Masthead1
       ImageComponent={<ImgMastheadAbout />}
       title="From The Team At CFMA"
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id rhoncus ligula. Quisque commodo, eros auctor elementum aliquam, urna turpis dapibus dolor, non feugiat tortor lectus."
     />
 
     <H31SectionTitleFullWidth

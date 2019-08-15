@@ -80,7 +80,6 @@ export default () => (
     <H31Masthead1
       ImageComponent={<ImgMastheadBoardOfDirectors />}
       title="Your Path to a Musical Career"
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id rhoncus ligula. Quisque commodo, eros auctor elementum aliquam, urna turpis dapibus dolor, non feugiat tortor lectus."
     />
 
     <H31SectionTitleFullWidth

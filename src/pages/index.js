@@ -119,7 +119,7 @@ export default () => (
     <H31Masthead1
       ImageComponent={<ImgMastheadHome />}
       title="Your Path to a Musical Career"
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id rhoncus ligula. Quisque commodo, eros auctor elementum aliquam, urna turpis dapibus dolor, non feugiat tortor lectus."
+      text="Welcome to the Central Florida Musicians’ Association! For almost a century, we have been serving the interests of musicians in Central Florida. Whether you’re interested in the benefits of union membership or simply in joining the largest association of professional musicians in the country, we’re here for you!"
     />
 
     <H31SectionTitleFullWidth

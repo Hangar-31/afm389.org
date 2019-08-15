@@ -28,7 +28,6 @@ export default () => (
     <H31Masthead1
       ImageComponent={<ImgMastheadContact />}
       title="Get in Touch"
-      text=""
     />
 
     <H31SectionTitleFullWidth
