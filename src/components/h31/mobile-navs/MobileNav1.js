@@ -1,7 +1,11 @@
+/* eslint-disable no-undef */
 import React, { Component } from "react";
 // import PropTypes from "prop-types";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
+
+// Components
 import {
   H31LayoutContainer,
   H31LayoutCol,
@@ -12,11 +16,15 @@ import {
 } from "..";
 import _config from "../../_config";
 
+// Styled Components
 const Overlay = styled.div`
   z-index: -1;
   position: fixed;
+  display: block;
   width: 100vw;
   height: 100vh;
+  top: 0;
+  left: 0;
   transition: 0.4s;
 `;
 
@@ -37,6 +45,13 @@ export default class MobileNav1 extends Component {
 
   render() {
     const { visible } = this.state;
+    if (typeof window !== "undefined") {
+      if (visible) {
+        disableBodyScroll(document.querySelector("body"));
+      } else {
+        enableBodyScroll(document.querySelector("body"));
+      }
+    }
 
     return (
       <>
@@ -44,6 +59,9 @@ export default class MobileNav1 extends Component {
           css={css`
             padding: 0;
             margin: 0;
+            border: none;
+            background: none;
+            -webkit-appearance: none;
           `}
           type="button"
           onClick={this.onClickToggleMenu}
@@ -105,7 +123,7 @@ export default class MobileNav1 extends Component {
           <H31LayoutRow>
             <H31LayoutCol
               css={css`
-                margin-bottom: 30px;
+                margin-bottom: 20px;
               `}
               xs={12}
             >
@@ -116,6 +134,9 @@ export default class MobileNav1 extends Component {
                 css={css`
                   font-size: 2rem;
                   color: ${_config.colorWhite};
+                  background: none;
+                  border: none;
+                  -webkit-appearance: none;
                 `}
               >
                 &times;
@@ -126,7 +147,7 @@ export default class MobileNav1 extends Component {
               <H31LayoutCol
                 css={css`
                   text-align: center;
-                  margin-bottom: 30px;
+                  margin-bottom: 20px;
                 `}
                 xs={12}
               >
@@ -137,7 +158,7 @@ export default class MobileNav1 extends Component {
             <H31LayoutCol
               css={css`
                 text-align: center;
-                margin-bottom: 30px;
+                margin-bottom: 20px;
               `}
               xs={12}
             >
@@ -166,7 +187,7 @@ export default class MobileNav1 extends Component {
               <H31LayoutCol
                 css={css`
                   text-align: center;
-                  margin-bottom: 30px;
+                  margin-bottom: 20px;
                 `}
                 xs={12}
               >

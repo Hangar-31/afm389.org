@@ -24,6 +24,8 @@ export default styled.a`
     text-decoration: none;
   }
 
+  -webkit-appearance: none;
+
   @media (max-width: 1369px) {
     font-size: 0.725rem;
   }

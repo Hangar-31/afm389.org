@@ -56,7 +56,7 @@ const ContentBlock = ({
   >
     <H31LayoutRow>
       <H31LayoutCol
-        xs={textRight ? { span: 1, order: 2 } : 1}
+        xs={textRight ? { span: 1, order: 1 } : 1}
         lg={textRight ? { span: 1, order: 2 } : { span: 1, order: 1 }}
       />
 
