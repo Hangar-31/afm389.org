@@ -8,33 +8,43 @@ import { H31Title3A, H31Text4 } from "..";
 import _config from "../../_config";
 
 const Container = styled.section`
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-coordinate: 0 0;
+  scroll-snap-points-x: repeat(100%);
+  scroll-snap-type: x mandatory;
+  flex: 1;
+  display: flex;
+
   max-width: 1440px;
   margin: 0 auto;
 
-  width: 100%;
-  overflow-x: scroll;
-  white-space: nowrap;
-  margin-bottom: 60px;
-  scroll-behavior: smooth;
-
-  transition: 1s;
-
   -webkit-overflow-scrolling: touch;
+
   &::-webkit-scrollbar {
     width: 0 !important;
   }
-  & {
-    overflow: -moz-scrollbars-none;
-    -ms-overflow-style: none;
-  }
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
 `;
 
-const ContainerInner = styled.section`
+const ContainerOuter = styled.section`
   display: inline-block;
+  padding: 0 15px;
+  flex: 0 0 33.33%;
+  scroll-snap-align: start;
+
+  @media (max-width: 1199px) {
+    flex: 0 0 50%;
+  }
+  @media (max-width: 767px) {
+    padding: 0 calc(8.333% + 15px);
+    flex: 0 0 100%;
+  }
+`;
+const ContainerInner = styled.section`
   border-top: 1px solid #d3d3d3;
   border-bottom: 1px solid #d3d3d3;
-  margin: 0 15px;
-  white-space: normal;
 `;
 
 const Wrapper = styled.section`
@@ -68,7 +78,7 @@ const ListButtons = styled.ul`
   justify-content: center;
   flex-wrap: nowrap;
   padding: 0;
-  margin-bottom: 60px;
+  margin: 30px 0;
 `;
 
 const ItemButton = styled.li`
@@ -80,6 +90,7 @@ const Button = styled.div`
   width: 5px;
   border-radius: 50%;
   height: 5px;
+  cursor: pointer;
   background-color: ${_config.colorDarkGrey};
 `;
 
@@ -102,48 +113,15 @@ class Testimonials extends React.Component {
   }
 
   componentDidMount() {
-    this.slideContainer.addEventListener("scroll", e => {
-      e.preventDefault();
-    });
-    this.slideContainer.addEventListener("DOMMouseScroll", e => {
-      e.preventDefault();
-    });
-    // this.slideContainer.addEventListener("wheel", e => {
-    //   e.preventDefault();
-    // });
-    this.slideContainer.addEventListener("touchmove", e => {
-      e.preventDefault();
-    });
-
     // Mouse Events
-    this.slideContainer.addEventListener("mousedown", e => {
-      this.x = e.clientX;
-    });
-    this.slideContainer.addEventListener("mouseup", e => {
-      const { slide, amount } = this.state;
-      if (
-        e.clientX > this.x &&
-        slide < this.testimonialComponents.length - amount
-      ) {
-        this.setState({ slide: slide + 1 });
-      } else if (e.clientX < this.x && slide > 0) {
-        this.setState({ slide: slide - 1 });
-      }
-    });
+    this.slideContainer.addEventListener("scroll", e => {
+      const { slide } = this.state;
+      // eslint-disable-next-line prettier/prettier
+      const lengths = (e.srcElement.scrollWidth / this.testimonialComponents.length);
 
-    // Touch Events
-    this.slideContainer.addEventListener("touchstart", e => {
-      this.x = e.touches[0].clientX;
-    });
-    this.slideContainer.addEventListener("touchend", e => {
-      const { slide, amount } = this.state;
-      if (
-        e.changedTouches[0].clientX > this.x &&
-        slide < this.testimonialComponents.length - amount
-      ) {
-        this.setState({ slide: slide + 1 });
-      } else if (e.changedTouches[0].clientX < this.x && slide > 0) {
-        this.setState({ slide: slide - 1 });
+      const x = Math.round(e.srcElement.scrollLeft / lengths);
+      if (x !== slide) {
+        this.setState({ slide: x });
       }
     });
 
@@ -177,11 +155,6 @@ class Testimonials extends React.Component {
     const { slide, amount } = this.state;
     const { testimonials } = this.props;
 
-    this.slideContainer.scrollLeft =
-      (this.slideContainer.scrollWidth / this.testimonialComponents.length -
-        1) *
-      slide;
-
     return (
       <>
         <Container
@@ -190,35 +163,30 @@ class Testimonials extends React.Component {
           }}
         >
           {testimonials.map((testimonial, i) => (
-            <ContainerInner
+            <ContainerOuter
               ref={ref => {
                 this.testimonialComponents[i] = ref;
               }}
-              css={css`
-                width: calc(100% / ${amount} - 30px);
-                @media (max-width: 767px) {
-                  margin: 0 calc(8.33% + 15px);
-                  width: calc(100% / ${amount} - 16.67% - 30px);
-                }
-              `}
             >
-              <Wrapper>
-                <TitleContainer
-                  css={css`
-                    background-color: ${_config.colorSecondary};
-                  `}
-                >
-                  <H31Title3A>{testimonial.name}</H31Title3A>
-                </TitleContainer>
-                <ParagraphContainer
-                  css={css`
-                    color: ${_config.colorDarkGrey};
-                  `}
-                >
-                  <H31Text4>{testimonial.text}</H31Text4>
-                </ParagraphContainer>
-              </Wrapper>
-            </ContainerInner>
+              <ContainerInner>
+                <Wrapper>
+                  <TitleContainer
+                    css={css`
+                      background-color: ${_config.colorSecondary};
+                    `}
+                  >
+                    <H31Title3A>{testimonial.name}</H31Title3A>
+                  </TitleContainer>
+                  <ParagraphContainer
+                    css={css`
+                      color: ${_config.colorDarkGrey};
+                    `}
+                  >
+                    <H31Text4>{testimonial.text}</H31Text4>
+                  </ParagraphContainer>
+                </Wrapper>
+              </ContainerInner>
+            </ContainerOuter>
           ))}
         </Container>
 
@@ -230,6 +198,7 @@ class Testimonials extends React.Component {
                 <ItemButton>
                   <Button
                     onClick={() => {
+                      this.slideContainer.scrollLeft = c.scrollWidth * i;
                       this.setState({ slide: i });
                     }}
                     css={css`
