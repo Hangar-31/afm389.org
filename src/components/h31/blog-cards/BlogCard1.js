@@ -102,25 +102,17 @@ const Container = styled(Link)`
   }
 `;
 
-const BlogCard1 = ({
-  overlayColor,
-  ImageComponent,
-  title,
-  text,
-  link,
-  linkText,
-  date
-}) => (
+const BlogCard1 = ({ article }) => (
   <Container
     css={css`
-      height: ${date ? "420px" : "350px"};
+      height: ${article.date ? "420px" : "350px"};
       &:hover {
         ${Overlay} {
-          background-color: ${overlayColor};
+          background-color: rgba(243, 149, 8, 0.84);
         }
       }
     `}
-    to={link}
+    to={article.link}
   >
     <Overlay>
       <Group>
@@ -131,65 +123,58 @@ const BlogCard1 = ({
               text-decoration: none;
             `}
           >
-            {title}
+            {article.title}
           </H31Title3B>
         </OverlayTitle>
         <OverlayClick>
-          <H31Title4A>{linkText}</H31Title4A>
+          <H31Title4A>{article.linkText}</H31Title4A>
         </OverlayClick>
       </Group>
     </Overlay>
 
-    <ImageContainer>{ImageComponent}</ImageContainer>
+    <ImageContainer>{article.image}</ImageContainer>
 
     <ContentContainer
       css={css`
-        height: ${date ? "163px" : "100%"};
-        padding: ${date ? "15px 30px 0 30px;" : "15px 30px;"};
+        height: ${article.date ? "163px" : "100%"};
+        padding: ${article.date ? "15px 30px 0 30px;" : "15px 30px;"};
       `}
     >
       <ContentGroup>
         <TitleContainer>
-          <H31Title3B>{title}</H31Title3B>
+          <H31Title3B>{article.title}</H31Title3B>
         </TitleContainer>
-        <H31Text3>{text}</H31Text3>
+        <H31Text3>{article.text}</H31Text3>
       </ContentGroup>
     </ContentContainer>
-    {date && (
+    {article.date && (
       <DateContainer>
-        <H31SimpleTime date={date} />
+        <H31SimpleTime date={article.date} />
       </DateContainer>
     )}
   </Container>
 );
 
 BlogCard1.defaultProps = {
-  // handleClick: () => console.log("BlogCard1"),
-  overlayColor: "#595959",
-  ImageComponent: <img alt="" src="https://placeimg.com/1000/1000/any" />,
-  title: <h3>Title 3</h3>,
-  text: (
-    <p>
-      Consectetur veniam et nisi do culpa non. Elit eiusmod anim ipsum est ex
-      nisi id occaecat adipisicing occaecat exercitation velit occaecat. Aliquip
-      labore qui nisi velit anim quis incididunt adipisicing ipsum dolore qui
-      cillum fugiat.
-    </p>
-  ),
-  link: <h4>Overlay Title 4</h4>,
-  linkText: <h4>Overlay Title 4</h4>,
-  date: null
+  article: {
+    image: <img alt="" src="https://placeimg.com/1000/1000/any" />,
+    title: <h3>Title 3</h3>,
+    text: (
+      <p>
+        Consectetur veniam et nisi do culpa non. Elit eiusmod anim ipsum est ex
+        nisi id occaecat adipisicing occaecat exercitation velit occaecat.
+        Aliquip labore qui nisi velit anim quis incididunt adipisicing ipsum
+        dolore qui cillum fugiat.
+      </p>
+    ),
+    link: <h4>Overlay Title 4</h4>,
+    linkText: <h4>Overlay Title 4</h4>,
+    date: null
+  }
 };
 
 BlogCard1.propTypes = {
-  // handleClick: PropTypes.func,
-  overlayColor: PropTypes.string,
-  ImageComponent: PropTypes.element,
-  title: PropTypes.string,
-  text: PropTypes.string,
-  link: PropTypes.string,
-  linkText: PropTypes.string,
-  date: PropTypes.string
+  article: PropTypes.objectOf(PropTypes.object)
 };
 
 export default BlogCard1;
