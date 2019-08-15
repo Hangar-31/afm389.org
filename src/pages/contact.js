@@ -112,11 +112,17 @@ export default () => (
         <H31LayoutRow>
           <H31LayoutCol />
         </H31LayoutRow>
+        <H31LayoutRow>
+          <h31LayoutCol />
+        </H31LayoutRow>
       </H31LayoutContainer>
     </MediaQuery>
 
     <MediaQuery query="(max-width: 767px)">
       <H31LayoutContainer>
+        <H31LayoutRow>
+          <H31LayoutCol />
+        </H31LayoutRow>
         <H31LayoutRow>
           <h31LayoutCol />
         </H31LayoutRow>
