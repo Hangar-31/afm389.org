@@ -44,6 +44,8 @@ const data = [
     we would love to help you prepare.
   </H31Text3>,
   <ImgAbout1 />,
+  <br />,
+  <br />,
   <H31Text3>
     Are you new in town and need to know who to connect with? We network through
     membership meetings, a contractor list, social media and a quarterly
