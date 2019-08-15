@@ -106,15 +106,21 @@ export default () => (
         </H31LayoutRow>
       </H31LayoutContainer>
     </MediaQuery>
-    <MediaQuery query="(max-width: 1199px)">
+
+    <MediaQuery query="(min-width: 768px)">
       <H31LayoutContainer>
         <H31LayoutRow>
           <H31LayoutCol />
         </H31LayoutRow>
       </H31LayoutContainer>
     </MediaQuery>
+
     <MediaQuery query="(max-width: 767px)">
-      <H31LayoutContainer />
+      <H31LayoutContainer>
+        <H31LayoutRow>
+          <h31LayoutCol />
+        </H31LayoutRow>
+      </H31LayoutContainer>
     </MediaQuery>
   </Layout>
 );
