@@ -12,6 +12,7 @@ export default styled(Link)`
   &:hover {
     text-decoration: none;
     opacity: 0.7;
+    color: ${siteConfig.colorTertiary};
   }
   @media (max-width: 1199px) {
     font-size: 0.725rem;
