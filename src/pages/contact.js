@@ -134,7 +134,6 @@ export default () => (
               <H31Title3A
                 css={css`
                   color: ${_config.colorSecondary};
-                  justify-self: center;
                 `}
               >
                 Mailing Address
@@ -142,7 +141,6 @@ export default () => (
               <H31Link4
                 css={css`
                   display: block;
-                  justify-self: center;
                 `}
                 href="https://www.google.com/maps/place/3020+E+Robinson+St,+Orlando,+FL+32803/@28.5457854,-81.3470503,17z/data=!3m1!4b1!4m5!3m4!1s0x88e77ad22dc16cc1:0x85de0e8e8138f6ec!8m2!3d28.5457854!4d-81.3448616"
               >
@@ -152,7 +150,6 @@ export default () => (
               <H31Title3A
                 css={css`
                   color: ${_config.colorSecondary};
-                  justify-self: center;
                 `}
               >
                 Number
@@ -160,7 +157,6 @@ export default () => (
               <H31Link4
                 css={css`
                   display: block;
-                  justify-self: center;
                 `}
                 href="tel::(407) 894-8666"
               >
@@ -170,17 +166,11 @@ export default () => (
               <H31Title3A
                 css={css`
                   color: ${_config.colorSecondary};
-                  justify-self: center;
                 `}
               >
                 E-mail
               </H31Title3A>
-              <H31Link4
-                css={css`
-                  justify-self: center;
-                `}
-                href="mailto::Local389@afm.org"
-              >
+              <H31Link4 css={css``} href="mailto::Local389@afm.org">
                 Local389@afm.org
               </H31Link4>
             </GridContainer>
