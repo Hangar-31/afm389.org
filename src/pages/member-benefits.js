@@ -131,7 +131,7 @@ const articles = [
 
 export default () => (
   <Layout>
-    <SEO title="" description="" />
+    <SEO title="Member Benefits" description="" />
 
     <H31Masthead1
       ImageComponent={<ImgMastheadMemberBenefits />}

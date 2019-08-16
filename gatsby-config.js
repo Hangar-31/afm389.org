@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "[]",
+    title: "Central Florida Musicians' Association",
     description: "[]",
-    author: "[]",
+    author: "Hangar 31 Development",
     siteUrl: "https://afm389.org",
     social: [
       {
@@ -43,8 +43,8 @@ module.exports = {
         start_url: "/",
         background_color: "[]",
         theme_color: "[]",
-        display: "minimal-ui"
-        // icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        display: "minimal-ui",
+        icon: "src/images/logos/cfma-logo-orlando-florida.png"
       }
     },
     // Loads web fonts from Google as specified

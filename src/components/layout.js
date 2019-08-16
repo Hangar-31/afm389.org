@@ -29,6 +29,12 @@ const Layout = ({ children }) => (
           width: 100%;
           background-color: ${_config.colorSecondary};
         }
+        .main-mobile-link-active {
+          color: ${_config.colorTertiary} !important;
+        }
+        .main-mobile-link-active + div {
+          color: ${_config.colorTertiary} !important;
+        }
       `}
     />
 

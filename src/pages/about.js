@@ -146,7 +146,7 @@ const testimonials = [
 
 export default () => (
   <Layout>
-    <SEO title="" description="" />
+    <SEO title="About" description="" />
 
     <H31Masthead1
       ImageComponent={<ImgMastheadAbout />}

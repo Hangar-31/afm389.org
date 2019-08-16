@@ -23,7 +23,7 @@ import ImgMastheadContact from "../components/images/mastheads/ImgMastheadContac
 
 export default () => (
   <Layout>
-    <SEO title="" description="" />
+    <SEO title="Contact" description="" />
 
     <H31Masthead1
       ImageComponent={<ImgMastheadContact />}

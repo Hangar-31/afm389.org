@@ -109,6 +109,7 @@ const Masthead1 = ({ ImageComponent, title, text }) => (
           <H31LayoutCol xs={1} md={0} />
         </H31LayoutRow>
 
+        {text === "" && <br />}
         {text !== "" && (
           <H31LayoutRow
             css={css`

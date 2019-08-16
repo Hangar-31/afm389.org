@@ -33,7 +33,7 @@ const content = [
 
 export default () => (
   <Layout>
-    <SEO title="" description="" />
+    <SEO title="Rehearsal Hall" description="" />
 
     <H31Masthead1
       ImageComponent={<ImgMastheadRehearsalHall />}

@@ -55,7 +55,7 @@ const articles = [
 
 export default () => (
   <Layout>
-    <SEO title="" description="" />
+    <SEO title="News & Events" description="" />
 
     <H31Masthead1
       ImageComponent={<ImgMastheadNewsAndEvents />}

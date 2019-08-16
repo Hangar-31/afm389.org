@@ -58,7 +58,13 @@ export default class Bio1 extends React.Component {
             >
               {name}
             </H31Title2B>
-            <H31Text6>{title}</H31Text6>
+            <H31Text6
+              css={css`
+                margin-bottom: 5px;
+              `}
+            >
+              {title}
+            </H31Text6>
             <H31LayoutContainer
               css={css`
                 border-top: 1px solid ${_config.colorLightGrey};

@@ -6,7 +6,7 @@ import SEO from "../components/seo";
 
 const TermsOfServicePage = () => (
   <Layout>
-    <SEO title="" description="" />
+    <SEO title="Terms of Service" description="" />
   </Layout>
 );
 
