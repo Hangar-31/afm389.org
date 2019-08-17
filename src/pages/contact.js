@@ -257,7 +257,7 @@ export default () => (
         css={css`
           margin: 0px;
           padding: 0px !important;
-          height: 340px;
+          height: 812px;
         `}
       >
         <H31GoogleMap1 />
