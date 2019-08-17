@@ -21,10 +21,4 @@ export default styled.button`
   line-height: 0;
   text-transform: uppercase;
   outline: none !important;
-
-  &:hover {
-    background-color: ${siteConfig.colorWhite};
-    border-color: ${siteConfig.colorTertiary};
-    color: ${siteConfig.colorTertiary};
-  }
 `;

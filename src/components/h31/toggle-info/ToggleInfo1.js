@@ -171,7 +171,7 @@ export default class Bio1 extends React.Component {
               {info.map(text => (
                 <H31Text3
                   css={css`
-                    margin-bottom: 15px;
+                    padding-bottom: 15px;
                   `}
                   key={text}
                 >

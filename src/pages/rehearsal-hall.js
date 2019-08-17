@@ -33,7 +33,7 @@ const content = [
 
 export default () => (
   <Layout>
-    <SEO title="" description="" />
+    <SEO title="Rehearsal Hall" description="" />
 
     <H31Masthead1
       ImageComponent={<ImgMastheadRehearsalHall />}
@@ -107,6 +107,26 @@ export default () => (
         >
           <ImgHome1 />
           <ImgHome1 />
+        </H31LayoutCol>
+      </H31LayoutRow>
+    </H31LayoutContainer>
+
+    <H31LayoutContainer fluid as="section">
+      <H31LayoutRow>
+        <H31LayoutCol xs={12}>
+          <iframe
+            title="Rehearsal Hall Calendar"
+            src="https://calendar.google.com/calendar/embed?src=local389%40afm.org&ctz=America%2FNew_York"
+            css={css`
+              width: 100%;
+              height: 600px;
+              border: none;
+              padding: 0;
+              margin: 0;
+            `}
+            frameBorder="0"
+            scrolling="no"
+          />
         </H31LayoutCol>
       </H31LayoutRow>
     </H31LayoutContainer>

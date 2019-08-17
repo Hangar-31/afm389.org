@@ -38,12 +38,11 @@ const GridContainer = styled.section`
 
 export default () => (
   <Layout>
-    <SEO title="" description="" />
+    <SEO title="Contact" description="" />
 
     <H31Masthead1
       ImageComponent={<ImgMastheadContact />}
       title="Get in Touch"
-      text=""
     />
 
     <H31SectionTitleFullWidth

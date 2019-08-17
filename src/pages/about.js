@@ -6,10 +6,7 @@ import MediaQuery from "react-responsive";
 // Components
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import H31ContentBlock2 from "../components/h31/content-block/ContentBlock2";
 
-// Images
-import ImgMastheadAbout from "../components/images/mastheads/ImgMastheadAbout";
 import {
   H31Masthead1,
   H31Text3,
@@ -18,8 +15,12 @@ import {
   H31LayoutCol,
   H31LayoutRow,
   H31LayoutContainer,
-  H31Bio1
+  H31Bio1,
+  H31ContentBlock2
 } from "../components/h31";
+
+// Images
+import ImgMastheadAbout from "../components/images/mastheads/ImgMastheadAbout";
 import _config from "../components/_config";
 import ImgAbout1 from "../components/images/_about/ImgAbout1";
 import ImgBioMikeAvila from "../components/images/bios/ImgBioMikeAvila";
@@ -43,6 +44,8 @@ const data = [
     we would love to help you prepare.
   </H31Text3>,
   <ImgAbout1 />,
+  <br />,
+  <br />,
   <H31Text3>
     Are you new in town and need to know who to connect with? We network through
     membership meetings, a contractor list, social media and a quarterly
@@ -123,7 +126,7 @@ const bios = [
   }
 ];
 
-const reviews = [
+const testimonials = [
   {
     name: "Terrance Armstrong",
     text:
@@ -135,7 +138,7 @@ const reviews = [
       "I had a problem with an individual at work. When I approached management, the Union was beside me all the way and supported me through a difficult time. Thank you!"
   },
   {
-    name: "David Copperfield",
+    name: "Noel MacFarland",
     text:
       "I had a problem with an individual at work. When I approached management, the Union was beside me all the way and supported me through a difficult time. Thank you!"
   }
@@ -143,12 +146,11 @@ const reviews = [
 
 export default () => (
   <Layout>
-    <SEO title="" description="" />
+    <SEO title="About" description="" />
 
     <H31Masthead1
       ImageComponent={<ImgMastheadAbout />}
       title="From The Team At CFMA"
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id rhoncus ligula. Quisque commodo, eros auctor elementum aliquam, urna turpis dapibus dolor, non feugiat tortor lectus."
     />
 
     <H31SectionTitleFullWidth
@@ -205,23 +207,6 @@ export default () => (
       titleSmall="Testimonials"
     />
 
-    <H31LayoutContainer fluid as="section">
-      <H31LayoutRow>
-        {reviews.map(review => (
-          <>
-            <H31LayoutCol className="d-xs-block d-lg-none" xs={1} lg={0} />
-            <H31LayoutCol xs={10} lg={4}>
-              <H31Testimonials
-                key={review.name}
-                titleColor={_config.colorSecondary}
-                title={review.name}
-                text={review.text}
-              />
-            </H31LayoutCol>
-            <H31LayoutCol className="d-xs-block d-lg-none" xs={1} lg={0} />
-          </>
-        ))}
-      </H31LayoutRow>
-    </H31LayoutContainer>
+    <H31Testimonials testimonials={testimonials} />
   </Layout>
 );

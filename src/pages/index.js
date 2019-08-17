@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-wrap-multilines */
 import React from "react";
-import MediaQuery from "react-responsive";
 import { css } from "@emotion/core";
 
 // Config
@@ -16,11 +15,11 @@ import {
   H31Testimonials,
   H31Masthead1,
   H31TextBlock2,
-  H31BlogCard1,
   H31LayoutContainer,
   H31LayoutRow,
   H31LayoutCol,
-  H31ButtonFillArrow
+  H31ButtonFillArrow,
+  H31SectionNews1
 } from "../components/h31";
 import ImgMastheadHome from "../components/images/mastheads/ImgMastheadHome";
 
@@ -31,7 +30,7 @@ import ImgHome3 from "../components/images/_home/ImgHome3";
 import ImgHome4 from "../components/images/_home/ImgHome4";
 
 // Data
-const blogs = [
+const articles = [
   {
     image: <ImgHome1 />,
     title: "2019 DISNEY OPEN CALL AUDITIONS",
@@ -110,27 +109,17 @@ const testimonials = [
     name: "Noel MacFarland",
     text:
       "I had a problem with an individual at work. When I approached management, the Union was beside me all the way and supported me through a difficult time. Thank you!"
-  },
-  {
-    name: "Noel MacFarland",
-    text:
-      "I had a problem with an individual at work. When I approached management, the Union was beside me all the way and supported me through a difficult time. Thank you!"
-  },
-  {
-    name: "David Copperfield",
-    text:
-      "I had a problem with an individual at work. When I approached management, the Union was beside me all the way and supported me through a difficult time. Thank you!"
   }
 ];
 
 export default () => (
   <Layout>
-    <SEO title="" description="" />
+    <SEO title="Your Path to a Musical Career" description="" />
 
     <H31Masthead1
       ImageComponent={<ImgMastheadHome />}
       title="Your Path to a Musical Career"
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id rhoncus ligula. Quisque commodo, eros auctor elementum aliquam, urna turpis dapibus dolor, non feugiat tortor lectus."
+      text="Welcome to the Central Florida Musicians’ Association! For almost a century, we have been serving the interests of musicians in Central Florida. Whether you’re interested in the benefits of union membership or simply in joining the largest association of professional musicians in the country, we’re here for you!"
     />
 
     <H31SectionTitleFullWidth
@@ -138,59 +127,11 @@ export default () => (
       titleSmall="Recent News And Events"
     />
 
-    <H31LayoutContainer fluid as="section">
-      <div
-        css={css`
-          position: absolute;
-          width: 100%;
-          top: 30px;
-          height: calc(100% - 60px);
-          background: linear-gradient(
-            90deg,
-            #6da55f calc(0% + 15px),
-            #164f4b calc(100% - 15px)
-          );
-        `}
-      />
-      <H31LayoutRow>
-        {/* <H31LayoutCol className="d-lg-block d-xl-none" xs={1} /> */}
-        <MediaQuery query="(min-width: 1200px)">
-          {blogs.map(blog => (
-            <H31LayoutCol xl={3}>
-              <H31BlogCard1
-                overlayColor="rgba(243, 149, 8, 0.84)"
-                ImageComponent={blog.image}
-                title={blog.title}
-                text={blog.text}
-                link={blog.link}
-                linkText="Read More"
-                date={blog.date}
-              />
-            </H31LayoutCol>
-          ))}
-        </MediaQuery>
-        <MediaQuery query="(max-width: 1199px)">
-          {blogs.slice(0, 3).map(blog => (
-            <H31LayoutCol xs={4}>
-              <H31BlogCard1
-                overlayColor="rgba(243, 149, 8, 0.84)"
-                ImageComponent={blog.image}
-                title={blog.title}
-                text={blog.text}
-                link={blog.link}
-                linkText="Read More"
-                date={blog.date}
-              />
-            </H31LayoutCol>
-          ))}
-        </MediaQuery>
-        {/* <H31LayoutCol className="d-lg-block d-xl-none" xs={1} /> */}
-      </H31LayoutRow>
-    </H31LayoutContainer>
+    <H31SectionNews1 articles={articles} />
 
     <H31LayoutContainer
       css={css`
-        @media (max-width: 575px) {
+        @media (max-width: 767px) {
           display: none;
         }
       `}

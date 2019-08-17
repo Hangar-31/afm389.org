@@ -108,7 +108,7 @@ const benefits = [
   }
 ]
 
-const partners = [
+const articles = [
   {
     image: <ImgPartner1 />,
     title: "Walt Disney Parks and Resorts U.S.",
@@ -131,12 +131,11 @@ const partners = [
 
 export default () => (
   <Layout>
-    <SEO title="" description="" />
+    <SEO title="Member Benefits" description="" />
 
     <H31Masthead1
       ImageComponent={<ImgMastheadMemberBenefits />}
       title="How We Support Musicians"
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id rhoncus ligula. Quisque commodo, eros auctor elementum aliquam, urna turpis dapibus dolor, non feugiat tortor lectus."
     />
 
     <H31SectionTitleFullWidth
@@ -187,7 +186,7 @@ export default () => (
       as="section"
     >
       <H31LayoutRow>
-        {partners.map(partner => (
+        {articles.map(article => (
           <>
             <H31LayoutCol className="d-xs-block d-lg-none" xs={1} sm={2} />
             <H31LayoutCol
@@ -198,14 +197,7 @@ export default () => (
               sm={8}
               lg={4}
             >
-              <H31BlogCard1
-                overlayColor="rgba(243, 149, 8, 0.84)"
-                ImageComponent={partner.image}
-                title={partner.title}
-                text={partner.text}
-                link={partner.link}
-                linkText="Visit Site"
-              />
+              <H31BlogCard1 article={article} />
             </H31LayoutCol>
             <H31LayoutCol className="d-xs-block d-lg-none" xs={1} sm={2} />
           </>

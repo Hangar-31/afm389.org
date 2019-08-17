@@ -71,8 +71,7 @@ const Masthead1 = ({ ImageComponent, title, text }) => (
             >
               {title}
             </H31Title1B>
-
-            <H31Paragraph1 text={text} />
+            {text !== "" && <H31Paragraph1 text={text} />}
           </H31LayoutCol>
         </H31LayoutRow>
       </MediaQuery>
@@ -110,6 +109,7 @@ const Masthead1 = ({ ImageComponent, title, text }) => (
           <H31LayoutCol xs={1} md={0} />
         </H31LayoutRow>
 
+<<<<<<< HEAD
         <H31LayoutRow
           css={css`
             display: flex;
@@ -134,6 +134,32 @@ const Masthead1 = ({ ImageComponent, title, text }) => (
           </H31LayoutCol>
           <H31LayoutCol xs={1} md={0} />
         </H31LayoutRow>
+=======
+        {text === "" && <br />}
+        {text !== "" && (
+          <H31LayoutRow
+            css={css`
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 100%;
+              padding: 30px 0;
+            `}
+          >
+            <H31LayoutCol xs={1} md={0} />
+            <H31LayoutCol xs={10} md={12}>
+              <H31Text2
+                css={css`
+                  color: ${_config.colorDarkGrey};
+                `}
+              >
+                {text}
+              </H31Text2>
+            </H31LayoutCol>
+            <H31LayoutCol xs={1} md={0} />
+          </H31LayoutRow>
+        )}
+>>>>>>> ed0c268d4ce577964985b3f30de1240db9dd2f52
       </H31LayoutContainer>
     </MediaQuery>
   </>
@@ -142,7 +168,7 @@ const Masthead1 = ({ ImageComponent, title, text }) => (
 Masthead1.defaultProps = {
   ImageComponent: <span>Put an image here</span>,
   title: "Title",
-  text: "Text"
+  text: ""
 };
 
 Masthead1.propTypes = {

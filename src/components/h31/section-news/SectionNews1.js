@@ -4,18 +4,19 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
-import { H31Title3A, H31Text4 } from "..";
+import { H31BlogCard1 } from "..";
 import _config from "../../_config";
 
 const MasterContainer = styled.section`
   position: relative;
   overflow-y: hidden;
-  height: 350px;
+  height: 450px;
 `;
 
 const Container = styled.section`
-  height: calc(100% + 7px);
   position: relative;
+  padding-bottom: 15px;
+  height: calc(100% + 7px);
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-coordinate: 0 0;
@@ -23,12 +24,9 @@ const Container = styled.section`
   scroll-snap-type: x mandatory;
   flex: 1;
   display: flex;
-
   max-width: 1440px;
   margin: 0 auto 30px auto;
-
   -webkit-overflow-scrolling: touch;
-
   &::-webkit-scrollbar {
     width: 0 !important;
   }
@@ -36,48 +34,43 @@ const Container = styled.section`
   -ms-overflow-style: none;
 `;
 
+const Background = styled.div`
+  position: absolute;
+  left: 0;
+  top: 15px;
+  width: 100%;
+  height: calc(100% - 60px);
+  background: linear-gradient(
+    90deg,
+    #6da55f calc(0% + 15px),
+    #164f4b calc(100% - 15px)
+  );
+`;
+
 const ContainerOuter = styled.section`
   display: inline-block;
   padding: 0 15px;
-  flex: 0 0 33.33%;
+  flex: 0 0 25%;
   scroll-snap-align: start;
 
   @media (max-width: 1199px) {
     flex: 0 0 50%;
   }
   @media (max-width: 767px) {
-    padding: 0 calc(8.333% + 15px);
-    flex: 0 0 100%;
+    padding-left: calc(8.333% + 15px);
+    flex: 0 0 80%;
+    &:last-child {
+      padding-right: calc(20% + 15px);
+      flex: 0 0 100%;
+    }
   }
 `;
-const ContainerInner = styled.section`
-  border-top: 1px solid #d3d3d3;
-  border-bottom: 1px solid #d3d3d3;
-`;
+const ContainerInner = styled.section``;
 
 const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 30px;
-`;
-
-const TitleContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  padding: 5px 0;
-  @media (max-width: 991px) {
-    padding: 15px 0;
-  }
-`;
-
-const ParagraphContainer = styled.div`
-  display: flex;
-  flex-direction: start;
-  padding: 20px 0px;
-  @media (max-width: 991px) {
-    text-align: center;
-  }
 `;
 
 const ListButtons = styled.ul`
@@ -102,17 +95,17 @@ const Button = styled.div`
   background-color: ${_config.colorDarkGrey};
 `;
 
-class Testimonials extends React.Component {
+class SectionNews1 extends React.Component {
   constructor() {
     super();
 
-    this.testimonialComponents = [{ offsetLeft: 0 }];
+    this.articleComponents = [{ offsetLeft: 0 }];
     this.slideContainer = { scrollLeft: 0 };
     this.x = 0;
 
     this.state = {
       slide: 0,
-      amount: 3
+      amount: 4
     };
   }
 
@@ -125,7 +118,7 @@ class Testimonials extends React.Component {
     this.slideContainer.addEventListener("scroll", e => {
       const { slide } = this.state;
       // eslint-disable-next-line prettier/prettier
-      const lengths = (e.srcElement.scrollWidth / this.testimonialComponents.length);
+      const lengths = (e.srcElement.scrollWidth / this.articleComponents.length);
 
       const x = Math.round(e.srcElement.scrollLeft / lengths);
       if (x !== slide) {
@@ -145,8 +138,8 @@ class Testimonials extends React.Component {
     // Screen Resize Events
     if (typeof window !== "undefined") {
       const { amount } = this.state;
-      if (window.innerWidth >= 1200 && amount !== 3) {
-        this.setState({ amount: 3 });
+      if (window.innerWidth >= 1200 && amount !== 4) {
+        this.setState({ amount: 4 });
       } else if (
         window.innerWidth <= 1199 &&
         window.innerWidth >= 768 &&
@@ -161,38 +154,26 @@ class Testimonials extends React.Component {
 
   render() {
     const { slide, amount } = this.state;
-    const { testimonials } = this.props;
+    const { articles } = this.props;
 
     return (
       <>
         <MasterContainer>
+          <Background />
           <Container
             ref={ref => {
               this.slideContainer = ref;
             }}
           >
-            {testimonials.map((testimonial, i) => (
+            {articles.map((article, i) => (
               <ContainerOuter
                 ref={ref => {
-                  this.testimonialComponents[i] = ref;
+                  this.articleComponents[i] = ref;
                 }}
               >
                 <ContainerInner>
                   <Wrapper>
-                    <TitleContainer
-                      css={css`
-                        background-color: ${_config.colorSecondary};
-                      `}
-                    >
-                      <H31Title3A>{testimonial.name}</H31Title3A>
-                    </TitleContainer>
-                    <ParagraphContainer
-                      css={css`
-                        color: ${_config.colorDarkGrey};
-                      `}
-                    >
-                      <H31Text4>{testimonial.text}</H31Text4>
-                    </ParagraphContainer>
+                    <H31BlogCard1 article={article} />
                   </Wrapper>
                 </ContainerInner>
               </ContainerOuter>
@@ -200,10 +181,10 @@ class Testimonials extends React.Component {
           </Container>
         </MasterContainer>
 
-        {this.testimonialComponents.length > amount && (
+        {this.articleComponents.length > amount && (
           <ListButtons>
-            {this.testimonialComponents
-              .splice(0, this.testimonialComponents.length - amount + 1)
+            {this.articleComponents
+              .splice(0, this.articleComponents.length - amount + 1)
               .map((c, i) => (
                 <ItemButton>
                   <Button
@@ -226,18 +207,21 @@ class Testimonials extends React.Component {
   }
 }
 
-Testimonials.defaultProps = {
-  testimonials: [
+SectionNews1.defaultProps = {
+  articles: [
     {
-      name: "Bill Rye",
-      text:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium mi aquam molestie, vel ultricies libero faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium mi a quam molestie, vel ultricies libero faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      image: "",
+      title: "",
+      text: "",
+      link: "",
+      linkText: "",
+      date: ""
     }
   ]
 };
 
-Testimonials.propTypes = {
-  testimonials: PropTypes.arrayOf(PropTypes.object)
+SectionNews1.propTypes = {
+  articles: PropTypes.arrayOf(PropTypes.object)
 };
 
-export default Testimonials;
+export default SectionNews1;

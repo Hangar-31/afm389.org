@@ -52,8 +52,9 @@ const formData = [
   {
     type: "select",
     name: "Regarding",
-    text: "Select What This Inquiry is About...",
+    text: "I would like to inquire about...",
     options: [
+      "I would like to inquire about...",
       "Joining CFMA",
       "Career Coaching",
       "Audition and Giggin Questions",

@@ -62,6 +62,9 @@ export default class MobileNav1 extends Component {
             border: none;
             background: none;
             -webkit-appearance: none;
+            &:hover {
+              background: ${_config.colorTertiary};
+            }
           `}
           type="button"
           onClick={this.onClickToggleMenu}
@@ -118,12 +121,24 @@ export default class MobileNav1 extends Component {
             transition: 0.5s;
 
             transform: translateX(${visible ? "-300px" : "0px"});
+            @media (max-width: 575px) {
+              width: 250px !important;
+            }
           `}
         >
-          <H31LayoutRow>
+          <H31LayoutRow
+            css={css`
+              overflow-y: scroll;
+              padding-bottom: 100px !important;
+            `}
+          >
             <H31LayoutCol
               css={css`
-                margin-bottom: 20px;
+                margin-bottom: 15px;
+                @media (max-width: 575px) {
+                  margin-bottom: -20px;
+                  padding-left: 0px !important;
+                }
               `}
               xs={12}
             >
@@ -132,11 +147,18 @@ export default class MobileNav1 extends Component {
                 type="button"
                 aria-label="Close Mobile Nav"
                 css={css`
-                  font-size: 2rem;
-                  color: ${_config.colorWhite};
+                  width: 45px;
+                  height: 45px;
                   background: none;
                   border: none;
+                  line-height: 0;
+                  font-size: 2rem;
+                  color: ${_config.colorWhite};
                   -webkit-appearance: none;
+
+                  &:hover {
+                    color: ${_config.colorTertiary};
+                  }
                 `}
               >
                 &times;
@@ -151,14 +173,29 @@ export default class MobileNav1 extends Component {
                 `}
                 xs={12}
               >
-                <H31Link1 to={link.to}>{link.name}</H31Link1>
+                <H31Link1
+                  css={css`
+                    &:hover {
+                      color: ${_config.colorTertiary};
+                    }
+                  `}
+                  activeClassName="main-mobile-link-active"
+                  to={link.to}
+                >
+                  {link.name}
+                </H31Link1>
               </H31LayoutCol>
             ))}
 
             <H31LayoutCol
               css={css`
                 text-align: center;
-                margin-bottom: 20px;
+                margin-top: 45px;
+                margin-bottom: 45px;
+                @media (max-width: 575px) {
+                  margin-top: 30px;
+                  margin-bottom: 30px;
+                }
               `}
               xs={12}
             >
@@ -187,7 +224,7 @@ export default class MobileNav1 extends Component {
               <H31LayoutCol
                 css={css`
                   text-align: center;
-                  margin-bottom: 20px;
+                  margin-bottom: 45px;
                 `}
                 xs={12}
               >
@@ -208,7 +245,17 @@ export default class MobileNav1 extends Component {
                 `}
                 xs={12}
               >
-                <H31Link1 to={link.to}>{link.name}</H31Link1>
+                <H31Link1
+                  css={css`
+                    &:hover {
+                      color: ${_config.colorTertiary};
+                    }
+                  `}
+                  activeClassName="main-mobile-link-active"
+                  to={link.to}
+                >
+                  {link.name}
+                </H31Link1>
               </H31LayoutCol>
             ))}
           </H31LayoutRow>
