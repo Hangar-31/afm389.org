@@ -199,7 +199,12 @@ export default () => (
       >
         <H31LayoutRow>
           <H31LayoutCol>
-            <GridContainer>
+            <GridContainer
+              css={css`
+                padding: 0 80px;
+                grid-gap: 10px 20px;
+              `}
+            >
               <H31Title3A
                 css={css`
                   color: ${_config.colorSecondary};
