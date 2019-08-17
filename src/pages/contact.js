@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
-import MediaQuery from "react-responsive";
+import Responsive from "react-responsive";
 
 // Config
 import _config from "../components/_config";
@@ -23,19 +23,18 @@ import {
 // Images
 import ImgMastheadContact from "../components/images/mastheads/ImgMastheadContact";
 
-// Flex Containers
+// Media Queries
+const Desktop = props => <Responsive {...props} minWidth={992} />;
+const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991} />;
+const Mobile = props => <Responsive {...props} maxWidth={767} />;
 
+// Grid Containers
 const GridContainer = styled.section`
   padding: 0 180px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 100px 100px 100px;
 `;
-
-// const MapContainer = styled.section`
-//   height: 200px;
-//   width: 100%;
-// `;
 
 export default () => (
   <Layout>
@@ -52,7 +51,7 @@ export default () => (
       titleSmall="Central FL Musicians Association"
       titleLarge="Contact Information"
     />
-    <MediaQuery query="(min-width: 992px)">
+    <Desktop>
       <H31LayoutContainer
         fluid
         as="section"
@@ -118,9 +117,9 @@ export default () => (
           <H31LayoutCol xs={1} />
         </H31LayoutRow>
       </H31LayoutContainer>
-    </MediaQuery>
+    </Desktop>
 
-    <MediaQuery query="(max-width: 991px)">
+    <Tablet>
       <H31LayoutContainer
         fluid
         as="section"
@@ -188,17 +187,76 @@ export default () => (
       >
         <H31GoogleMap1 />
       </H31LayoutContainer>
-    </MediaQuery>
+    </Tablet>
 
-    <MediaQuery query="(max-width: 767px)">
-      <H31LayoutContainer>
+    <Mobile>
+      <H31LayoutContainer
+        fluid
+        as="section"
+        css={css`
+          margin: 90px 0 30px 0;
+        `}
+      >
         <H31LayoutRow>
-          <H31LayoutCol />
-        </H31LayoutRow>
-        <H31LayoutRow>
-          <h31LayoutCol />
+          <H31LayoutCol>
+            <GridContainer>
+              <H31Title3A
+                css={css`
+                  color: ${_config.colorSecondary};
+                `}
+              >
+                Mailing Address
+              </H31Title3A>
+              <H31Link4
+                css={css`
+                  display: block;
+                `}
+                href="https://www.google.com/maps/place/3020+E+Robinson+St,+Orlando,+FL+32803/@28.5457854,-81.3470503,17z/data=!3m1!4b1!4m5!3m4!1s0x88e77ad22dc16cc1:0x85de0e8e8138f6ec!8m2!3d28.5457854!4d-81.3448616"
+              >
+                {["3020 East Robinson Street", <br />, "Orlando, FL 3280"]}
+              </H31Link4>
+
+              <H31Title3A
+                css={css`
+                  color: ${_config.colorSecondary};
+                `}
+              >
+                Number
+              </H31Title3A>
+              <H31Link4
+                css={css`
+                  display: block;
+                `}
+                href="tel::(407) 894-8666"
+              >
+                (407) 894-8666
+              </H31Link4>
+
+              <H31Title3A
+                css={css`
+                  color: ${_config.colorSecondary};
+                `}
+              >
+                E-mail
+              </H31Title3A>
+              <H31Link4 css={css``} href="mailto::Local389@afm.org">
+                Local389@afm.org
+              </H31Link4>
+            </GridContainer>
+          </H31LayoutCol>
         </H31LayoutRow>
       </H31LayoutContainer>
-    </MediaQuery>
+      <H31LayoutContainer
+        fluid
+        as="section"
+        css={css`
+          margin: 0px;
+          padding: 0px !important;
+          height: 340px;
+        `}
+      >
+        <H31GoogleMap1 />
+      </H31LayoutContainer>
+    </Mobile>
   </Layout>
 );

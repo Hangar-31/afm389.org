@@ -117,6 +117,9 @@ const Masthead1 = ({ ImageComponent, title, text }) => (
             justify-content: center;
             height: 100%;
             padding: 30px 0;
+            @media (max-width: 767px) {
+              padding: 0px;
+            }
           `}
         >
           <H31LayoutCol xs={1} md={0} />
