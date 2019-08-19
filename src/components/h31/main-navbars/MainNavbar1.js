@@ -34,6 +34,7 @@ const WrapperLogo = styled(Link)`
   left: 15px;
   width: 115px;
   height: 115px;
+  transition: 0.2s;
   img {
     width: 100%;
     height: 100%;
@@ -109,6 +110,7 @@ const MainNavbar1 = ({
                 &:hover {
                   color: ${_config.colorWhite};
                   text-decoration: none;
+                  opacity: 0.8;
                 }
                 @media(max-width: 1369px) {
                   width: 100%;
