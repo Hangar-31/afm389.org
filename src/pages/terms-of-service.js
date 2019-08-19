@@ -19,7 +19,13 @@ import {
 } from "../components/h31";
 
 const data = [
-  <H31Title4A>Terms of Service</H31Title4A>,
+  <H31Title4A
+    css={css`
+      color: #000000;
+    `}
+  >
+    Terms of Service
+  </H31Title4A>,
   <H31Text3>
     Welcome to the American Federation of Musicians (“AFM”) Website. Please
     carefully review our Terms of Service before you begin using the site. Thank

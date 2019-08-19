@@ -18,7 +18,13 @@ import {
 } from "../components/h31";
 
 const data = [
-  <H31Title4A>AFM Privacy Policy</H31Title4A>,
+  <H31Title4A
+    css={css`
+      color: #000000;
+    `}
+  >
+    AFM Privacy Policy
+  </H31Title4A>,
   <H31Text3>
     The American Federation of Musicians (“AFM”) has created this privacy policy
     to explain how information is used that you may provide while visiting this
@@ -30,7 +36,13 @@ const data = [
     any means other than our Website.
   </H31Text3>,
 
-  <H31Title4A>How and When We Collect Information</H31Title4A>,
+  <H31Title4A
+    css={css`
+      color: #000000;
+    `}
+  >
+    How and When We Collect Information
+  </H31Title4A>,
   <H31Text3>
     Activity That Doesn’t Require Registration. You can view content on the
     Website without registering or providing any personal information. When you
@@ -102,7 +114,13 @@ const data = [
     us.
   </H31Text3>,
 
-  <H31Title4A>Uses of Personal Information</H31Title4A>,
+  <H31Title4A
+    css={css`
+      color: #000000;
+    `}
+  >
+    Uses of Personal Information
+  </H31Title4A>,
   <H31ListBullet1>
     <H31Item1>
       The personal information that we collect on the Website helps us, our
@@ -147,7 +165,13 @@ const data = [
     </H31Item1>
   </H31ListBullet1>,
 
-  <H31Title4A>Other Disclosures</H31Title4A>,
+  <H31Title4A
+    css={css`
+      color: #000000;
+    `}
+  >
+    Other Disclosures
+  </H31Title4A>,
   <H31Text3>
     We may be required to disclose user information pursuant to lawful requests,
     such as subpoenas or court orders, or in compliance with applicable laws. If
@@ -181,7 +205,13 @@ const data = [
     complaint forms, contact us by mail or by telephone rather than by e-mail.
   </H31Text3>,
 
-  <H31Title4A>More Information</H31Title4A>,
+  <H31Title4A
+    css={css`
+      color: #000000;
+    `}
+  >
+    More Information
+  </H31Title4A>,
   <H31Text3>
     Our Website may also permit you to access non-AFM sites. It is important to
     remember that, if you link to a non-AFM site from our Website, that party’s
