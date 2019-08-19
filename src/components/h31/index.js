@@ -53,6 +53,10 @@ export {
 // Buttons
 export { default as H31ButtonBrightSubmit } from "./buttons/ButtonBrightSubmit";
 export { default as H31ButtonFillArrow } from "./buttons/ButtonFillArrow";
+export {
+  default as H31ButtonFacebookShare
+} from "./buttons/ButtonFacebookShare";
+export { default as H31ButtonTwitterTweet } from "./buttons/ButtonTwitterTweet";
 
 // Content Blocks
 export { default as H31ContentBlock1 } from "./content-block/ContentBlock1";

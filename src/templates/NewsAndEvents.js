@@ -2,9 +2,11 @@
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import moment from "moment";
-
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
+
+// Config
+import _config from "../components/_config";
 
 // H31 Components
 import Layout from "../components/layout";
@@ -16,9 +18,13 @@ import {
   H31LayoutCol,
   H31Text3,
   H31Title1C,
-  H31Title2C
+  H31ListBullet1,
+  H31ListNumbered1,
+  H31Item1,
+  H31Title2B,
+  H31ButtonFacebookShare,
+  H31ButtonTwitterTweet
 } from "../components/h31";
-import _config from "../components/_config";
 
 const NewsAndEvents = ({ data }) => {
   const { markdownRemark } = data;
@@ -33,13 +39,20 @@ const NewsAndEvents = ({ data }) => {
         fluid
         css={css`
           margin: 30px 0;
+          img {
+            max-width: 100%;
+          }
         `}
       >
         <H31LayoutRow>
           <H31LayoutCol md={3} />
           <H31LayoutCol md={6}>
             <ContentBlock2 title={frontmatter.title}>
-              <H31LayoutContainer>
+              <H31LayoutContainer
+                css={css`
+                  padding-top: 0 !important;
+                `}
+              >
                 <H31LayoutRow
                   css={css`
                     padding: 0 !important;
@@ -51,7 +64,7 @@ const NewsAndEvents = ({ data }) => {
                     css={css`
                       padding: 0 !important;
                     `}
-                    md={3}
+                    xs={6}
                   >
                     <H31Text3
                       css={css`
@@ -61,6 +74,19 @@ const NewsAndEvents = ({ data }) => {
                       {moment().format("ll")}
                     </H31Text3>
                   </H31LayoutCol>
+
+                  <H31LayoutCol
+                    css={css`
+                      display: flex;
+                      align-items: center;
+                      justify-content: flex-end;
+                      padding: 0 !important;
+                    `}
+                    xs={6}
+                  >
+                    <H31ButtonTwitterTweet />
+                    <H31ButtonFacebookShare />
+                  </H31LayoutCol>
                 </H31LayoutRow>
               </H31LayoutContainer>
 
@@ -68,17 +94,31 @@ const NewsAndEvents = ({ data }) => {
                 css={css`
                   h1 {
                     ${H31Title1C.__emotion_styles}
+                    color: ${_config.colorSecondary};
+                    margin-bottom: 15px;
                   }
                   h2 {
-                    ${H31Title2C.__emotion_styles}
+                    ${H31Title2B.__emotion_styles}
+                    color: ${_config.colorSecondary};
+                    margin-bottom: 15px;
                   }
                   p {
                     ${H31Text3.__emotion_styles}
                   }
+                  ul {
+                    ${H31ListBullet1.__emotion_styles}
+                  }
+                  ol {
+                    ${H31ListNumbered1.__emotion_styles}
+                  }
+                  li {
+                    ${H31Item1.__emotion_styles}
+                  }
                   img {
-                    display: block;
+                    display: none;
                     margin: 0 auto;
                     max-width: 100%;
+                    max-height: 300px;
                   }
                   iframe {
                     width: 100%;

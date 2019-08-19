@@ -6,6 +6,9 @@ import { css } from "@emotion/core";
 // Components
 import { H31LayoutContainer } from "..";
 
+// Images
+import ImgLocationMarker from "../../../images/accents/cfma-location-marker.png";
+
 const GoogleMap1 = props => {
   const { lat, lng, zoom } = props;
   return (
@@ -22,15 +25,17 @@ const GoogleMap1 = props => {
           bootstrapURLKeys={{
             key: "AIzaSyA1Bv9KOS95RNxflm54fgkIENFb-dB-k9w"
           }}
-          defaultCenter={{ lat: 28.544989, lng: -81.36003 }}
+          defaultCenter={{ lat: 28.5457854, lng: -81.3470503 }}
           defaultZoom={zoom}
         >
-          <div
+          <img
+            alt=""
             css={css`
-              width: 20px;
-              height: 20px;
-              background: red;
+              position: absolute;
+              left: -25px;
+              top: -76px;
             `}
+            src={ImgLocationMarker}
             lat={lat}
             lng={lng}
             text="My Marker"
@@ -44,7 +49,7 @@ const GoogleMap1 = props => {
 GoogleMap1.defaultProps = {
   lat: 28.5457854,
   lng: -81.34486,
-  zoom: 15
+  zoom: 14
 };
 
 GoogleMap1.propTypes = {

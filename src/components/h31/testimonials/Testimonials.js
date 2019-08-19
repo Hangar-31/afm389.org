@@ -60,6 +60,9 @@ const Wrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   padding: 30px;
+  @media (max-width: 500px) {
+    padding: 30px 0;
+  }
 `;
 
 const TitleContainer = styled.div`
@@ -86,7 +89,7 @@ const ListButtons = styled.ul`
   justify-content: center;
   flex-wrap: nowrap;
   padding: 0;
-  margin: 30px 0;
+  margin: 0 0 60px 0;
 `;
 
 const ItemButton = styled.li`

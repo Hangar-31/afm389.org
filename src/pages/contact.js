@@ -243,7 +243,7 @@ export default () => (
               >
                 E-mail
               </H31Title3A>
-              <H31Link4 css={css``} href="mailto::Local389@afm.org">
+              <H31Link4 href="mailto::Local389@afm.org">
                 Local389@afm.org
               </H31Link4>
             </GridContainer>

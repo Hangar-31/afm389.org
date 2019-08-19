@@ -1,5 +1,6 @@
 import React from "react";
 import { css } from "@emotion/core";
+import styled from "@emotion/styled";
 
 // Components
 import Layout from "../components/layout";
@@ -14,13 +15,30 @@ import {
   H31Title2B,
   H31Item1,
   H31ListNumbered1,
-  H31ListBullet1
+  H31ListBullet1,
+  H31Link4
 } from "../components/h31";
 
 // Images
 import ImgMastheadRehearsalHall from "../components/images/mastheads/ImgMastheadRehearsalHall";
 import ImgHome1 from "../components/images/_home/ImgHome1";
+import _config from "../components/_config";
 
+// Styled Components
+const ContainerContact = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  width 100%;
+  padding: 15px 60px;
+  background-color: #303D48;
+  @media(max-width: 767px) {
+    padding: 15px 15px;
+    grid-template-columns: 1fr;
+  }
+`;
+
+// Data
 const content1 = [
   <H31Text3>
     Our newly-renovated rehearsal space is 25’x40’ and features a Yamaha upright
@@ -32,13 +50,85 @@ const content1 = [
     The use of this space is free to our members. This is a great value in a
     city in which the average rehearsal space cost is $25/hour to several
     hundred dollars per month.
-  </H31Text3>
+  </H31Text3>,
+  <ContainerContact>
+    <H31Title2B
+      css={css`
+        display: block;
+        text-align: center;
+        width: 100%;
+        color: #ffffff;
+        grid-column: span 2;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #ffffff;
+        @media (max-width: 767px) {
+          grid-column: span 1;
+        }
+      `}
+    >
+      Reserve a Time
+    </H31Title2B>
+    <div
+      css={css`
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+        border-right: 2px solid #ffffff;
+        @media (max-width: 767px) {
+          border-right: none;
+        }
+      `}
+    >
+      <H31Text3
+        css={css`
+          font-weight: bold;
+          color: ${_config.colorTertiary};
+        `}
+      >
+        Call
+      </H31Text3>
+      <H31Link4
+        css={css`
+          color: #ffffff;
+          display: block;
+        `}
+        href="tel::(407) 894-8666"
+      >
+        (407) 894-8666
+      </H31Link4>
+    </div>
+
+    <div
+      css={css`
+        text-align: center;
+      `}
+    >
+      <H31Text3
+        css={css`
+          font-weight: bold;
+          color: ${_config.colorTertiary};
+        `}
+      >
+        Email
+      </H31Text3>
+      <H31Link4
+        css={css`
+          color: #ffffff;
+          display: block;
+        `}
+        href="mailto::Local389@afm.org"
+      >
+        Local389@afm.org
+      </H31Link4>
+    </div>
+  </ContainerContact>
 ];
 
 const content2 = [
   <H31Title2B
     css={css`
-      margin: 30px 0;
+      margin: 15px 0 30px 0;
     `}
   >
     Three-Strike Policy
@@ -259,24 +349,41 @@ export default () => (
           </H31ContentBlock2>
         </H31LayoutCol>
       </H31LayoutRow>
-    </H31LayoutContainer>
 
-    <H31LayoutContainer fluid as="section">
       <H31LayoutRow>
-        <H31LayoutCol xs={12}>
-          <iframe
-            title="Rehearsal Hall Calendar"
-            src="https://calendar.google.com/calendar/embed?src=local389%40afm.org&ctz=America%2FNew_York"
-            css={css`
-              width: 100%;
-              height: 600px;
-              border: none;
-              padding: 0;
-              margin: 0;
-            `}
-            frameBorder="0"
-            scrolling="no"
-          />
+        <H31LayoutCol md={12}>
+          <H31ContentBlock2 title="Rehearsal Hall Calendar">
+            <H31LayoutContainer fluid>
+              <H31LayoutRow>
+                <H31LayoutCol
+                  css={css`
+                    padding: 0 !important;
+                  `}
+                  xs={12}
+                >
+                  <iframe
+                    title="Rehearsal Hall Calendar"
+                    src="https://calendar.google.com/calendar/embed?src=local389%40afm.org&ctz=America%2FNew_York?showTz=1&amp;showTitle=0&amp;showNav=0&amp;showTabs=0&amp;showPrint=0&amp;showDate=0&amp;showCalendars=0"
+                    css={css`
+                      width: 100%;
+                      height: 800px;
+                      border: none;
+                      padding: 0;
+                      margin: 0;
+                      @media (max-width: 767px) {
+                        height: 600px;
+                      }
+                      @media (max-width: 575px) {
+                        height: 400px;
+                      }
+                    `}
+                    frameBorder="0"
+                    scrolling="no"
+                  />
+                </H31LayoutCol>
+              </H31LayoutRow>
+            </H31LayoutContainer>
+          </H31ContentBlock2>
         </H31LayoutCol>
       </H31LayoutRow>
     </H31LayoutContainer>

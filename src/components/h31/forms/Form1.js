@@ -129,6 +129,7 @@ const formData = [
   },
   {
     type: "button",
+    name: "Submit",
     text: "SEND",
     sizeXs: 12,
     sizeSm: 12,
@@ -177,10 +178,15 @@ export default class Form1 extends React.Component {
     if (this.formEl.checkValidity() === false) {
       for (let i = 0; i < formLength; i += 1) {
         const elem = this.formEl[i];
-        if (elem.nodeName.toLowerCase() !== "button") {
+
+        if (elem.nodeName.toLowerCase() === "select") {
+          if (!elem.validity.valid || elem.value === elem[0].value) {
+            errors.push(`Error on field ${elem.name}: Please select a value.`);
+          }
+        } else if (elem.nodeName.toLowerCase() !== "button") {
           if (!elem.validity.valid) {
             errors.push(
-              `Error on field ${elem.placeholder}: ${elem.validationMessage}`
+              `Error on field ${elem.name}: ${elem.validationMessage}`
             );
           }
         }
@@ -234,7 +240,7 @@ export default class Form1 extends React.Component {
               xs={data.sizeXs}
               sm={data.sizeSm}
               md={data.size}
-              lgmd={data.siLg}
+              lg={data.sizeLg}
               css={css`
                 padding-left: 0 !important;
                 margin-bottom: 25px;
@@ -251,15 +257,6 @@ export default class Form1 extends React.Component {
                   name={data.name}
                   defaultValue={data.options[0]}
                 >
-                  <option
-                    value=""
-                    css={css`
-                      color: #eeeeee;
-                    `}
-                    disabled
-                  >
-                    {data.text}
-                  </option>
                   {data.options.map(option => (
                     <option key={option} value={option}>
                       {option}
@@ -364,6 +361,7 @@ export default class Form1 extends React.Component {
 
       delete data.errors;
       delete data.submitting;
+      delete data.Submit;
 
       fetch("/send", {
         method: "POST",
