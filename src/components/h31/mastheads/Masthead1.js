@@ -109,33 +109,6 @@ const Masthead1 = ({ ImageComponent, title, text }) => (
           <H31LayoutCol xs={1} md={0} />
         </H31LayoutRow>
 
-<<<<<<< HEAD
-        <H31LayoutRow
-          css={css`
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            padding: 30px 0;
-            @media (max-width: 767px) {
-              padding: 0px;
-            }
-          `}
-        >
-          <H31LayoutCol xs={1} md={0} />
-          <H31LayoutCol xs={10} md={12}>
-            <H31Text2
-              css={css`
-                color: ${_config.colorDarkGrey};
-              `}
-            >
-              {text}
-            </H31Text2>
-          </H31LayoutCol>
-          <H31LayoutCol xs={1} md={0} />
-        </H31LayoutRow>
-=======
->>>>>>> a47c7c8172eac1d06851fd4272c2664d55e2512f
         {text === "" && <br />}
         {text !== "" && (
           <H31LayoutRow
