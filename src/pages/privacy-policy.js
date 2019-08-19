@@ -18,6 +18,7 @@ import {
 } from "../components/h31";
 
 const data = [
+  <br />,
   <H31Title4A
     css={css`
       color: #000000;
@@ -25,6 +26,7 @@ const data = [
   >
     AFM Privacy Policy
   </H31Title4A>,
+  <br />,
   <H31Text3>
     The American Federation of Musicians (“AFM”) has created this privacy policy
     to explain how information is used that you may provide while visiting this
@@ -43,6 +45,7 @@ const data = [
   >
     How and When We Collect Information
   </H31Title4A>,
+  <br />,
   <H31Text3>
     Activity That Doesn’t Require Registration. You can view content on the
     Website without registering or providing any personal information. When you
@@ -121,6 +124,7 @@ const data = [
   >
     Uses of Personal Information
   </H31Title4A>,
+  <br />,
   <H31ListBullet1>
     <H31Item1>
       The personal information that we collect on the Website helps us, our
@@ -172,6 +176,7 @@ const data = [
   >
     Other Disclosures
   </H31Title4A>,
+  <br />,
   <H31Text3>
     We may be required to disclose user information pursuant to lawful requests,
     such as subpoenas or court orders, or in compliance with applicable laws. If
@@ -187,7 +192,14 @@ const data = [
     information on our visitors would be among the transferred assets.
   </H31Text3>,
 
-  <H31Title4A>Information Security and Data Integrity</H31Title4A>,
+  <H31Title4A
+    css={css`
+      color: #000000;
+    `}
+  >
+    Information Security and Data Integrity
+  </H31Title4A>,
+  <br />,
   <H31Text3>
     We take security measures to protect against unauthorized access to or
     unauthorized alteration, disclosure or destruction of data. These measures
@@ -212,6 +224,7 @@ const data = [
   >
     More Information
   </H31Title4A>,
+  <br />,
   <H31Text3>
     Our Website may also permit you to access non-AFM sites. It is important to
     remember that, if you link to a non-AFM site from our Website, that party’s
