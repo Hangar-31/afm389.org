@@ -41,8 +41,8 @@ export default {
       to: "/member-benefits"
     },
     {
-      name: "News And Events",
-      to: "/news-&-events"
+      name: "News And Articles",
+      to: "/news-&-articles"
     },
     {
       name: "Contact",

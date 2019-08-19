@@ -61,6 +61,7 @@ export default class MobileNav1 extends Component {
             margin: 0;
             border: none;
             background: none;
+            border-radius: 5px;
             -webkit-appearance: none;
             &:hover {
               background: ${_config.colorTertiary};

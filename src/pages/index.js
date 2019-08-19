@@ -37,7 +37,8 @@ const articles = [
     text:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex.",
     date: "2013-01-01T00:00:00.000",
-    link: "/"
+    link: "/",
+    linkText: "Read More"
   },
   {
     image: <ImgHome2 />,
@@ -45,7 +46,8 @@ const articles = [
     text:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex.",
     date: "2013-01-01T00:00:00.000",
-    link: "/"
+    link: "/",
+    linkText: "Read More"
   },
   {
     image: <ImgHome3 />,
@@ -53,7 +55,8 @@ const articles = [
     text:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex.",
     date: "2013-01-01T00:00:00.000",
-    link: "/"
+    link: "/",
+    linkText: "Read More"
   },
   {
     image: <ImgHome4 />,
@@ -61,7 +64,8 @@ const articles = [
     text:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex.",
     date: "2013-01-01T00:00:00.000",
-    link: "/"
+    link: "/",
+    linkText: "Read More"
   }
 ];
 

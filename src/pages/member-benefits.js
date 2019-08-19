@@ -73,7 +73,7 @@ const benefits = [
     info: [
       <span>
       Every member of the Association is entitled to this free splash page. It is a page all about you, allowing you to post sound clips, links to your own website as well as information about your product.&nbsp;
-        {<Link4 css={css`${Text3.__emotion_styles}; text-decoration: underline;`} href="https://AFMentertainment.org">AFMentertainment.org</Link4>} 
+        {<Link4 css={css`${Text3.__emotion_styles}; text-decoration: underline;`} href="www.AFMentertainment.org">AFMentertainment.org</Link4>} 
       &nbsp;is also advertised in the AFM National Convention Planner, for those seeking musicians and the like for their convention work.
       </span>
     ]
@@ -113,19 +113,22 @@ const articles = [
     image: <ImgPartner1 />,
     title: "Walt Disney Parks and Resorts U.S.",
     text: "One of the largest employers of professional musicians in Central Florida – our members benefit from a long negotiating relationship with Disney.",
-    link: "/"
+    link: "/",
+    linkText: "Visit Site"
   },
   {
     image: <ImgPartner2 />,
     title: "Broadway Across America",
     text: "Bringing professional-level Broadway shows to the Central Florida stage requires professional musicians, too. Broadway shows musicians are booked by a Union contractor.",
-    link: "/"
+    link: "/",
+    linkText: "Visit Site"
   },
   {
     image: <ImgPartner3 />,
     title: "Orlando Philharmonic Orchestra",
     text: "Newly unionized in 2012, our agreement and amiable working relationship with the Philharmonic continues to better wages and working conditions for our musicians.",
-    link: "/"
+    link: "/",
+    linkText: "Visit Site"
   }
 ]
 

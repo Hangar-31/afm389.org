@@ -250,13 +250,14 @@ export default () => (
           </H31LayoutCol>
         </H31LayoutRow>
       </H31LayoutContainer>
+
       <H31LayoutContainer
         fluid
         as="section"
         css={css`
           margin: 0px;
           padding: 0px !important;
-          height: 812px;
+          height: 350px;
         `}
       >
         <H31GoogleMap1 />

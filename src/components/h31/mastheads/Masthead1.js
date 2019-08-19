@@ -109,6 +109,7 @@ const Masthead1 = ({ ImageComponent, title, text }) => (
           <H31LayoutCol xs={1} md={0} />
         </H31LayoutRow>
 
+<<<<<<< HEAD
         <H31LayoutRow
           css={css`
             display: flex;
@@ -133,6 +134,8 @@ const Masthead1 = ({ ImageComponent, title, text }) => (
           </H31LayoutCol>
           <H31LayoutCol xs={1} md={0} />
         </H31LayoutRow>
+=======
+>>>>>>> a47c7c8172eac1d06851fd4272c2664d55e2512f
         {text === "" && <br />}
         {text !== "" && (
           <H31LayoutRow

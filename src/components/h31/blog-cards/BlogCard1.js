@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import { Link } from "gatsby";
 
 // Config
-import _config from "../../_config";
+// import _config from "../../_config";
 
 // Components
 import { H31SimpleTime, H31Title3B, H31Title4A, H31Text3 } from "..";
@@ -19,27 +19,27 @@ const Overlay = styled.section`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 50%;
   width: 100%;
   transition: 0.2s;
 `;
 
-const OverlayTitle = styled.div`
-  width: 100%;
-  margin-bottom: 30px;
-  text-align: center;
-  > * {
-    color: #ffffff;
-    text-decoration: none;
-  }
-`;
+// const OverlayTitle = styled.div`
+//   width: 100%;
+//   margin-bottom: 30px;
+//   text-align: center;
+//   > * {
+//     color: #ffffff;
+//     text-decoration: none;
+//   }
+// `;
 
 const OverlayClick = styled.div`
   width: 100%;
   text-align: center;
 `;
 
-const Group = styled.div``;
+// const Group = styled.div``;
 
 const ContentGroup = styled.div`
   overflow: hidden;
@@ -82,22 +82,15 @@ const Container = styled(Link)`
   border: none;
   overflow: hidden;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  
+
   color: initial;
   text-decoration: none;
   background-color: #ffffff;
   &:hover {
+    text-decoration: none !important;
     pointer: cursor;
     ${Overlay} {
       opacity: 1;
-    }
-    ${ImageContainer} {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-    }
-    ${ContentContainer}, ${TitleContainer}, ${DateContainer} {
-      opacity: 0;
     }
   }
 `;
@@ -115,21 +108,9 @@ const BlogCard1 = ({ article }) => (
     to={article.link}
   >
     <Overlay>
-      <Group>
-        <OverlayTitle>
-          <H31Title3B
-            css={css`
-              color: ${_config.colorWhite};
-              text-decoration: none;
-            `}
-          >
-            {article.title}
-          </H31Title3B>
-        </OverlayTitle>
-        <OverlayClick>
-          <H31Title4A>{article.linkText}</H31Title4A>
-        </OverlayClick>
-      </Group>
+      <OverlayClick>
+        <H31Title4A>{article.linkText}</H31Title4A>
+      </OverlayClick>
     </Overlay>
 
     <ImageContainer>{article.image}</ImageContainer>
@@ -144,7 +125,15 @@ const BlogCard1 = ({ article }) => (
         <TitleContainer>
           <H31Title3B>{article.title}</H31Title3B>
         </TitleContainer>
-        <H31Text3>{article.text}</H31Text3>
+        <H31Text3
+          css={css`
+            @media (max-width: 575px) {
+              font-size: 1rem;
+            }
+          `}
+        >
+          {article.text}
+        </H31Text3>
       </ContentGroup>
     </ContentContainer>
     {article.date && (
