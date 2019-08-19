@@ -6,26 +6,28 @@ import MediaQuery from "react-responsive";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
+import _config from "../components/_config";
+
 import {
   H31LayoutCol,
   H31LayoutRow,
   H31LayoutContainer,
   H31ContentBlock2,
   H31Text3,
-  H31Title4A,
+  H31Title2B,
   H31ListBullet1,
   H31Item1
 } from "../components/h31";
 
 const data = [
   <br />,
-  <H31Title4A
+  <H31Title2B
     css={css`
-      color: #000000;
+      color: ${_config.colorSecondary};
     `}
   >
     AFM Privacy Policy
-  </H31Title4A>,
+  </H31Title2B>,
   <br />,
   <H31Text3>
     The American Federation of Musicians (“AFM”) has created this privacy policy
@@ -38,13 +40,13 @@ const data = [
     any means other than our Website.
   </H31Text3>,
 
-  <H31Title4A
+  <H31Title2B
     css={css`
-      color: #000000;
+      color: ${_config.colorSecondary};
     `}
   >
     How and When We Collect Information
-  </H31Title4A>,
+  </H31Title2B>,
   <br />,
   <H31Text3>
     Activity That Doesn’t Require Registration. You can view content on the
@@ -117,13 +119,13 @@ const data = [
     us.
   </H31Text3>,
 
-  <H31Title4A
+  <H31Title2B
     css={css`
-      color: #000000;
+      color: ${_config.colorSecondary};
     `}
   >
     Uses of Personal Information
-  </H31Title4A>,
+  </H31Title2B>,
   <br />,
   <H31ListBullet1>
     <H31Item1>
@@ -169,13 +171,13 @@ const data = [
     </H31Item1>
   </H31ListBullet1>,
 
-  <H31Title4A
+  <H31Title2B
     css={css`
-      color: #000000;
+      color: ${_config.colorSecondary};
     `}
   >
     Other Disclosures
-  </H31Title4A>,
+  </H31Title2B>,
   <br />,
   <H31Text3>
     We may be required to disclose user information pursuant to lawful requests,
@@ -192,13 +194,13 @@ const data = [
     information on our visitors would be among the transferred assets.
   </H31Text3>,
 
-  <H31Title4A
+  <H31Title2B
     css={css`
-      color: #000000;
+      color: ${_config.colorSecondary};
     `}
   >
     Information Security and Data Integrity
-  </H31Title4A>,
+  </H31Title2B>,
   <br />,
   <H31Text3>
     We take security measures to protect against unauthorized access to or
@@ -217,13 +219,13 @@ const data = [
     complaint forms, contact us by mail or by telephone rather than by e-mail.
   </H31Text3>,
 
-  <H31Title4A
+  <H31Title2B
     css={css`
-      color: #000000;
+      color: ${_config.colorSecondary};
     `}
   >
     More Information
-  </H31Title4A>,
+  </H31Title2B>,
   <br />,
   <H31Text3>
     Our Website may also permit you to access non-AFM sites. It is important to

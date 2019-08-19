@@ -6,27 +6,30 @@ import MediaQuery from "react-responsive";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
+// Config
+import _config from "../components/_config";
+
 import {
   H31LayoutCol,
   H31LayoutRow,
   H31LayoutContainer,
   H31ContentBlock2,
   H31Text3,
-  H31Title4A,
   H31ListBullet1,
   H31Item1,
-  H31ListNumbered1
+  H31ListNumbered1,
+  H31Title2B
 } from "../components/h31";
 
 const data = [
   <br />,
-  <H31Title4A
+  <H31Title2B
     css={css`
-      color: #000000;
+      color: ${_config.colorSecondary};
     `}
   >
     Terms of Service
-  </H31Title4A>,
+  </H31Title2B>,
   <br />,
   <H31Text3>
     Welcome to the American Federation of Musicians (“AFM”) Website. Please
