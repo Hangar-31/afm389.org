@@ -52,17 +52,19 @@ exports.createPages = ({ actions, graphql }) => {
       const previousPrevious =
         i + 2 > posts.length - 1 ? null : posts[i + 2].node;
 
-      createPage({
-        path: urlMaker(post.node.fileAbsolutePath),
-        id: post.node.id,
-        component: blogStoriesOfCareTemplate,
-        context: {
-          nextNext,
-          next,
-          previous,
-          previousPrevious
-        }
-      });
+      if (!post.node.fileAbsolutePath.includes("static/testimonials")) {
+        createPage({
+          path: urlMaker(post.node.fileAbsolutePath),
+          id: post.node.id,
+          component: blogStoriesOfCareTemplate,
+          context: {
+            nextNext,
+            next,
+            previous,
+            previousPrevious
+          }
+        });
+      }
     });
   });
 };
