@@ -8,7 +8,7 @@ import { Link } from "gatsby";
 // import _config from "../../_config";
 
 // Components
-import { H31SimpleTime, H31Title3B, H31Title4A, H31Text3 } from "..";
+import { H31SimpleTime, H31Title3B, H31Text3 } from "..";
 
 // Styled Components
 const ContentGroup = styled.div`
@@ -50,7 +50,6 @@ const Container = styled(Link)`
   position: relative;
   padding: 0px;
   width: 100%;
-  max-width: 500px;
   border: none;
   overflow: hidden;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -58,12 +57,9 @@ const Container = styled(Link)`
   color: initial;
   text-decoration: none;
   background-color: #ffffff;
+
   &:hover {
-    text-decoration: none !important;
-    pointer: cursor;
-    ${Overlay} {
-      opacity: 1;
-    }
+    text-decoration: none;
   }
 `;
 

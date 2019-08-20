@@ -47,7 +47,7 @@ export default class BlogCardLoader1 extends React.Component {
                     title
                   }
                   fileAbsolutePath
-                  excerpt(pruneLength: 100)
+                  excerpt(pruneLength: 90)
                   fields {
                     path
                   }

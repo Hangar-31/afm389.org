@@ -44,6 +44,7 @@ export { default as H31Bio1 } from "./bios/Bio1";
 
 // Blog Cards
 export { default as H31BlogCard1 } from "./blog-cards/BlogCard1";
+export { default as H31BlogCard2 } from "./blog-cards/BlogCard2";
 
 // Blog Card Loader
 export {

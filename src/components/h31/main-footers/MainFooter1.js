@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React from "react";
 import { PropTypes } from "prop-types";
 import { css } from "@emotion/core";
@@ -55,6 +56,10 @@ const Item = styled.li`
     line-height: 1;
     font-size: 0.775rem;
   }
+`;
+
+const LinkExternal = styled.a`
+  ${H31Link2.__emotion_styles}
 `;
 
 const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
@@ -140,7 +145,12 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
                 </Item>
                 {item.links.map(link => (
                   <Item key={link.name}>
-                    <H31Link2 to={link.to}>{link.name}</H31Link2>
+                    {link.external && (
+                      <LinkExternal href={link.to}>{link.name}</LinkExternal>
+                    )}
+                    {!link.external && (
+                      <H31Link2 to={link.to}>{link.name}</H31Link2>
+                    )}
                   </Item>
                 ))}
               </List>

@@ -5,7 +5,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
-
+import MediaQuery from "react-responsive";
 import moment from "moment";
 import { css } from "@emotion/core";
 
@@ -28,17 +28,38 @@ import {
   H31Title2B,
   H31ButtonFacebookShare,
   H31ButtonTwitterTweet,
-  H31ButtonFillArrow
+  H31ButtonFillArrow,
+  H31BlogCard2
 } from "../components/h31";
 
 const NewsAndEvents = ({ data, pageContext }) => {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
 
+  console.log(pageContext);
+
   // Extract articles for next and previous navigating
-  const { nextNext, next, previous, previousPrevious } = pageContext;
-  let articles = [nextNext, next, previous, previousPrevious];
-  articles = articles.filter(article => article != null);
+  let { next, previous } = pageContext;
+  if (next !== null) {
+    next = {
+      image: next.frontmatter.image,
+      title: next.frontmatter.title,
+      text: next.excerpt,
+      date: next.frontmatter.date,
+      link: next.fields.path,
+      linkText: "Read More"
+    };
+  }
+  if (previous !== null) {
+    previous = {
+      image: previous.frontmatter.image,
+      title: previous.frontmatter.title,
+      text: previous.excerpt,
+      date: previous.frontmatter.date,
+      link: previous.fields.path,
+      linkText: "Read More"
+    };
+  }
 
   return (
     <Layout>
@@ -114,6 +135,8 @@ const NewsAndEvents = ({ data, pageContext }) => {
                 >
                   <H31LayoutCol
                     css={css`
+                      display: flex;
+                      align-items: center;
                       padding: 0 !important;
                     `}
                     xs={6}
@@ -248,8 +271,59 @@ const NewsAndEvents = ({ data, pageContext }) => {
                     padding: 0 !important;
                   `}
                 >
-                  <H31LayoutCol xs={6} />
-                  <H31LayoutCol xs={6} />
+                  <H31LayoutCol
+                    xs={6}
+                    css={css`
+                      padding-left: 0 !important;
+                    `}
+                  >
+                    {previous !== null && (
+                      <>
+                        <H31ButtonFillArrow
+                          arrowDirection="left"
+                          carrotColor={_config.colorTertiary}
+                          primaryColor={_config.colorWhite}
+                          secondaryColor={_config.colorTertiary}
+                          text="Previous"
+                          link={previous.link}
+                        />
+                        <MediaQuery query="(min-width: 992px)">
+                          <br />
+                          <br />
+                          <H31BlogCard2 article={previous} />
+                        </MediaQuery>
+                      </>
+                    )}
+                  </H31LayoutCol>
+                  <H31LayoutCol
+                    xs={6}
+                    css={css`
+                      padding-right: 0 !important;
+                    `}
+                  >
+                    {next !== null && (
+                      <>
+                        <div
+                          css={css`
+                            text-align: right;
+                          `}
+                        >
+                          <H31ButtonFillArrow
+                            arrowDirection="right"
+                            carrotColor={_config.colorTertiary}
+                            primaryColor={_config.colorWhite}
+                            secondaryColor={_config.colorTertiary}
+                            text="Next"
+                            link={next.link}
+                          />
+                        </div>
+                        <MediaQuery query="(min-width: 992px)">
+                          <br />
+                          <H31BlogCard2 article={next} />
+                        </MediaQuery>
+                      </>
+                    )}
+                  </H31LayoutCol>
                 </H31LayoutRow>
               </H31LayoutContainer>
             </ContentBlock2>

@@ -61,7 +61,8 @@ export default {
       links: [
         {
           name: "American Federation of Musicians",
-          to: "/"
+          to: "https://www.afm.org/",
+          external: true
         }
       ]
     },
@@ -109,7 +110,7 @@ export default {
       links: [
         {
           name: "Contact",
-          to: "/"
+          to: "/contact"
         }
       ]
     },
@@ -118,11 +119,11 @@ export default {
       links: [
         {
           name: "Rehearsal Hall",
-          to: "/"
+          to: "/rehearsal-hall"
         },
         {
           name: "Calendar",
-          to: "/"
+          to: "/rehearsal-hall"
         }
       ]
     }

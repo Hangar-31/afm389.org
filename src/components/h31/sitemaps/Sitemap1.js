@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
@@ -31,6 +32,10 @@ const Item = styled.li`
   line-height: 1.25;
 `;
 
+const LinkExternal = styled.a`
+  ${H31Link2.__emotion_styles}
+`;
+
 const Sitemap1 = () => (
   <H31LayoutContainer
     css={css`
@@ -48,7 +53,12 @@ const Sitemap1 = () => (
               </Item>
               {item.links.map(link => (
                 <Item key={link.name}>
-                  <H31Link2 to={link.to}>{link.name}</H31Link2>
+                  {link.external && (
+                    <LinkExternal href={link.to}>{link.name}</LinkExternal>
+                  )}
+                  {!link.external && (
+                    <H31Link2 to={link.to}>{link.name}</H31Link2>
+                  )}
                 </Item>
               ))}
             </List>

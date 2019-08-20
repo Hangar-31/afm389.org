@@ -22,7 +22,7 @@ exports.createPages = ({ actions, graphql }) => {
       ) {
         edges {
           node {
-            excerpt(pruneLength: 200)
+            excerpt(pruneLength: 80)
             fileAbsolutePath
             html
             id
@@ -43,7 +43,9 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors);
     }
 
-    const posts = result.data.allMarkdownRemark.edges;
+    const posts = result.data.allMarkdownRemark.edges.filter(
+      post => !post.node.fileAbsolutePath.includes("static/testimonials")
+    );
 
     posts.forEach((post, i) => {
       const nextNext = i - 2 < 0 ? null : posts[i - 2].node;
@@ -52,19 +54,17 @@ exports.createPages = ({ actions, graphql }) => {
       const previousPrevious =
         i + 2 > posts.length - 1 ? null : posts[i + 2].node;
 
-      if (!post.node.fileAbsolutePath.includes("static/testimonials")) {
-        createPage({
-          path: urlMaker(post.node.fileAbsolutePath),
-          id: post.node.id,
-          component: blogStoriesOfCareTemplate,
-          context: {
-            nextNext,
-            next,
-            previous,
-            previousPrevious
-          }
-        });
-      }
+      createPage({
+        path: urlMaker(post.node.fileAbsolutePath),
+        id: post.node.id,
+        component: blogStoriesOfCareTemplate,
+        context: {
+          nextNext,
+          next,
+          previous,
+          previousPrevious
+        }
+      });
     });
   });
 };

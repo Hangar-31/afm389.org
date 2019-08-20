@@ -14,4 +14,8 @@ export default styled.a`
   &:hover {
     box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.4);
   }
+  @media (max-width: 991px) {
+    width: 60px;
+    height: 20px;
+  }
 `;

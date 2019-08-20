@@ -116,7 +116,10 @@ const BlogCard1 = ({ article }) => (
     </Overlay>
 
     <ImageContainer>
-      <img alt="" src={article.image} />
+      {typeof article.image === "string" && (
+        <img alt={article.title} src={article.image} />
+      )}
+      {typeof article.image !== "string" && article.image}
     </ImageContainer>
 
     <ContentContainer
