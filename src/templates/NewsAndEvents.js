@@ -159,7 +159,7 @@ const NewsAndEvents = ({ data, pageContext }) => {
                     `}
                     xs={6}
                   >
-                    {window !== "undefined" && (
+                    {typeof window !== "undefined" && (
                       <>
                         <TwitterShareButton url={window.location}>
                           <H31ButtonTwitterTweet
@@ -248,7 +248,7 @@ const NewsAndEvents = ({ data, pageContext }) => {
                     `}
                     xs={12}
                   >
-                    {window !== "undefined" && (
+                    {typeof window !== "undefined" && (
                       <>
                         <TwitterShareButton url={window.location}>
                           <H31ButtonTwitterTweet
