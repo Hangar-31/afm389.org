@@ -11,36 +11,6 @@ import { Link } from "gatsby";
 import { H31SimpleTime, H31Title3B, H31Title4A, H31Text3 } from "..";
 
 // Styled Components
-const Overlay = styled.section`
-  z-index: 1;
-  position: absolute;
-  opacity: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  height: 50%;
-  width: 100%;
-  transition: 0.2s;
-`;
-
-// const OverlayTitle = styled.div`
-//   width: 100%;
-//   margin-bottom: 30px;
-//   text-align: center;
-//   > * {
-//     color: #ffffff;
-//     text-decoration: none;
-//   }
-// `;
-
-const OverlayClick = styled.div`
-  width: 100%;
-  text-align: center;
-`;
-
-// const Group = styled.div``;
-
 const ContentGroup = styled.div`
   overflow: hidden;
   height: 150px;
@@ -101,20 +71,9 @@ const BlogCard1 = ({ article }) => (
   <Container
     css={css`
       height: ${article.date ? "420px" : "350px"};
-      &:hover {
-        ${Overlay} {
-          background-color: rgba(243, 149, 8, 0.84);
-        }
-      }
     `}
     to={article.link}
   >
-    <Overlay>
-      <OverlayClick>
-        <H31Title4A>{article.linkText}</H31Title4A>
-      </OverlayClick>
-    </Overlay>
-
     <ImageContainer>
       <img alt="" src={article.image} />
     </ImageContainer>

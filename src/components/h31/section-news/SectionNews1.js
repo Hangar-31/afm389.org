@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/no-unused-state */
 import React from "react";
-import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
+import { StaticQuery, graphql } from "gatsby";
 import { H31BlogCard1 } from "..";
 import _config from "../../_config";
 
@@ -154,74 +154,98 @@ class SectionNews1 extends React.Component {
 
   render() {
     const { slide, amount } = this.state;
-    const { articles } = this.props;
 
     return (
-      <>
-        <MasterContainer>
-          <Background />
-          <Container
-            ref={ref => {
-              this.slideContainer = ref;
-            }}
-          >
-            {articles.map((article, i) => (
-              <ContainerOuter
-                ref={ref => {
-                  this.articleComponents[i] = ref;
-                }}
-              >
-                <ContainerInner>
-                  <Wrapper>
-                    <H31BlogCard1 article={article} />
-                  </Wrapper>
-                </ContainerInner>
-              </ContainerOuter>
-            ))}
-          </Container>
-        </MasterContainer>
+      <StaticQuery
+        query={graphql`
+          query SectionNews1 {
+            allMarkdownRemark {
+              edges {
+                node {
+                  frontmatter {
+                    image
+                    date
+                    title
+                  }
+                  fileAbsolutePath
+                  excerpt(pruneLength: 100)
+                  fields {
+                    path
+                  }
+                }
+              }
+            }
+          }
+        `}
+        render={data => {
+          const articles = data.allMarkdownRemark.edges
+            .map(article => article.node)
+            .filter(article =>
+              article.fileAbsolutePath.includes("static/news-and-articles")
+            )
+            .map(article => {
+              const newArticle = {
+                image: article.frontmatter.image,
+                title: article.frontmatter.title,
+                text: article.excerpt,
+                date: article.frontmatter.date,
+                link: article.fields.path,
+                linkText: "Read More"
+              };
+              return newArticle;
+            });
+          return (
+            <>
+              <MasterContainer>
+                <Background />
+                <Container
+                  ref={ref => {
+                    this.slideContainer = ref;
+                  }}
+                >
+                  {articles.map((article, i) => (
+                    <ContainerOuter
+                      ref={ref => {
+                        this.articleComponents[i] = ref;
+                      }}
+                    >
+                      <ContainerInner>
+                        <Wrapper>
+                          <H31BlogCard1 article={article} />
+                        </Wrapper>
+                      </ContainerInner>
+                    </ContainerOuter>
+                  ))}
+                </Container>
+              </MasterContainer>
 
-        {this.articleComponents.length > amount && (
-          <ListButtons>
-            {this.articleComponents
-              .splice(0, this.articleComponents.length - amount + 1)
-              .map((c, i) => (
-                <ItemButton>
-                  <Button
-                    onClick={() => {
-                      this.slideContainer.scrollLeft = c.scrollWidth * i;
-                      this.setState({ slide: i });
-                    }}
-                    css={css`
-                      background-color: ${slide === i
-                        ? _config.colorSecondary
-                        : _config.colorLightGrey};
-                    `}
-                  />
-                </ItemButton>
-              ))}
-          </ListButtons>
-        )}
-      </>
+              {this.articleComponents.length > amount && (
+                <ListButtons>
+                  {this.articleComponents
+                    .splice(0, this.articleComponents.length - amount + 1)
+                    .map((c, i) => (
+                      <ItemButton>
+                        <Button
+                          onClick={() => {
+                            this.slideContainer.scrollLeft = c.scrollWidth * i;
+                            this.setState({ slide: i });
+                          }}
+                          css={css`
+                            background-color: ${slide === i
+                              ? _config.colorSecondary
+                              : _config.colorLightGrey};
+                          `}
+                        />
+                      </ItemButton>
+                    ))}
+                </ListButtons>
+              )}
+            </>
+          );
+        }}
+      />
     );
   }
 }
-
-SectionNews1.defaultProps = {
-  articles: [
-    {
-      image: "",
-      title: "",
-      text: "",
-      link: "",
-      linkText: "",
-      date: ""
-    }
-  ]
-};
-
-SectionNews1.propTypes = {
-  articles: PropTypes.arrayOf(PropTypes.object)
-};
 
 export default SectionNews1;

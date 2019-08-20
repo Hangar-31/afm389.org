@@ -8,9 +8,9 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: news-and-events
+  - name: news-and-articles
     label: News and Events
-    folder: static/news-and-events
+    folder: static/news-and-articles
     create: true
     fields:
       - { name: date, label: Date, widget: datetime }

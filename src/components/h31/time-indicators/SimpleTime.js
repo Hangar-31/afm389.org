@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
+import moment from "moment";
 import { H31Text3 } from "..";
 
 const SimpleFlexContainer = styled.section`
@@ -43,7 +44,7 @@ const SimpleTime = ({ color, date }) => (
         margin-bottom: 0;
       `}
     >
-      {date}
+      {moment(date).format("LL")}
     </H31Text3>
   </SimpleFlexContainer>
 );

@@ -42,7 +42,7 @@ export default {
     },
     {
       name: "News And Articles",
-      to: "/news-&-articles"
+      to: "/news-and-articles"
     },
     {
       name: "Contact",
@@ -70,11 +70,11 @@ export default {
       links: [
         {
           name: "CFMA History",
-          to: "/"
+          to: "/about-us"
         },
         {
           name: "The Team at CFMA",
-          to: "/"
+          to: "/about-us"
         }
       ]
     },
@@ -83,11 +83,11 @@ export default {
       links: [
         {
           name: "Benefits",
-          to: "/"
+          to: "/member-benefits"
         },
         {
           name: "(CBA) Partners",
-          to: "/"
+          to: "/member-benefits"
         }
       ]
     },
@@ -95,20 +95,12 @@ export default {
       title: "EVENTS",
       links: [
         {
-          name: "2019 Disney Open Call Auditions",
-          to: "/"
+          name: "Attending An Informational Gathering",
+          to: "/news-and-articles/attending-an-information-gathering"
         },
         {
-          name: "Orlando Musicians Conference",
-          to: "/"
-        },
-        {
-          name: "10 Tips For Live Performances",
-          to: "/"
-        },
-        {
-          name: "CFMA May 12th Musicians Social",
-          to: "/"
+          name: "The Subtle Art of Dinner Music",
+          to: "/news-and-articles/the-subtle-art-of-dinner-music"
         }
       ]
     },

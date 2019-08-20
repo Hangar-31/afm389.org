@@ -1,16 +1,18 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/no-unused-state */
 import React from "react";
-import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
+import { StaticQuery, graphql } from "gatsby";
 import { H31Title3A, H31Text4 } from "..";
+
+// Config
 import _config from "../../_config";
 
+// Styled Components
 const MasterContainer = styled.section`
   position: relative;
   overflow-y: hidden;
-  height: 350px;
 `;
 
 const Container = styled.section`
@@ -164,83 +166,97 @@ class Testimonials extends React.Component {
 
   render() {
     const { slide, amount } = this.state;
-    const { testimonials } = this.props;
 
     return (
-      <>
-        <MasterContainer>
-          <Container
-            ref={ref => {
-              this.slideContainer = ref;
-            }}
-          >
-            {testimonials.map((testimonial, i) => (
-              <ContainerOuter
-                ref={ref => {
-                  this.testimonialComponents[i] = ref;
-                }}
-              >
-                <ContainerInner>
-                  <Wrapper>
-                    <TitleContainer
-                      css={css`
-                        background-color: ${_config.colorSecondary};
-                      `}
-                    >
-                      <H31Title3A>{testimonial.name}</H31Title3A>
-                    </TitleContainer>
-                    <ParagraphContainer
-                      css={css`
-                        color: ${_config.colorDarkGrey};
-                      `}
-                    >
-                      <H31Text4>{testimonial.text}</H31Text4>
-                    </ParagraphContainer>
-                  </Wrapper>
-                </ContainerInner>
-              </ContainerOuter>
-            ))}
-          </Container>
-        </MasterContainer>
+      <StaticQuery
+        query={graphql`
+          query {
+            allMarkdownRemark {
+              edges {
+                node {
+                  id
+                  frontmatter {
+                    title
+                    date
+                    image
+                    name
+                    text
+                  }
+                  fileAbsolutePath
+                }
+              }
+            }
+          }
+        `}
+        render={data => {
+          const testimonials = data.allMarkdownRemark.edges
+            .map(testimonial => testimonial.node.frontmatter)
+            .filter(testimonial => testimonial.name !== null);
 
-        {this.testimonialComponents.length > amount && (
-          <ListButtons>
-            {this.testimonialComponents
-              .splice(0, this.testimonialComponents.length - amount + 1)
-              .map((c, i) => (
-                <ItemButton>
-                  <Button
-                    onClick={() => {
-                      this.slideContainer.scrollLeft = c.scrollWidth * i;
-                      this.setState({ slide: i });
-                    }}
-                    css={css`
-                      background-color: ${slide === i
-                        ? _config.colorSecondary
-                        : _config.colorLightGrey};
-                    `}
-                  />
-                </ItemButton>
-              ))}
-          </ListButtons>
-        )}
-      </>
+          return (
+            <>
+              <MasterContainer>
+                <Container
+                  ref={ref => {
+                    this.slideContainer = ref;
+                  }}
+                >
+                  {testimonials.map((testimonial, i) => (
+                    <ContainerOuter
+                      ref={ref => {
+                        this.testimonialComponents[i] = ref;
+                      }}
+                    >
+                      <ContainerInner>
+                        <Wrapper>
+                          <TitleContainer
+                            css={css`
+                              background-color: ${_config.colorSecondary};
+                            `}
+                          >
+                            <H31Title3A>{testimonial.name}</H31Title3A>
+                          </TitleContainer>
+                          <ParagraphContainer
+                            css={css`
+                              color: ${_config.colorDarkGrey};
+                            `}
+                          >
+                            <H31Text4>{testimonial.text}</H31Text4>
+                          </ParagraphContainer>
+                        </Wrapper>
+                      </ContainerInner>
+                    </ContainerOuter>
+                  ))}
+                </Container>
+              </MasterContainer>
+
+              {this.testimonialComponents.length > amount && (
+                <ListButtons>
+                  {this.testimonialComponents
+                    .splice(0, this.testimonialComponents.length - amount + 1)
+                    .map((c, i) => (
+                      <ItemButton>
+                        <Button
+                          onClick={() => {
+                            this.slideContainer.scrollLeft = c.scrollWidth * i;
+                            this.setState({ slide: i });
+                          }}
+                          css={css`
+                            background-color: ${slide === i
+                              ? _config.colorSecondary
+                              : _config.colorLightGrey};
+                          `}
+                        />
+                      </ItemButton>
+                    ))}
+                </ListButtons>
+              )}
+            </>
+          );
+        }}
+      />
     );
   }
 }
-
-Testimonials.defaultProps = {
-  testimonials: [
-    {
-      name: "Bill Rye",
-      text:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium mi aquam molestie, vel ultricies libero faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium mi a quam molestie, vel ultricies libero faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    }
-  ]
-};
-
-Testimonials.propTypes = {
-  testimonials: PropTypes.arrayOf(PropTypes.object)
-};
 
 export default Testimonials;

@@ -23,8 +23,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `news-and-events`,
-        path: `${__dirname}/static/news-and-events`
+        name: `news-and-articles`,
+        path: `${__dirname}/static/news-and-articles`
       }
     },
     {

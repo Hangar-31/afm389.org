@@ -1,7 +1,6 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-wrap-multilines */
 import React from "react";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
 import { css } from "@emotion/core";
 
 // Config
@@ -11,7 +10,7 @@ import _config from "../components/_config";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import {
-  // H31ContentBlock1,
+  H31ContentBlock1,
   H31SectionTitleFullWidth,
   H31CallToAction,
   H31Testimonials,
@@ -71,40 +70,36 @@ const articles = [
   }
 ];
 
-// const contentBlocks = [
-//   {
-//     title: "Your Legal Support",
-//     text: `Having a contract is one thing, but having a contract backed by the
-//       union is another. We work with the finest attorneys in the business.
-//       We have recovered thousands of dollars for our members.`,
-//     image: <ImgHome1 />
-//   },
-//   {
-//     title: "Keeping You Informed",
-//     text: `The local music scene is ever-changing. Our member-ship is a great
-//       resource to help navigate that scene. Quarterly membership meetings,
-//       newsletters and social media can help keep you informed.`,
-//     image: <ImgHome2 />
-//   },
-//   {
-//     title: "A Vibrant Community",
-//     text: `Nearly 600 musicians call themselves CFMA members. From Jazz to
-//       Classical, Latin to Rock, R&B to Hip-Hop, our members play it all.`,
-//     image: <ImgHome3 />
-//   },
-//   {
-//     title: "Ready For A Rehearsal",
-//     text: `Use of the Rehearsal Hall is free for our members! More details can be
-//       found here.`,
-//     image: <ImgHome4 />
-//   }
-// ];
+const contentBlocks = [
+  {
+    title: "Your Legal Support",
+    text: `Having a contract is one thing, but having a contract backed by the
+      union is another. We work with the finest attorneys in the business.
+      We have recovered thousands of dollars for our members.`,
+    image: <ImgHome1 />
+  },
+  {
+    title: "Keeping You Informed",
+    text: `The local music scene is ever-changing. Our member-ship is a great
+      resource to help navigate that scene. Quarterly membership meetings,
+      newsletters and social media can help keep you informed.`,
+    image: <ImgHome2 />
+  },
+  {
+    title: "A Vibrant Community",
+    text: `Nearly 600 musicians call themselves CFMA members. From Jazz to
+      Classical, Latin to Rock, R&B to Hip-Hop, our members play it all.`,
+    image: <ImgHome3 />
+  },
+  {
+    title: "Ready For A Rehearsal",
+    text: `Use of the Rehearsal Hall is free for our members! More details can be
+      found here.`,
+    image: <ImgHome4 />
+  }
+];
 
-export const Index = ({ data }) => {
-  const testimonials = data.allMarkdownRemark.edges
-    .map(testimonial => testimonial.node.frontmatter)
-    .filter(testimonial => testimonial.name !== null);
-
+export default () => {
   return (
     <Layout>
       <SEO title="Your Path to a Musical Career" description="" />
@@ -159,7 +154,7 @@ export const Index = ({ data }) => {
         raising industry standards in Central Florida. How can we help you?"
       />
 
-      {/* {contentBlocks.map((contentBlock, i) => (
+      {contentBlocks.map((contentBlock, i) => (
         <H31ContentBlock1
           ImageComponent={contentBlock.image}
           title={contentBlock.title}
@@ -170,7 +165,7 @@ export const Index = ({ data }) => {
           }
           textRight={i % 2 !== 0}
         />
-      ))} */}
+      ))}
 
       <H31CallToAction />
 
@@ -179,35 +174,7 @@ export const Index = ({ data }) => {
         titleSmall="Testimonials"
       />
 
-      <H31Testimonials testimonials={testimonials} />
+      <H31Testimonials />
     </Layout>
   );
 };
-
-Index.defaultProps = {
-  data: {}
-};
-
-Index.propTypes = {
-  data: PropTypes.objectOf(PropTypes.object())
-};
-
-export const query = graphql`
-  query {
-    allMarkdownRemark {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date
-            image
-            name
-            text
-          }
-          fileAbsolutePath
-        }
-      }
-    }
-  }
-`;
