@@ -36,8 +36,6 @@ const NewsAndEvents = ({ data, pageContext }) => {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
 
-  console.log(pageContext);
-
   // Extract articles for next and previous navigating
   let { next, previous } = pageContext;
   if (next !== null) {
