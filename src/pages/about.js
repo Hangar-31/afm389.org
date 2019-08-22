@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-wrap-multilines */
 import React from "react";
 import { css } from "@emotion/core";
-import MediaQuery from "react-responsive";
 
 // Components
 import Layout from "../components/layout";
@@ -173,14 +172,29 @@ export default () => (
       <H31LayoutRow>
         <H31LayoutCol xs={1} md={2} xl={3} />
         <H31LayoutCol xs={10} md={8} xl={6}>
-          <MediaQuery query="(min-width: 575px)">
-            <H31ContentBlock2 title="We Work For Musicians">
+          <div
+            css={css`
+              display: none !important;
+              @media (min-width: 576px) {
+                display: block !important;
+              }
+            `}
+          >
+            <H31ContentBlock2 title="Musicians Working For Musicians">
               {data}
             </H31ContentBlock2>
-          </MediaQuery>
-          <MediaQuery query="(max-width: 575px)">
+          </div>
+
+          <div
+            css={css`
+              display: none !important;
+              @media (max-width: 575px) {
+                display: block !important;
+              }
+            `}
+          >
             <H31ContentBlock2>{data}</H31ContentBlock2>
-          </MediaQuery>
+          </div>
         </H31LayoutCol>
         <H31LayoutCol xs={1} md={2} xl={3} />
       </H31LayoutRow>

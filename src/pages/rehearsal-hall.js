@@ -30,6 +30,7 @@ const ContainerContact = styled.section`
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   width 100%;
+  margin-top: 30px;
   padding: 15px 60px;
   background-color: #303D48;
   @media(max-width: 767px) {
@@ -126,27 +127,6 @@ const content1 = [
 ];
 
 const content2 = [
-  <H31Title2B
-    css={css`
-      margin: 15px 0 30px 0;
-    `}
-  >
-    Three-Strike Policy
-  </H31Title2B>,
-  <H31Text3>
-    If you are in violation of any of the rules three times within any
-    contiguous 12-month period, you will be disallowed from reserving and using
-    the Hall for one year. For example, if a Band Leader is in violation of
-    these terms, he will not be allowed to have one of his band members book the
-    Hall in his stead. Detailed Rules are below, but violations include:
-  </H31Text3>,
-  <H31ListBullet1>
-    <H31Item1>Not paying for non-members</H31Item1>
-    <H31Item1>Not completing Rehearsal Hall form</H31Item1>
-    <H31Item1>Not returning Hall to proper order</H31Item1>
-    <H31Item1>No-shows without prior cancellation notice</H31Item1>
-    <H31Item1>Taking or borrowing equipment without prior permission</H31Item1>
-  </H31ListBullet1>,
   <H31Title2B
     css={css`
       margin: 30px 0;
@@ -249,7 +229,28 @@ const content2 = [
     </H31Item1>
     <H31Item1>Member individual rehearsals</H31Item1>
     <H31Item1>Majority non-member rehearsals</H31Item1>
-  </H31ListNumbered1>
+  </H31ListNumbered1>,
+  <H31Title2B
+    css={css`
+      margin: 30px 0;
+    `}
+  >
+    Three-Strike Policy
+  </H31Title2B>,
+  <H31Text3>
+    If you are in violation of any of the rules three times within any
+    contiguous 12-month period, you will be disallowed from reserving and using
+    the Hall for one year. For example, if a Band Leader is in violation of
+    these terms, he will not be allowed to have one of his band members book the
+    Hall in his stead. Detailed Rules are below, but violations include:
+  </H31Text3>,
+  <H31ListBullet1>
+    <H31Item1>Not paying for non-members</H31Item1>
+    <H31Item1>Not completing Rehearsal Hall form</H31Item1>
+    <H31Item1>Not returning Hall to proper order</H31Item1>
+    <H31Item1>No-shows without prior cancellation notice</H31Item1>
+    <H31Item1>Taking or borrowing equipment without prior permission</H31Item1>
+  </H31ListBullet1>
 ];
 
 export default () => (
@@ -272,13 +273,18 @@ export default () => (
         }
       `}
     >
-      <H31LayoutRow>
+      <H31LayoutRow
+        css={css`
+          margin-bottom: 15px;
+        `}
+      >
         <H31LayoutCol md={12} lg={6}>
           <H31ContentBlock2 title="Our Facility">
             <H31LayoutContainer fluid>
               <H31LayoutRow>
                 <H31LayoutCol
                   css={css`
+                    flex-wrap: wrap;
                     padding: 0 !important;
                   `}
                   lg={12}
@@ -331,26 +337,11 @@ export default () => (
         </H31LayoutCol>
       </H31LayoutRow>
 
-      <H31LayoutRow>
-        <H31LayoutCol md={12}>
-          <H31ContentBlock2 title="Rehearsal Hall Rules">
-            <H31LayoutContainer fluid>
-              <H31LayoutRow>
-                <H31LayoutCol
-                  css={css`
-                    padding: 0 !important;
-                  `}
-                  xs={12}
-                >
-                  {content2}
-                </H31LayoutCol>
-              </H31LayoutRow>
-            </H31LayoutContainer>
-          </H31ContentBlock2>
-        </H31LayoutCol>
-      </H31LayoutRow>
-
-      <H31LayoutRow>
+      <H31LayoutRow
+        css={css`
+          margin-bottom: 15px;
+        `}
+      >
         <H31LayoutCol md={12}>
           <H31ContentBlock2 title="Rehearsal Hall Calendar">
             <H31LayoutContainer fluid>
@@ -380,6 +371,29 @@ export default () => (
                     frameBorder="0"
                     scrolling="no"
                   />
+                </H31LayoutCol>
+              </H31LayoutRow>
+            </H31LayoutContainer>
+          </H31ContentBlock2>
+        </H31LayoutCol>
+      </H31LayoutRow>
+
+      <H31LayoutRow
+        css={css`
+          margin-bottom: 15px;
+        `}
+      >
+        <H31LayoutCol md={12}>
+          <H31ContentBlock2 title="Rehearsal Hall Rules">
+            <H31LayoutContainer fluid>
+              <H31LayoutRow>
+                <H31LayoutCol
+                  css={css`
+                    padding: 0 !important;
+                  `}
+                  xs={12}
+                >
+                  {content2}
                 </H31LayoutCol>
               </H31LayoutRow>
             </H31LayoutContainer>

@@ -103,6 +103,9 @@ export { default as H31MobileNav1 } from "./mobile-navs/MobileNav1";
 // Paragraphs
 export { default as H31Paragraph1 } from "./paragraphs/Paragraph1";
 
+// Section CBAS
+export { default as H31SectionCBAS1 } from "./section-cbas/SectionCBAS1";
+
 // Section Titles
 export {
   default as H31SectionTitleFullWidth

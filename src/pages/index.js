@@ -112,7 +112,7 @@ export default () => {
 
       <H31SectionTitleFullWidth
         backgroundColor={_config.colorWhite}
-        titleSmall="Recent News And Events"
+        titleSmall="Recent News And Articles"
       />
 
       <H31SectionNews1 articles={articles} />
@@ -137,7 +137,7 @@ export default () => {
             md={12}
           >
             <H31ButtonFillArrow
-              link="/news-&-events"
+              link="/news-and-articles"
               text="See All News"
               carrotColor={_config.colorTertiary}
               secondaryColor={_config.colorTertiary}
@@ -147,7 +147,7 @@ export default () => {
       </H31LayoutContainer>
 
       <H31TextBlock2
-        title="We Work For Musicians"
+        title="Musicians Working For Musicians"
         subtitle="Helping Musicians Succeed"
         text="As part of the American Federation of Musicians — the largest
         organization in the world representing musicians — we are committed to

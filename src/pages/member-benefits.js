@@ -14,12 +14,12 @@ import {
   H31Masthead1,
   H31SectionTitleFullWidth,
   H31ToggleInfo1,
-  H31BlogCard1,
   H31LayoutContainer,
   H31LayoutRow,
   H31LayoutCol,
   H31Text3,
-  H31CallToAction
+  H31CallToAction,
+  H31SectionCBAS1
 } from "../components/h31";
 
 // Images
@@ -118,15 +118,15 @@ const articles = [
   },
   {
     image: <ImgPartner2 />,
-    title: "Broadway Across America",
-    text: "Bringing professional-level Broadway shows to the Central Florida stage requires professional musicians, too. Broadway shows musicians are booked by a Union contractor.",
+    title: "Orlando Philharmonic Orchestra",
+    text: "Newly unionized in 2012, our agreement and amiable working relationship with the Philharmonic continues to better wages and working conditions for our musicians.",
     link: "/",
     linkText: "Visit Site"
   },
   {
     image: <ImgPartner3 />,
-    title: "Orlando Philharmonic Orchestra",
-    text: "Newly unionized in 2012, our agreement and amiable working relationship with the Philharmonic continues to better wages and working conditions for our musicians.",
+    title: "Broadway Across America",
+    text: "Bringing professional-level Broadway shows to the Central Florida stage requires professional musicians, too. Broadway shows musicians are booked by a Union contractor.",
     link: "/",
     linkText: "Visit Site"
   }
@@ -169,44 +169,7 @@ export default () => (
       titleLarge="Collective Bargaining Agreement (CBA) Partners"
     />
 
-    <H31LayoutContainer
-      css={css`
-        height: 340px;
-        margin-bottom: 30px;
-        background: linear-gradient(
-          90deg,
-          #6da55f calc(0% + 15px),
-          #164f4b calc(100% - 30px)
-        );
-        @media(max-width: 991px) {
-          height: 1100px;
-        }
-        @media(max-width: 575px) {
-          padding-top: 30px !important;
-        }
-      `}
-      fluid
-      as="section"
-    >
-      <H31LayoutRow>
-        {articles.map(article => (
-          <>
-            <H31LayoutCol className="d-xs-block d-lg-none" xs={1} sm={2} />
-            <H31LayoutCol
-              css={css`
-              margin-bottom: 30px;
-            `}
-              xs={10}
-              sm={8}
-              lg={4}
-            >
-              <H31BlogCard1 article={article} />
-            </H31LayoutCol>
-            <H31LayoutCol className="d-xs-block d-lg-none" xs={1} sm={2} />
-          </>
-        ))}
-      </H31LayoutRow>
-    </H31LayoutContainer>
+    <H31SectionCBAS1 articles={articles} />
 
     <H31LayoutContainer 
       css={css`

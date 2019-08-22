@@ -34,6 +34,9 @@ const GridContainer = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 100px 100px 100px;
+  @media (max-width: 575px) {
+    padding: 0 50px;
+  }
 `;
 
 export default () => (

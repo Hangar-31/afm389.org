@@ -4,9 +4,6 @@ import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
 
-// Config
-// import _config from "../../_config";
-
 // Components
 import { H31SimpleTime, H31Title3B, H31Title4A, H31Text3 } from "..";
 
@@ -14,12 +11,13 @@ import { H31SimpleTime, H31Title3B, H31Title4A, H31Text3 } from "..";
 const Overlay = styled.section`
   z-index: 1;
   position: absolute;
+  top: 0;
   opacity: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  height: 50%;
+  height: 205px;
   width: 100%;
   transition: 0.2s;
 `;
@@ -41,12 +39,10 @@ const OverlayClick = styled.div`
 
 // const Group = styled.div``;
 
-const ContentGroup = styled.div`
-  overflow: hidden;
-  height: 150px;
-`;
+const ContentGroup = styled.div``;
 const ImageContainer = styled.div`
-  height: 50%;
+  height: 205px;
+  overflow: hidden;
   width: 100%;
   transition: 0.5s;
   > .gatsby-image-wrapper,
@@ -100,7 +96,7 @@ const Container = styled(Link)`
 const BlogCard1 = ({ article }) => (
   <Container
     css={css`
-      height: ${article.date ? "420px" : "350px"};
+      min-height: ${article.date ? "420px" : "350px"};
       &:hover {
         ${Overlay} {
           background-color: rgba(243, 149, 8, 0.84);
@@ -109,22 +105,21 @@ const BlogCard1 = ({ article }) => (
     `}
     to={article.link}
   >
-    <Overlay>
-      <OverlayClick>
-        <H31Title4A>{article.linkText}</H31Title4A>
-      </OverlayClick>
-    </Overlay>
-
     <ImageContainer>
       {typeof article.image === "string" && (
         <img alt={article.title} src={article.image} />
       )}
       {typeof article.image !== "string" && article.image}
+      <Overlay>
+        <OverlayClick>
+          <H31Title4A>{article.linkText}</H31Title4A>
+        </OverlayClick>
+      </Overlay>
     </ImageContainer>
 
     <ContentContainer
       css={css`
-        height: ${article.date ? "163px" : "100%"};
+        min-height: ${article.date ? "163px" : "100%"};
         padding: ${article.date ? "15px 30px 0 30px;" : "15px 30px;"};
       `}
     >

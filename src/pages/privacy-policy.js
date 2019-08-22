@@ -1,6 +1,5 @@
 import React from "react";
 import { css } from "@emotion/core";
-import MediaQuery from "react-responsive";
 
 // Components
 import Layout from "../components/layout";
@@ -30,14 +29,14 @@ const data = [
   </H31Title2B>,
   <br />,
   <H31Text3>
-    The American Federation of Musicians (“AFM”) has created this privacy policy
-    to explain how information is used that you may provide while visiting this
-    website (“Website”) and to demonstrate our firm commitment to Internet
-    privacy. By using or accessing the Website, you are accepting the practices
-    described in this Privacy Policy. This Privacy Policy applies only to
-    information collected online through the Website and does not describe the
-    ways in which we may collect or use information obtained offline or through
-    any means other than our Website.
+    The Central Florida Musicians&apos; Association (CFMA) has created this
+    privacy policy to explain how information is used that you may provide while
+    visiting this website (“Website”) and to demonstrate our firm commitment to
+    Internet privacy. By using or accessing the Website, you are accepting the
+    practices described in this Privacy Policy. This Privacy Policy applies only
+    to information collected online through the Website and does not describe
+    the ways in which we may collect or use information obtained offline or
+    through any means other than our Website.
   </H31Text3>,
 
   <H31Title2B
@@ -263,12 +262,27 @@ const PrivacyPolicyPage = () => (
       <H31LayoutRow>
         <H31LayoutCol xs={1} md={2} xl={3} />
         <H31LayoutCol xs={10} md={8} xl={6}>
-          <MediaQuery query="(min-width: 575px)">
+          <div
+            css={css`
+              display: none !important;
+              @media (min-width: 576px) {
+                display: block !important;
+              }
+            `}
+          >
             <H31ContentBlock2 title="Privacy Policy">{data}</H31ContentBlock2>
-          </MediaQuery>
-          <MediaQuery query="(max-width: 575px)">
+          </div>
+
+          <div
+            css={css`
+              display: none !important;
+              @media (max-width: 575px) {
+                display: block !important;
+              }
+            `}
+          >
             <H31ContentBlock2>{data}</H31ContentBlock2>
-          </MediaQuery>
+          </div>
         </H31LayoutCol>
         <H31LayoutCol xs={1} md={2} xl={3} />
       </H31LayoutRow>

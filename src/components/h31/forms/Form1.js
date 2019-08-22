@@ -156,7 +156,6 @@ export default class Form1 extends React.Component {
     this.state = {
       Subject: "Website Contact Form",
       ...formFields,
-
       errors: [],
       submitting: 0
     };

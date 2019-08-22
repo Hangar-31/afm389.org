@@ -14,10 +14,10 @@ const spinning = keyframes`
 const SpinningCircle = ({ color }) => (
   <div
     css={css`
-      height: 30px;
-      width: 30px;
-      border: 4px solid #eeeeee;
-      border-top: 4px solid ${color};
+      height: 17px;
+      width: 17px;
+      border: 3px solid #eeeeee;
+      border-top: 3px solid ${color};
       border-radius: 50%;
       animation: ${spinning} 1s ease infinite;
     `}

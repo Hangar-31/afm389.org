@@ -2,7 +2,6 @@ import React from "react";
 import { PropTypes } from "prop-types";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
-import MediaQuery from "react-responsive";
 
 // Style Config File
 import _config from "../../_config";
@@ -51,90 +50,92 @@ const Masthead1 = ({ ImageComponent, title, text }) => (
       fluid
     >
       <BackgroundImage>{ImageComponent}</BackgroundImage>
-
-      <MediaQuery query="(min-width: 768px)">
-        <H31LayoutRow
-          css={css`
-            display: flex;
-            align-items: flex-end;
-            flex-wrap: wrap;
-            height: 100%;
-          `}
-        >
-          <H31LayoutCol xs={8} lg={7}>
-            <H31Title1B
-              css={css`
-                margin-bottom: 15px;
-                text-align: center;
-                background-color: ${_config.colorPrimary};
-              `}
-            >
-              {title}
-            </H31Title1B>
-            {text !== "" && <H31Paragraph1 text={text} />}
-          </H31LayoutCol>
-        </H31LayoutRow>
-      </MediaQuery>
+      <H31LayoutRow
+        css={css`
+          display: flex;
+          align-items: flex-end;
+          flex-wrap: wrap;
+          height: 100%;
+          @media (max-width: 767px) {
+            display: none !important;
+          }
+        `}
+      >
+        <H31LayoutCol xs={8} lg={7}>
+          <H31Title1B
+            css={css`
+              margin-bottom: 15px;
+              text-align: center;
+              background-color: ${_config.colorPrimary};
+            `}
+          >
+            {title}
+          </H31Title1B>
+          {text !== "" && <H31Paragraph1 text={text} />}
+        </H31LayoutCol>
+      </H31LayoutRow>
     </H31LayoutContainer>
 
-    <MediaQuery query="(max-width: 767px)">
-      <H31LayoutContainer
+    <H31LayoutContainer
+      css={css`
+        padding: 0 !important;
+        display: none;
+        @media (max-width: 768px) {
+          display: block;
+        }
+      `}
+      fluid
+      as="section"
+    >
+      <H31LayoutRow
         css={css`
-          padding: 0 !important;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          padding: 15px 0;
+          background-color: ${_config.colorPrimary};
         `}
-        fluid
-        as="section"
       >
+        <H31LayoutCol xs={1} md={0} />
+        <H31LayoutCol xs={10} md={12}>
+          <H31Title1B
+            css={css`
+              text-align: center;
+              background-color: ${_config.colorPrimary};
+            `}
+          >
+            {title}
+          </H31Title1B>
+        </H31LayoutCol>
+        <H31LayoutCol xs={1} md={0} />
+      </H31LayoutRow>
+
+      {text === "" && <br />}
+      {text !== "" && (
         <H31LayoutRow
           css={css`
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100%;
-            padding: 15px 0;
-            background-color: ${_config.colorPrimary};
+            padding: 30px 0;
           `}
         >
           <H31LayoutCol xs={1} md={0} />
           <H31LayoutCol xs={10} md={12}>
-            <H31Title1B
+            <H31Text2
               css={css`
-                text-align: center;
-                background-color: ${_config.colorPrimary};
+                color: ${_config.colorDarkGrey};
               `}
             >
-              {title}
-            </H31Title1B>
+              {text}
+            </H31Text2>
           </H31LayoutCol>
           <H31LayoutCol xs={1} md={0} />
         </H31LayoutRow>
-
-        {text === "" && <br />}
-        {text !== "" && (
-          <H31LayoutRow
-            css={css`
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              height: 100%;
-              padding: 30px 0;
-            `}
-          >
-            <H31LayoutCol xs={1} md={0} />
-            <H31LayoutCol xs={10} md={12}>
-              <H31Text2
-                css={css`
-                  color: ${_config.colorDarkGrey};
-                `}
-              >
-                {text}
-              </H31Text2>
-            </H31LayoutCol>
-            <H31LayoutCol xs={1} md={0} />
-          </H31LayoutRow>
-        )}
-      </H31LayoutContainer>
-    </MediaQuery>
+      )}
+    </H31LayoutContainer>
   </>
 );
 

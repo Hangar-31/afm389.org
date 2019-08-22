@@ -84,7 +84,17 @@ export default class BlogCardLoader1 extends React.Component {
               <H31LayoutRow>
                 {articles.slice(0, loadAmount).map((article, i) => (
                   <>
-                    <H31LayoutCol md={3}>
+                    <H31LayoutCol
+                      css={css`
+                        @media (max-width: 575px) {
+                          margin-bottom: 15px;
+                        }
+                      `}
+                      xs={12}
+                      sm={6}
+                      md={4}
+                      xl={3}
+                    >
                       <H31BlogCard1 article={article} />
                     </H31LayoutCol>
 
@@ -95,7 +105,10 @@ export default class BlogCardLoader1 extends React.Component {
                           align-items: center;
                           justify-content: center;
                         `}
-                        md={3}
+                        xs={12}
+                        sm={6}
+                        md={4}
+                        xl={3}
                       >
                         <H31Button1
                           css={css`
@@ -113,7 +126,7 @@ export default class BlogCardLoader1 extends React.Component {
                     )}
 
                     {(i + 1) % 4 === 0 && i + 1 !== articles.length && (
-                      <H31LayoutCol md={12}>
+                      <H31LayoutCol xs={12}>
                         <div
                           css={css`
                             width: 100%;

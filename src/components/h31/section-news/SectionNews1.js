@@ -10,12 +10,10 @@ import _config from "../../_config";
 const MasterContainer = styled.section`
   position: relative;
   overflow-y: hidden;
-  height: 450px;
 `;
 
 const Container = styled.section`
   position: relative;
-  padding-bottom: 15px;
   height: calc(100% + 7px);
   overflow-x: auto;
   overflow-y: hidden;
@@ -25,7 +23,7 @@ const Container = styled.section`
   flex: 1;
   display: flex;
   max-width: 1440px;
-  margin: 0 auto 30px auto;
+  margin: 0 auto;
   -webkit-overflow-scrolling: touch;
   &::-webkit-scrollbar {
     width: 0 !important;
@@ -39,17 +37,16 @@ const Background = styled.div`
   left: 0;
   top: 15px;
   width: 100%;
-  height: calc(100% - 60px);
-  background: linear-gradient(
-    90deg,
-    #6da55f calc(0% + 15px),
-    #164f4b calc(100% - 15px)
-  );
+  height: calc(100% - 50px);
+  background: linear-gradient(90deg, #6da55f 0%, #164f4b 100%);
+  @media (max-width: 767px) {
+    height: calc(100% - 65px);
+  }
 `;
 
 const ContainerOuter = styled.section`
   display: inline-block;
-  padding: 0 15px;
+  padding: 0 15px 20px 15px;
   flex: 0 0 25%;
   scroll-snap-align: start;
 

@@ -148,6 +148,8 @@ export default class MobileNav1 extends Component {
                 type="button"
                 aria-label="Close Mobile Nav"
                 css={css`
+                  z-index: 1;
+                  position: relative;
                   width: 45px;
                   height: 45px;
                   background: none;

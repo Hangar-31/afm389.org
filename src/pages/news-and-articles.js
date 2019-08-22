@@ -69,7 +69,7 @@ export default () => (
     <H31SectionTitleFullWidth
       backgroundColor={_config.colorPrimary}
       titleSmall="Central FL Musicians Association"
-      titleLarge="News And Events"
+      titleLarge="News And Articles"
     />
 
     <H31BlogCardLoader1 articles={articles} />

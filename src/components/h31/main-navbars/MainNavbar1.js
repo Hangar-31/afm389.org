@@ -4,7 +4,6 @@ import { Link } from "gatsby";
 import { PropTypes } from "prop-types";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
-import MediaQuery from 'react-responsive';
 
 // Config
 import _config from "../../_config";
@@ -89,21 +88,23 @@ const MainNavbar1 = ({
         }
       `}
       >
-        <MediaQuery query="(min-width: 720px)">
-          <H31LayoutCol
-            xs={4}
-            lg={3}
-            css={css`
-              display: flex;
+        <H31LayoutCol
+          xs={4}
+          lg={3}
+          css={css`
+              display: flex !important;
               align-items: center;
+              @media (max-width: 719px) {
+                display: none !important;
+              }
             `}
-          >
-            <WrapperLogo to="/"><ImgLogo /></WrapperLogo>
+        >
+          <WrapperLogo to="/"><ImgLogo /></WrapperLogo>
             
-            <H31Title1A
-              as={Link}
-              to="/"
-              css={css`
+          <H31Title1A
+            as={Link}
+            to="/"
+            css={css`
                 position: relative;
                 margin-left: 145px;
                 text-align: center;
@@ -129,10 +130,10 @@ const MainNavbar1 = ({
                   margin-left: 72px;
                 }
               `}
-            >
+          >
               CFMA Local 389
-              <span
-                css={css`
+            <span
+              css={css`
                   position: absolute;
                   font-size: 0.625rem;
                   white-space: none;
@@ -149,157 +150,174 @@ const MainNavbar1 = ({
                     top: 20px;
                   }
                 `}
-              >
+            >
                 Central FL Musicians&#x27; Association
-              </span>
-            </H31Title1A>
-          </H31LayoutCol>
-        </MediaQuery>
+            </span>
+          </H31Title1A>
+        </H31LayoutCol>
 
-        <MediaQuery query="(max-width: 719px)">
-          <H31LayoutCol
-            xs={10}
+        <H31LayoutCol
+          xs={10}
+          css={css`
+            display: flex;
+            align-items: center;
+            @media (min-width: 720px) {
+              display: none !important;
+            }
+          `}
+        >
+          <WrapperLogo to="/"><ImgLogo /></WrapperLogo>
+          
+          <H31Title1A
+            as={Link}
+            to="/"
             css={css`
-              display: flex;
-              align-items: center;
+              position: relative;
+              text-align: center;
+              width: 120px;
+              margin-left: 72px;
+              &:hover {
+                color: ${_config.colorWhite};
+                text-decoration: none;
+              }
             `}
           >
-            <WrapperLogo to="/"><ImgLogo /></WrapperLogo>
-            
-            <H31Title1A
-              as={Link}
-              to="/"
+            CFMA Local 389
+            <span
               css={css`
-                position: relative;
-                text-align: center;
-                width: 120px;
-                margin-left: 72px;
-                &:hover {
-                  color: ${_config.colorWhite};
-                  text-decoration: none;
-                }
+                position: absolute;
+                font-size: 7px;
+                white-space: none;
+                width: 120%;
+                left: -10%;
+                top: 20px;
+                right: 0;
+                margin: 0 auto;
               `}
             >
-              CFMA Local 389
-              <span
-                css={css`
-                  position: absolute;
-                  font-size: 7px;
-                  white-space: none;
-                  width: 120%;
-                  left: -10%;
-                  top: 20px;
-                  right: 0;
-                  margin: 0 auto;
-                `}
-              >
-                Central FL Musicians&#x27; Association
-              </span>
-            </H31Title1A>
-          </H31LayoutCol>
-        </MediaQuery>
+              Central FL Musicians&#x27; Association
+            </span>
+          </H31Title1A>
+        </H31LayoutCol>
           
-        <MediaQuery query="(min-width: 992px)">
-          <H31LayoutCol
-            xs={7}
-            lg={7}
-            xl={6}
-            css={css`
+        <H31LayoutCol
+          xs={7}
+          lg={7}
+          xl={6}
+          css={css`
             display: flex;
             justify-content: space-between;
+            @media (max-width: 991px) {
+              display: none !important;
+            }
+            
           `}
-          >
-            {_config.mainNav.map(link => (
-              <H31LinkTallUnderline
-                link={link.to}
-                text={link.name}
-                linkColor={_config.colorWhite}
-                linkHoverColor={_config.colorSecondary}
-                underlineColor={_config.colorSecondary}
-                underlineHoverColor={_config.colorSecondary}
-              />
+        >
+          {_config.mainNav.map(link => (
+            <H31LinkTallUnderline
+              link={link.to}
+              text={link.name}
+              linkColor={_config.colorWhite}
+              linkHoverColor={_config.colorSecondary}
+              underlineColor={_config.colorSecondary}
+              underlineHoverColor={_config.colorSecondary}
+            />
           ))}
-          </H31LayoutCol>
+        </H31LayoutCol>
         
-          <H31LayoutCol
-            xs={3}
-            lg={2}
-            xl={3}
-            css={css`
+        <H31LayoutCol
+          xs={3}
+          lg={2}
+          xl={3}
+          css={css`
             display: flex;
             align-items: center;
             justify-content: flex-end;
+            @media (max-width: 991px) {
+              display: none !important;
+            }
           `}
-          >
-            {_config.socials.map(social => (
-              <H31SocialIcons
-                color={_config.colorWhite}
-                social={social.social}
-                link={social.link}
-                colorHover={_config.colorTertiary}
-              />
+        >
+          {_config.socials.map(social => (
+            <H31SocialIcons
+              color={_config.colorWhite}
+              social={social.social}
+              link={social.link}
+              colorHover={_config.colorTertiary}
+            />
             ))}
 
-            <H31Link6 
-              css={css`
+          <H31Link6 
+            css={css`
               margin-left: 30px; 
               @media (max-width: 1370px) {
                 margin-left: 15px; 
               }
             `} 
-              href="https://afmquartet.org/wp-content/plugins/afmorg/loginform.php?client_token=898909860"
-            >
+            href="https://afmquartet.org/wp-content/plugins/afmorg/loginform.php?client_token=898909860"
+          >
               Member Log In
+          </H31Link6>
+        </H31LayoutCol>
 
-            </H31Link6>
-          </H31LayoutCol>
-        </MediaQuery>
+        <H31LayoutCol
+          xs={4}
+          css={css`
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
-        <MediaQuery query="(max-width: 991px) and (min-width: 720px)">
-          <H31LayoutCol
-            xs={4}
+          @media (min-width: 992px) {
+            display: none !important;
+          }
+          @media (max-width: 719px) {
+            display: none !important;
+          }
+        `}
+        >
+          <H31Text2 
             css={css`
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin-right: 15px;
           `}
           >
-            <H31Text2 
-              css={css`
-              margin-right: 15px;
-            `}
-            >
-            Don&apos;t Go It Alone
-            </H31Text2>
+          Don&apos;t Go It Alone
+          </H31Text2>
 
-            <H31Link5 href="https://members.afm.org/join/step1/c/en_US">Join Now</H31Link5>
-          </H31LayoutCol>
+          <H31Link5 href="https://members.afm.org/join/step1/c/en_US">Join Now</H31Link5>
+        </H31LayoutCol>
 
-          <H31LayoutCol
-            xs={4}
-            css={css`
+        <H31LayoutCol
+          xs={4}
+          css={css`
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+
+          @media (min-width: 992px) {
+            display: none !important;
+          }
+          @media (max-width: 719px) {
+            display: none !important;
+          }
+        `}
+        >
+          <H31MobileNav1 />
+        </H31LayoutCol>
+
+        <H31LayoutCol
+          xs={2}
+          css={css`
             display: flex;
             align-items: center;
             justify-content: flex-end;
+
+            @media (min-width: 720px) {
+              display: none !important;
+            }
           `}
-          >
-            <H31MobileNav1 />
-          </H31LayoutCol>
-        </MediaQuery>
-
-        <MediaQuery query="(max-width: 719px)">
-          <H31LayoutCol
-            xs={2}
-            css={css`
-              display: flex;
-              align-items: center;
-              justify-content: flex-end;
-            `}
-          >
-            <H31MobileNav1 />
-          </H31LayoutCol>
-        </MediaQuery>
-
+        >
+          <H31MobileNav1 />
+        </H31LayoutCol>
       </H31LayoutRow>
 
       <H31LayoutRow css={css`
@@ -315,74 +333,79 @@ const MainNavbar1 = ({
         }
       `}
       >
-        <MediaQuery query="(min-width: 992px)">
-          <H31LayoutCol xs={3} />
-          <H31LayoutCol
+        <H31LayoutCol xs={3} />
+        <H31LayoutCol
+          css={css`
+          display: flex;
+          align-items: center;
+
+          @media (max-width: 991px) {
+            display: none !important;
+          }
+        `}
+        >
+          <H31Text2 
             css={css`
-            display: flex;
-            align-items: center;
+              margin-right: 15px;
           `}
           >
-            <H31Text2 
-              css={css`
-                margin-right: 15px;
-            `}
-            >
-            Don&apos;t Go It Alone
-            </H31Text2>
+          Don&apos;t Go It Alone
+          </H31Text2>
 
-            <H31Link5 href="https://members.afm.org/join/step1/c/en_US">Join Now</H31Link5>
-          </H31LayoutCol>
-        </MediaQuery>
+          <H31Link5 href="https://members.afm.org/join/step1/c/en_US">Join Now</H31Link5>
+        </H31LayoutCol>
       </H31LayoutRow>
     </H31LayoutContainer>
 
-    <MediaQuery query="(max-width: 719px)">
-      <H31LayoutContainer 
-        fluid
-        as="section"
-        css={css`
-          z-index: 1;
-          position: absolute;
-        `}
-      >
-        <H31LayoutRow>
-          <H31LayoutCol
-            xs={12}
+    <H31LayoutContainer 
+      fluid
+      as="section"
+      css={css`
+        z-index: 1;
+        position: absolute;
+
+        @media (min-width: 720px) {
+          display: none !important;
+        }
+      `}
+    >
+      <H31LayoutRow>
+        <H31LayoutCol
+          xs={12}
+          css={css`
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+          `}
+        >
+          <H31Text2 
             css={css`
-              display: flex;
-              align-items: center;
-              justify-content: center;
+              margin-right: 15px;
+              @media (max-width: 719px) {
+                font-weight: 800;
+                font-size: 1.125rem;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+              }
             `}
           >
-            <H31Text2 
-              css={css`
-                margin-right: 15px;
-                @media (max-width: 719px) {
-                  font-weight: 800;
-                  font-size: 1.125rem;
-                  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
-                }
-              `}
-            >
-              Don&apos;t Go It Alone
-            </H31Text2>
+            Don&apos;t Go It Alone
+          </H31Text2>
 
-            <H31Link5
-              css={css`
-                @media (max-width: 719px) {
-                  font-size: 0.4375rem;
-                  padding: 5px 10px;
-                }
-              `}
-              href="https://members.afm.org/join/step1/c/en_US"
-            >
-              Join Now
-            </H31Link5>
-          </H31LayoutCol>
-        </H31LayoutRow>
-      </H31LayoutContainer>
-    </MediaQuery>
+          <H31Link5
+            css={css`
+              @media (max-width: 719px) {
+                font-size: 0.4375rem;
+                padding: 5px 10px;
+              }
+            `}
+            href="https://members.afm.org/join/step1/c/en_US"
+          >
+            Join Now
+          </H31Link5>
+        </H31LayoutCol>
+      </H31LayoutRow>
+    </H31LayoutContainer>
   </>
 );
 
