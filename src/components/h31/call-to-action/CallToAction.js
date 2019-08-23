@@ -97,6 +97,13 @@ export default () => (
         >
           <H31Link5
             css={css`
+              @media (max-width: 1369px) {
+                font-size: 1rem;
+              }
+              @media(max-width: 1099px) {
+                padding 15px;
+                font-size: 0.875rem;
+              }
               @media (max-width: 575px) {
                 font-size: 1.125rem;
                 padding: 15px 30px;

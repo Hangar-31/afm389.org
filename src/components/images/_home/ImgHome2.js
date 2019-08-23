@@ -7,7 +7,9 @@ export default () => (
     query={graphql`
       query {
         placeholderImage: file(
-          relativePath: { eq: "_home/cfma-note-sheet-orlando-florida.jpg" }
+          relativePath: {
+            eq: "_home/cfma-street-musicians-thumbs-up-florida.jpg"
+          }
         ) {
           childImageSharp {
             fluid(maxWidth: 1920) {

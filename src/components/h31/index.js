@@ -100,6 +100,11 @@ export { default as H31Masthead1 } from "./mastheads/Masthead1";
 // Mobile Navs
 export { default as H31MobileNav1 } from "./mobile-navs/MobileNav1";
 
+// Overlay Member Login
+export {
+  default as H31OverlayMemberLogin1
+} from "./overlay-member-login/OverlayMemberLogin1";
+
 // Paragraphs
 export { default as H31Paragraph1 } from "./paragraphs/Paragraph1";
 

@@ -11,8 +11,8 @@ import {
   H31LayoutCol,
   H31Link1,
   H31LayoutRow,
-  H31Link6,
-  H31SocialIcons
+  H31SocialIcons,
+  H31OverlayMemberLogin1
 } from "..";
 import _config from "../../_config";
 
@@ -202,25 +202,7 @@ export default class MobileNav1 extends Component {
               `}
               xs={12}
             >
-              <H31Link6
-                css={css`
-                  @media (max-width: 991px) {
-                    font-size: 0.875rem;
-                    padding: 10px 20px;
-                  }
-                  @media (max-width: 767px) {
-                    font-size: 0.75rem;
-                    padding: 10px 20px;
-                  }
-                  @media (max-width: 575px) {
-                    font-size: 0.675rem;
-                    padding: 10px 20px;
-                  }
-                `}
-                href="https://afmquartet.org/wp-content/plugins/afmorg/loginform.php?client_token=898909860"
-              >
-                Member Log In
-              </H31Link6>
+              <H31OverlayMemberLogin1 />
             </H31LayoutCol>
 
             {_config.socials.map(social => (

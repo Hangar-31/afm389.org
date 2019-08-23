@@ -14,12 +14,12 @@ import {
   H31LinkTallUnderline,
   H31Title1A,
   H31Text2,
-  H31Link6,
   H31Link5,
   H31LayoutContainer,
   H31LayoutRow,
   H31LayoutCol,
-  H31MobileNav1
+  H31MobileNav1,
+  H31OverlayMemberLogin1
 } from "..";
 
 // Images
@@ -92,12 +92,12 @@ const MainNavbar1 = ({
           xs={4}
           lg={3}
           css={css`
-              display: flex !important;
-              align-items: center;
-              @media (max-width: 719px) {
-                display: none !important;
-              }
-            `}
+            display: flex !important;
+            align-items: center;
+            @media (max-width: 719px) {
+              display: none !important;
+            }
+          `}
         >
           <WrapperLogo to="/"><ImgLogo /></WrapperLogo>
             
@@ -247,17 +247,7 @@ const MainNavbar1 = ({
             />
             ))}
 
-          <H31Link6 
-            css={css`
-              margin-left: 30px; 
-              @media (max-width: 1370px) {
-                margin-left: 15px; 
-              }
-            `} 
-            href="https://afmquartet.org/wp-content/plugins/afmorg/loginform.php?client_token=898909860"
-          >
-              Member Log In
-          </H31Link6>
+          <H31OverlayMemberLogin1 />
         </H31LayoutCol>
 
         <H31LayoutCol
