@@ -5,11 +5,10 @@ import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
 import {
   H31LoadingIndicator1,
-  // label,
-  // input,
+  H31Input1,
   H31Button3,
   H31ButtonBrightSubmit,
-  // H31Select1,
+  H31Select1,
   H31Textarea1,
   H31Error1
 } from "../index";
@@ -152,6 +151,7 @@ export default class Form1 extends React.Component {
         netlify-honeypot="bot-field"
       >
         <input type="hidden" name="form-name" value="Footer Form" />
+        <input type="hidden" name="bot-field" onChange={this.onChange} />
 
         <ul
           css={css`
@@ -167,102 +167,88 @@ export default class Form1 extends React.Component {
         </ul>
 
         {/* Regarding */}
-
-        <label htmlFor="Regarding">
-          <select
-            onChange={this.handleChange}
-            required
-            name="Regarding"
-            defaultValue="I would like to inquire about..."
-          >
-            <option value="I would like to inquire about...">
-              I would like to inquire about...
-            </option>
-            <option value="Joining CFMA">Joining CFMA</option>
-            <option value="Career Coaching">Career Coaching</option>
-            <option value="Audition and Giggin Questions">
-              Audition and Giggin Questions
-            </option>
-            <option value="Questions About Benefits">
-              Questions About Benefits
-            </option>
-            <option value="Question About Member Log In">
-              Question About Member Log In
-            </option>
-            <option value="Others">Others</option>
-          </select>
-        </label>
+        <H31Select1
+          onChange={this.handleChange}
+          required
+          name="Regarding"
+          defaultValue="I would like to inquire about..."
+        >
+          <option value="I would like to inquire about...">
+            I would like to inquire about...
+          </option>
+          <option value="Joining CFMA">Joining CFMA</option>
+          <option value="Career Coaching">Career Coaching</option>
+          <option value="Audition and Giggin Questions">
+            Audition and Giggin Questions
+          </option>
+          <option value="Questions About Benefits">
+            Questions About Benefits
+          </option>
+          <option value="Question About Member Log In">
+            Question About Member Log In
+          </option>
+          <option value="Others">Others</option>
+        </H31Select1>
 
         {/* First Name */}
-
-        <label htmlFor="FirstName">
-          <input
-            required
-            id="FirstName"
-            onChange={this.handleChange}
-            placeholder="First Name"
-            type="text"
-            name="FirstName"
-            value={this.state.FirstName}
-          />
-        </label>
+        <H31Input1
+          required
+          id="fname"
+          onChange={this.handleChange}
+          placeholder="First Name"
+          type="text"
+          name="FirstName"
+          value={this.state.FirstName}
+        />
 
         {/* Last Name */}
-        <label htmlFor="LastName">
-          <input
-            required
-            id="LastName"
-            onChange={this.handleChange}
-            placeholder="Last Name"
-            type="text"
-            name="LastName"
-            value={this.state.LastName}
-          />
-        </label>
+        <H31Input1
+          required
+          id="lname"
+          onChange={this.handleChange}
+          placeholder="Last Name"
+          type="text"
+          name="LastName"
+          value={this.state.LastName}
+        />
 
         {/* Email */}
-        <label htmlFor="Email">
-          <input
-            required
-            id="Email"
-            onChange={this.handleChange}
-            placeholder="Email Address"
-            type="email"
-            name="Email"
-            value={this.state.Email}
-          />
-        </label>
+        <H31Input1
+          required
+          id="email"
+          onChange={this.handleChange}
+          placeholder="Email Address"
+          type="email"
+          name="Email"
+          value={this.state.Email}
+        />
 
         {/* City */}
-        <label htmlFor="City">
-          <input
-            required
-            id="City"
-            onChange={this.handleChange}
-            placeholder="City"
-            type="text"
-            name="City"
-            value={this.state.City}
-          />
-        </label>
+        <H31Input1
+          required
+          id="city"
+          onChange={this.handleChange}
+          placeholder="City"
+          type="text"
+          name="City"
+          value={this.state.City}
+        />
 
         {/* State */}
-        <label htmlFor="State">
-          <input
-            required
-            id="State"
-            onChange={this.handleChange}
-            placeholder="State"
-            type="text"
-            name="State"
-            value={this.state.State}
-          />
-        </label>
+        <H31Input1
+          required
+          id="state"
+          onChange={this.handleChange}
+          placeholder="State"
+          type="text"
+          name="State"
+          value={this.state.State}
+        />
 
         {/* Messages */}
         <H31Textarea1
           required
-          id="Message"
+          id="message"
           onChange={this.handleChange}
           placeholder="Message"
           name="Message"
@@ -299,16 +285,6 @@ export default class Form1 extends React.Component {
             {this.state.submitting === 2 && "Sent"}
           </H31Button3>
         </H31ButtonBrightSubmit>
-
-        <label
-          htmlFor="bot-field"
-          css={css`
-            display: none;
-          `}
-        >
-          If you are human don&#39;t fill this form out
-          <input name="bot-field" onChange={this.onChange} />
-        </label>
       </Form>
     );
   }
