@@ -48,97 +48,6 @@ const Required2 = (
   </span>
 );
 
-const formData = [
-  {
-    type: "select",
-    name: "Regarding",
-    text: "I would like to inquire about...",
-    options: [
-      "I would like to inquire about...",
-      "Joining CFMA",
-      "Career Coaching",
-      "Audition and Giggin Questions",
-      "Questions About Benefits",
-      "Question About Member Log In",
-      "Others"
-    ],
-    sizeXs: 12,
-    sizeSm: 12,
-    sizeMd: 12,
-    sizeLg: 12,
-    required: true
-  },
-  {
-    type: "text",
-    name: "FirstName",
-    text: "First Name",
-    sizeXs: 6,
-    sizeSm: 6,
-    sizeMd: 6,
-    sizeLg: 6,
-    required: true
-  },
-  {
-    type: "text",
-    name: "LastName",
-    text: "Last Name",
-    sizeXs: 6,
-    sizeSm: 6,
-    sizeMd: 6,
-    sizeLg: 6,
-    required: true
-  },
-  {
-    type: "email",
-    name: "Email",
-    text: "Email Address",
-    sizeXs: 12,
-    sizeSm: 12,
-    sizeMd: 12,
-    sizeLg: 12,
-    required: true
-  },
-  {
-    type: "text",
-    name: "City",
-    text: "City",
-    sizeXs: 8,
-    sizeSm: 9,
-    sizeMd: 9,
-    sizeLg: 9,
-    required: true
-  },
-  {
-    type: "text",
-    name: "State",
-    text: "State",
-    sizeXs: 4,
-    sizeSm: 3,
-    sizeMd: 3,
-    sizeLg: 3,
-    required: true
-  },
-  {
-    type: "textbox",
-    name: "Message",
-    text: "Message",
-    sizeXs: 12,
-    sizeSm: 12,
-    sizeMd: 12,
-    sizeLg: 12,
-    required: true
-  },
-  {
-    type: "button",
-    name: "Submit",
-    text: "SEND",
-    sizeXs: 12,
-    sizeSm: 12,
-    sizeMd: 12,
-    sizeLg: 12
-  }
-];
-
 // Encode Function for Data
 function encode(data) {
   return Object.keys(data)
@@ -149,14 +58,16 @@ function encode(data) {
 export default class Form1 extends React.Component {
   constructor(props) {
     super(props);
-    const formFields = [];
-    formData.forEach(element => {
-      formFields[element.name] = "";
-    });
 
     this.state = {
       Subject: "Website Contact Form",
-      ...formFields,
+      Regarding: "",
+      FirstName: "",
+      LastName: "",
+      Email: "",
+      City: "",
+      State: "",
+      Message: "",
       errors: [],
       submitting: 0
     };
@@ -199,158 +110,6 @@ export default class Form1 extends React.Component {
     return true;
   }
 
-  buildForm() {
-    this.formLeft = [];
-    this.formRight = [];
-
-    formData.forEach(data => {
-      switch (data.type) {
-        case "text":
-          this.formLeft.push(
-            <H31LayoutCol
-              xs={data.sizeXs}
-              sm={data.sizeSm}
-              md={data.sizeMd}
-              lg={data.sizeLg}
-              css={css`
-                padding-left: 0 !important;
-                margin-bottom: 25px;
-                @media (max-width: 767px) {
-                  padding-left: 15px !important;
-                }
-              `}
-            >
-              <H31Label1 key={data.name} htmlFor={data.name}>
-                {data.required && Required}
-                <H31Input1
-                  id={data.name}
-                  onChange={this.handleChange}
-                  name={data.name}
-                  placeholder={data.text}
-                  type={data.type}
-                  required={data.required}
-                />
-              </H31Label1>
-            </H31LayoutCol>
-          );
-          break;
-        case "select":
-          this.formLeft.push(
-            <H31LayoutCol
-              xs={data.sizeXs}
-              sm={data.sizeSm}
-              md={data.size}
-              lg={data.sizeLg}
-              css={css`
-                padding-left: 0 !important;
-                margin-bottom: 25px;
-                @media (max-width: 767px) {
-                  padding-left: 15px !important;
-                }
-              `}
-            >
-              <H31Label1 key={data.name} htmlFor={data.name}>
-                {data.required && Required}
-                <H31Select1
-                  onChange={this.handleChange}
-                  required={data.required}
-                  name={data.name}
-                  defaultValue={data.options[0]}
-                >
-                  {data.options.map(option => (
-                    <option key={option} value={option}>
-                      {option}
-                    </option>
-                  ))}
-                </H31Select1>
-              </H31Label1>
-            </H31LayoutCol>
-          );
-          break;
-        case "textbox":
-          this.formRight.push(
-            <H31LayoutCol
-              xs={data.sizeXs}
-              sm={data.sizeSm}
-              md={data.sizeMd}
-              lg={data.sizeLg}
-              css={css`
-                height: calc(100% - 76px);
-                padding-right: 0 !important;
-                margin-bottom: 25px;
-                flex: none !important;
-                @media (max-width: 767px) {
-                  padding-right: 15px !important;
-                  height: 150px;
-                }
-              `}
-              key={data.name}
-            >
-              <H31Textarea1
-                id={data.name}
-                onChange={this.handleChange}
-                name={data.name}
-                placeholder={data.text}
-                required={data.required}
-              />
-              {data.required && Required2}
-            </H31LayoutCol>
-          );
-          break;
-        case "button":
-          this.formRight.push(
-            <H31LayoutCol
-              xs={data.sizeXs}
-              sm={data.sizeSm}
-              md={data.sizeMd}
-              lg={data.sizeLg}
-              css={css`
-                height: 26px;
-                padding-right: 0 !important;
-                flex: none !important;
-                @media (max-width: 767px) {
-                  padding-right: 15px !important;
-                }
-              `}
-            >
-              <H31ButtonBrightSubmit
-                key={data.type}
-                type="submit"
-                css={css`
-                  ${
-                    this.state.submitting === 2
-                      ? `background: ${_config.colorSecondary};`
-                      : ``
-                  }
-                  ${
-                    this.state.submitting === 2
-                      ? `border: 1px solid ${_config.colorWhite};`
-                      : ``
-                  }
-                  ${this.state.submitting === 2 ? "pointer-events: none;" : ""}
-                `}
-              >
-                <H31Button3
-                  css={css`
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 0.75rem;
-                  `}
-                >
-                  {this.state.submitting === 0 && "Send"}
-                  {this.state.submitting === 1 && <H31LoadingIndicator1 />}
-                  {this.state.submitting === 2 && "Sent"}
-                </H31Button3>
-              </H31ButtonBrightSubmit>
-            </H31LayoutCol>
-          );
-          break;
-        default:
-      }
-    });
-  }
-
   onSubmit(e) {
     e.preventDefault();
     this.setState({ submitting: 1 });
@@ -384,123 +143,337 @@ export default class Form1 extends React.Component {
   }
 
   render() {
-    this.buildForm();
-
     return (
-      <>
-        <form
-          css={css`
-            display: none;
-          `}
-          name={this.props.formName}
-          noValidate
-          netlify
-          netlify-honeypot="bot-field"
-        >
-          <input name="Regarding" />
-          <input name="FirstName" />
-          <input name="LastName" />
-          <input name="Email" />
-          <input name="City" />
-          <input name="State" />
-          <input name="Message" />
-        </form>
+      <Form
+        ref={form => {
+          this.formEl = form;
+        }}
+        onSubmit={this.onSubmit}
+        name={this.props.formName}
+        noValidate
+        netlify
+        netlify-honeypot="bot-field"
+      >
+        <H31LayoutContainer fluid>
+          {this.state.errors.length > 0 && (
+            <H31LayoutRow>
+              <ul
+                css={css`
+                  color: red;
+                  margin-bottom: 30px;
+                `}
+              >
+                {this.state.errors.map(error => (
+                  <H31LayoutCol md={12}>
+                    <li key={error}>
+                      <H31Error1>{error}</H31Error1>
+                    </li>
+                  </H31LayoutCol>
+                ))}
+              </ul>
+            </H31LayoutRow>
+          )}
 
-        <Form
-          ref={form => {
-            this.formEl = form;
-          }}
-          onSubmit={this.onSubmit}
-          name={this.props.formName}
-          noValidate
-          netlify
-          netlify-honeypot="bot-field"
-        >
-          <H31LayoutContainer fluid>
-            {this.state.errors.length > 0 && (
-              <H31LayoutRow>
-                <ul
-                  css={css`
-                    color: red;
-                    margin-bottom: 30px;
-                  `}
-                >
-                  {this.state.errors.map(error => (
-                    <H31LayoutCol md={12}>
-                      <li key={error}>
-                        <H31Error1>{error}</H31Error1>
-                      </li>
-                    </H31LayoutCol>
-                  ))}
-                </ul>
-              </H31LayoutRow>
-            )}
-
-            <H31LayoutRow
+          <H31LayoutRow
+            css={css`
+              @media (max-width: 767px) {
+                padding-bottom: 30px;
+              }
+            `}
+          >
+            <H31LayoutCol
               css={css`
-                @media (max-width: 767px) {
-                  padding-bottom: 30px;
-                }
+                padding-left: 0 !important;
+                padding-right: 0 !important;
               `}
+              md={6}
             >
-              <H31LayoutCol
+              <H31LayoutContainer
                 css={css`
-                  padding-left: 0 !important;
-                  padding-right: 0 !important;
+                  @media (max-width: 767px) {
+                    padding: 0 !important;
+                  }
                 `}
-                md={6}
+                fluid
               >
-                <H31LayoutContainer
-                  css={css`
-                    @media (max-width: 767px) {
-                      padding: 0 !important;
-                    }
-                  `}
-                  fluid
-                >
-                  <H31LayoutRow>{this.formLeft}</H31LayoutRow>
-                </H31LayoutContainer>
-              </H31LayoutCol>
-              <H31LayoutCol
-                css={css`
-                  padding-left: 0 !important;
-                  padding-right: 0 !important;
-                `}
-                md={6}
-              >
-                <H31LayoutContainer
-                  css={css`
-                    height: 100%;
-                    @media (max-width: 767px) {
-                      padding: 0 !important;
-                    }
-                  `}
-                  fluid
-                >
-                  <H31LayoutRow
+                <H31LayoutRow>
+                  {/* Reason */}
+
+                  <H31LayoutCol
+                    xs={12}
                     css={css`
-                      flex-flow: column;
-                      height: 100%;
+                      padding-left: 0 !important;
+                      margin-bottom: 25px;
+                      @media (max-width: 767px) {
+                        padding-left: 15px !important;
+                      }
                     `}
                   >
-                    {this.formRight}
-                  </H31LayoutRow>
-                </H31LayoutContainer>
-              </H31LayoutCol>
+                    <H31Label1 htmlFor="Regarding">
+                      {Required}
+                      <H31Select1
+                        onChange={this.handleChange}
+                        required
+                        name="Regarding"
+                        defaultValue="I would like to inquire about..."
+                      >
+                        <option value="I would like to inquire about...">
+                          I would like to inquire about...
+                        </option>
+                        <option value="Joining CFMA">Joining CFMA</option>
+                        <option value="Career Coaching">Career Coaching</option>
+                        <option value="Audition and Giggin Questions">
+                          Audition and Giggin Questions
+                        </option>
+                        <option value="Questions About Benefits">
+                          Questions About Benefits
+                        </option>
+                        <option value="Question About Member Log In">
+                          Question About Member Log In
+                        </option>
+                        <option value="Others">Others</option>
+                      </H31Select1>
+                    </H31Label1>
+                  </H31LayoutCol>
 
-              <H31Label1
-                htmlFor="BotMessage"
+                  {/* First Name */}
+
+                  <H31LayoutCol
+                    xs={6}
+                    css={css`
+                      padding-left: 0 !important;
+                      margin-bottom: 25px;
+                      @media (max-width: 767px) {
+                        padding-left: 15px !important;
+                      }
+                    `}
+                  >
+                    <H31Label1 htmlFor="FirstName">
+                      {Required}
+                      <H31Input1
+                        id="FirstName"
+                        onChange={this.handleChange}
+                        name="FirstName"
+                        placeholder="First Name"
+                        type="text"
+                        required
+                      />
+                    </H31Label1>
+                  </H31LayoutCol>
+
+                  {/* Last Name */}
+
+                  <H31LayoutCol
+                    xs={6}
+                    css={css`
+                      padding-left: 0 !important;
+                      margin-bottom: 25px;
+                      @media (max-width: 767px) {
+                        padding-left: 15px !important;
+                      }
+                    `}
+                  >
+                    <H31Label1 htmlFor="LastName">
+                      {Required}
+                      <H31Input1
+                        id="LastName"
+                        onChange={this.handleChange}
+                        name="LastName"
+                        placeholder="Last Name"
+                        type="text"
+                        required
+                      />
+                    </H31Label1>
+                  </H31LayoutCol>
+
+                  {/* Email */}
+
+                  <H31LayoutCol
+                    xs={12}
+                    css={css`
+                      padding-left: 0 !important;
+                      margin-bottom: 25px;
+                      @media (max-width: 767px) {
+                        padding-left: 15px !important;
+                      }
+                    `}
+                  >
+                    <H31Label1 htmlFor="Email">
+                      {Required}
+                      <H31Input1
+                        id="Email"
+                        onChange={this.handleChange}
+                        name="Email"
+                        placeholder="Email Address"
+                        type="email"
+                        required
+                      />
+                    </H31Label1>
+                  </H31LayoutCol>
+
+                  {/* City */}
+
+                  <H31LayoutCol
+                    xs={8}
+                    sm={9}
+                    css={css`
+                      padding-left: 0 !important;
+                      margin-bottom: 25px;
+                      @media (max-width: 767px) {
+                        padding-left: 15px !important;
+                      }
+                    `}
+                  >
+                    <H31Label1 htmlFor="City">
+                      {Required}
+                      <H31Input1
+                        id="City"
+                        onChange={this.handleChange}
+                        name="City"
+                        placeholder="City"
+                        type="text"
+                        required
+                      />
+                    </H31Label1>
+                  </H31LayoutCol>
+
+                  {/* State */}
+
+                  <H31LayoutCol
+                    xs={4}
+                    sm={3}
+                    css={css`
+                      padding-left: 0 !important;
+                      margin-bottom: 25px;
+                      @media (max-width: 767px) {
+                        padding-left: 15px !important;
+                      }
+                    `}
+                  >
+                    <H31Label1 htmlFor="State">
+                      {Required}
+                      <H31Input1
+                        id="State"
+                        onChange={this.handleChange}
+                        name="State"
+                        placeholder="State"
+                        type="text"
+                        required
+                      />
+                    </H31Label1>
+                  </H31LayoutCol>
+                </H31LayoutRow>
+              </H31LayoutContainer>
+            </H31LayoutCol>
+
+            <H31LayoutCol
+              css={css`
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+              `}
+              md={6}
+            >
+              <H31LayoutContainer
                 css={css`
-                  display: none;
+                  height: 100%;
+                  @media (max-width: 767px) {
+                    padding: 0 !important;
+                  }
                 `}
+                fluid
               >
-                If you are human don&#39;t fill this form out
-                <input name="bot-field" onChange={this.onChange} />
-              </H31Label1>
-            </H31LayoutRow>
-          </H31LayoutContainer>
-        </Form>
-      </>
+                <H31LayoutRow
+                  css={css`
+                    flex-flow: column;
+                    height: 100%;
+                  `}
+                >
+                  {/* Messages */}
+
+                  <H31LayoutCol
+                    xs={12}
+                    css={css`
+                      height: calc(100% - 76px);
+                      padding-right: 0 !important;
+                      margin-bottom: 25px;
+                      flex: none !important;
+                      @media (max-width: 767px) {
+                        padding-right: 15px !important;
+                        height: 150px;
+                      }
+                    `}
+                  >
+                    <H31Textarea1
+                      id="Message"
+                      onChange={this.handleChange}
+                      name="Message"
+                      placeholder="Message"
+                      required
+                    />
+                    {Required2}
+                  </H31LayoutCol>
+
+                  {/* Submit Button */}
+
+                  <H31LayoutCol
+                    xs={12}
+                    css={css`
+                      height: 26px;
+                      padding-right: 0 !important;
+                      flex: none !important;
+                      @media (max-width: 767px) {
+                        padding-right: 15px !important;
+                      }
+                    `}
+                  >
+                    <H31ButtonBrightSubmit
+                      type="submit"
+                      css={css`
+                  ${
+                    this.state.submitting === 2
+                      ? `background: ${_config.colorSecondary};`
+                      : ``
+                  }
+                  ${
+                    this.state.submitting === 2
+                      ? `border: 1px solid ${_config.colorWhite};`
+                      : ``
+                  }
+                  ${this.state.submitting === 2 ? "pointer-events: none;" : ""}
+                `}
+                    >
+                      <H31Button3
+                        css={css`
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          font-size: 0.75rem;
+                        `}
+                      >
+                        {this.state.submitting === 0 && "Send"}
+                        {this.state.submitting === 1 && (
+                          <H31LoadingIndicator1 />
+                        )}
+                        {this.state.submitting === 2 && "Sent"}
+                      </H31Button3>
+                    </H31ButtonBrightSubmit>
+                  </H31LayoutCol>
+                </H31LayoutRow>
+              </H31LayoutContainer>
+            </H31LayoutCol>
+
+            <H31Label1
+              htmlFor="bot-field"
+              css={css`
+                display: none;
+              `}
+            >
+              If you are human don&#39;t fill this form out
+              <input name="bot-field" onChange={this.onChange} />
+            </H31Label1>
+          </H31LayoutRow>
+        </H31LayoutContainer>
+      </Form>
     );
   }
 }
