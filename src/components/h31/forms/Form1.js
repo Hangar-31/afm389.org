@@ -11,9 +11,6 @@ import {
   H31ButtonBrightSubmit,
   H31Select1,
   H31Textarea1,
-  H31LayoutCol,
-  H31LayoutRow,
-  H31LayoutContainer,
   H31Error1
 } from "../index";
 import _config from "../../_config";
@@ -156,324 +153,166 @@ export default class Form1 extends React.Component {
       >
         <input type="hidden" name="form-name" value="Footer Form" />
 
-        <H31LayoutContainer fluid>
-          {this.state.errors.length > 0 && (
-            <H31LayoutRow>
-              <ul
-                css={css`
-                  color: red;
-                  margin-bottom: 30px;
-                `}
-              >
-                {this.state.errors.map(error => (
-                  <H31LayoutCol md={12}>
-                    <li key={error}>
-                      <H31Error1>{error}</H31Error1>
-                    </li>
-                  </H31LayoutCol>
-                ))}
-              </ul>
-            </H31LayoutRow>
-          )}
+        <ul
+          css={css`
+            color: red;
+            margin-bottom: 30px;
+          `}
+        >
+          {this.state.errors.map(error => (
+            <li key={error}>
+              <H31Error1>{error}</H31Error1>
+            </li>
+          ))}
+        </ul>
 
-          <H31LayoutRow
+        {/* Regarding */}
+
+        <H31Label1 htmlFor="Regarding">
+          <H31Select1
+            onChange={this.handleChange}
+            required
+            name="Regarding"
+            defaultValue="I would like to inquire about..."
+          >
+            <option value="I would like to inquire about...">
+              I would like to inquire about...
+            </option>
+            <option value="Joining CFMA">Joining CFMA</option>
+            <option value="Career Coaching">Career Coaching</option>
+            <option value="Audition and Giggin Questions">
+              Audition and Giggin Questions
+            </option>
+            <option value="Questions About Benefits">
+              Questions About Benefits
+            </option>
+            <option value="Question About Member Log In">
+              Question About Member Log In
+            </option>
+            <option value="Others">Others</option>
+          </H31Select1>
+        </H31Label1>
+
+        {/* First Name */}
+
+        <H31Label1 htmlFor="FirstName">
+          <H31Input1
+            required
+            id="FirstName"
+            onChange={this.handleChange}
+            placeholder="First Name"
+            type="text"
+            name="FirstName"
+            value={this.state.FirstName}
+          />
+        </H31Label1>
+
+        {/* Last Name */}
+        <H31Label1 htmlFor="LastName">
+          <H31Input1
+            required
+            id="LastName"
+            onChange={this.handleChange}
+            placeholder="Last Name"
+            type="text"
+            name="LastName"
+            value={this.state.LastName}
+          />
+        </H31Label1>
+
+        {/* Email */}
+        <H31Label1 htmlFor="Email">
+          <H31Input1
+            required
+            id="Email"
+            onChange={this.handleChange}
+            placeholder="Email Address"
+            type="email"
+            name="Email"
+            value={this.state.Email}
+          />
+        </H31Label1>
+
+        {/* City */}
+        <H31Label1 htmlFor="City">
+          <H31Input1
+            required
+            id="City"
+            onChange={this.handleChange}
+            placeholder="City"
+            type="text"
+            name="City"
+            value={this.state.City}
+          />
+        </H31Label1>
+
+        {/* State */}
+        <H31Label1 htmlFor="State">
+          <H31Input1
+            required
+            id="State"
+            onChange={this.handleChange}
+            placeholder="State"
+            type="text"
+            name="State"
+            value={this.state.State}
+          />
+        </H31Label1>
+
+        {/* Messages */}
+        <H31Textarea1
+          required
+          id="Message"
+          onChange={this.handleChange}
+          placeholder="Message"
+          name="Message"
+          value={this.state.Message}
+        />
+
+        {/* Submit Button */}
+        <H31ButtonBrightSubmit
+          type="submit"
+          css={css`
+                      ${
+                        this.state.submitting === 2
+                          ? `background: ${_config.colorSecondary};`
+                          : ``
+                      }
+                      ${
+                        this.state.submitting === 2
+                          ? `border: 1px solid ${_config.colorWhite};`
+                          : ``
+                      }
+                        ${
+                          this.state.submitting === 2
+                            ? "pointer-events: none;"
+                            : ""
+                        }
+                      `}
+        >
+          <H31Button3
             css={css`
-              @media (max-width: 767px) {
-                padding-bottom: 30px;
-              }
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 0.75rem;
             `}
           >
-            <H31LayoutCol
-              css={css`
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-              `}
-              md={6}
-            >
-              <H31LayoutContainer
-                css={css`
-                  @media (max-width: 767px) {
-                    padding: 0 !important;
-                  }
-                `}
-                fluid
-              >
-                <H31LayoutRow>
-                  {/* Reason */}
+            {this.state.submitting === 0 && "Send"}
+            {this.state.submitting === 1 && <H31LoadingIndicator1 />}
+            {this.state.submitting === 2 && "Sent"}
+          </H31Button3>
+        </H31ButtonBrightSubmit>
 
-                  <H31LayoutCol
-                    xs={12}
-                    css={css`
-                      padding-left: 0 !important;
-                      margin-bottom: 25px;
-                      @media (max-width: 767px) {
-                        padding-left: 15px !important;
-                      }
-                    `}
-                  >
-                    <H31Label1 htmlFor="Regarding">
-                      <H31Select1
-                        onChange={this.handleChange}
-                        required
-                        name="Regarding"
-                        defaultValue="I would like to inquire about..."
-                      >
-                        <option value="I would like to inquire about...">
-                          I would like to inquire about...
-                        </option>
-                        <option value="Joining CFMA">Joining CFMA</option>
-                        <option value="Career Coaching">Career Coaching</option>
-                        <option value="Audition and Giggin Questions">
-                          Audition and Giggin Questions
-                        </option>
-                        <option value="Questions About Benefits">
-                          Questions About Benefits
-                        </option>
-                        <option value="Question About Member Log In">
-                          Question About Member Log In
-                        </option>
-                        <option value="Others">Others</option>
-                      </H31Select1>
-                    </H31Label1>
-                  </H31LayoutCol>
-
-                  {/* First Name */}
-
-                  <H31LayoutCol
-                    xs={6}
-                    css={css`
-                      padding-left: 0 !important;
-                      margin-bottom: 25px;
-                      @media (max-width: 767px) {
-                        padding-left: 15px !important;
-                      }
-                    `}
-                  >
-                    <H31Label1 htmlFor="FirstName">
-                      <H31Input1
-                        required
-                        id="FirstName"
-                        onChange={this.handleChange}
-                        placeholder="First Name"
-                        type="text"
-                        name="FirstName"
-                        value={this.state.FirstName}
-                      />
-                    </H31Label1>
-                  </H31LayoutCol>
-
-                  {/* Last Name */}
-
-                  <H31LayoutCol
-                    xs={6}
-                    css={css`
-                      padding-left: 0 !important;
-                      margin-bottom: 25px;
-                      @media (max-width: 767px) {
-                        padding-left: 15px !important;
-                      }
-                    `}
-                  >
-                    <H31Label1 htmlFor="LastName">
-                      <H31Input1
-                        required
-                        id="LastName"
-                        onChange={this.handleChange}
-                        placeholder="Last Name"
-                        type="text"
-                        name="LastName"
-                        value={this.state.LastName}
-                      />
-                    </H31Label1>
-                  </H31LayoutCol>
-
-                  {/* Email */}
-
-                  <H31LayoutCol
-                    xs={12}
-                    css={css`
-                      padding-left: 0 !important;
-                      margin-bottom: 25px;
-                      @media (max-width: 767px) {
-                        padding-left: 15px !important;
-                      }
-                    `}
-                  >
-                    <H31Label1 htmlFor="Email">
-                      <H31Input1
-                        required
-                        id="Email"
-                        onChange={this.handleChange}
-                        placeholder="Email Address"
-                        type="email"
-                        name="Email"
-                        value={this.state.Email}
-                      />
-                    </H31Label1>
-                  </H31LayoutCol>
-
-                  {/* City */}
-
-                  <H31LayoutCol
-                    xs={8}
-                    sm={9}
-                    css={css`
-                      padding-left: 0 !important;
-                      margin-bottom: 25px;
-                      @media (max-width: 767px) {
-                        padding-left: 15px !important;
-                      }
-                    `}
-                  >
-                    <H31Label1 htmlFor="City">
-                      <H31Input1
-                        required
-                        id="City"
-                        onChange={this.handleChange}
-                        placeholder="City"
-                        type="text"
-                        name="City"
-                        value={this.state.City}
-                      />
-                    </H31Label1>
-                  </H31LayoutCol>
-
-                  {/* State */}
-
-                  <H31LayoutCol
-                    xs={4}
-                    sm={3}
-                    css={css`
-                      padding-left: 0 !important;
-                      margin-bottom: 25px;
-                      @media (max-width: 767px) {
-                        padding-left: 15px !important;
-                      }
-                    `}
-                  >
-                    <H31Label1 htmlFor="State">
-                      <H31Input1
-                        required
-                        id="State"
-                        onChange={this.handleChange}
-                        placeholder="State"
-                        type="text"
-                        name="State"
-                        value={this.state.State}
-                      />
-                    </H31Label1>
-                  </H31LayoutCol>
-                </H31LayoutRow>
-              </H31LayoutContainer>
-            </H31LayoutCol>
-
-            <H31LayoutCol
-              css={css`
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-              `}
-              md={6}
-            >
-              <H31LayoutContainer
-                css={css`
-                  height: 100%;
-                  @media (max-width: 767px) {
-                    padding: 0 !important;
-                  }
-                `}
-                fluid
-              >
-                <H31LayoutRow
-                  css={css`
-                    flex-flow: column;
-                    height: 100%;
-                  `}
-                >
-                  {/* Messages */}
-
-                  <H31LayoutCol
-                    xs={12}
-                    css={css`
-                      height: calc(100% - 76px);
-                      padding-right: 0 !important;
-                      margin-bottom: 25px;
-                      flex: none !important;
-                      @media (max-width: 767px) {
-                        padding-right: 15px !important;
-                        height: 150px;
-                      }
-                    `}
-                  >
-                    <H31Textarea1
-                      required
-                      id="Message"
-                      onChange={this.handleChange}
-                      placeholder="Message"
-                      name="Message"
-                      value={this.state.Message}
-                    />
-                  </H31LayoutCol>
-
-                  {/* Submit Button */}
-
-                  <H31LayoutCol
-                    xs={12}
-                    css={css`
-                      height: 26px;
-                      padding-right: 0 !important;
-                      flex: none !important;
-                      @media (max-width: 767px) {
-                        padding-right: 15px !important;
-                      }
-                    `}
-                  >
-                    <H31ButtonBrightSubmit
-                      type="submit"
-                      css={css`
-                  ${
-                    this.state.submitting === 2
-                      ? `background: ${_config.colorSecondary};`
-                      : ``
-                  }
-                  ${
-                    this.state.submitting === 2
-                      ? `border: 1px solid ${_config.colorWhite};`
-                      : ``
-                  }
-                  ${this.state.submitting === 2 ? "pointer-events: none;" : ""}
-                `}
-                    >
-                      <H31Button3
-                        css={css`
-                          display: flex;
-                          align-items: center;
-                          justify-content: center;
-                          font-size: 0.75rem;
-                        `}
-                      >
-                        {this.state.submitting === 0 && "Send"}
-                        {this.state.submitting === 1 && (
-                          <H31LoadingIndicator1 />
-                        )}
-                        {this.state.submitting === 2 && "Sent"}
-                      </H31Button3>
-                    </H31ButtonBrightSubmit>
-                  </H31LayoutCol>
-                </H31LayoutRow>
-              </H31LayoutContainer>
-            </H31LayoutCol>
-
-            <H31Label1
-              htmlFor="bot-field"
-              css={css`
-                display: none;
-              `}
-            >
-              If you are human don&#39;t fill this form out
-              <input name="bot-field" onChange={this.onChange} />
-            </H31Label1>
-          </H31LayoutRow>
-        </H31LayoutContainer>
+        <H31Label1
+          htmlFor="bot-field"
+          css={css`
+            display: none;
+          `}
+        >
+          If you are human don&#39;t fill this form out
+          <input name="bot-field" onChange={this.onChange} />
+        </H31Label1>
       </Form>
     );
   }
