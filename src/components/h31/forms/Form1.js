@@ -5,11 +5,11 @@ import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
 import {
   H31LoadingIndicator1,
-  H31Label1,
-  H31Input1,
+  // label,
+  // input,
   H31Button3,
   H31ButtonBrightSubmit,
-  H31Select1,
+  // H31Select1,
   H31Textarea1,
   H31Error1
 } from "../index";
@@ -168,8 +168,8 @@ export default class Form1 extends React.Component {
 
         {/* Regarding */}
 
-        <H31Label1 htmlFor="Regarding">
-          <H31Select1
+        <label htmlFor="Regarding">
+          <select
             onChange={this.handleChange}
             required
             name="Regarding"
@@ -190,13 +190,13 @@ export default class Form1 extends React.Component {
               Question About Member Log In
             </option>
             <option value="Others">Others</option>
-          </H31Select1>
-        </H31Label1>
+          </select>
+        </label>
 
         {/* First Name */}
 
-        <H31Label1 htmlFor="FirstName">
-          <H31Input1
+        <label htmlFor="FirstName">
+          <input
             required
             id="FirstName"
             onChange={this.handleChange}
@@ -205,11 +205,11 @@ export default class Form1 extends React.Component {
             name="FirstName"
             value={this.state.FirstName}
           />
-        </H31Label1>
+        </label>
 
         {/* Last Name */}
-        <H31Label1 htmlFor="LastName">
-          <H31Input1
+        <label htmlFor="LastName">
+          <input
             required
             id="LastName"
             onChange={this.handleChange}
@@ -218,11 +218,11 @@ export default class Form1 extends React.Component {
             name="LastName"
             value={this.state.LastName}
           />
-        </H31Label1>
+        </label>
 
         {/* Email */}
-        <H31Label1 htmlFor="Email">
-          <H31Input1
+        <label htmlFor="Email">
+          <input
             required
             id="Email"
             onChange={this.handleChange}
@@ -231,11 +231,11 @@ export default class Form1 extends React.Component {
             name="Email"
             value={this.state.Email}
           />
-        </H31Label1>
+        </label>
 
         {/* City */}
-        <H31Label1 htmlFor="City">
-          <H31Input1
+        <label htmlFor="City">
+          <input
             required
             id="City"
             onChange={this.handleChange}
@@ -244,11 +244,11 @@ export default class Form1 extends React.Component {
             name="City"
             value={this.state.City}
           />
-        </H31Label1>
+        </label>
 
         {/* State */}
-        <H31Label1 htmlFor="State">
-          <H31Input1
+        <label htmlFor="State">
+          <input
             required
             id="State"
             onChange={this.handleChange}
@@ -257,7 +257,7 @@ export default class Form1 extends React.Component {
             name="State"
             value={this.state.State}
           />
-        </H31Label1>
+        </label>
 
         {/* Messages */}
         <H31Textarea1
@@ -273,22 +273,18 @@ export default class Form1 extends React.Component {
         <H31ButtonBrightSubmit
           type="submit"
           css={css`
-                      ${
-                        this.state.submitting === 2
-                          ? `background: ${_config.colorSecondary};`
-                          : ``
-                      }
-                      ${
-                        this.state.submitting === 2
-                          ? `border: 1px solid ${_config.colorWhite};`
-                          : ``
-                      }
-                        ${
-                          this.state.submitting === 2
-                            ? "pointer-events: none;"
-                            : ""
-                        }
-                      `}
+          ${
+            this.state.submitting === 2
+              ? `background: ${_config.colorSecondary};`
+              : ``
+          }
+          ${
+            this.state.submitting === 2
+              ? `border: 1px solid ${_config.colorWhite};`
+              : ``
+          }
+            ${this.state.submitting === 2 ? "pointer-events: none;" : ""}
+          `}
         >
           <H31Button3
             css={css`
@@ -304,7 +300,7 @@ export default class Form1 extends React.Component {
           </H31Button3>
         </H31ButtonBrightSubmit>
 
-        <H31Label1
+        <label
           htmlFor="bot-field"
           css={css`
             display: none;
@@ -312,7 +308,7 @@ export default class Form1 extends React.Component {
         >
           If you are human don&#39;t fill this form out
           <input name="bot-field" onChange={this.onChange} />
-        </H31Label1>
+        </label>
       </Form>
     );
   }
