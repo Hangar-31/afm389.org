@@ -115,7 +115,7 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
         <H31LayoutCol
           css={css`
             @media (max-width: 767px) {
-              padding: 0 !important;
+              padding: 0 15px 30px 15px !important;
             }
           `}
           xs={12}

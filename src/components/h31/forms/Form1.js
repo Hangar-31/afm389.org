@@ -14,35 +14,41 @@ import {
 } from "../index";
 import _config from "../../_config";
 
-const Form = styled.form``;
+const Form = styled.form`
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+`;
 
-// const Required = (
-//   <span
-//     css={css`
-//       position: absolute;
-//       top: -17px;
-//       left: 0;
-//       color: ${_config.colorLightGrey};
-//       font-size: 0.625rem;
-//     `}
-//   >
-//     * Required
-//   </span>
-// );
+const Fieldset = styled.div`
+  display: grid;
+  grid-column: span 1;
+  grid-gap: 23px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+`;
 
-// const Required2 = (
-//   <span
-//     css={css`
-//       position: absolute;
-//       top: -17px;
-//       left: 15px;
-//       color: ${_config.colorLightGrey};
-//       font-size: 0.625rem;
-//     `}
-//   >
-//     * Required
-//   </span>
-// );
+const P = styled.p`
+  position: relative;
+  margin: 0;
+  padding: 0;
+`;
+
+const Required = (
+  <span
+    css={css`
+      position: absolute;
+      top: -17px;
+      left: 0;
+      color: ${_config.colorLightGrey};
+      font-size: 0.625rem;
+    `}
+  >
+    * Required
+  </span>
+);
 
 // Encode Function for Data
 function encode(data) {
@@ -151,140 +157,209 @@ export default class Form1 extends React.Component {
         netlify-honeypot="bot-field"
       >
         <input type="hidden" name="form-name" value="Footer Form" />
-        <input type="hidden" name="bot-field" onChange={this.onChange} />
-
-        <ul
+        <input
           css={css`
-            color: red;
-            margin-bottom: 30px;
+            display: none;
           `}
-        >
-          {this.state.errors.map(error => (
+          name="bot-field"
+        />
+
+        {this.state.errors.map(error => (
+          <ul
+            css={css`
+              color: red;
+              margin-bottom: 30px;
+            `}
+          >
             <li key={error}>
               <H31Error1>{error}</H31Error1>
             </li>
-          ))}
-        </ul>
+          </ul>
+        ))}
 
         {/* Regarding */}
-        <H31Select1
-          onChange={this.handleChange}
-          required
-          name="Regarding"
-          defaultValue="I would like to inquire about..."
-        >
-          <option value="I would like to inquire about...">
-            I would like to inquire about...
-          </option>
-          <option value="Joining CFMA">Joining CFMA</option>
-          <option value="Career Coaching">Career Coaching</option>
-          <option value="Audition and Giggin Questions">
-            Audition and Giggin Questions
-          </option>
-          <option value="Questions About Benefits">
-            Questions About Benefits
-          </option>
-          <option value="Question About Member Log In">
-            Question About Member Log In
-          </option>
-          <option value="Others">Others</option>
-        </H31Select1>
-
-        {/* First Name */}
-        <H31Input1
-          required
-          id="fname"
-          onChange={this.handleChange}
-          placeholder="First Name"
-          type="text"
-          name="FirstName"
-          value={this.state.FirstName}
-        />
-
-        {/* Last Name */}
-        <H31Input1
-          required
-          id="lname"
-          onChange={this.handleChange}
-          placeholder="Last Name"
-          type="text"
-          name="LastName"
-          value={this.state.LastName}
-        />
-
-        {/* Email */}
-        <H31Input1
-          required
-          id="email"
-          onChange={this.handleChange}
-          placeholder="Email Address"
-          type="email"
-          name="Email"
-          value={this.state.Email}
-        />
-
-        {/* City */}
-        <H31Input1
-          required
-          id="city"
-          onChange={this.handleChange}
-          placeholder="City"
-          type="text"
-          name="City"
-          value={this.state.City}
-        />
-
-        {/* State */}
-        <H31Input1
-          required
-          id="state"
-          onChange={this.handleChange}
-          placeholder="State"
-          type="text"
-          name="State"
-          value={this.state.State}
-        />
-
-        {/* Messages */}
-        <H31Textarea1
-          required
-          id="message"
-          onChange={this.handleChange}
-          placeholder="Message"
-          name="Message"
-          value={this.state.Message}
-        />
-
-        {/* Submit Button */}
-        <H31ButtonBrightSubmit
-          type="submit"
-          css={css`
-          ${
-            this.state.submitting === 2
-              ? `background: ${_config.colorSecondary};`
-              : ``
-          }
-          ${
-            this.state.submitting === 2
-              ? `border: 1px solid ${_config.colorWhite};`
-              : ``
-          }
-            ${this.state.submitting === 2 ? "pointer-events: none;" : ""}
-          `}
-        >
-          <H31Button3
+        <Fieldset>
+          <P
             css={css`
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              font-size: 0.75rem;
+              grid-column: span 4;
             `}
           >
-            {this.state.submitting === 0 && "Send"}
-            {this.state.submitting === 1 && <H31LoadingIndicator1 />}
-            {this.state.submitting === 2 && "Sent"}
-          </H31Button3>
-        </H31ButtonBrightSubmit>
+            {Required}
+            <H31Select1
+              onChange={this.handleChange}
+              required
+              name="Regarding"
+              defaultValue="I would like to inquire about..."
+            >
+              <option value="I would like to inquire about...">
+                I would like to inquire about...
+              </option>
+              <option value="Joining CFMA">Joining CFMA</option>
+              <option value="Career Coaching">Career Coaching</option>
+              <option value="Audition and Giggin Questions">
+                Audition and Giggin Questions
+              </option>
+              <option value="Questions About Benefits">
+                Questions About Benefits
+              </option>
+              <option value="Question About Member Log In">
+                Question About Member Log In
+              </option>
+              <option value="Others">Others</option>
+            </H31Select1>
+          </P>
+
+          {/* First Name */}
+          <P
+            css={css`
+              grid-column: span 2;
+            `}
+          >
+            {Required}
+            <H31Input1
+              required
+              id="fname"
+              onChange={this.handleChange}
+              placeholder="First Name"
+              type="text"
+              name="FirstName"
+              value={this.state.FirstName}
+            />
+          </P>
+
+          {/* Last Name */}
+          <P
+            css={css`
+              grid-column: span 2;
+            `}
+          >
+            {Required}
+            <H31Input1
+              required
+              id="lname"
+              onChange={this.handleChange}
+              placeholder="Last Name"
+              type="text"
+              name="LastName"
+              value={this.state.LastName}
+            />
+          </P>
+
+          {/* Email */}
+          <P
+            css={css`
+              grid-column: span 4;
+            `}
+          >
+            {Required}
+            <H31Input1
+              required
+              id="email"
+              onChange={this.handleChange}
+              placeholder="Email Address"
+              type="email"
+              name="Email"
+              value={this.state.Email}
+            />
+          </P>
+
+          {/* City */}
+          <P
+            css={css`
+              grid-column: span 3;
+            `}
+          >
+            {Required}
+            <H31Input1
+              required
+              id="city"
+              onChange={this.handleChange}
+              placeholder="City"
+              type="text"
+              name="City"
+              value={this.state.City}
+              css={css`
+                grid-column: span 3;
+              `}
+            />
+          </P>
+
+          {/* State */}
+          <P
+            css={css`
+              grid-column: span 1;
+            `}
+          >
+            {Required}
+            <H31Input1
+              required
+              id="state"
+              onChange={this.handleChange}
+              placeholder="State"
+              type="text"
+              name="State"
+              value={this.state.State}
+            />
+          </P>
+        </Fieldset>
+
+        <Fieldset>
+          {/* Messages */}
+          <P
+            css={css`
+              grid-column: span 4;
+              height: 125px;
+            `}
+          >
+            {Required}
+            <H31Textarea1
+              required
+              id="message"
+              onChange={this.handleChange}
+              placeholder="Message"
+              name="Message"
+              value={this.state.Message}
+            />
+          </P>
+
+          {/* Submit Button */}
+          <P
+            css={css`
+              height: 26px;
+              grid-column: span 4;
+            `}
+          >
+            <H31ButtonBrightSubmit
+              type="submit"
+              css={css`
+              ${
+                this.state.submitting === 2
+                  ? `background: ${_config.colorSecondary};`
+                  : ``
+              }
+              ${
+                this.state.submitting === 2
+                  ? `border: 1px solid ${_config.colorWhite};`
+                  : ``
+              }
+              ${this.state.submitting === 2 ? "pointer-events: none;" : ""}
+          `}
+            >
+              <H31Button3
+                css={css`
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 0.75rem;
+                `}
+              >
+                {this.state.submitting === 0 && "Send"}
+                {this.state.submitting === 1 && <H31LoadingIndicator1 />}
+                {this.state.submitting === 2 && "Sent"}
+              </H31Button3>
+            </H31ButtonBrightSubmit>
+          </P>
+        </Fieldset>
       </Form>
     );
   }
