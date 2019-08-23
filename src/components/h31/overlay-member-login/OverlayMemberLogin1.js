@@ -59,9 +59,11 @@ export default class Bio1 extends React.Component {
   }
 
   onClick(e) {
-    e.preventDefault();
-    const { visible } = this.state;
-    this.setState({ visible: !visible });
+    if (e.currentTarget === e.target) {
+      e.preventDefault();
+      const { visible } = this.state;
+      this.setState({ visible: !visible });
+    }
   }
 
   render() {
