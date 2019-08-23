@@ -253,12 +253,13 @@ export default class Form1 extends React.Component {
                     <H31Label1 htmlFor="FirstName">
                       {Required}
                       <H31Input1
+                        required
                         id="FirstName"
                         onChange={this.handleChange}
-                        name="FirstName"
                         placeholder="First Name"
                         type="text"
-                        required
+                        name="FirstName"
+                        value={this.state.FirstName}
                       />
                     </H31Label1>
                   </H31LayoutCol>
@@ -278,12 +279,13 @@ export default class Form1 extends React.Component {
                     <H31Label1 htmlFor="LastName">
                       {Required}
                       <H31Input1
+                        required
                         id="LastName"
                         onChange={this.handleChange}
-                        name="LastName"
                         placeholder="Last Name"
                         type="text"
-                        required
+                        name="LastName"
+                        value={this.state.LastName}
                       />
                     </H31Label1>
                   </H31LayoutCol>
@@ -303,12 +305,13 @@ export default class Form1 extends React.Component {
                     <H31Label1 htmlFor="Email">
                       {Required}
                       <H31Input1
+                        required
                         id="Email"
                         onChange={this.handleChange}
-                        name="Email"
                         placeholder="Email Address"
                         type="email"
-                        required
+                        name="Email"
+                        value={this.state.Email}
                       />
                     </H31Label1>
                   </H31LayoutCol>
@@ -329,12 +332,13 @@ export default class Form1 extends React.Component {
                     <H31Label1 htmlFor="City">
                       {Required}
                       <H31Input1
+                        required
                         id="City"
                         onChange={this.handleChange}
-                        name="City"
                         placeholder="City"
                         type="text"
-                        required
+                        name="City"
+                        value={this.state.City}
                       />
                     </H31Label1>
                   </H31LayoutCol>
@@ -355,12 +359,13 @@ export default class Form1 extends React.Component {
                     <H31Label1 htmlFor="State">
                       {Required}
                       <H31Input1
+                        required
                         id="State"
                         onChange={this.handleChange}
-                        name="State"
                         placeholder="State"
                         type="text"
-                        required
+                        name="State"
+                        value={this.state.State}
                       />
                     </H31Label1>
                   </H31LayoutCol>
@@ -406,11 +411,12 @@ export default class Form1 extends React.Component {
                     `}
                   >
                     <H31Textarea1
+                      required
                       id="Message"
                       onChange={this.handleChange}
-                      name="Message"
                       placeholder="Message"
-                      required
+                      name="Message"
+                      value={this.state.Message}
                     />
                     {Required2}
                   </H31LayoutCol>
