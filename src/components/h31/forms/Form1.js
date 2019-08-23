@@ -30,7 +30,7 @@ const Required = (
       font-size: 0.625rem;
     `}
   >
-    * Required
+    * Testing
   </span>
 );
 
@@ -44,7 +44,7 @@ const Required2 = (
       font-size: 0.625rem;
     `}
   >
-    * Required
+    * Testing
   </span>
 );
 
