@@ -221,7 +221,6 @@ export default class Form1 extends React.Component {
               `}
             >
               <H31Label1 key={data.name} htmlFor={data.name}>
-                {data.required && Required}
                 <H31Input1
                   id={data.name}
                   onChange={this.handleChange}
@@ -230,6 +229,7 @@ export default class Form1 extends React.Component {
                   type="text"
                   required={data.required}
                 />
+                {data.required && Required}
               </H31Label1>
             </H31LayoutCol>
           );
@@ -250,7 +250,6 @@ export default class Form1 extends React.Component {
               `}
             >
               <H31Label1 key={data.name} htmlFor={data.name}>
-                {data.required && Required}
                 <H31Select1
                   onChange={this.handleChange}
                   required={data.required}
@@ -263,6 +262,7 @@ export default class Form1 extends React.Component {
                     </option>
                   ))}
                 </H31Select1>
+                {data.required && Required}
               </H31Label1>
             </H31LayoutCol>
           );
