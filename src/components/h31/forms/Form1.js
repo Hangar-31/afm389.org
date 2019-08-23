@@ -149,11 +149,13 @@ export default class Form1 extends React.Component {
           this.formEl = form;
         }}
         onSubmit={this.onSubmit}
-        name={this.props.formName}
+        name="Footer Form"
         noValidate
-        netlify
+        data-netlify="true"
         netlify-honeypot="bot-field"
       >
+        <input type="hidden" name="form-name" value="Footer Form" />
+
         <H31LayoutContainer fluid>
           {this.state.errors.length > 0 && (
             <H31LayoutRow>
