@@ -20,33 +20,33 @@ import _config from "../../_config";
 
 const Form = styled.form``;
 
-// const Required = (
-//   <span
-//     css={css`
-//       position: absolute;
-//       top: -17px;
-//       left: 0;
-//       color: ${_config.colorLightGrey};
-//       font-size: 0.625rem;
-//     `}
-//   >
-//     * Required
-//   </span>
-// );
+const Required = (
+  <span
+    css={css`
+      position: absolute;
+      top: -17px;
+      left: 0;
+      color: ${_config.colorLightGrey};
+      font-size: 0.625rem;
+    `}
+  >
+    * Required
+  </span>
+);
 
-// const Required2 = (
-//   <span
-//     css={css`
-//       position: absolute;
-//       top: -17px;
-//       left: 15px;
-//       color: ${_config.colorLightGrey};
-//       font-size: 0.625rem;
-//     `}
-//   >
-//     * Required
-//   </span>
-// );
+const Required2 = (
+  <span
+    css={css`
+      position: absolute;
+      top: -17px;
+      left: 15px;
+      color: ${_config.colorLightGrey};
+      font-size: 0.625rem;
+    `}
+  >
+    * Required
+  </span>
+);
 
 const formData = [
   {
@@ -89,7 +89,7 @@ const formData = [
     required: true
   },
   {
-    type: "text",
+    type: "email",
     name: "Email",
     text: "Email Address",
     sizeXs: 12,
@@ -221,12 +221,13 @@ export default class Form1 extends React.Component {
               `}
             >
               <H31Label1 key={data.name} htmlFor={data.name}>
+                {data.required && Required}
                 <H31Input1
                   id={data.name}
                   onChange={this.handleChange}
                   name={data.name}
                   placeholder={data.text}
-                  type="text"
+                  type={data.type}
                   required={data.required}
                 />
               </H31Label1>
@@ -249,6 +250,7 @@ export default class Form1 extends React.Component {
               `}
             >
               <H31Label1 key={data.name} htmlFor={data.name}>
+                {data.required && Required}
                 <H31Select1
                   onChange={this.handleChange}
                   required={data.required}
@@ -291,6 +293,7 @@ export default class Form1 extends React.Component {
                 placeholder={data.text}
                 required={data.required}
               />
+              {data.required && Required2}
             </H31LayoutCol>
           );
           break;
@@ -360,8 +363,6 @@ export default class Form1 extends React.Component {
       delete data.submitting;
       delete data.Submit;
 
-      console.log(data);
-
       fetch("/send", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -386,100 +387,120 @@ export default class Form1 extends React.Component {
     this.buildForm();
 
     return (
-      <Form
-        ref={form => {
-          this.formEl = form;
-        }}
-        onSubmit={this.onSubmit}
-        name={this.props.formName}
-        noValidate
-        netlify
-        netlify-honeypot="bot-field"
-      >
-        <H31LayoutContainer fluid>
-          {this.state.errors.length > 0 && (
-            <H31LayoutRow>
-              <ul
-                css={css`
-                  color: red;
-                  margin-bottom: 30px;
-                `}
-              >
-                {this.state.errors.map(error => (
-                  <H31LayoutCol md={12}>
-                    <li key={error}>
-                      <H31Error1>{error}</H31Error1>
-                    </li>
-                  </H31LayoutCol>
-                ))}
-              </ul>
-            </H31LayoutRow>
-          )}
+      <>
+        <form
+          css={css`
+            display: none;
+          `}
+          name={this.props.formName}
+          noValidate
+          netlify
+          netlify-honeypot="bot-field"
+        >
+          <input name="Regarding" />
+          <input name="FirstName" />
+          <input name="LastName" />
+          <input name="Email" />
+          <input name="City" />
+          <input name="State" />
+          <input name="Message" />
+        </form>
 
-          <H31LayoutRow
-            css={css`
-              @media (max-width: 767px) {
-                padding-bottom: 30px;
-              }
-            `}
-          >
-            <H31LayoutCol
-              css={css`
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-              `}
-              md={6}
-            >
-              <H31LayoutContainer
-                css={css`
-                  @media (max-width: 767px) {
-                    padding: 0 !important;
-                  }
-                `}
-                fluid
-              >
-                <H31LayoutRow>{this.formLeft}</H31LayoutRow>
-              </H31LayoutContainer>
-            </H31LayoutCol>
-            <H31LayoutCol
-              css={css`
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-              `}
-              md={6}
-            >
-              <H31LayoutContainer
-                css={css`
-                  height: 100%;
-                  @media (max-width: 767px) {
-                    padding: 0 !important;
-                  }
-                `}
-                fluid
-              >
-                <H31LayoutRow
+        <Form
+          ref={form => {
+            this.formEl = form;
+          }}
+          onSubmit={this.onSubmit}
+          name={this.props.formName}
+          noValidate
+          netlify
+          netlify-honeypot="bot-field"
+        >
+          <H31LayoutContainer fluid>
+            {this.state.errors.length > 0 && (
+              <H31LayoutRow>
+                <ul
                   css={css`
-                    flex-flow: column;
-                    height: 100%;
+                    color: red;
+                    margin-bottom: 30px;
                   `}
                 >
-                  {this.formRight}
-                </H31LayoutRow>
-              </H31LayoutContainer>
-            </H31LayoutCol>
+                  {this.state.errors.map(error => (
+                    <H31LayoutCol md={12}>
+                      <li key={error}>
+                        <H31Error1>{error}</H31Error1>
+                      </li>
+                    </H31LayoutCol>
+                  ))}
+                </ul>
+              </H31LayoutRow>
+            )}
 
-            <H31Label1
-              htmlFor="BotMessage"
+            <H31LayoutRow
               css={css`
-                display: none;
+                @media (max-width: 767px) {
+                  padding-bottom: 30px;
+                }
               `}
             >
-              If you are human don&#39;t fill this form out
-              <input name="bot-field" onChange={this.onChange} />
-            </H31Label1>
-          </H31LayoutRow>
-        </H31LayoutContainer>
-      </Form>
+              <H31LayoutCol
+                css={css`
+                  padding-left: 0 !important;
+                  padding-right: 0 !important;
+                `}
+                md={6}
+              >
+                <H31LayoutContainer
+                  css={css`
+                    @media (max-width: 767px) {
+                      padding: 0 !important;
+                    }
+                  `}
+                  fluid
+                >
+                  <H31LayoutRow>{this.formLeft}</H31LayoutRow>
+                </H31LayoutContainer>
+              </H31LayoutCol>
+              <H31LayoutCol
+                css={css`
+                  padding-left: 0 !important;
+                  padding-right: 0 !important;
+                `}
+                md={6}
+              >
+                <H31LayoutContainer
+                  css={css`
+                    height: 100%;
+                    @media (max-width: 767px) {
+                      padding: 0 !important;
+                    }
+                  `}
+                  fluid
+                >
+                  <H31LayoutRow
+                    css={css`
+                      flex-flow: column;
+                      height: 100%;
+                    `}
+                  >
+                    {this.formRight}
+                  </H31LayoutRow>
+                </H31LayoutContainer>
+              </H31LayoutCol>
+
+              <H31Label1
+                htmlFor="BotMessage"
+                css={css`
+                  display: none;
+                `}
+              >
+                If you are human don&#39;t fill this form out
+                <input name="bot-field" onChange={this.onChange} />
+              </H31Label1>
+            </H31LayoutRow>
+          </H31LayoutContainer>
+        </Form>
+      </>
     );
   }
 }
