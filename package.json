@@ -60,6 +60,7 @@
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.6.1",
     "gatsby-plugin-eslint": "^2.0.5",
+    "gatsby-plugin-remove-trailing-slashes": "^2.1.4",
     "prettier": "^1.18.2"
   },
   "keywords": [

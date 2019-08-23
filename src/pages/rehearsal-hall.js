@@ -343,7 +343,7 @@ export default () => (
         `}
       >
         <H31LayoutCol md={12}>
-          <H31ContentBlock2 title="Rehearsal Hall Calendar">
+          <H31ContentBlock2 id="calendar" title="Rehearsal Hall Calendar">
             <H31LayoutContainer fluid>
               <H31LayoutRow>
                 <H31LayoutCol
@@ -384,7 +384,7 @@ export default () => (
         `}
       >
         <H31LayoutCol md={12}>
-          <H31ContentBlock2 title="Rehearsal Hall Rules">
+          <H31ContentBlock2 id="rules" title="Rehearsal Hall Rules">
             <H31LayoutContainer fluid>
               <H31LayoutRow>
                 <H31LayoutCol

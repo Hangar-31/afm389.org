@@ -60,8 +60,8 @@ export {
 export { default as H31ButtonTwitterTweet } from "./buttons/ButtonTwitterTweet";
 
 // Content Blocks
-export { default as H31ContentBlock1 } from "./content-block/ContentBlock1";
-export { default as H31ContentBlock2 } from "./content-block/ContentBlock2";
+export { default as H31ContentBlock1 } from "./content-blocks/ContentBlock1";
+export { default as H31ContentBlock2 } from "./content-blocks/ContentBlock2";
 
 // Call To Action
 export { default as H31CallToAction } from "./call-to-action/CallToAction";

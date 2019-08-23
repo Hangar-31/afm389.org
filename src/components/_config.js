@@ -71,11 +71,11 @@ export default {
       links: [
         {
           name: "CFMA History",
-          to: "/about-us"
+          to: "/about"
         },
         {
           name: "The Team at CFMA",
-          to: "/about-us"
+          to: "/about#board-of-directors"
         }
       ]
     },
@@ -88,7 +88,7 @@ export default {
         },
         {
           name: "(CBA) Partners",
-          to: "/member-benefits"
+          to: "/member-benefits#cbas"
         }
       ]
     },
@@ -115,15 +115,19 @@ export default {
       ]
     },
     {
-      title: "REHEARSAL HALL CALENDAR",
+      title: "REHEARSAL HALL",
       links: [
         {
-          name: "Rehearsal Hall",
-          to: "/rehearsal-hall"
+          name: "Information",
+          to: "/rehearsal-hall#information"
         },
         {
           name: "Calendar",
-          to: "/rehearsal-hall"
+          to: "/rehearsal-hall#calendar"
+        },
+        {
+          name: "Rules",
+          to: "/rehearsal-hall#rules"
         }
       ]
     }

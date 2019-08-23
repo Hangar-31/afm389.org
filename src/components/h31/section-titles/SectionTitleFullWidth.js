@@ -15,9 +15,11 @@ const SectionTitleFullWidth = ({
   backgroundColor,
   titleSmallColor,
   titleSmall,
-  titleLarge
+  titleLarge,
+  id
 }) => (
   <H31LayoutContainer
+    id={id}
     as="section"
     fluid
     css={css`
@@ -33,6 +35,7 @@ const SectionTitleFullWidth = ({
       }
       @media (max-width: 575px) {
         min-height: 60px;
+        padding: 10px 0 !important;
       }
     `}
   >
@@ -71,14 +74,16 @@ SectionTitleFullWidth.defaultProps = {
   backgroundColor: "grey",
   titleSmall: "Small Title",
   titleSmallColor: "",
-  titleLarge: null
+  titleLarge: null,
+  id: null
 };
 
 SectionTitleFullWidth.propTypes = {
   backgroundColor: PropTypes.string,
   titleSmall: PropTypes.element,
   titleSmallColor: PropTypes.string,
-  titleLarge: PropTypes.number
+  titleLarge: PropTypes.number,
+  id: PropTypes.string
 };
 
 export default SectionTitleFullWidth;

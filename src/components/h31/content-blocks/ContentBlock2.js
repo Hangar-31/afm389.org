@@ -19,8 +19,8 @@ const Container = styled.section`
   overflow: hidden;
 `;
 
-const ContentBlock2 = ({ title, children }) => (
-  <Container>
+const ContentBlock2 = ({ id, title, children }) => (
+  <Container id={id}>
     {title !== null && (
       <H31Title2C
         css={css`
@@ -38,6 +38,7 @@ const ContentBlock2 = ({ title, children }) => (
 );
 
 ContentBlock2.defaultProps = {
+  id: null,
   title: null,
   children: (
     <>
@@ -59,6 +60,7 @@ ContentBlock2.defaultProps = {
 };
 
 ContentBlock2.propTypes = {
+  id: PropTypes.string,
   title: PropTypes.string,
   children: PropTypes.element
 };

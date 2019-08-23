@@ -40,8 +40,8 @@ const Background = styled.div`
   width: 100%;
   height: calc(100% - 35px);
   background: linear-gradient(90deg, #6da55f 0%, #164f4b 100%);
-  @media (max-width: 767px) {
-    height: calc(100% - 65px);
+  @media (max-width: 1199px) {
+    height: calc(100% - 50px);
   }
 `;
 

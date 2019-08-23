@@ -15,7 +15,7 @@ import _config from "../components/_config";
 // H31 Components
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import ContentBlock2 from "../components/h31/content-block/ContentBlock2";
+import ContentBlock2 from "../components/h31/content-blocks/ContentBlock2";
 import {
   H31LayoutContainer,
   H31LayoutRow,

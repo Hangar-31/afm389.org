@@ -167,6 +167,7 @@ export default () => (
       titleSmall="Central FL Musicians Association"
       titleSmallColor={_config.colorPrimary}
       titleLarge="Collective Bargaining Agreement (CBA) Partners"
+      id="cbas"
     />
 
     <H31SectionCBAS1 articles={articles} />

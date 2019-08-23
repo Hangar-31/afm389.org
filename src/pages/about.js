@@ -205,6 +205,7 @@ export default () => (
       titleSmall="Central FL Musicians Association"
       titleSmallColor={_config.colorPrimary}
       titleLarge="Board of Directors"
+      id="board-of-directors"
     />
 
     {bios.map(bio => (
