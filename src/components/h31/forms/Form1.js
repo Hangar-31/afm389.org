@@ -20,33 +20,33 @@ import _config from "../../_config";
 
 const Form = styled.form``;
 
-const Required = (
-  <span
-    css={css`
-      position: absolute;
-      top: -17px;
-      left: 0;
-      color: ${_config.colorLightGrey};
-      font-size: 0.625rem;
-    `}
-  >
-    * Required
-  </span>
-);
+// const Required = (
+//   <span
+//     css={css`
+//       position: absolute;
+//       top: -17px;
+//       left: 0;
+//       color: ${_config.colorLightGrey};
+//       font-size: 0.625rem;
+//     `}
+//   >
+//     * Required
+//   </span>
+// );
 
-const Required2 = (
-  <span
-    css={css`
-      position: absolute;
-      top: -17px;
-      left: 15px;
-      color: ${_config.colorLightGrey};
-      font-size: 0.625rem;
-    `}
-  >
-    * Required
-  </span>
-);
+// const Required2 = (
+//   <span
+//     css={css`
+//       position: absolute;
+//       top: -17px;
+//       left: 15px;
+//       color: ${_config.colorLightGrey};
+//       font-size: 0.625rem;
+//     `}
+//   >
+//     * Required
+//   </span>
+// );
 
 const formData = [
   {
@@ -229,7 +229,6 @@ export default class Form1 extends React.Component {
                   type="text"
                   required={data.required}
                 />
-                {data.required && Required}
               </H31Label1>
             </H31LayoutCol>
           );
@@ -262,7 +261,6 @@ export default class Form1 extends React.Component {
                     </option>
                   ))}
                 </H31Select1>
-                {data.required && Required}
               </H31Label1>
             </H31LayoutCol>
           );
@@ -293,7 +291,6 @@ export default class Form1 extends React.Component {
                 placeholder={data.text}
                 required={data.required}
               />
-              {data.required && Required2}
             </H31LayoutCol>
           );
           break;
