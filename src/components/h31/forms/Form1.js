@@ -363,6 +363,8 @@ export default class Form1 extends React.Component {
       delete data.submitting;
       delete data.Submit;
 
+      console.log(data);
+
       fetch("/send", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -376,7 +378,7 @@ export default class Form1 extends React.Component {
         })
         .catch(() => {
           this.validate();
-          this.setState({ submitting: 1 });
+          this.setState({ submitting: 0 });
         });
     } else {
       this.setState({ submitting: 0 });
@@ -394,7 +396,7 @@ export default class Form1 extends React.Component {
         onSubmit={this.onSubmit}
         name={this.props.formName}
         noValidate
-        data-netlify="true"
+        netlify
         netlify-honeypot="bot-field"
       >
         <H31LayoutContainer fluid>
