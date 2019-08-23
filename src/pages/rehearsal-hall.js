@@ -2,6 +2,9 @@ import React from "react";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 
+// Config
+import _config from "../components/_config";
+
 // Components
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -21,8 +24,10 @@ import {
 
 // Images
 import ImgMastheadRehearsalHall from "../components/images/mastheads/ImgMastheadRehearsalHall";
-import ImgHome1 from "../components/images/_home/ImgHome1";
-import _config from "../components/_config";
+import ImgRehearsalHall1 from "../components/images/_rehearsal-hall/ImgRehearsalHall1";
+import ImgRehearsalHall2 from "../components/images/_rehearsal-hall/ImgRehearsalHall2";
+import ImgRehearsalHall3 from "../components/images/_rehearsal-hall/ImgRehearsalHall3";
+import ImgRehearsalHall4 from "../components/images/_rehearsal-hall/ImgRehearsalHall4";
 
 // Styled Components
 const ContainerContact = styled.section`
@@ -302,8 +307,8 @@ export default () => (
                   `}
                   xs={6}
                 >
-                  <ImgHome1 />
-                  <ImgHome1 />
+                  <ImgRehearsalHall1 />
+                  <ImgRehearsalHall2 />
                 </H31LayoutCol>
               </H31LayoutRow>
             </H31LayoutContainer>
@@ -319,8 +324,8 @@ export default () => (
           `}
           lg={3}
         >
-          <ImgHome1 />
-          <ImgHome1 />
+          <ImgRehearsalHall1 />
+          <ImgRehearsalHall2 />
         </H31LayoutCol>
 
         <H31LayoutCol
@@ -332,8 +337,8 @@ export default () => (
           `}
           lg={3}
         >
-          <ImgHome1 />
-          <ImgHome1 />
+          <ImgRehearsalHall3 />
+          <ImgRehearsalHall4 />
         </H31LayoutCol>
       </H31LayoutRow>
 
