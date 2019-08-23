@@ -20,33 +20,33 @@ import _config from "../../_config";
 
 const Form = styled.form``;
 
-const Required = (
-  <span
-    css={css`
-      position: absolute;
-      top: -17px;
-      left: 0;
-      color: ${_config.colorLightGrey};
-      font-size: 0.625rem;
-    `}
-  >
-    * Testing
-  </span>
-);
+// const Required = (
+//   <span
+//     css={css`
+//       position: absolute;
+//       top: -17px;
+//       left: 0;
+//       color: ${_config.colorLightGrey};
+//       font-size: 0.625rem;
+//     `}
+//   >
+//     * Required
+//   </span>
+// );
 
-const Required2 = (
-  <span
-    css={css`
-      position: absolute;
-      top: -17px;
-      left: 15px;
-      color: ${_config.colorLightGrey};
-      font-size: 0.625rem;
-    `}
-  >
-    * Testing
-  </span>
-);
+// const Required2 = (
+//   <span
+//     css={css`
+//       position: absolute;
+//       top: -17px;
+//       left: 15px;
+//       color: ${_config.colorLightGrey};
+//       font-size: 0.625rem;
+//     `}
+//   >
+//     * Required
+//   </span>
+// );
 
 // Encode Function for Data
 function encode(data) {
@@ -212,7 +212,6 @@ export default class Form1 extends React.Component {
                     `}
                   >
                     <H31Label1 htmlFor="Regarding">
-                      {Required}
                       <H31Select1
                         onChange={this.handleChange}
                         required
@@ -251,7 +250,6 @@ export default class Form1 extends React.Component {
                     `}
                   >
                     <H31Label1 htmlFor="FirstName">
-                      {Required}
                       <H31Input1
                         required
                         id="FirstName"
@@ -277,7 +275,6 @@ export default class Form1 extends React.Component {
                     `}
                   >
                     <H31Label1 htmlFor="LastName">
-                      {Required}
                       <H31Input1
                         required
                         id="LastName"
@@ -303,7 +300,6 @@ export default class Form1 extends React.Component {
                     `}
                   >
                     <H31Label1 htmlFor="Email">
-                      {Required}
                       <H31Input1
                         required
                         id="Email"
@@ -330,7 +326,6 @@ export default class Form1 extends React.Component {
                     `}
                   >
                     <H31Label1 htmlFor="City">
-                      {Required}
                       <H31Input1
                         required
                         id="City"
@@ -357,7 +352,6 @@ export default class Form1 extends React.Component {
                     `}
                   >
                     <H31Label1 htmlFor="State">
-                      {Required}
                       <H31Input1
                         required
                         id="State"
@@ -418,7 +412,6 @@ export default class Form1 extends React.Component {
                       name="Message"
                       value={this.state.Message}
                     />
-                    {Required2}
                   </H31LayoutCol>
 
                   {/* Submit Button */}
