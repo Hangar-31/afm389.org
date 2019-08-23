@@ -121,7 +121,7 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
           xs={12}
           lg={8}
         >
-          <H31Form1 formName="Footer Contact Form" />
+          <H31Form1 formName="Footer Form" />
         </H31LayoutCol>
         <H31LayoutCol className="d-xs-none d-md-block" md={1} lg={2} />
       </H31LayoutRow>
