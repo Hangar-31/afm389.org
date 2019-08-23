@@ -407,8 +407,11 @@ const PrivacyPolicyPage = () => (
       as="section"
       css={css`
         margin: 45px 0;
+        @media (max-width: 719px) {
+          margin-top: 65px;
+        }
         @media (max-width: 575px) {
-          margin: 15px 0;
+          margin: 30px 0 15px 0;
         }
       `}
     >

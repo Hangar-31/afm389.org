@@ -164,18 +164,20 @@ export default class Form1 extends React.Component {
           name="bot-field"
         />
 
-        {this.state.errors.map(error => (
+        {this.state.errors.length > 0 && (
           <ul
             css={css`
               color: red;
               margin-bottom: 30px;
             `}
           >
-            <li key={error}>
-              <H31Error1>{error}</H31Error1>
-            </li>
+            {this.state.errors.map(error => (
+              <li key={error}>
+                <H31Error1>{error}</H31Error1>
+              </li>
+            ))}
           </ul>
-        ))}
+        )}
 
         {/* Regarding */}
         <Fieldset>
