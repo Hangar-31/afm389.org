@@ -157,7 +157,7 @@ export default class Form1 extends React.Component {
         netlify-honeypot="bot-field"
       >
         <input type="hidden" name="form-name" value="Footer Form" />
-        <input
+        <textarea
           css={css`
             display: none;
           `}
