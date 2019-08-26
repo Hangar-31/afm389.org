@@ -33,6 +33,9 @@ const Masthead1 = ({ ImageComponent, title, text }) => (
         position: relative;
         height: 600px;
         padding-top: 0 !important;
+        @media (max-width: 1440px) {
+          height: 525px;
+        }
         @media (max-width: 1199px) {
           height: 500px;
         }

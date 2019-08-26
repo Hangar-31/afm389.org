@@ -43,8 +43,8 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors);
     }
 
-    const posts = result.data.allMarkdownRemark.edges.filter(
-      post => !post.node.fileAbsolutePath.includes("static/testimonials")
+    const posts = result.data.allMarkdownRemark.edges.filter(post =>
+      post.node.fileAbsolutePath.includes("static/news-and-articles")
     );
 
     posts.forEach((post, i) => {

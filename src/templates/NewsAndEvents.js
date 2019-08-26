@@ -144,7 +144,7 @@ const NewsAndEvents = ({ data, pageContext }) => {
                         margin-bottom: 0;
                       `}
                     >
-                      {moment().format("ll")}
+                      {moment(frontmatter.date).format("ll")}
                     </H31Text3>
                   </H31LayoutCol>
 

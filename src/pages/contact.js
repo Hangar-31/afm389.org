@@ -43,10 +43,18 @@ export default () => (
   <Layout>
     <SEO title="Contact" description="" />
 
-    <H31Masthead1
-      ImageComponent={<ImgMastheadContact />}
-      title="Get in Touch"
-    />
+    <div
+      css={css`
+        .gatsby-image-wrapper img {
+          object-position: center right !important;
+        }
+      `}
+    >
+      <H31Masthead1
+        ImageComponent={<ImgMastheadContact />}
+        title="Get in Touch"
+      />
+    </div>
 
     <H31SectionTitleFullWidth
       backgroundColor={_config.colorPrimary}
