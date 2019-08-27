@@ -207,7 +207,7 @@ export default class Form1 extends React.Component {
               <option value="Question About Member Log In">
                 Question About Member Log In
               </option>
-              <option value="Others">Others</option>
+              <option value="Other">Other</option>
             </H31Select1>
           </P>
 
