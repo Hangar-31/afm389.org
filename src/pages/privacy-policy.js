@@ -6,6 +6,7 @@ import MediaQuery from "react-responsive";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
+// Config
 import _config from "../components/_config";
 
 import {
