@@ -8,7 +8,7 @@ export default () => (
       query {
         placeholderImage: file(
           relativePath: {
-            eq: "mastheads/cfma-board-members-masthead-orlando-florida.jpg"
+            eq: "_about/cfma-front-of-bulding-with-drums-orlando-florida.png"
           }
         ) {
           childImageSharp {

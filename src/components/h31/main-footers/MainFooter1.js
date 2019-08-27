@@ -5,6 +5,7 @@ import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 
 // Components
+import { StaticQuery, graphql } from "gatsby";
 import {
   H31LayoutContainer,
   H31LayoutRow,
@@ -139,21 +140,76 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
         <H31LayoutCol xs={12} xl={10}>
           <Wrapper>
             {_config.sitemapNav.map(item => (
-              <List key={item.title}>
-                <Item>
-                  <H31Title4B>{item.title}</H31Title4B>
-                </Item>
-                {item.links.map(link => (
-                  <Item key={link.name}>
-                    {link.external && (
-                      <LinkExternal href={link.to}>{link.name}</LinkExternal>
-                    )}
-                    {!link.external && (
-                      <H31Link2 to={link.to}>{link.name}</H31Link2>
-                    )}
-                  </Item>
-                ))}
-              </List>
+              <>
+                {item.title === "EVENTS" && (
+                  <List key={item.title}>
+                    <Item>
+                      <H31Title4B>{item.title}</H31Title4B>
+                    </Item>
+                    <StaticQuery
+                      query={graphql`
+                        query Sitemap1 {
+                          allMarkdownRemark(
+                            filter: {
+                              fileAbsolutePath: {
+                                regex: "/static/news-and-articles/"
+                              }
+                            }
+                            limit: 3
+                            sort: { order: DESC, fields: frontmatter___date }
+                          ) {
+                            edges {
+                              node {
+                                frontmatter {
+                                  title
+                                }
+                                fields {
+                                  path
+                                }
+                              }
+                            }
+                          }
+                        }
+                      `}
+                      render={data => {
+                        const { edges } = data.allMarkdownRemark;
+                        console.log(edges[0]);
+                        return (
+                          <>
+                            {edges.map(edge => (
+                              <Item key={edge.node.frontmatter.title}>
+                                <H31Link2 to={edge.node.fields.path}>
+                                  {edge.node.frontmatter.title}
+                                </H31Link2>
+                              </Item>
+                            ))}
+                          </>
+                        );
+                      }}
+                    />
+                  </List>
+                )}
+
+                {item.title !== "EVENTS" && (
+                  <List key={item.title}>
+                    <Item>
+                      <H31Title4B>{item.title}</H31Title4B>
+                    </Item>
+                    {item.links.map(link => (
+                      <Item key={link.name}>
+                        {link.external && (
+                          <LinkExternal href={link.to}>
+                            {link.name}
+                          </LinkExternal>
+                        )}
+                        {!link.external && (
+                          <H31Link2 to={link.to}>{link.name}</H31Link2>
+                        )}
+                      </Item>
+                    ))}
+                  </List>
+                )}
+              </>
             ))}
           </Wrapper>
         </H31LayoutCol>
