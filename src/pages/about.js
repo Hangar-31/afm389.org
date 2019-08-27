@@ -125,27 +125,12 @@ const bios = [
   }
 ];
 
-const testimonials = [
-  {
-    name: "Terrance Armstrong",
-    text:
-      "I had a problem with an individual at work. When I approached management, the Union was beside me all the way and supported me through a difficult time. Thank you!"
-  },
-  {
-    name: "Noel MacFarland",
-    text:
-      "I had a problem with an individual at work. When I approached management, the Union was beside me all the way and supported me through a difficult time. Thank you!"
-  },
-  {
-    name: "Noel MacFarland",
-    text:
-      "I had a problem with an individual at work. When I approached management, the Union was beside me all the way and supported me through a difficult time. Thank you!"
-  }
-];
-
 export default () => (
   <Layout>
-    <SEO title="About" description="" />
+    <SEO
+      title="About"
+      description="The Central Florida Musicians’ Association (CFMA) was founded in 1924 as “The Musicians Protective Association.” Those were the days when Labor and Management were assumed adversaries by their very nature..."
+    />
 
     <H31Masthead1
       ImageComponent={<ImgMastheadAbout />}
@@ -222,6 +207,6 @@ export default () => (
       titleSmall="Testimonials"
     />
 
-    <H31Testimonials testimonials={testimonials} />
+    <H31Testimonials />
   </Layout>
 );
