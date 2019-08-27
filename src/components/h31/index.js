@@ -119,9 +119,6 @@ export {
 // Section Titles
 export { default as H31SectionNews1 } from "./section-news/SectionNews1";
 
-// Sitemaps
-export { default as H31Sitemap1 } from "./sitemaps/Sitemap1";
-
 // Social Bars
 export {
   default as H31SocialBarHorizontal
