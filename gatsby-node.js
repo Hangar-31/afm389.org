@@ -17,7 +17,7 @@ exports.createPages = ({ actions, graphql }) => {
   return graphql(`
     {
       allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
+        sort: { order: ASC, fields: [frontmatter___date] }
         limit: 1000
       ) {
         edges {
@@ -48,11 +48,14 @@ exports.createPages = ({ actions, graphql }) => {
     );
 
     posts.forEach((post, i) => {
-      const nextNext = i - 2 < 0 ? null : posts[i - 2].node;
-      const next = i - 1 < 0 ? null : posts[i - 1].node;
-      const previous = i + 1 > posts.length - 1 ? null : posts[i + 1].node;
+      const nextNext =
+        typeof posts[i + 2] === "undefined" ? null : posts[i + 2].node;
+      const next =
+        typeof posts[i + 1] === "undefined" ? null : posts[i + 1].node;
+      const previous =
+        typeof posts[i - 1] === "undefined" ? null : posts[i - 1].node;
       const previousPrevious =
-        i + 2 > posts.length - 1 ? null : posts[i + 2].node;
+        typeof posts[i - 2] === "undefined" ? null : posts[i - 2].node;
 
       createPage({
         path: urlMaker(post.node.fileAbsolutePath),
