@@ -41,7 +41,10 @@ const GridContainer = styled.section`
 
 export default () => (
   <Layout>
-    <SEO title="Contact" description="" />
+    <SEO
+      title="Contact"
+      description="Get in touch with us with any questions, or to begin discussing your journey towards a musical career."
+    />
 
     <div
       css={css`

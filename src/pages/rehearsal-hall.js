@@ -260,7 +260,10 @@ const content2 = [
 
 export default () => (
   <Layout>
-    <SEO title="Rehearsal Hall" description="" />
+    <SEO
+      title="Rehearsal Hall"
+      description="Our Rehearsal Hall is located just outside the city of Orlando, and is open to all of our members to reserve and utilize. Schedule a time to come by and utilize the Rehearsal Hall's piano, music stands, tables, chairs and more!"
+    />
 
     <H31Masthead1
       ImageComponent={<ImgMastheadRehearsalHall />}

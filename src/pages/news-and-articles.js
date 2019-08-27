@@ -59,7 +59,10 @@ const articles = [
 
 export default () => (
   <Layout>
-    <SEO title="News & Events" description="" />
+    <SEO
+      title="News & Articles"
+      description="Stay up to date with the latest news on local gigs and events through our network. Also keep an eye out for helpful articles to improve your knowledge and skills as a professional musician."
+    />
 
     <H31Masthead1
       ImageComponent={<ImgMastheadNewsAndEvents />}

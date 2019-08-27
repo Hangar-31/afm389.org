@@ -247,7 +247,13 @@ const data = [
 
 const PrivacyPolicyPage = () => (
   <Layout>
-    <SEO title="Privacy Policy" description="" />
+    <SEO
+      title="Privacy Policy"
+      description="The Central Florida Musicians' Association (CFMA) has created this
+        privacy policy to explain how information is used that you may provide while
+        visiting this website (“Website”) and to demonstrate our firm commitment to
+        Internet privacy."
+    />
 
     <H31LayoutContainer
       fluid

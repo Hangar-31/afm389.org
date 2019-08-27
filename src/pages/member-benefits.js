@@ -134,7 +134,7 @@ const articles = [
 
 export default () => (
   <Layout>
-    <SEO title="Member Benefits" description="" />
+    <SEO title="Member Benefits" description="CFMA is a one-stop resource for all of your professional needs. We invite you to become a part of the world’s largest professional association representing the interests of professional musicians..." />
 
     <H31Masthead1
       ImageComponent={<ImgMastheadMemberBenefits />}

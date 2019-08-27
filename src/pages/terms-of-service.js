@@ -400,7 +400,12 @@ const data = [
 
 const PrivacyPolicyPage = () => (
   <Layout>
-    <SEO title="Terms of Service" description="" />
+    <SEO
+      title="Terms of Service"
+      description="Welcome to the Central Florida Musicians' Association (CFMA) Website.
+        Please carefully review our Terms of Service before you begin using the
+        site. Thank you."
+    />
 
     <H31LayoutContainer
       fluid
