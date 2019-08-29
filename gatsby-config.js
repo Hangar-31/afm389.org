@@ -38,11 +38,11 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "[]",
-        short_name: "[]",
+        name: "Central Florida Musicians' Association",
+        short_name: "CFMA",
         start_url: "/",
-        background_color: "[]",
-        theme_color: "[]",
+        background_color: "#FFFFFF",
+        theme_color: "#6DA55F",
         display: "minimal-ui",
         icon: "src/images/logos/cfma-logo-orlando-florida.png"
       }
