@@ -70,7 +70,7 @@ export default () => {
   return (
     <Layout>
       <SEO
-        title="Your Path to a Musical Career"
+        title="Your Path To A Musical Career"
         description="Welcome to the Central Florida Musicians’ Association! For almost a century, we have been serving the interests of musicians in Central Florida. Whether you’re interested in the benefits of union membership or simply in joining the largest association of professional musicians in the country, we’re here for you!"
       />
 
