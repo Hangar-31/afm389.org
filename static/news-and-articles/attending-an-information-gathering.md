@@ -1,7 +1,7 @@
 ---
 date: 2019-08-26T14:00:00.000Z
 title: Attending An Informational Gathering
-image: /assets/example-image.jpg
+image: /assets/cfma-attending-an-informationl-meeting-orlando-florida.jpg
 ---
 
 Okay, I’m with you. Attending an “informational gathering” doesn’t sound very exciting, but it may very well be the most important meeting you can attend as a union member, and here’s why:
