@@ -19,6 +19,11 @@ export default () => (
         }
       }
     `}
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
+    render={data => (
+      <Img
+        alt="Central Florida Musicians' Association rehearsal hall drums and equipment"
+        fluid={data.placeholderImage.childImageSharp.fluid}
+      />
+    )}
   />
 );

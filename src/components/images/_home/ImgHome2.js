@@ -19,6 +19,11 @@ export default () => (
         }
       }
     `}
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
+    render={data => (
+      <Img
+        alt="street musician giving thumbs up"
+        fluid={data.placeholderImage.childImageSharp.fluid}
+      />
+    )}
   />
 );

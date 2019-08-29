@@ -19,6 +19,11 @@ export default () => (
         }
       }
     `}
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
+    render={data => (
+      <Img
+        alt="Central Florida Musicians' Association Trumpet Player Learning to Play"
+        fluid={data.placeholderImage.childImageSharp.fluid}
+      />
+    )}
   />
 );

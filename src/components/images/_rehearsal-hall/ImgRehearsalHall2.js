@@ -19,6 +19,11 @@ export default () => (
         }
       }
     `}
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
+    render={data => (
+      <Img
+        alt="Central Florida Musicians' Association guitar player at rehearsal hall"
+        fluid={data.placeholderImage.childImageSharp.fluid}
+      />
+    )}
   />
 );

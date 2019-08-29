@@ -17,6 +17,11 @@ export default () => (
         }
       }
     `}
-    render={data => <Img fixed={data.placeholderImage.childImageSharp.fixed} />}
+    render={data => (
+      <Img
+        alt="Central Florida Musicians' Association location marker with logo"
+        fixed={data.placeholderImage.childImageSharp.fixed}
+      />
+    )}
   />
 );

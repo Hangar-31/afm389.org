@@ -71,7 +71,7 @@ const BlogCard1 = ({ article }) => (
     to={article.link}
   >
     <ImageContainer>
-      <img alt="" src={article.image} />
+      <img alt={article.title} src={article.image} />
     </ImageContainer>
 
     <ContentContainer

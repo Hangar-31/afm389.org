@@ -19,6 +19,11 @@ export default () => (
         }
       }
     `}
-    render={data => <Img fixed={data.placeholderImage.childImageSharp.fixed} />}
+    render={data => (
+      <Img
+        alt="front of building with drums"
+        fixed={data.placeholderImage.childImageSharp.fixed}
+      />
+    )}
   />
 );

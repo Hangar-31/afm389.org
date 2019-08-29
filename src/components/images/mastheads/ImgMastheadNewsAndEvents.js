@@ -19,6 +19,11 @@ export default () => (
         }
       }
     `}
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
+    render={data => (
+      <Img
+        alt="Central Florida Musicians' Association Street Musicians of Disney"
+        fluid={data.placeholderImage.childImageSharp.fluid}
+      />
+    )}
   />
 );
