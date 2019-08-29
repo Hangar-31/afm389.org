@@ -1,5 +1,5 @@
 ---
-date: 2019-06-15T15:00:19.044Z
+date: 2019-08-29T14:00:00.000Z
 title: The Subtle Art of Dinner Music
 image: /assets/banquet-catering-celebration.jpg
 ---
