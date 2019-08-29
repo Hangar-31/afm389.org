@@ -17,6 +17,7 @@ export { default as H31Link3 } from "./base-elements/Link3";
 export { default as H31Link4 } from "./base-elements/Link4";
 export { default as H31Link5 } from "./base-elements/Link5";
 export { default as H31Link6 } from "./base-elements/Link6";
+export { default as H31Link7 } from "./base-elements/Link7";
 export { default as H31ListBullet1 } from "./base-elements/ListBullet1";
 export { default as H31ListNumbered1 } from "./base-elements/ListNumbered1";
 export { default as H31Text1 } from "./base-elements/Text1";

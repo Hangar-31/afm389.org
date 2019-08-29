@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-wrap-multilines */
 import React from "react";
@@ -20,7 +21,8 @@ import {
   H31LayoutRow,
   H31LayoutCol,
   H31ButtonFillArrow,
-  H31SectionNews1
+  H31SectionNews1,
+  H31Link7
 } from "../components/h31";
 import ImgMastheadHome from "../components/images/mastheads/ImgMastheadHome";
 
@@ -31,45 +33,6 @@ import ImgHome3 from "../components/images/_home/ImgHome3";
 import ImgHome4 from "../components/images/_home/ImgHome4";
 
 // Data
-const articles = [
-  {
-    image: <ImgHome1 />,
-    title: "2019 DISNEY OPEN CALL AUDITIONS",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex.",
-    date: "2013-01-01T00:00:00.000",
-    link: "/",
-    linkText: "Read More"
-  },
-  {
-    image: <ImgHome2 />,
-    title: "ORLANDO MUSICIANS CONFERENCE",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex.",
-    date: "2013-01-01T00:00:00.000",
-    link: "/",
-    linkText: "Read More"
-  },
-  {
-    image: <ImgHome3 />,
-    title: "10 TIPS FOR LIVE PERFORMANCES",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex.",
-    date: "2013-01-01T00:00:00.000",
-    link: "/",
-    linkText: "Read More"
-  },
-  {
-    image: <ImgHome4 />,
-    title: "CFMA MAY 12th MUSICIANS SOCIAL",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non leo lacus. Aliquam imperdiet eleifend blandit. Donec vitae ex.",
-    date: "2013-01-01T00:00:00.000",
-    link: "/",
-    linkText: "Read More"
-  }
-];
-
 const contentBlocks = [
   {
     title: "Your Legal Support",
@@ -93,8 +56,12 @@ const contentBlocks = [
   },
   {
     title: "Ready For A Rehearsal",
-    text: `Use of the Rehearsal Hall is free for our members! More details can be
-      found here.`,
+    text: (
+      <>
+        Use of the Rehearsal Hall is free for our members! More details can be
+        found <H31Link7 to="/rehearsal-hall">here</H31Link7>.
+      </>
+    ),
     image: <ImgHome4 />
   }
 ];
@@ -118,7 +85,7 @@ export default () => {
         titleSmall="Recent News And Articles"
       />
 
-      <H31SectionNews1 articles={articles} />
+      <H31SectionNews1 />
 
       <H31LayoutContainer
         css={css`
