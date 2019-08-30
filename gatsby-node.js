@@ -17,7 +17,7 @@ exports.createPages = ({ actions, graphql }) => {
   return graphql(`
     {
       allMarkdownRemark(
-        sort: { order: ASC, fields: [frontmatter___date] }
+        sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
       ) {
         edges {
@@ -43,13 +43,9 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors);
     }
 
-    const posts = result.data.allMarkdownRemark.edges
-      .filter(post =>
-        post.node.fileAbsolutePath.includes("static/news-and-articles")
-      )
-      .sort((a, b) => {
-        return b.node.frontmatter.date - a.node.frontmatter.date;
-      });
+    const posts = result.data.allMarkdownRemark.edges.filter(post =>
+      post.node.fileAbsolutePath.includes("static/news-and-articles")
+    );
 
     posts.forEach((post, i) => {
       const nextNext =
