@@ -50,7 +50,6 @@ exports.createPages = ({ actions, graphql }) => {
       .sort((a, b) => {
         return b.node.frontmatter.date - a.node.frontmatter.date;
       });
-    console.log(posts.map(article => article.node.frontmatter.date));
 
     posts.forEach((post, i) => {
       const nextNext =
