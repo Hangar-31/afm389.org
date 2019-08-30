@@ -38,7 +38,9 @@ export default class BlogCardLoader1 extends React.Component {
       <StaticQuery
         query={graphql`
           query BlogCardLoader1 {
-            allMarkdownRemark {
+            allMarkdownRemark(
+              sort: { order: DESC, fields: [frontmatter___date] }
+            ) {
               edges {
                 node {
                   frontmatter {

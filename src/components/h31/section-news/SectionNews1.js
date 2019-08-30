@@ -156,7 +156,9 @@ class SectionNews1 extends React.Component {
       <StaticQuery
         query={graphql`
           query SectionNews1 {
-            allMarkdownRemark {
+            allMarkdownRemark(
+              sort: { order: DESC, fields: [frontmatter___date] }
+            ) {
               edges {
                 node {
                   frontmatter {

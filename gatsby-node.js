@@ -43,9 +43,14 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors);
     }
 
-    const posts = result.data.allMarkdownRemark.edges.filter(post =>
-      post.node.fileAbsolutePath.includes("static/news-and-articles")
-    );
+    const posts = result.data.allMarkdownRemark.edges
+      .filter(post =>
+        post.node.fileAbsolutePath.includes("static/news-and-articles")
+      )
+      .sort((a, b) => {
+        return b.node.frontmatter.date - a.node.frontmatter.date;
+      });
+    console.log(posts.map(article => article.node.frontmatter.date));
 
     posts.forEach((post, i) => {
       const nextNext =
