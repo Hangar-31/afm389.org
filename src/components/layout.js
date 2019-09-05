@@ -2,6 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
 import { Global, css } from "@emotion/core";
 
 // Config
@@ -35,6 +36,12 @@ const Layout = ({ children }) => (
         }
       `}
     />
+
+    <Helmet>
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
+      <script src="https://code.jquery.com/pep/0.4.3/pep.js" />
+    </Helmet>
 
     <H31MainNavbar1
       topBarColor={_config.colorPrimary}

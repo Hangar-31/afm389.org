@@ -173,7 +173,6 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
                       `}
                       render={data => {
                         const { edges } = data.allMarkdownRemark;
-                        console.log(edges[0]);
                         return (
                           <>
                             {edges.map(edge => (

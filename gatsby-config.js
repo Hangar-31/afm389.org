@@ -12,12 +12,26 @@ module.exports = {
     ]
   },
   plugins: [
+    "gatsby-plugin-react-helmet",
     // File sourcing into Gatsby for use with Gatsby Node API
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
         path: `${__dirname}/src/images`
+      }
+    },
+    // Creates a manifest for the website
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "Central Florida Musicians' Association",
+        short_name: "CFMA",
+        start_url: "/",
+        background_color: "#FFFFFF",
+        theme_color: "#6DA55F",
+        display: "minimal-ui",
+        icon: "src/images/logos/cfma-logo-orlando-florida.png"
       }
     },
     {
@@ -34,26 +48,40 @@ module.exports = {
         path: `${__dirname}/static/testimonials`
       }
     },
-    // Creates a manifest for the website
-    {
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        name: "Central Florida Musicians' Association",
-        short_name: "CFMA",
-        start_url: "/",
-        background_color: "#FFFFFF",
-        theme_color: "#6DA55F",
-        display: "minimal-ui",
-        icon: "src/images/logos/cfma-logo-orlando-florida.png"
-      }
-    },
     // Loads web fonts from Google as specified
+    // {
+    //   resolve: "gatsby-plugin-web-font-loader",
+    //   options: {
+    //     google: {
+    //       families: ["Roboto Slab", "Sarpanch", "Staatliches", "Assistant"]
+    //     }
+    //   }
+    // },
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
-        google: {
-          families: ["Roboto Slab", "Sarpanch", "Staatliches", "Assistant"]
-        }
+        fonts: [
+          {
+            family: `Roboto Slab`,
+            subsets: [`latin`],
+            variants: [`400`, `700`]
+          },
+          {
+            family: `Sarpanch`,
+            subsets: [`latin`],
+            variants: [`400`, `500`, `600`, `700`, `800`, `900`]
+          },
+          {
+            family: `Staatliches`,
+            subsets: [`latin`],
+            variants: [`400`]
+          },
+          {
+            family: `Assistant`,
+            subsets: [`latin`],
+            variants: [`400`, `500`, `600`, `700`, `800`, `900`]
+          }
+        ]
       }
     },
     // Makes field "markdownRemark" queryable
@@ -70,8 +98,8 @@ module.exports = {
         ]
       }
     },
-    // Emotion plugin for Gatsby
-    `gatsby-plugin-emotion`,
+    // Sitemap
+    "gatsby-plugin-sitemap",
 
     // Netlify CMS
     "gatsby-plugin-netlify-cms",
@@ -86,9 +114,6 @@ module.exports = {
     // Creates a Service Worker for offline use
     "gatsby-plugin-offline",
 
-    // Allows the use of react-helmet within Gatsby
-    "gatsby-plugin-react-helmet",
-
     // Creates ImageSharp nodes for image manipulation within GraphQL queries
     "gatsby-transformer-sharp",
 
@@ -96,9 +121,6 @@ module.exports = {
     "gatsby-plugin-sharp",
 
     // Gatsby Plugin for linting -- Using AirBNB
-    "gatsby-plugin-eslint",
-
-    // Remove Trailing Slashes from URLs
-    "gatsby-plugin-remove-trailing-slashes"
+    "gatsby-plugin-eslint"
   ]
 };
