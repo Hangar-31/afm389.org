@@ -3,16 +3,15 @@ module.exports = {
     title: "Central Florida Musicians' Association",
     description: "[]",
     author: "Hangar 31 Development",
-    siteUrl: "https://afm389.org",
-    social: [
-      {
-        name: "facebook",
-        url: "[]"
-      }
-    ]
+    siteUrl: "https://afm389.org"
   },
   plugins: [
+    // Sitemap
+    "gatsby-plugin-advanced-sitemap",
+
+    // Helmet plugin
     "gatsby-plugin-react-helmet",
+
     // File sourcing into Gatsby for use with Gatsby Node API
     {
       resolve: "gatsby-source-filesystem",
@@ -98,9 +97,6 @@ module.exports = {
         ]
       }
     },
-    // Sitemap
-    "gatsby-plugin-sitemap",
-
     // Netlify CMS
     "gatsby-plugin-netlify-cms",
     "gatsby-plugin-netlify",
