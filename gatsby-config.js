@@ -47,15 +47,8 @@ module.exports = {
         path: `${__dirname}/static/testimonials`
       }
     },
-    // Loads web fonts from Google as specified
-    // {
-    //   resolve: "gatsby-plugin-web-font-loader",
-    //   options: {
-    //     google: {
-    //       families: ["Roboto Slab", "Sarpanch", "Staatliches", "Assistant"]
-    //     }
-    //   }
-    // },
+
+    // Prefetch Google Fonts
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {

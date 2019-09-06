@@ -26,8 +26,6 @@ import {
 import ImgPartner1 from "../components/images/partners/ImgPartner1";
 import ImgPartner2 from "../components/images/partners/ImgPartner2";
 import ImgPartner3 from "../components/images/partners/ImgPartner3";
-import Link4 from "../components/h31/base-elements/Link4";
-import Text3 from "../components/h31/base-elements/Text3";
 
 // Data
 
@@ -57,7 +55,7 @@ const benefits = [
     info: ["One issue that we often deal with at the CFMA office is musicians who have not been paid for their work. Over the years we have recovered tens of thousands of dollars for our members who have found themselves in this position."]
   },
   {
-    name: "Free Standardize Contracts",
+    name: "Free Standardized Contracts",
     info: ["We provide a two-page, user friendly local engagement contract. The agreement is in “fill in the blank” formatting, making it quick and easy to fill out."]
   },
   {
@@ -72,27 +70,39 @@ const benefits = [
     name: "Free splash page on AFMentertainment.org",
     info: [
       <span>
-      Every member of the Association is entitled to this free splash page. It is a page all about you, allowing you to post sound clips, links to your own website as well as information about your product.&nbsp;
-        {<Link4 css={css`${Text3.__emotion_styles}; text-decoration: underline;`} href="www.AFMentertainment.org">AFMentertainment.org</Link4>} 
-      &nbsp;is also advertised in the AFM National Convention Planner, for those seeking musicians and the like for their convention work.
+        Coming soon! Every member of the Association is entitled to this free splash page. It is a page all about you, allowing you to post sound clips, links to your own website as well as information about your product.&nbsp;
+        {<a css={css`${H31Text3.__emotion_styles}; text-decoration: underline;`} href="http://AFMentertainment.com">AFMentertainment.com</a>} 
+        &nbsp;is also advertised in the AFM National Convention Planner, for those seeking musicians and the like for their convention work.
       </span>
     ]
   },
   {
-    name: "Free subscription to International Musician Magazine",
-    info: []
+    name: "Free Subscription to International Musician Magazine",
+    info: ["Stay on top of the world of professional musicians with the International Musician. Within its pages you will find profiles of inspiring musicians, reviews of the latest gear, news relating to the AFM’s efforts to improve the lives of musicians, and notifications of auditions and other opportunities for professional musicians."]
   },
   {
-    name: "National Union Benefits at UnionPlus.org",
-    info: []
+  name: `National Union Benefits at Unionplus.org`,
+    info: [
+      <span>
+        Union Privilege is a nonprofit organization founded by the AFL-CIO in 1986 to provide excellent consumer Union Plus benefit programs exclusively to union members (current and retired) and their families. Benefits range from car rental and cell phone discounts to credit counseling and home financing. Visit&nbsp;
+        {<a css={css`${H31Text3.__emotion_styles}; text-decoration: underline;`} href="https://unionplus.org">Unionplus.org</a>}
+        &nbsp;to learn more.
+      </span>
+    ]
   },
   {
-    name: "AFMInsurance.org",
-    info: []
+    name: "AFMInsurance.com",
+    info: [
+      <span>
+        AFM Insurance specializes in insurance products ranging from Major Medical to Long-term Care. Also, protect your musical equipment and necessary gear without breaking the bank. Visit&nbsp;
+        {<a css={css`${H31Text3.__emotion_styles}; text-decoration: underline;`} href="https://afminsurance.com">AFMInsurance.com</a>}
+        &nbsp;to learn more.
+      </span>
+    ]
   },
   {
     name: "Contract Negotiation",
-    info: []
+    info: ["The Association has been negotiating musician’s contracts in Central Florida for almost 100 years. These contracts range from the largest entertainment company in the world (Walt Disney World) to single engagement contracts for weddings and special events."]
   },
   {
     name: "National and International Audition Notices",
@@ -103,7 +113,7 @@ const benefits = [
   {
     name: "Legal Assistance",
     info: [
-      "The AFM posts audition notices in its monthly International Musician magazine. Central Florida auditions are emailed to members."
+      "Local 389 works with the best labor attorneys in the business. They oversee the legal wording of our collective bargaining agreements, and assist us in resolving contract issues. They are also available to our members for consultation in some circumstances."
     ]
   }
 ]
