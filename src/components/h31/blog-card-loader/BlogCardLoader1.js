@@ -88,9 +88,9 @@ export default class BlogCardLoader1 extends React.Component {
                   <>
                     <H31LayoutCol
                       css={css`
+                        margin-bottom: 30px;
                         @media (max-width: 575px) {
                           margin-bottom: 15px;
-                        }
                       `}
                       xs={12}
                       sm={6}

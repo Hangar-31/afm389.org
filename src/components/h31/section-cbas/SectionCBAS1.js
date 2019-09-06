@@ -167,7 +167,7 @@ class SectionCBAS1 extends React.Component {
               >
                 <ContainerInner>
                   <Wrapper>
-                    <H31BlogCard1 article={article} />
+                    <H31BlogCard1 hover={false} article={article} />
                   </Wrapper>
                 </ContainerInner>
               </ContainerOuter>

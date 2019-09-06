@@ -1,6 +1,6 @@
+import React from "react";
 import PropTypes from "prop-types";
-/** @jsx jsx */
-import { css, jsx } from "@emotion/core";
+import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
 
@@ -71,7 +71,7 @@ const DateContainer = styled.div`
   padding: 10px;
 `;
 
-const Container = styled(Link)`
+const ContainerLink = styled(Link)`
   display: block;
   position: relative;
   padding: 0px;
@@ -84,66 +84,125 @@ const Container = styled(Link)`
   color: initial;
   text-decoration: none;
   background-color: #ffffff;
-  &:hover {
-    text-decoration: none !important;
-    pointer: cursor;
-    ${Overlay} {
-      opacity: 1;
-    }
-  }
 `;
 
-const BlogCard1 = ({ article }) => (
-  <Container
-    css={css`
-      min-height: ${article.date ? "420px" : "350px"};
-      &:hover {
-        ${Overlay} {
-          background-color: rgba(243, 149, 8, 0.84);
-        }
-      }
-    `}
-    to={article.link}
-  >
-    <ImageContainer>
-      {typeof article.image === "string" && (
-        <img alt={article.title} src={article.image} />
-      )}
-      {typeof article.image !== "string" && article.image}
-      <Overlay>
-        <OverlayClick>
-          <H31Title4A>{article.linkText}</H31Title4A>
-        </OverlayClick>
-      </Overlay>
-    </ImageContainer>
+const ContainerBlock = styled.article`
+  display: block;
+  position: relative;
+  padding: 0px;
+  width: 100%;
+  max-width: 500px;
+  border: none;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-    <ContentContainer
-      css={css`
-        min-height: ${article.date ? "163px" : "100%"};
-        padding: ${article.date ? "15px 30px 0 30px;" : "15px 30px;"};
-      `}
-    >
-      <ContentGroup>
-        <TitleContainer>
-          <H31Title3B>{article.title}</H31Title3B>
-        </TitleContainer>
-        <H31Text3
+  color: initial;
+  text-decoration: none;
+  background-color: #ffffff;
+`;
+
+const BlogCard1 = ({ article, hover }) => (
+  <>
+    {hover && (
+      <ContainerLink
+        css={css`
+          min-height: ${article.date ? "420px" : "350px"};
+          &:hover {
+            text-decoration: none !important;
+            ${hover &&
+              `
+                pointer: cursor;
+                ${Overlay} {
+                  opacity: 1;
+                  background-color: rgba(243, 149, 8, 0.84);
+                }
+            `}
+        `}
+        to={article.link}
+      >
+        <ImageContainer>
+          {typeof article.image === "string" && (
+            <img alt={article.title} src={article.image} />
+          )}
+          {typeof article.image !== "string" && article.image}
+          <Overlay>
+            <OverlayClick>
+              <H31Title4A>{article.linkText}</H31Title4A>
+            </OverlayClick>
+          </Overlay>
+        </ImageContainer>
+
+        <ContentContainer
           css={css`
-            @media (max-width: 575px) {
-              font-size: 1rem;
-            }
+            min-height: ${article.date ? "163px" : "100%"};
+            padding: ${article.date ? "15px 30px 0 30px;" : "15px 30px;"};
           `}
         >
-          {article.text}
-        </H31Text3>
-      </ContentGroup>
-    </ContentContainer>
-    {article.date && (
-      <DateContainer>
-        <H31SimpleTime date={article.date} />
-      </DateContainer>
+          <ContentGroup>
+            <TitleContainer>
+              <H31Title3B>{article.title}</H31Title3B>
+            </TitleContainer>
+            <H31Text3
+              css={css`
+                @media (max-width: 575px) {
+                  font-size: 1rem;
+                }
+              `}
+            >
+              {article.text}
+            </H31Text3>
+          </ContentGroup>
+        </ContentContainer>
+        {article.date && (
+          <DateContainer>
+            <H31SimpleTime date={article.date} />
+          </DateContainer>
+        )}
+      </ContainerLink>
     )}
-  </Container>
+    {!hover && (
+      <ContainerBlock>
+        <ImageContainer>
+          {typeof article.image === "string" && (
+            <img alt={article.title} src={article.image} />
+          )}
+          {typeof article.image !== "string" && article.image}
+          <Overlay>
+            <OverlayClick>
+              <H31Title4A>{article.linkText}</H31Title4A>
+            </OverlayClick>
+          </Overlay>
+        </ImageContainer>
+
+        <ContentContainer
+          css={css`
+            min-height: ${article.date ? "163px" : "100%"};
+            padding: ${article.date ? "15px 30px 0 30px;" : "15px 30px;"};
+          `}
+        >
+          <ContentGroup>
+            <TitleContainer>
+              <H31Title3B>{article.title}</H31Title3B>
+            </TitleContainer>
+            <H31Text3
+              css={css`
+                @media (max-width: 575px) {
+                  font-size: 1rem;
+                }
+              `}
+            >
+              {article.text}
+            </H31Text3>
+          </ContentGroup>
+        </ContentContainer>
+        {article.date && (
+          <DateContainer>
+            <H31SimpleTime date={article.date} />
+          </DateContainer>
+        )}
+      </ContainerBlock>
+    )}
+  </>
 );
 
 BlogCard1.defaultProps = {
@@ -161,11 +220,13 @@ BlogCard1.defaultProps = {
     link: <h4>Overlay Title 4</h4>,
     linkText: <h4>Overlay Title 4</h4>,
     date: null
-  }
+  },
+  hover: true
 };
 
 BlogCard1.propTypes = {
-  article: PropTypes.objectOf(PropTypes.object)
+  article: PropTypes.objectOf(PropTypes.object),
+  hover: PropTypes.bool
 };
 
 export default BlogCard1;
