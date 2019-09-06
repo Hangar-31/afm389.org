@@ -4,6 +4,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { Global, css } from "@emotion/core";
+import { SkipNavLink, SkipNavContent } from "@reach/skip-nav";
 
 // Config
 import _config from "./_config";
@@ -20,6 +21,11 @@ const Layout = ({ children }) => (
       styles={css`
         body {
           margin: 0;
+        }
+        [data-reach-skip-link] {
+          position: absolute;
+          z-index: 1;
+          top: -30px;
         }
         .main-link-active {
           color: ${_config.colorSecondary} !important;
@@ -43,10 +49,14 @@ const Layout = ({ children }) => (
       <script src="https://code.jquery.com/pep/0.4.3/pep.js" />
     </Helmet>
 
+    <SkipNavLink />
+
     <H31MainNavbar1
       topBarColor={_config.colorPrimary}
       bottomBarColor={_config.colorSecondary}
     />
+
+    <SkipNavContent />
 
     {children}
 
