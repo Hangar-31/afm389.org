@@ -36,7 +36,7 @@ const benefits = [
   },
   {
     name: "Liability Insurance",
-    info: ["If you are performing on any government facility, from a school campus, to the Lake Eola Band Shell, you are required to carry Performance Liability Insurance, which can cost as much as $1,000 per year. As a member of CFMA however, you can purchase coverage for only $150 annually!"]
+    info: ["Many area venues – such as local government recreation centers or hotels and bars - require the performer to carry Performance Liability Insurance. This can cost as much as $1,000 per year. As a member of CFMA however, you can purchase coverage for only $150 annually!"]
   },
   {
     name: "Member Directory",
@@ -52,7 +52,7 @@ const benefits = [
   },
   {
     name: "Payment Recovery",
-    info: ["One issue that we often deal with at the CFMA office is musicians who have not been paid for their work. Over the years we have recovered tens of thousands of dollars for our members who have found themselves in this position."]
+    info: ["A couple of issues that we often deal with at the CFMA office are underpayment and nonpayment to our members for services rendered. Over the years we have recovered tens of thousands of dollars for our members who have found themselves in this position."]
   },
   {
     name: "Free Standardized Contracts",
@@ -78,7 +78,7 @@ const benefits = [
   },
   {
     name: "Free Subscription to International Musician Magazine",
-    info: ["Stay on top of the world of professional musicians with the International Musician. Within its pages you will find profiles of inspiring musicians, reviews of the latest gear, news relating to the AFM’s efforts to improve the lives of musicians, and notifications of auditions and other opportunities for professional musicians."]
+    info: ["Stay up-to-date on the business end of the professional musician with the International Musician. Within its pages you will find profiles of inspiring musicians, reviews of the latest gear, news relating to the AFM’s efforts to improve the lives of musicians, and notifications of auditions and other opportunities for professional musicians."]
   },
   {
   name: `National Union Benefits at Unionplus.org`,
@@ -122,7 +122,7 @@ const articles = [
   {
     image: <ImgPartner1 />,
     title: "Walt Disney Parks and Resorts U.S.",
-    text: "One of the largest employers of professional musicians in Central Florida – our members benefit from a long negotiating relationship with Disney.",
+    text: "Walt Disney World is the largest employer of professional musicians in Central Florida. Our members benefit from a long negotiating relationship with Disney which has evolved into a strong Collective Bargaining Agreement.",
     link: "/",
     linkText: "Visit Site"
   },
@@ -136,7 +136,7 @@ const articles = [
   {
     image: <ImgPartner3 />,
     title: "Broadway Across America",
-    text: "Bringing professional-level Broadway shows to the Central Florida stage requires professional musicians, too. Broadway shows musicians are booked by a Union contractor.",
+    text: "Bringing professional-level Broadway shows to the Central Florida stage requires professional musicians, too. Our Broadway musicians are booked by a Union contractor and covered under a Union Contract.",
     link: "/",
     linkText: "Visit Site"
   }
