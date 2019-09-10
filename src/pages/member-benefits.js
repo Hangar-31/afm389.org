@@ -78,7 +78,7 @@ const benefits = [
   },
   {
     name: "Free Subscription to International Musician Magazine",
-    info: ["Stay up-to-date on the business end of the professional musician with the International Musician. Within its pages you will find profiles of inspiring musicians, reviews of the latest gear, news relating to the AFM’s efforts to improve the lives of musicians, and notifications of auditions and other opportunities for professional musicians."]
+    info: ["Stay up-to-date on the business end of our profession with a free subscription to the International Musician. Within its pages you will find profiles of inspiring musicians, reviews of the latest gear, news relating to the AFM’s efforts to improve our working lives, and notifications of auditions and other opportunities for professional musicians."]
   },
   {
   name: `National Union Benefits at Unionplus.org`,
