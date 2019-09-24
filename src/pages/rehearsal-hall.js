@@ -362,7 +362,7 @@ export default () => (
                 >
                   <iframe
                     title="Rehearsal Hall Calendar"
-                    src="https://calendar.google.com/calendar/embed?src=local389%40afm.org&ctz=America%2FNew_York?showTz=1&amp;showTitle=0&amp;showNav=0&amp;showTabs=0&amp;showPrint=0&amp;showDate=0&amp;showCalendars=0"
+                    src="https://calendar.google.com/calendar/embed?src=local389%40afm.org&ctz=America%2FNew_York?showTz=1&amp;showTitle=0&amp;showTabs=0&amp;showPrint=0&amp;showCalendars=0"
                     css={css`
                       width: 100%;
                       height: 800px;
