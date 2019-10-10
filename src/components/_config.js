@@ -93,7 +93,7 @@ export default {
       ]
     },
     {
-      title: "EVENTS",
+      title: "NEWS & ARTICLES",
       links: [
         {
           name: "Attending An Informational Gathering",

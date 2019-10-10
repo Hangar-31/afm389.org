@@ -33,27 +33,31 @@ import ImgBioKathyThomas from "../components/images/bios/ImgBioKathyThomas";
 
 const data = [
   <H31Text3>
-    Having a dispute with your employer? Are you owed money from a contractor or
-    organization for whom you have worked? We have recovered tens of thousands
-    of dollars for our members over the years.
+    <b>Wondering what the next step in your career should be? </b>
+    We are happy to share our years of experience on formulating a plan that
+    fits your needs and dreams.
   </H31Text3>,
   <H31Text3>
-    Would you like coaching on how to audition for Walt Disney World? We hold up
-    to three auditions per year for our members to audition for the company and
-    we would love to help you prepare.
+    <b>Are you new in town and need to know who to connect with? </b>
+    We network through membership meetings, a contractor list, weekly updates of
+    current events and networking opportunities, social media and a quarterly
+    newsletter, among other things.
   </H31Text3>,
   <ImgAbout1 />,
   <br />,
   <br />,
   <H31Text3>
-    Are you new in town and need to know who to connect with? We network through
-    membership meetings, a contractor list, social media and a quarterly
-    newsletter, among other things.
+    <b>Would you like coaching on how to audition for Walt Disney World? </b>
+    We hold up to three auditions per year for our members to audition for the
+    company and we would love to help you prepare.
   </H31Text3>,
   <H31Text3>
-    Wondering what the next step in your career should be? We are happy to share
-    our years of experience on formulating a plan that fits your needs and
-    dreams.
+    <b>
+      Are you owed money from a contractor or organization for whom you have
+      worked?&nbsp;
+    </b>
+    We have recovered tens of thousands of dollars for our members over the
+    years.
   </H31Text3>
 ];
 
