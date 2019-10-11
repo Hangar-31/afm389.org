@@ -1,7 +1,7 @@
 ---
 date: 2019-10-11T14:38:46.918Z
 title: Don't blow the gig!
-image: /assets/10519663_421824301289453_1752789983427811400_n.jpg
+image: /assets/chord-close-up-electric-guitar-96380.jpg
 ---
 “Don’t blow the gig!” These are words for which our departed brother, Dick Gabriel is known. He used to use the phrase as a reminder that if there is no contract covering work which you are offered, perhaps the best thought is not to reject the gig, but to find a way to get the work covered under a contract. 
 
