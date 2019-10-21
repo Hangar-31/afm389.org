@@ -3,6 +3,8 @@ date: 2019-08-29T14:00:00.000Z
 title: The Subtle Art of Dinner Music
 image: /assets/banquet-catering-celebration.jpg
 ---
+By Howard Herman
+
 Playing dinner music is not the same as playing a concert. You are not there to be heard, although some guests may choose to listen and enjoy your performance. You are there to provide background music and play requests (like Happy Birthday, key of F), if asked. A pianist, no matter how well one plays, is really in the business of crowd control.
 
 Here are some tips based on over half a century of playing experience:
