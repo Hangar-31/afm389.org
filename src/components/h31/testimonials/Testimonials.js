@@ -178,7 +178,6 @@ class Testimonials extends React.Component {
                   frontmatter {
                     title
                     date
-                    image
                     name
                     text
                   }
@@ -203,6 +202,7 @@ class Testimonials extends React.Component {
                 >
                   {testimonials.map((testimonial, i) => (
                     <ContainerOuter
+                      key={testimonial.name}
                       ref={ref => {
                         this.testimonialComponents[i] = ref;
                       }}
@@ -235,7 +235,7 @@ class Testimonials extends React.Component {
                   {this.testimonialComponents
                     .splice(0, this.testimonialComponents.length - amount + 1)
                     .map((c, i) => (
-                      <ItemButton>
+                      <ItemButton key={`testimonials-${Math.random() * 10000}`}>
                         <Button
                           onClick={() => {
                             this.slideContainer.scrollLeft = c.scrollWidth * i;

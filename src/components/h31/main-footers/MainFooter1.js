@@ -140,9 +140,9 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
         <H31LayoutCol xs={12} xl={10}>
           <Wrapper>
             {_config.sitemapNav.map(item => (
-              <>
+              <React.Fragment key={item.title}>
                 {item.title === "EVENTS" && (
-                  <List key={item.title}>
+                  <List>
                     <Item>
                       <H31Title4B>{item.title}</H31Title4B>
                     </Item>
@@ -208,7 +208,7 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
                     ))}
                   </List>
                 )}
-              </>
+              </React.Fragment>
             ))}
           </Wrapper>
         </H31LayoutCol>
@@ -244,7 +244,7 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
         >
           {_config.footerNav.map(link => (
             <H31LinkTallUnderline
-              key="main-links-for-hangar-31"
+              key={link.name}
               linkColor={_config.colorWhite}
               linkHoverColor={_config.colorSecondary}
               underlineColor={_config.colorSecondary}
@@ -270,6 +270,8 @@ const MainFooter1 = ({ topBarColor, bottomBarColor, ImageComponent }) => (
         >
           {_config.socials.map(social => (
             <H31SocialIcons
+              key={social.social}
+              name={social.social}
               color={_config.colorWhite}
               social={social.social}
               link={social.link}

@@ -215,6 +215,7 @@ const MainNavbar1 = ({
         >
           {_config.mainNav.map(link => (
             <H31LinkTallUnderline
+              key={link.name}
               link={link.to}
               text={link.name}
               linkColor={_config.colorWhite}
@@ -240,6 +241,7 @@ const MainNavbar1 = ({
         >
           {_config.socials.map(social => (
             <H31SocialIcons
+              key={social.social}
               color={_config.colorWhite}
               social={social.social}
               link={social.link}

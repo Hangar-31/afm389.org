@@ -36,7 +36,7 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const ContentBlock = ({
+const ContentBlock1 = ({
   ImageComponent,
   title,
   text,
@@ -113,29 +113,29 @@ const ContentBlock = ({
   </H31LayoutContainer>
 );
 
-ContentBlock.defaultProps = {
+ContentBlock1.defaultProps = {
+  ImageComponent: <img alt="" src="https://via.placeholder.com/1200x1200" />,
   title: "Title",
   text: `
-  Sed ac neque ac sem iaculis commodo. Aenean accumsan in neque non tempus.
-  Aenean euismod metus leo, at euismod libero pharetra eu. Cras ultrices
-  imperdiet tortor. Sed mollis eros id arcu auctor, sit amet posuere arcu
-  facilisis. Aliquam et euismod neque, in rhoncus lectus. Suspendisse dictum
-  vitae massa sed lacinia. Aliquam et euismod neque, in rhoncus lectus.
-  Suspendisse dictum vitae massa sed lacinia.
+    Sed ac neque ac sem iaculis commodo. Aenean accumsan in neque non tempus.
+    Aenean euismod metus leo, at euismod libero pharetra eu. Cras ultrices
+    imperdiet tortor. Sed mollis eros id arcu auctor, sit amet posuere arcu
+    facilisis. Aliquam et euismod neque, in rhoncus lectus. Suspendisse dictum
+    vitae massa sed lacinia. Aliquam et euismod neque, in rhoncus lectus.
+    Suspendisse dictum vitae massa sed lacinia.
   `,
-  ImageComponent: <img alt="" src="https://via.placeholder.com/1200x1200" />,
   titleColor: "#000000",
   backgroundColor: "transparent",
   textRight: false
 };
 
-ContentBlock.propTypes = {
+ContentBlock1.propTypes = {
   ImageComponent: PropTypes.element,
   title: PropTypes.string,
-  text: PropTypes.string,
+  text: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   titleColor: PropTypes.string,
   backgroundColor: PropTypes.string,
   textRight: PropTypes.bool
 };
 
-export default ContentBlock;
+export default ContentBlock1;

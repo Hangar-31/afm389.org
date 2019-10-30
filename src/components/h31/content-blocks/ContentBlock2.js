@@ -62,7 +62,7 @@ ContentBlock2.defaultProps = {
 ContentBlock2.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
-  children: PropTypes.element
+  children: PropTypes.node
 };
 
 export default ContentBlock2;

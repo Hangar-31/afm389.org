@@ -161,6 +161,7 @@ class SectionCBAS1 extends React.Component {
           >
             {articles.map((article, i) => (
               <ContainerOuter
+                key={article.title}
                 ref={ref => {
                   this.articleComponents[i] = ref;
                 }}
@@ -180,7 +181,7 @@ class SectionCBAS1 extends React.Component {
             {this.articleComponents
               .splice(0, this.articleComponents.length - amount + 1)
               .map((c, i) => (
-                <ItemButton>
+                <ItemButton key={`section-cbas-${Math.random() * 10000}`}>
                   <Button
                     onClick={() => {
                       this.slideContainer.scrollLeft = c.scrollWidth * i;

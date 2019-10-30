@@ -22,7 +22,7 @@ export default () => (
     render={data => (
       <Img
         alt="Central Florida Musicians' Association Trumpet Player Learning to Play"
-        critical
+        loading="eager"
         fluid={data.placeholderImage.childImageSharp.fluid}
       />
     )}

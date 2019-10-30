@@ -22,6 +22,7 @@ export default () => (
     render={data => (
       <Img
         alt="Central Florida Musicians' Association Rehearsal Hall Drums"
+        loading="eager"
         fluid={data.placeholderImage.childImageSharp.fluid}
       />
     )}

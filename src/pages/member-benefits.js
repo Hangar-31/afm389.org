@@ -168,7 +168,7 @@ export default () => (
     `}
     >
       {benefits.map(benefit => (
-        <H31ToggleInfo1 name={benefit.name} info={benefit.info} />
+        <H31ToggleInfo1 key={benefit.name} name={benefit.name} info={benefit.info} />
       ))}
     </section>
 

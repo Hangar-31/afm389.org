@@ -6,13 +6,14 @@ module.exports = {
     siteUrl: "https://afm389.org"
   },
   plugins: [
-    // Sitemap
-    "gatsby-plugin-advanced-sitemap",
-
-    // Helmet plugin
-    "gatsby-plugin-react-helmet",
-
     // File sourcing into Gatsby for use with Gatsby Node API
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/static/assets`
+      }
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -82,6 +83,9 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-relative-images`
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 600
@@ -90,6 +94,11 @@ module.exports = {
         ]
       }
     },
+    // Sitemap
+    "gatsby-plugin-advanced-sitemap",
+
+    // Helmet plugin
+    "gatsby-plugin-react-helmet",
     // Netlify CMS
     "gatsby-plugin-netlify-cms",
     "gatsby-plugin-netlify",

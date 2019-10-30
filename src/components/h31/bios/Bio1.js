@@ -108,7 +108,7 @@ export default class Bio1 extends React.Component {
                         css={css`
                           margin-bottom: 15px;
                         `}
-                        key={bio}
+                        key={bio.name}
                       >
                         {bio}
                       </H31Text3>

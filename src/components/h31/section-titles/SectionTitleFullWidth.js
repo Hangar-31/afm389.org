@@ -80,9 +80,9 @@ SectionTitleFullWidth.defaultProps = {
 
 SectionTitleFullWidth.propTypes = {
   backgroundColor: PropTypes.string,
-  titleSmall: PropTypes.element,
+  titleSmall: PropTypes.string,
   titleSmallColor: PropTypes.string,
-  titleLarge: PropTypes.number,
+  titleLarge: PropTypes.string,
   id: PropTypes.string
 };
 

@@ -170,6 +170,7 @@ export default class MobileNav1 extends Component {
 
             {_config.mainNav.map(link => (
               <H31LayoutCol
+                key={link.name}
                 css={css`
                   text-align: center;
                   margin-bottom: 20px;
@@ -207,6 +208,7 @@ export default class MobileNav1 extends Component {
 
             {_config.socials.map(social => (
               <H31LayoutCol
+                key={social.social}
                 css={css`
                   text-align: center;
                   margin-bottom: 45px;
@@ -224,6 +226,7 @@ export default class MobileNav1 extends Component {
 
             {_config.footerNav.map(link => (
               <H31LayoutCol
+                key={link.name}
                 css={css`
                   text-align: center;
                   margin-bottom: 30px;

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
+import Img from "gatsby-image";
 
 // Config
 // import _config from "../../_config";
@@ -63,7 +64,7 @@ const Container = styled(Link)`
   }
 `;
 
-const BlogCard1 = ({ article }) => (
+const BlogCard2 = ({ article }) => (
   <Container
     css={css`
       height: ${article.date ? "420px" : "350px"};
@@ -71,7 +72,7 @@ const BlogCard1 = ({ article }) => (
     to={article.link}
   >
     <ImageContainer>
-      <img alt={article.title} src={article.image} />
+      <Img alt={article.title} fluid={article.image} />
     </ImageContainer>
 
     <ContentContainer
@@ -103,26 +104,26 @@ const BlogCard1 = ({ article }) => (
   </Container>
 );
 
-BlogCard1.defaultProps = {
+BlogCard2.defaultProps = {
   article: {
-    image: <img alt="" src="https://placeimg.com/1000/1000/any" />,
-    title: <h3>Title 3</h3>,
-    text: (
-      <p>
-        Consectetur veniam et nisi do culpa non. Elit eiusmod anim ipsum est ex
-        nisi id occaecat adipisicing occaecat exercitation velit occaecat.
-        Aliquip labore qui nisi velit anim quis incididunt adipisicing ipsum
-        dolore qui cillum fugiat.
-      </p>
-    ),
-    link: <h4>Overlay Title 4</h4>,
-    linkText: <h4>Overlay Title 4</h4>,
-    date: null
+    image: {},
+    title: "title",
+    text: "text",
+    link: "link",
+    linkText: "link text",
+    date: "date"
   }
 };
 
-BlogCard1.propTypes = {
-  article: PropTypes.objectOf(PropTypes.object)
+BlogCard2.propTypes = {
+  article: PropTypes.shape({
+    image: PropTypes.object,
+    title: PropTypes.string,
+    text: PropTypes.string,
+    link: PropTypes.string,
+    linkText: PropTypes.string,
+    date: PropTypes.string
+  })
 };
 
-export default BlogCard1;
+export default BlogCard2;

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
+import Img from "gatsby-image";
 
 // Components
 import { H31SimpleTime, H31Title3B, H31Title4A, H31Text3 } from "..";
@@ -22,24 +23,13 @@ const Overlay = styled.section`
   transition: 0.2s;
 `;
 
-// const OverlayTitle = styled.div`
-//   width: 100%;
-//   margin-bottom: 30px;
-//   text-align: center;
-//   > * {
-//     color: #ffffff;
-//     text-decoration: none;
-//   }
-// `;
-
 const OverlayClick = styled.div`
   width: 100%;
   text-align: center;
 `;
 
-// const Group = styled.div``;
-
 const ContentGroup = styled.div``;
+
 const ImageContainer = styled.div`
   height: 205px;
   overflow: hidden;
@@ -121,10 +111,10 @@ const BlogCard1 = ({ article, hover }) => (
         to={article.link}
       >
         <ImageContainer>
-          {typeof article.image === "string" && (
-            <img alt={article.title} src={article.image} />
+          {typeof article.image === "object" && (
+            <Img alt={article.title} fluid={article.image} />
           )}
-          {typeof article.image !== "string" && article.image}
+          {typeof article.image !== "object" && article.image}
           <Overlay>
             <OverlayClick>
               <H31Title4A>{article.linkText}</H31Title4A>
@@ -163,10 +153,10 @@ const BlogCard1 = ({ article, hover }) => (
     {!hover && (
       <ContainerBlock>
         <ImageContainer>
-          {typeof article.image === "string" && (
-            <img alt={article.title} src={article.image} />
+          {typeof article.image === "object" && (
+            <Img alt={article.title} fluid={article.image} />
           )}
-          {typeof article.image !== "string" && article.image}
+          {typeof article.image !== "object" && article.image}
           <Overlay>
             <OverlayClick>
               <H31Title4A>{article.linkText}</H31Title4A>
@@ -207,25 +197,25 @@ const BlogCard1 = ({ article, hover }) => (
 
 BlogCard1.defaultProps = {
   article: {
-    image: <img alt="" src="https://placeimg.com/1000/1000/any" />,
-    title: <h3>Title 3</h3>,
-    text: (
-      <p>
-        Consectetur veniam et nisi do culpa non. Elit eiusmod anim ipsum est ex
-        nisi id occaecat adipisicing occaecat exercitation velit occaecat.
-        Aliquip labore qui nisi velit anim quis incididunt adipisicing ipsum
-        dolore qui cillum fugiat.
-      </p>
-    ),
-    link: <h4>Overlay Title 4</h4>,
-    linkText: <h4>Overlay Title 4</h4>,
-    date: null
+    image: {},
+    title: "title",
+    text: "text",
+    link: "link",
+    linkText: "link text",
+    date: "date"
   },
   hover: true
 };
 
 BlogCard1.propTypes = {
-  article: PropTypes.objectOf(PropTypes.object),
+  article: PropTypes.shape({
+    image: PropTypes.object,
+    title: PropTypes.string,
+    text: PropTypes.string,
+    link: PropTypes.string,
+    linkText: PropTypes.string,
+    date: PropTypes.string
+  }),
   hover: PropTypes.bool
 };
 

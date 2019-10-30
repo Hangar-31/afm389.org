@@ -126,6 +126,7 @@ export default () => {
 
       {contentBlocks.map((contentBlock, i) => (
         <H31ContentBlock1
+          key={contentBlock.title}
           ImageComponent={contentBlock.image}
           title={contentBlock.title}
           text={contentBlock.text}

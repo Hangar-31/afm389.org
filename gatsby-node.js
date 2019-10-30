@@ -1,4 +1,5 @@
 /* eslint-disable consistent-return */
+const { fmImagesToRelative } = require("gatsby-remark-relative-images");
 const path = require("path");
 
 const urlMaker = pathWay => {
@@ -32,7 +33,13 @@ exports.createPages = ({ actions, graphql }) => {
             frontmatter {
               title
               date
-              image
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 1200) {
+                    src
+                  }
+                }
+              }
             }
           }
         }
@@ -74,6 +81,7 @@ exports.createPages = ({ actions, graphql }) => {
 
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
+  fmImagesToRelative(node);
   if (node.internal.type === `MarkdownRemark`) {
     createNodeField({
       node,

@@ -162,7 +162,13 @@ class SectionNews1 extends React.Component {
               edges {
                 node {
                   frontmatter {
-                    image
+                    image {
+                      childImageSharp {
+                        fluid(maxWidth: 1200) {
+                          ...GatsbyImageSharpFluid
+                        }
+                      }
+                    }
                     date
                     title
                   }
@@ -184,7 +190,7 @@ class SectionNews1 extends React.Component {
             )
             .map(article => {
               const newArticle = {
-                image: article.frontmatter.image,
+                image: article.frontmatter.image.childImageSharp.fluid,
                 title: article.frontmatter.title,
                 text: article.excerpt,
                 date: article.frontmatter.date,
@@ -204,6 +210,7 @@ class SectionNews1 extends React.Component {
                 >
                   {articles.map((article, i) => (
                     <ContainerOuter
+                      key={article.title}
                       ref={ref => {
                         this.articleComponents[i] = ref;
                       }}
@@ -223,7 +230,7 @@ class SectionNews1 extends React.Component {
                   {this.articleComponents
                     .splice(0, this.articleComponents.length - amount + 1)
                     .map((c, i) => (
-                      <ItemButton>
+                      <ItemButton key={`section-news-${Math.random() * 10000}`}>
                         <Button
                           onClick={() => {
                             this.slideContainer.scrollLeft = c.scrollWidth * i;

@@ -44,7 +44,13 @@ export default class BlogCardLoader1 extends React.Component {
               edges {
                 node {
                   frontmatter {
-                    image
+                    image {
+                      childImageSharp {
+                        fluid(maxWidth: 1200) {
+                          ...GatsbyImageSharpFluid
+                        }
+                      }
+                    }
                     date
                     title
                   }
@@ -66,7 +72,7 @@ export default class BlogCardLoader1 extends React.Component {
             )
             .map(article => {
               const newArticle = {
-                image: article.frontmatter.image,
+                image: article.frontmatter.image.childImageSharp.fluid,
                 title: article.frontmatter.title,
                 text: article.excerpt,
                 date: article.frontmatter.date,

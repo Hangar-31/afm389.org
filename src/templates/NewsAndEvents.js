@@ -8,6 +8,7 @@ import { FacebookShareButton, TwitterShareButton } from "react-share";
 import MediaQuery from "react-responsive";
 import moment from "moment";
 import { css } from "@emotion/core";
+import Img from "gatsby-image";
 
 // Config
 import _config from "../components/_config";
@@ -40,7 +41,7 @@ const NewsAndEvents = ({ data, pageContext }) => {
   let { next, previous } = pageContext;
   if (next !== null) {
     next = {
-      image: next.frontmatter.image,
+      image: next.frontmatter.image.childImageSharp.fluid,
       title: next.frontmatter.title,
       text: next.excerpt,
       date: next.frontmatter.date,
@@ -50,7 +51,7 @@ const NewsAndEvents = ({ data, pageContext }) => {
   }
   if (previous !== null) {
     previous = {
-      image: previous.frontmatter.image,
+      image: previous.frontmatter.image.childImageSharp.fluid,
       title: previous.frontmatter.title,
       text: previous.excerpt,
       date: previous.frontmatter.date,
@@ -183,12 +184,22 @@ const NewsAndEvents = ({ data, pageContext }) => {
                     `}
                   >
                     <div>
-                      <img
+                      <Img
                         css={css`
                           margin-bottom: 15px;
+                          height: 450px;
+                          @media (max-width: 991px) {
+                            height: 350px;
+                          }
+                          @media (max-width: 767px) {
+                            height: 300px;
+                          }
+                          @media (max-width: 574px) {
+                            height: 250px;
+                          }
                         `}
                         alt={frontmatter.title}
-                        src={frontmatter.image}
+                        fluid={frontmatter.image.childImageSharp.fluid}
                       />
                       <div
                         css={css`
@@ -354,7 +365,13 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date
-        image
+        image {
+          childImageSharp {
+            fluid(maxWidth: 1200) {
+              src
+            }
+          }
+        }
       }
     }
   }
