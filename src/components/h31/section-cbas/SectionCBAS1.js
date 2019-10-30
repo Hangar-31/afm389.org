@@ -183,6 +183,7 @@ class SectionCBAS1 extends React.Component {
               .map((c, i) => (
                 <ItemButton key={`section-cbas-${Math.random() * 10000}`}>
                   <Button
+                    name="cbas slide control"
                     onClick={() => {
                       this.slideContainer.scrollLeft = c.scrollWidth * i;
                       this.setState({ slide: i });

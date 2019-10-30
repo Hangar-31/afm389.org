@@ -332,6 +332,7 @@ export default class Form1 extends React.Component {
             `}
           >
             <H31ButtonBrightSubmit
+              name="submit form to afm389"
               type="submit"
               css={css`
               ${
@@ -348,6 +349,7 @@ export default class Form1 extends React.Component {
           `}
             >
               <H31Button3
+                name="submit form to afm389"
                 css={css`
                   display: flex;
                   align-items: center;

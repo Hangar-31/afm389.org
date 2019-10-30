@@ -213,6 +213,7 @@ export default class Bio1 extends React.Component {
                   xs={12}
                 >
                   <H31Link5
+                    name="close overlay"
                     css={css`
                       color: ${_config.colorWhite} !important;
                       cursor: pointer;

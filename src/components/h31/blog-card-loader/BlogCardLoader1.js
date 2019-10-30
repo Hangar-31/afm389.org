@@ -126,6 +126,8 @@ export default class BlogCardLoader1 extends React.Component {
                               border-color: ${_config.colorTertiary};
                             }
                           `}
+                          name={`click to scroll the view of articles to position ${i +
+                            1}`}
                           onClick={this.onClickLoadMore}
                         >
                           More Stories

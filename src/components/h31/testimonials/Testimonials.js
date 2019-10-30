@@ -237,6 +237,7 @@ class Testimonials extends React.Component {
                     .map((c, i) => (
                       <ItemButton key={`testimonials-${Math.random() * 10000}`}>
                         <Button
+                          name="testimonial slide control"
                           onClick={() => {
                             this.slideContainer.scrollLeft = c.scrollWidth * i;
                             this.setState({ slide: i });

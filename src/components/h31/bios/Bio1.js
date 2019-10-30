@@ -124,6 +124,7 @@ export default class Bio1 extends React.Component {
                   `}
                 >
                   <H31Button1
+                    name="open more information"
                     css={css`
                       height: 40px;
                       border: ${this.state.visible
