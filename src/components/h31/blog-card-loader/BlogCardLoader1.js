@@ -46,7 +46,7 @@ export default class BlogCardLoader1 extends React.Component {
                   frontmatter {
                     image {
                       childImageSharp {
-                        fluid(maxWidth: 1200) {
+                        fluid(maxWidth: 500) {
                           ...GatsbyImageSharpFluid
                         }
                       }
