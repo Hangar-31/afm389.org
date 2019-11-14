@@ -1,3 +1,4 @@
+/* eslint-disable valid-typeof */
 import React from "react";
 import PropTypes from "prop-types";
 import { css } from "@emotion/core";
@@ -111,10 +112,10 @@ const BlogCard1 = ({ article, hover }) => (
         to={article.link}
       >
         <ImageContainer>
-          {typeof article.image === "object" && (
+          {!React.isValidElement(article.image) && (
             <Img alt={article.title} fluid={article.image} />
           )}
-          {typeof article.image !== "object" && article.image}
+          {React.isValidElement(article.image) && article.image}
           <Overlay>
             <OverlayClick>
               <H31Title4A>{article.linkText}</H31Title4A>
@@ -153,10 +154,10 @@ const BlogCard1 = ({ article, hover }) => (
     {!hover && (
       <ContainerBlock>
         <ImageContainer>
-          {typeof article.image === "object" && (
+          {!React.isValidElement(article.image) && (
             <Img alt={article.title} fluid={article.image} />
           )}
-          {typeof article.image !== "object" && article.image}
+          {React.isValidElement(article.image) && article.image}
           <Overlay>
             <OverlayClick>
               <H31Title4A>{article.linkText}</H31Title4A>
