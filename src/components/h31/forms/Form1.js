@@ -199,7 +199,7 @@ export default class Form1 extends React.Component {
               <option value="Joining CFMA">Joining CFMA</option>
               <option value="Career Coaching">Career Coaching</option>
               <option value="Audition and Giggin Questions">
-                Audition and Giggin Questions
+                Audition and Gigging Questions
               </option>
               <option value="Questions About Benefits">
                 Questions About Benefits
