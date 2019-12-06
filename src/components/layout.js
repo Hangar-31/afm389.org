@@ -1,10 +1,9 @@
-/* eslint-disable react/jsx-wrap-multilines */
-// eslint-disable-next-line no-unused-vars
 import React from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { Global, css } from "@emotion/core";
 import { SkipNavLink, SkipNavContent } from "@reach/skip-nav";
+import RobotoSlabVar from "../../static/fonts/RobotoSlabVar.ttf";
 
 // Config
 import _config from "./_config";
@@ -39,6 +38,12 @@ const Layout = ({ children }) => (
         }
         .main-mobile-link-active + div {
           color: ${_config.colorTertiary} !important;
+        }
+        @font-face {
+          font-family: "Roboto Slab";
+          src: url(${RobotoSlabVar}) format("truetype");
+          font-weight: normal;
+          font-style: normal;
         }
       `}
     />
