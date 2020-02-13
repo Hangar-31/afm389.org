@@ -1,7 +1,7 @@
 ---
 date: 2020-02-12T16:27:53.228Z
 title: Rehearsal Space
-image: /assets/58679628080__de2d73ef-3d64-4681-ada3-8b211d31bebf.jpg
+image: /assets/afm-3.jpg
 ---
 Rehearsal space is one of the greatest needs and largest monthly expenses for bands and performing artists. In our research, we have found facilities requesting $25 per hour (at the low end) and hundreds of dollars per month at the high end.  As a member of our association, rehearsal space is free! Our facility is conveniently located on the east side of downtown Orlando, just off of the 408, and it is available 24/7. 
 
