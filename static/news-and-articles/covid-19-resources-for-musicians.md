@@ -15,11 +15,23 @@ More information and application [here](https://www.afm.org/petrillo-memorial-fu
 
 [COVID-19 Freelance Artist Resources](https://covid19freelanceartistresource.wordpress.com/): _as a disclaimer, we have no relationship with most of these organizations on this list; this is not intended as an endorsement or otherwise of any of the services offered through the various links._
 
+__[www.benefits.gov](www.benefits.gov) _\- the official benefits website of the U.S. Government._
+
+[Recording Academy MusiCares Relief Fund](https://www.grammy.com/…/…/musicares-coronavirus-relief-fund)
+
+[Sweet Relief Musicians Fund](https://www.sweetrelief.org/covid-19-fund.html)
+
 [Orange County, FL Residents Crisis Assistance Program](https://www.orangecountyfl.net/FamiliesHealthSocialSvcs/CrisisAssistanceProgram.aspx#.Xnkd7IhKiwc)
+
+[Osceola County Resident Resources](https://www.orangecountyfl.net/FamiliesHealthSocialSvcs/CrisisAssistanceProgram.aspx?fbclid=IwAR1YF7_VfndqKqSwZvGJQSUYmWyJxhNa-GhhbvcwKNTFXs9SGsY-uClwF7M#.Xn4slohKhPa)
 
 [Seminole County Residents Assistance Program](https://www.seminolecountyfl.gov/departments-services/county-managers-office/prepare-seminole/emergencyevent.stml#assistanceprograms)
 
+****
 
+****
+
+****
 
 **Losing work because of COVID-19? AFM Local 369 in Las Vegas offers the following advice:** 
 
