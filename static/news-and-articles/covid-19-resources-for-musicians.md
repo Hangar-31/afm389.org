@@ -5,6 +5,8 @@ image: /assets/pills-on-gray-background-3923156.jpg
 ---
 Below is a list of resources for musicians who may be impacted in some way by COVID-19 (Coronavirus). We will continue to update this list as new resources are made available.
 
+[The Freelancer's Guide to the CARES Act](https://freelancecoop.org/caresact/)
+
 [**AFM's COVID-19 Resources** ](https://www.afm.org/covid-19/)
 
 **AFM's Lester Petrillo Fund**\
@@ -22,7 +24,6 @@ More information and application [here](https://www.afm.org/petrillo-memorial-fu
 [Orange County, FL Residents Crisis Assistance Program](https://www.orangecountyfl.net/FamiliesHealthSocialSvcs/CrisisAssistanceProgram.aspx#.Xnkd7IhKiwc)
 
 [Osceola County Resident Resources](https://www.osceola.org/covid19/financial-assistance/resident.stml?fbclid=IwAR2xwriYg5-GUCispVKDwnUPMYPYVaqB-AEbu2jErE2vBvMTaZBnjbGiUoc)
-
 
 [Seminole County Residents Assistance Program](https://www.seminolecountyfl.gov/departments-services/county-managers-office/prepare-seminole/emergencyevent.stml#assistanceprograms)
 
