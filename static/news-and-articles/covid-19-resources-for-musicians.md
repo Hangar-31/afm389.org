@@ -3,6 +3,8 @@ date: 2020-03-19T16:35:37.127Z
 title: COVID-19 RESOURCES FOR MUSICIANS
 image: /assets/pills-on-gray-background-3923156.jpg
 ---
+Updated April 2, 2020
+
 Below is a list of resources for musicians who may be impacted in some way by COVID-19 (Coronavirus). We will continue to update this list as new resources are made available.
 
 [The Freelancer's Guide to the CARES Act](https://freelancecoop.org/caresact/)
