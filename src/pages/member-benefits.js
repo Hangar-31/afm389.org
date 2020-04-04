@@ -71,7 +71,7 @@ const benefits = [
     info: [
       <span>
         Coming soon! Every member of the Association is entitled to this free splash page. It is a page all about you, allowing you to post sound clips, links to your own website as well as information about your product.&nbsp;
-        {<a css={css`${H31Text3.__emotion_styles}; text-decoration: underline;`} href="http://www.AFMentertainment.com">AFMentertainment.com</a>} 
+        <a css={css`${H31Text3.__emotion_styles}; text-decoration: underline;`} href="http://www.AFMentertainment.com">AFMentertainment.com</a> 
         &nbsp;is also advertised in the AFM National Convention Planner, for those seeking musicians and the like for their convention work.
       </span>
     ]
@@ -85,7 +85,7 @@ const benefits = [
     info: [
       <span>
         Union Privilege is a nonprofit organization founded by the AFL-CIO in 1986 to provide excellent consumer Union Plus benefit programs exclusively to union members (current and retired) and their families. Benefits range from car rental and cell phone discounts to credit counseling and home financing. Visit&nbsp;
-        {<a css={css`${H31Text3.__emotion_styles}; text-decoration: underline;`} href="https://www.unionplus.org">Unionplus.org</a>}
+        <a css={css`${H31Text3.__emotion_styles}; text-decoration: underline;`} href="https://www.unionplus.org">Unionplus.org</a>
         &nbsp;to learn more.
       </span>
     ]
@@ -95,7 +95,7 @@ const benefits = [
     info: [
       <span>
         AFM Insurance specializes in insurance products ranging from Major Medical to Long-term Care. Also, protect your musical equipment and necessary gear without breaking the bank. Visit&nbsp;
-        {<a css={css`${H31Text3.__emotion_styles}; text-decoration: underline;`} href="https://www.afminsurance.com">AFMInsurance.com</a>}
+        <a css={css`${H31Text3.__emotion_styles}; text-decoration: underline;`} href="https://www.afminsurance.com">AFMInsurance.com</a>
         &nbsp;to learn more.
       </span>
     ]
@@ -202,7 +202,7 @@ export default () => (
               }
             `}
           >
-              A collective bargaining agreement enables you to have a voice in every area of your employment. This includes your wages and all of your working conditions (from break times to health benefits).
+            A collective bargaining agreement enables you to have a voice in every area of your employment. This includes your wages and all of your working conditions (from break times to health benefits).
           </H31Text3>
         </H31LayoutCol>
         <H31LayoutCol xs={1} sm={2} md={3} />

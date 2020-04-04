@@ -80,6 +80,7 @@ const NewsAndEvents = ({ data, pageContext }) => {
           }
           li {
             ${H31Item1.__emotion_styles}
+            color: ${_config.colorSecondary};
           }
         `}
       >
@@ -202,6 +203,7 @@ const NewsAndEvents = ({ data, pageContext }) => {
                         fluid={frontmatter.image.childImageSharp.fluid}
                       />
                       <div
+                        id="blog-html-styles"
                         css={css`
                         h1 {
                           ${H31Title1C.__emotion_styles}
@@ -217,10 +219,8 @@ const NewsAndEvents = ({ data, pageContext }) => {
                           ${H31Text3.__emotion_styles}
                         }
                         img {
-                          display: none;
                           margin: 0 auto;
                           max-width: 100%;
-                          max-height: 300px;
                         }
                         iframe {
                           width: 100%;
@@ -368,7 +368,7 @@ export const pageQuery = graphql`
         image {
           childImageSharp {
             fluid(maxWidth: 1000) {
-              src
+              ...GatsbyImageSharpFluid
             }
           }
         }

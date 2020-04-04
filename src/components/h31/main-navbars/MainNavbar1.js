@@ -131,7 +131,7 @@ const MainNavbar1 = ({
                 }
               `}
           >
-              CFMA Local 389
+            CFMA Local 389
             <span
               css={css`
                   position: absolute;
@@ -151,7 +151,7 @@ const MainNavbar1 = ({
                   }
                 `}
             >
-                Central FL Musicians&#x27; Association
+              Central FL Musicians&#x27; Association
             </span>
           </H31Title1A>
         </H31LayoutCol>
@@ -272,7 +272,7 @@ const MainNavbar1 = ({
             margin-right: 15px;
           `}
           >
-          Don&apos;t Go It Alone
+            Don&apos;t Go It Alone
           </H31Text2>
 
           <H31Link5 href="https://members.afm.org/join/step1/c/en_US">Join Now</H31Link5>
@@ -341,7 +341,7 @@ const MainNavbar1 = ({
               margin-right: 15px;
           `}
           >
-          Don&apos;t Go It Alone
+            Don&apos;t Go It Alone
           </H31Text2>
 
           <H31Link5 href="https://members.afm.org/join/step1/c/en_US">Join Now</H31Link5>

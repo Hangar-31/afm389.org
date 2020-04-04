@@ -48,16 +48,12 @@ export { default as H31BlogCard1 } from "./blog-cards/BlogCard1";
 export { default as H31BlogCard2 } from "./blog-cards/BlogCard2";
 
 // Blog Card Loader
-export {
-  default as H31BlogCardLoader1
-} from "./blog-card-loader/BlogCardLoader1";
+export { default as H31BlogCardLoader1 } from "./blog-card-loader/BlogCardLoader1";
 
 // Buttons
 export { default as H31ButtonBrightSubmit } from "./buttons/ButtonBrightSubmit";
 export { default as H31ButtonFillArrow } from "./buttons/ButtonFillArrow";
-export {
-  default as H31ButtonFacebookShare
-} from "./buttons/ButtonFacebookShare";
+export { default as H31ButtonFacebookShare } from "./buttons/ButtonFacebookShare";
 export { default as H31ButtonTwitterTweet } from "./buttons/ButtonTwitterTweet";
 
 // Content Blocks
@@ -85,9 +81,7 @@ export { default as H31LinkBarHorizontal } from "./link-bars/LinkBarHorizontal";
 export { default as H31LinkTallUnderline } from "./links/LinkTallUnderline";
 
 // Loading Indicators
-export {
-  default as H31LoadingIndicator1
-} from "./loading-indicators/LoadingIndicator1";
+export { default as H31LoadingIndicator1 } from "./loading-indicators/LoadingIndicator1";
 
 // Main Footers
 export { default as H31MainFooter1 } from "./main-footers/MainFooter1";
@@ -102,9 +96,7 @@ export { default as H31Masthead1 } from "./mastheads/Masthead1";
 export { default as H31MobileNav1 } from "./mobile-navs/MobileNav1";
 
 // Overlay Member Login
-export {
-  default as H31OverlayMemberLogin1
-} from "./overlay-member-login/OverlayMemberLogin1";
+export { default as H31OverlayMemberLogin1 } from "./overlay-member-login/OverlayMemberLogin1";
 
 // Paragraphs
 export { default as H31Paragraph1 } from "./paragraphs/Paragraph1";
@@ -113,17 +105,13 @@ export { default as H31Paragraph1 } from "./paragraphs/Paragraph1";
 export { default as H31SectionCBAS1 } from "./section-cbas/SectionCBAS1";
 
 // Section Titles
-export {
-  default as H31SectionTitleFullWidth
-} from "./section-titles/SectionTitleFullWidth";
+export { default as H31SectionTitleFullWidth } from "./section-titles/SectionTitleFullWidth";
 
 // Section Titles
 export { default as H31SectionNews1 } from "./section-news/SectionNews1";
 
 // Social Bars
-export {
-  default as H31SocialBarHorizontal
-} from "./social-bars/SocialBarHorizontal";
+export { default as H31SocialBarHorizontal } from "./social-bars/SocialBarHorizontal";
 
 // Socials
 export { default as H31SocialIcons } from "./socials/SocialIcons";

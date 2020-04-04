@@ -21,7 +21,9 @@ export default styled.select`
   font-weight: 300;
 
   background: url(${ImgDownCarrot}) no-repeat 98% center/10px, #ffffff;
-  -webkit-appearance: button;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
 
   option {
     color: ${siteConfig.colorDarkGrey};

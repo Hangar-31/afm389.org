@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
@@ -9,7 +10,7 @@ import RobotoSlabVar from "../../static/fonts/RobotoSlabVar.ttf";
 import _config from "./_config";
 
 // Components
-import { H31MainNavbar1, H31MainFooter1 } from "./h31/index";
+import { H31MainNavbar1, H31MainFooter1, H31Text3 } from "./h31/index";
 
 // Images
 import ImgFooterBackground from "./images/footer/ImgFooterBackground";
@@ -38,6 +39,11 @@ const Layout = ({ children }) => (
         }
         .main-mobile-link-active + div {
           color: ${_config.colorTertiary} !important;
+        }
+        #blog-html-styles {
+          li {
+            ${H31Text3.__emotion_styles}
+          }
         }
         @font-face {
           font-family: "Roboto Slab";
