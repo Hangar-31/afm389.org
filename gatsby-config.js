@@ -119,6 +119,13 @@ module.exports = {
     "gatsby-plugin-sharp",
 
     // Gatsby Plugin for linting -- Using AirBNB
-    "gatsby-plugin-eslint"
+    "gatsby-plugin-eslint",
+
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-146527665-1"
+      }
+    }
   ]
 };
