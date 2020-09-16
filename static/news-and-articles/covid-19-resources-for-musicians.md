@@ -3,29 +3,19 @@ date: 2020-03-19T16:35:37.127Z
 title: COVID-19 RESOURCES FOR MUSICIANS
 image: /assets/pills-on-gray-background-3923156.jpg
 ---
-Updated April 13, 2020
+Updated June 16, 2020
 
-Below is a list of resources for musicians who may be impacted in some way by COVID-19 (Coronavirus). We will continue to update this list as new resources are made available.
+**ORGANIZATIONS OFFERING ASSISTANCE**
 
+[Artist Relief](https://artistrelief.submittable.com/submit)
 
+[Jazz Foundation of America](https://jazzfoundation.org/covid19fund/)
 
-[Information about the Federal Government Stimulus Payments](https://www.forbes.com/sites/advisor/2020/04/06/dont-worry-the-1200-stimulus-payment-wont-cut-into-your-tax-refund-next-april/#1bc08b1d5ea8)
+[Musicians Foundation](https://www.musiciansfoundation.org/apply/)
 
-[FAQ from Florida on Unemployment](http://www.floridajobs.org/Reemployment-Assistance-Service-Center/reemployment-assistance/claimants/claimant-faqs)
+[Foundation for Contemporary Arts](https://foundationforcontemporaryarts.submittable.com/submit/b9feb8b2-3b40-4a12-bee3-b0e71294d17f/fca-emergency-grants-covid-19-fund)
 
-[Tips on filing for unemployment in Florida](https://eligibility.com/unemployment/florida-fl-unemployment-benefits)
-
-[FAQ on unemployment from the State of Florida](http://www.floridajobs.org/docs/default-source/reemployment-assistance-center/new-individual-faq-includes-cares-act-final.pdf?sfvrsn=5f2547b0_4)
-
-[The Freelancer's Guide to the CARES Act](https://freelancecoop.org/caresact/)
-
-[**AFM's COVID-19 Resources** ](https://www.afm.org/covid-19/)
-
-**AFM's Lester Petrillo Fund**\
-For members of the AFM, American Federation of Musicians of the United States and Canada, there is limited emergency financial aid through the AFM's Lester Petrillo Fund. The following circumstances would qualify for assistance:\
-1: A member is diagnosed with Coronavirus (COVID-19).\
-2: A member tests positive for Coronavirus (COVID-19) and is quarantined.\
-More information and application [here](https://www.afm.org/petrillo-memorial-fund/). 
+[**AFM's COVID-19 Resources** ](https://www.afm.org/covid-19/)****
 
 [COVID-19 Freelance Artist Resources](https://covid19freelanceartistresource.wordpress.com/): _as a disclaimer, we have no relationship with most of these organizations on this list; this is not intended as an endorsement or otherwise of any of the services offered through the various links._
 
@@ -40,6 +30,26 @@ More information and application [here](https://www.afm.org/petrillo-memorial-fu
 [Seminole County Residents Assistance Program](https://www.seminolecountyfl.gov/departments-services/county-managers-office/prepare-seminole/emergencyevent.stml#assistanceprograms)
 
 [U.S. Government Benefits](https://www.benefits.gov/)
+
+**AFM's Lester Petrillo Fund**\
+For members of the AFM, American Federation of Musicians of the United States and Canada, there is limited emergency financial aid through the AFM's Lester Petrillo Fund. The following circumstances would qualify for assistance:\
+1: A member is diagnosed with Coronavirus (COVID-19).\
+2: A member tests positive for Coronavirus (COVID-19) and is quarantined.\
+More information and application [here](https://www.afm.org/petrillo-memorial-fund/). 
+
+
+
+**UNEMPLOYMENT INFORMATION AND TIPS**
+
+[Information about the Federal Government Stimulus Payments](https://www.forbes.com/sites/advisor/2020/04/06/dont-worry-the-1200-stimulus-payment-wont-cut-into-your-tax-refund-next-april/#1bc08b1d5ea8)
+
+[Tips on filing for unemployment in Florida](https://eligibility.com/unemployment/florida-fl-unemployment-benefits)
+
+[FAQ on unemployment from the State of Florida](http://www.floridajobs.org/docs/default-source/reemployment-assistance-center/new-individual-faq-includes-cares-act-final.pdf?sfvrsn=5f2547b0_4)
+
+[The Freelancer's Guide to the CARES Act](https://freelancecoop.org/caresact/)
+
+
 
 - - -
 
