@@ -275,7 +275,7 @@ const MainNavbar1 = ({
             Don&apos;t Go It Alone
           </H31Text2>
 
-          <H31Link5 href="https://members.afm.org/join/step1/c/en_US">Join Now</H31Link5>
+          <H31Link5 href="https://member.afm389.org/sign-up">Join Now</H31Link5>
         </H31LayoutCol>
 
         <H31LayoutCol
@@ -344,7 +344,7 @@ const MainNavbar1 = ({
             Don&apos;t Go It Alone
           </H31Text2>
 
-          <H31Link5 href="https://members.afm.org/join/step1/c/en_US">Join Now</H31Link5>
+          <H31Link5 href="https://member.afm389.org/sign-up">Join Now</H31Link5>
         </H31LayoutCol>
       </H31LayoutRow>
     </H31LayoutContainer>
@@ -391,7 +391,7 @@ const MainNavbar1 = ({
                 padding: 5px 10px;
               }
             `}
-            href="https://members.afm.org/join/step1/c/en_US"
+            href="https://member.afm389.org/sign-up"
           >
             Join Now
           </H31Link5>

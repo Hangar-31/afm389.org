@@ -109,7 +109,7 @@ export default () => (
                 padding: 15px 30px;
               }
             `}
-            href="https://members.afm.org/join/step1/c/en_US"
+            href="https://member.afm389.org/sign-up"
           >
             Join Now
           </H31Link5>
