@@ -66,16 +66,16 @@ const benefits = [
     name: "No Initiation Fees for Bands",
     info: ["Understanding the investment we make in our careers, the AFM provides this cost savings benefit. If every member of a band joins at the same time, all initiation fees are waived."]
   },
-  {
-    name: "Free splash page on AFMentertainment.com",
-    info: [
-      <span>
-        Coming soon! Every member of the Association is entitled to this free splash page. It is a page all about you, allowing you to post sound clips, links to your own website as well as information about your product.&nbsp;
-        <a css={css`${H31Text3.__emotion_styles}; text-decoration: underline;`} href="http://www.AFMentertainment.com">AFMentertainment.com</a> 
-        &nbsp;is also advertised in the AFM National Convention Planner, for those seeking musicians and the like for their convention work.
-      </span>
-    ]
-  },
+  // {
+  //   name: "Free splash page on AFMentertainment.com",
+  //   info: [
+  //     <span>
+  //       Coming soon! Every member of the Association is entitled to this free splash page. It is a page all about you, allowing you to post sound clips, links to your own website as well as information about your product.&nbsp;
+  //       <a css={css`${H31Text3.__emotion_styles}; text-decoration: underline;`} href="http://www.AFMentertainment.com">AFMentertainment.com</a> 
+  //       &nbsp;is also advertised in the AFM National Convention Planner, for those seeking musicians and the like for their convention work.
+  //     </span>
+  //   ]
+  // },
   {
     name: "Free Subscription to International Musician Magazine",
     info: ["Stay up-to-date on the business end of our profession with a free subscription to the International Musician. Within its pages you will find profiles of inspiring musicians, reviews of the latest gear, news relating to the AFM’s efforts to improve our working lives, and notifications of auditions and other opportunities for professional musicians."]
