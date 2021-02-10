@@ -51,30 +51,9 @@ module.exports = {
 
     // Prefetch Google Fonts
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          {
-            family: `Roboto Slab`,
-            subsets: [`latin`],
-            variants: [`400`, `700`]
-          },
-          {
-            family: `Sarpanch`,
-            subsets: [`latin`],
-            variants: [`400`, `500`, `600`, `700`, `800`, `900`]
-          },
-          {
-            family: `Staatliches`,
-            subsets: [`latin`],
-            variants: [`400`]
-          },
-          {
-            family: `Assistant`,
-            subsets: [`latin`],
-            variants: [`400`, `500`, `600`, `700`, `800`, `900`]
-          }
-        ]
+        fonts: [`Roboto Slab`, `Sarpanch`, `Staatliches`, `Assistant`]
       }
     },
     // Makes field "markdownRemark" queryable
