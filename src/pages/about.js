@@ -26,10 +26,11 @@ import ImgBioMikeAvila from "../components/images/bios/ImgBioMikeAvila";
 import ImgBioDeborahWells from "../components/images/bios/ImgBioDeborahWells";
 import ImgBioSamZambito from "../components/images/bios/ImgBioSamZambito";
 import ImgBioNancyCrockford from "../components/images/bios/ImgBioNancyCrockford";
-import ImgBioHowardHerman from "../components/images/bios/ImgBioHowardHerman";
+// import ImgBioHowardHerman from "../components/images/bios/ImgBioHowardHerman";
 import ImgBioBarrySmith from "../components/images/bios/ImgBioBarrySmith";
 import ImgBioBrianSmithers from "../components/images/bios/ImgBioBrianSmithers";
 import ImgBioKathyThomas from "../components/images/bios/ImgBioKathyThomas";
+import ImgBioJeffThomas from "../components/images/bios/ImgBioJeffThomas";
 
 const data = [
   <H31Text3 key={`about-page-${Math.random() * 10000}`}>
@@ -96,11 +97,11 @@ const bios = [
     ]
   },
   {
-    name: "Howard Herman",
+    name: "Jeff Thomas",
     title: "Executive Board",
-    image: <ImgBioHowardHerman />,
+    image: <ImgBioJeffThomas />,
     bios: [
-      "Howard Herman is a professional jazz pianist, arranger, composer and music educator in the Orlando area. He earned his M.A. (Composition) from Long Island University, his B.A. from New York University (Major: Music Theory, Minor: Music Education). He also did undergraduate work at Berklee College of Music and postgraduate work at C.S.U.N. and U.C.L.A. He has worked with Regis Philbin, Henry Beckman, Nichelle Nichols, Walter Koenig, George Takei, Scott Whitfield, Peter Welker, Leroy Cooper, Don Lamond, and Robin Yukiko. www.howardherman.com"
+      "Having been trained as a classical and jazz musician, Jeff has had a varied career in both the commercial music industry and on the concert stage. He is Principal Trombone with the Orlando Philharmonic Orchestra and the Bach Festival Orchestra. Jeff has studied with some of the most respected teachers in the country, and he has paid that experience forward through inspiring countless numbers of students and professional performers through teaching and mentoring. All of this (and much more) allows Jeff to reach out and serve the interests of our musicians on a variety of levels. Jeff shares a blended family of six children with his wife and best friend, Kathy Thomas."
     ]
   },
   {
