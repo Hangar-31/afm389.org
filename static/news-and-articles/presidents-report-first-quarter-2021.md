@@ -1,7 +1,7 @@
 ---
 date: 2021-03-17T18:19:43.920Z
 title: President's Report (First Quarter 2021)
-image: /assets/mike-avila-afm-17-1-.jpg
+image: /assets/avila-pic-for-website-news-post.jpg
 ---
 Greetings Fellow Musicians,
 
