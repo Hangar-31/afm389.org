@@ -31,6 +31,7 @@ import ImgHome1 from "../components/images/_home/ImgHome1";
 import ImgHome2 from "../components/images/_home/ImgHome2";
 import ImgHome3 from "../components/images/_home/ImgHome3";
 import ImgHome4 from "../components/images/_home/ImgHome4";
+import Paragraph1 from "../components/h31/paragraphs/Paragraph1";
 
 // Data
 const contentBlocks = [
@@ -79,6 +80,37 @@ export default () => {
         title="Your Path to a Musical Career"
         text="Welcome to the Central Florida Musicians’ Association! For almost a century, we have been serving the interests of musicians in Central Florida. Whether you’re interested in the benefits of union membership or simply in joining the largest association of professional musicians in the country, we’re here for you!"
       />
+
+      <div
+        css={css`
+          section {
+            background: black !important;
+            p {
+              font-size: 90%;
+              color: red;
+              max-width: 1410px;
+              text-align: center;
+              margin: 0 auto;
+
+              @media (max-width: 991px) {
+                font-size: 1rem;
+              }
+
+              @media (max-width: 768px) {
+                font-size: 0.75rem;
+              }
+            }
+          }
+        `}
+      >
+        <Paragraph1
+          text="SPECIAL NOTICE: Due to the COVID-19 pandemic, and in an abundance of
+          caution, please note that Local 389 (office and rehearsal space) is
+          physically closed to members until further notice. We are continuing
+          full daily operations with staff working remotely. We continue to
+          check email, voice mail and regular mail regularly."
+        />
+      </div>
 
       <H31SectionTitleFullWidth
         backgroundColor={_config.colorWhite}
