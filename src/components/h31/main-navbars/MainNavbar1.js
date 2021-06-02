@@ -201,9 +201,9 @@ const MainNavbar1 = ({
         </H31LayoutCol>
           
         <H31LayoutCol
-          xs={7}
+          xs={8}
           lg={7}
-          xl={6}
+          xl={7}
           css={css`
             display: flex;
             justify-content: space-between;
@@ -229,7 +229,7 @@ const MainNavbar1 = ({
         <H31LayoutCol
           xs={3}
           lg={2}
-          xl={3}
+          xl={2}
           css={css`
             display: flex;
             align-items: center;

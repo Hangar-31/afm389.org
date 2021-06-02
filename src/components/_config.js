@@ -40,6 +40,10 @@ export default {
       name: "Member Benefits",
       to: "/member-benefits"
     },
+    // {
+    //   name: "Find A Musician",
+    //   to: "/find-a-musician"
+    // },
     {
       name: "News And Articles",
       to: "/news-and-articles"
