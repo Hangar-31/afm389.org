@@ -17,6 +17,7 @@ import {
 // Images
 import ImgMastheadAbout from "../components/images/mastheads/ImgMastheadAbout";
 import _config from "../components/_config";
+import MemberDirectoryContext from "../components/h31/section-member-directory/SectionMemberDirectory";
 
 export default () => (
   <Layout>
@@ -49,9 +50,7 @@ export default () => (
     >
       <H31LayoutRow>
         <H31LayoutCol xs={1} md={2} xl={3} />
-        <H31LayoutCol xs={10} md={8} xl={6}>
-          <span>Directory Goes Here</span>
-        </H31LayoutCol>
+        <MemberDirectoryContext />
         <H31LayoutCol xs={1} md={2} xl={3} />
       </H31LayoutRow>
     </H31LayoutContainer>
