@@ -54,6 +54,8 @@ const query = `{
   GetMembers(type: "PUBLIC") {
     id
     avatar
+    firstName
+    lastName
     bio
     contractor
     email
