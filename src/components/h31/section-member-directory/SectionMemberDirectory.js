@@ -36,7 +36,7 @@ const endpoint = "https://usician.onrender.com/graphql";
 const gqlClient = () =>
   new GraphQLClient(endpoint, {
     headers: {
-      domain: "member.atlantamusicians.com"
+      domain: "member.afm389.org"
     }
   });
 
