@@ -15,7 +15,7 @@ import {
 } from "../components/h31";
 
 // Images
-import ImgMastheadAbout from "../components/images/mastheads/ImgMastheadAbout";
+import ImgMastheadFindAMusician from "../components/images/mastheads/ImgMastheadFindAMusician";
 import _config from "../components/_config";
 import MemberDirectoryContext from "../components/h31/section-member-directory/SectionMemberDirectory";
 
@@ -27,7 +27,7 @@ export default () => (
     />
 
     <H31Masthead1
-      ImageComponent={<ImgMastheadAbout />}
+      ImageComponent={<ImgMastheadFindAMusician />}
       title="Find A Musician"
     />
 

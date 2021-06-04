@@ -46,14 +46,6 @@ const ContainerContact = styled.section`
 
 // Data
 const content1 = [
-  <H31Text3
-    css={css`
-      color: red;
-    `}
-  >
-    Due to COVID-19 concerns and safety guidelines, the CFMA Rehearsal Hall is
-    currently unavailable for use.
-  </H31Text3>,
   <H31Text3>
     Our newly-renovated rehearsal space is 25’x40’ and features a Yamaha upright
     piano, drum set, speakers, amplifier, Hammond B-3 organ, tables, chairs and

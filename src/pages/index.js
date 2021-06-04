@@ -31,7 +31,6 @@ import ImgHome1 from "../components/images/_home/ImgHome1";
 import ImgHome2 from "../components/images/_home/ImgHome2";
 import ImgHome3 from "../components/images/_home/ImgHome3";
 import ImgHome4 from "../components/images/_home/ImgHome4";
-import Paragraph1 from "../components/h31/paragraphs/Paragraph1";
 
 // Data
 const contentBlocks = [
@@ -81,7 +80,7 @@ export default () => {
         text="Welcome to the Central Florida Musicians’ Association! For almost a century, we have been serving the interests of musicians in Central Florida. Whether you’re interested in the benefits of union membership or simply in joining the largest association of professional musicians in the country, we’re here for you!"
       />
 
-      <div
+      {/* <div
         css={css`
           section {
             background: black !important;
@@ -110,7 +109,7 @@ export default () => {
           full daily operations with staff working remotely. We continue to
           check email, voice mail and regular mail regularly."
         />
-      </div>
+      </div> */}
 
       <H31SectionTitleFullWidth
         backgroundColor={_config.colorWhite}

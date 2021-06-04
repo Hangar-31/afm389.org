@@ -31,11 +31,7 @@ import ImgPartner3 from "../components/images/partners/ImgPartner3";
 
 const benefits = [
   {
-    name: 
-  <span>
-    Free Rehearsal Space 24/7! 
-    <span css={css`color:red; font-size: 80%;`}> Temporarily Closed</span>
-  </span>,
+    name: "Free Rehearsal Space 24/7!",
     info: ["Finding an affordable, quality rehearsal space can be a challenge. However, our members have 24/7 access to our facility and musical equipment!"]
   },
   {
