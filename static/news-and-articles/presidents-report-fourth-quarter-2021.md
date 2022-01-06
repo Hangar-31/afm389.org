@@ -1,7 +1,7 @@
 ---
 date: 2022-01-06T17:06:36.111Z
 title: President's Report (Fourth Quarter 2021)
-image: /assets/airport-airplane-airport-gate-70955.jpg
+image: assets/heading-photo.jpg
 ---
 **Seasons Greetings Members!**
 
