@@ -1,7 +1,7 @@
 ---
 date: 2022-01-06T17:54:42.363Z
 title: 'Member Profile: Jocelyn Hsu'
-image: assets/jocelyn-hsu-cropped.jpg
+image: /assets/jocelyn-hsu-cropped.jpg
 ---
 Taiwanese-American violinist Jocelyn Hsu is a performer based in Orlando, Florida. She is an established electric violinist and vocalist, having performed in major venues all across the country, and is also a session violinist at Solar Studios for Grammy-nominated producer Michael Franklin.
 
