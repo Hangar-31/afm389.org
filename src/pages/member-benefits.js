@@ -36,7 +36,7 @@ const benefits = [
   },
   {
     name: "Liability Insurance",
-    info: ["Many area venues – such as local government recreation centers or hotels and bars - require the performer to carry Performance Liability Insurance. This can cost as much as $1,000 per year. As a member of CFMA however, you can purchase coverage for only $150 annually!"]
+    info: ["Many area venues – such as local government recreation centers or hotels and bars - require the performer to carry Performance Liability Insurance. This can cost as much as $1,000 per year. As a member of CFMA however, you can purchase coverage for only $198 annually!"]
   },
   {
     name: "Member Directory",
