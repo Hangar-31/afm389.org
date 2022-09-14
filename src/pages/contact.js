@@ -112,7 +112,7 @@ export default () => (
           >
             E-mail
           </H31Title3A>
-          <H31Link4 href="mailto::Local389@afm.org">Local389@afm.org</H31Link4>
+          <H31Link4 href="mailto::info@afm389.org">info@afm389.org</H31Link4>
         </H31LayoutCol>
         <H31LayoutCol
           css={css`
