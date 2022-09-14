@@ -6,6 +6,7 @@ const SocialIcons = ({ color, colorHover, link, social }) => (
   <a
     href={link}
     css={css`
+      margin: right: 10px;
       path {
         transition: 0.2s;
       }
