@@ -1,9 +1,11 @@
 /* eslint-disable prettier/prettier */
+/** @jsx jsx */
 import React from "react";
+import { css, jsx } from "@emotion/react";
 import { Link } from "gatsby";
 import { PropTypes } from "prop-types";
-import { css } from "@emotion/core";
-import styled from "@emotion/styled";
+
+import styled from "@emotion/styled/macro";
 
 // Config
 import _config from "../../_config";
@@ -53,11 +55,11 @@ const WrapperLogo = styled(Link)`
   }
 `;
 
-const MainNavbar1 = ({
+function MainNavbar1({
   topBarColor,
   bottomBarColor
-}) => (
-  <>
+}) {
+  return <>
     <H31LayoutContainer
       fluid
       as="section"
@@ -399,7 +401,7 @@ const MainNavbar1 = ({
       </H31LayoutRow>
     </H31LayoutContainer>
   </>
-);
+}
 
 MainNavbar1.defaultProps = {
   topBarColor: "#999999",

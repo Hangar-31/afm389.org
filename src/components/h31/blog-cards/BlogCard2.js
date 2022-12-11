@@ -1,7 +1,8 @@
+/* eslint-disable import/named */
 import PropTypes from "prop-types";
 /** @jsx jsx */
-import { css, jsx } from "@emotion/core";
-import styled from "@emotion/styled";
+import { css, jsx } from "@emotion/react";
+import styled from "@emotion/styled/macro";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 
@@ -64,45 +65,47 @@ const Container = styled(Link)`
   }
 `;
 
-const BlogCard2 = ({ article }) => (
-  <Container
-    css={css`
-      height: ${article.date ? "420px" : "350px"};
-    `}
-    to={article.link}
-  >
-    <ImageContainer>
-      <Img alt={article.title} fluid={article.image} />
-    </ImageContainer>
-
-    <ContentContainer
+function BlogCard2({ article }) {
+  return (
+    <Container
       css={css`
-        height: ${article.date ? "163px" : "100%"};
-        padding: ${article.date ? "15px 30px 0 30px;" : "15px 30px;"};
+        height: ${article.date ? "420px" : "350px"};
       `}
+      to={article.link}
     >
-      <ContentGroup>
-        <TitleContainer>
-          <H31Title3B>{article.title}</H31Title3B>
-        </TitleContainer>
-        <H31Text3
-          css={css`
-            @media (max-width: 575px) {
-              font-size: 1rem;
-            }
-          `}
-        >
-          {article.text}
-        </H31Text3>
-      </ContentGroup>
-    </ContentContainer>
-    {article.date && (
-      <DateContainer>
-        <H31SimpleTime date={article.date} />
-      </DateContainer>
-    )}
-  </Container>
-);
+      <ImageContainer>
+        <Img alt={article.title} fluid={article.image} />
+      </ImageContainer>
+
+      <ContentContainer
+        css={css`
+          height: ${article.date ? "163px" : "100%"};
+          padding: ${article.date ? "15px 30px 0 30px;" : "15px 30px;"};
+        `}
+      >
+        <ContentGroup>
+          <TitleContainer>
+            <H31Title3B>{article.title}</H31Title3B>
+          </TitleContainer>
+          <H31Text3
+            css={css`
+              @media (max-width: 575px) {
+                font-size: 1rem;
+              }
+            `}
+          >
+            {article.text}
+          </H31Text3>
+        </ContentGroup>
+      </ContentContainer>
+      {article.date && (
+        <DateContainer>
+          <H31SimpleTime date={article.date} />
+        </DateContainer>
+      )}
+    </Container>
+  );
+}
 
 BlogCard2.defaultProps = {
   article: {
@@ -111,8 +114,8 @@ BlogCard2.defaultProps = {
     text: "text",
     link: "link",
     linkText: "link text",
-    date: "date"
-  }
+    date: "date",
+  },
 };
 
 BlogCard2.propTypes = {
@@ -122,8 +125,8 @@ BlogCard2.propTypes = {
     text: PropTypes.string,
     link: PropTypes.string,
     linkText: PropTypes.string,
-    date: PropTypes.string
-  })
+    date: PropTypes.string,
+  }),
 };
 
 export default BlogCard2;

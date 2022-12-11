@@ -1,4 +1,6 @@
-import styled from "@emotion/styled";
+/** @jsx jsx */
+import { jsx } from "@emotion/react";
+import styled from "@emotion/styled/macro";
 import baseConfig from "./_config";
 import siteConfig from "../../_config";
 
@@ -14,5 +16,4 @@ export default styled.h4`
   @media (max-width: 575px) {
     font-size: 0.625rem;
   }
-
 `;

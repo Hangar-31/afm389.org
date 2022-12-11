@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable prettier/prettier */
 import React from "react";
-import { css } from "@emotion/core";
+import { css } from "@emotion/react";
 
 // Config
 import _config from "../components/_config";
@@ -142,8 +142,8 @@ const articles = [
   }
 ]
 
-export default () => (
-  <Layout>
+export default function() {
+  return <Layout>
     <SEO title="Member Benefits" description="CFMA is a one-stop resource for all of your professional needs. We invite you to become a part of the world’s largest professional association representing the interests of professional musicians..." />
 
     <H31Masthead1
@@ -212,4 +212,4 @@ export default () => (
     <H31CallToAction />
 
   </Layout>
-);
+};

@@ -1,5 +1,6 @@
+/** @jsx jsx */
 import React, { useEffect, useState } from "react";
-import { css } from "@emotion/core";
+import { css, jsx } from "@emotion/react";
 
 import { GraphQLClient } from "graphql-request";
 import MemberDirectory from "../../usicians-directory";
@@ -10,7 +11,7 @@ import PublicDirectoryCard from "../../usicians-directory/DirectoryCard/Public";
 import filterMemberDirectory from "../../usicians-directory/filterMemberDirectory";
 import {
   TagsStyled,
-  FilteredListContainerStyled
+  FilteredListContainerStyled,
 } from "../../usicians-directory/Directory.Styled";
 
 export const colors = {
@@ -19,7 +20,7 @@ export const colors = {
   darkBlue: "#1F225B",
   lightBlue: "#469FD1",
   paragraphGrey: "#747474",
-  border: "#EC4067"
+  border: "#EC4067",
 };
 
 export const mq = {
@@ -28,7 +29,7 @@ export const mq = {
   sm: 767.98,
   md: 991.98,
   lg: 1199.98,
-  xl: 1439.98
+  xl: 1439.98,
 };
 
 const endpoint = "https://usician.onrender.com/graphql";
@@ -36,8 +37,8 @@ const endpoint = "https://usician.onrender.com/graphql";
 const gqlClient = () =>
   new GraphQLClient(endpoint, {
     headers: {
-      domain: "member.afm389.org"
-    }
+      domain: "member.afm389.org",
+    },
   });
 
 const query = `{
@@ -85,7 +86,7 @@ const query = `{
   }
 }`;
 
-const MemberDirectoryContext = () => {
+function MemberDirectoryContext() {
   const [members, setMembers] = useState([]);
   const [filters, setFilters] = useState({ instruments: [], musicStyles: [] });
   useEffect(() => {
@@ -109,7 +110,7 @@ const MemberDirectoryContext = () => {
           <Contractor />
           Contractor
         </>
-      )
+      ),
     },
     {
       code: "teach",
@@ -118,8 +119,8 @@ const MemberDirectoryContext = () => {
           <Teacher />
           Teacher
         </>
-      )
-    }
+      ),
+    },
   ];
   return (
     <ProviderDirectory filterData={filters}>
@@ -223,6 +224,6 @@ const MemberDirectoryContext = () => {
       </section>
     </ProviderDirectory>
   );
-};
+}
 
 export default MemberDirectoryContext;

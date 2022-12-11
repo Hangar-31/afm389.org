@@ -1,8 +1,9 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/no-unused-state */
+/** @jsx jsx */
 import React from "react";
-import styled from "@emotion/styled";
-import { css } from "@emotion/core";
+import { css, jsx } from "@emotion/react";
+import styled from "@emotion/styled/macro";
 import PropTypes from "prop-types";
 import { H31BlogCard1 } from "..";
 import _config from "../../_config";
@@ -99,11 +100,10 @@ class SectionCBAS1 extends React.Component {
 
     this.articleComponents = [{ offsetLeft: 0 }];
     this.slideContainer = { scrollLeft: 0 };
-    this.x = 0;
 
     this.state = {
       slide: 0,
-      amount: 4
+      amount: 4,
     };
   }
 
@@ -113,7 +113,7 @@ class SectionCBAS1 extends React.Component {
 
   componentDidMount() {
     // Mouse Events
-    this.slideContainer.addEventListener("scroll", e => {
+    this.slideContainer.addEventListener("scroll", (e) => {
       const { slide } = this.state;
       // eslint-disable-next-line prettier/prettier
       const lengths = (e.srcElement.scrollWidth / this.articleComponents.length);
@@ -155,14 +155,14 @@ class SectionCBAS1 extends React.Component {
         <MasterContainer>
           <Background />
           <Container
-            ref={ref => {
+            ref={(ref) => {
               this.slideContainer = ref;
             }}
           >
             {articles.map((article, i) => (
               <ContainerOuter
                 key={article.title}
-                ref={ref => {
+                ref={(ref) => {
                   this.articleComponents[i] = ref;
                 }}
               >
@@ -204,11 +204,11 @@ class SectionCBAS1 extends React.Component {
 }
 
 SectionCBAS1.defaultProps = {
-  articles: {}
+  articles: {},
 };
 
 SectionCBAS1.propTypes = {
-  articles: PropTypes.objectOf(PropTypes.object)
+  articles: PropTypes.objectOf(PropTypes.object),
 };
 
 export default SectionCBAS1;

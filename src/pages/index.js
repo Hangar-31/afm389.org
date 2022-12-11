@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-wrap-multilines */
 import React from "react";
-import { css } from "@emotion/core";
+import { css } from "@emotion/react";
 
 // Config
 import _config from "../components/_config";
@@ -22,7 +22,7 @@ import {
   H31LayoutCol,
   H31ButtonFillArrow,
   H31SectionNews1,
-  H31Link7
+  H31Link7,
 } from "../components/h31";
 import ImgMastheadHome from "../components/images/mastheads/ImgMastheadHome";
 
@@ -39,20 +39,20 @@ const contentBlocks = [
     text: `Having a contract is one thing, but having a contract backed by the
       union is another. We work with the finest attorneys in the business.
       We have recovered thousands of dollars for our members.`,
-    image: <ImgHome1 />
+    image: <ImgHome1 />,
   },
   {
     title: "Keeping You Informed",
     text: `The local music scene is ever-changing. Our member-ship is a great
       resource to help navigate that scene. Quarterly membership meetings,
       newsletters and social media can help keep you informed.`,
-    image: <ImgHome2 />
+    image: <ImgHome2 />,
   },
   {
     title: "A Vibrant Community",
     text: `Nearly 600 musicians call themselves CFMA members. From Jazz to
       Classical, Latin to Rock, R&B to Hip-Hop, our members play it all.`,
-    image: <ImgHome3 />
+    image: <ImgHome3 />,
   },
   {
     title: "Ready For A Rehearsal",
@@ -62,11 +62,11 @@ const contentBlocks = [
         found <H31Link7 to="/rehearsal-hall">here</H31Link7>.
       </>
     ),
-    image: <ImgHome4 />
-  }
+    image: <ImgHome4 />,
+  },
 ];
 
-export default () => {
+export default function () {
   return (
     <Layout>
       <SEO
@@ -179,4 +179,4 @@ export default () => {
       <H31Testimonials />
     </Layout>
   );
-};
+}

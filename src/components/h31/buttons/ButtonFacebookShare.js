@@ -1,4 +1,6 @@
-import styled from "@emotion/styled";
+/** @jsx jsx */
+import { jsx } from "@emotion/react";
+import styled from "@emotion/styled/macro";
 import ImgFacebookShare from "../../../images/accents/social-facebook-share-button.png";
 
 export default styled.a`

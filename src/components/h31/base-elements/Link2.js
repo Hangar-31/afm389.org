@@ -1,4 +1,6 @@
-import styled from "@emotion/styled";
+/** @jsx jsx */
+import { jsx } from "@emotion/react";
+import styled from "@emotion/styled/macro";
 import { Link } from "gatsby";
 import baseConfig from "./_config";
 import siteConfig from "../../_config";

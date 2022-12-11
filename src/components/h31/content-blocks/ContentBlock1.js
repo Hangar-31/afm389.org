@@ -1,7 +1,8 @@
+/** @jsx jsx */
 import React from "react";
+import { css, jsx } from "@emotion/react";
 import { PropTypes } from "prop-types";
-import styled from "@emotion/styled";
-import { css } from "@emotion/core";
+import styled from "@emotion/styled/macro";
 
 // Components
 import {
@@ -9,7 +10,7 @@ import {
   H31Text3,
   H31LayoutContainer,
   H31LayoutRow,
-  H31LayoutCol
+  H31LayoutCol,
 } from "..";
 
 // Styled Components
@@ -36,82 +37,84 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const ContentBlock1 = ({
+function ContentBlock1({
   ImageComponent,
   title,
   text,
   titleColor,
   backgroundColor,
-  textRight
-}) => (
-  <H31LayoutContainer
-    fluid
-    as="section"
-    css={css`
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-      margin-bottom: 90px;
-      background-color: ${backgroundColor};
-    `}
-  >
-    <H31LayoutRow>
-      <H31LayoutCol
-        xs={textRight ? { span: 1, order: 1 } : 1}
-        lg={textRight ? { span: 1, order: 2 } : { span: 1, order: 1 }}
-      />
+  textRight,
+}) {
+  return (
+    <H31LayoutContainer
+      fluid
+      as="section"
+      css={css`
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        margin-bottom: 90px;
+        background-color: ${backgroundColor};
+      `}
+    >
+      <H31LayoutRow>
+        <H31LayoutCol
+          xs={textRight ? { span: 1, order: 1 } : 1}
+          lg={textRight ? { span: 1, order: 2 } : { span: 1, order: 1 }}
+        />
 
-      <H31LayoutCol
-        xs={textRight ? { span: 6, order: 2 } : 6}
-        lg={textRight ? { span: 4, order: 3 } : { span: 4, order: 2 }}
-        css={css`
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-        `}
-      >
-        <TitleWrapper>
-          <H31Title2C
-            css={css`
-              color: ${titleColor};
-              text-align: ${textRight ? "center" : "left"};
-              @media (max-width: 991px) {
-                font-size: 2rem;
-              }
-              @media (max-width: 767px) {
-                font-size: 1.25rem;
-              }
-              @media (max-width: 575px) {
-                font-size: 0.875rem;
-              }
-            `}
-          >
-            {title}
-          </H31Title2C>
-        </TitleWrapper>
-
-        <H31Text3
+        <H31LayoutCol
+          xs={textRight ? { span: 6, order: 2 } : 6}
+          lg={textRight ? { span: 4, order: 3 } : { span: 4, order: 2 }}
           css={css`
-            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
           `}
         >
-          {text}
-        </H31Text3>
-      </H31LayoutCol>
+          <TitleWrapper>
+            <H31Title2C
+              css={css`
+                color: ${titleColor};
+                text-align: ${textRight ? "center" : "left"};
+                @media (max-width: 991px) {
+                  font-size: 2rem;
+                }
+                @media (max-width: 767px) {
+                  font-size: 1.25rem;
+                }
+                @media (max-width: 575px) {
+                  font-size: 0.875rem;
+                }
+              `}
+            >
+              {title}
+            </H31Title2C>
+          </TitleWrapper>
 
-      <H31LayoutCol
-        xs={textRight ? { span: 4, order: 1 } : 4}
-        lg={textRight ? { span: 6, order: 1 } : { span: 6, order: 4 }}
-      >
-        <ImageWrapper>{ImageComponent}</ImageWrapper>
-      </H31LayoutCol>
+          <H31Text3
+            css={css`
+              margin-bottom: 0;
+            `}
+          >
+            {text}
+          </H31Text3>
+        </H31LayoutCol>
 
-      <H31LayoutCol
-        xs={textRight ? { span: 1, order: 3 } : 1}
-        lg={textRight ? { span: 1, order: 4 } : { span: 1, order: 3 }}
-      />
-    </H31LayoutRow>
-  </H31LayoutContainer>
-);
+        <H31LayoutCol
+          xs={textRight ? { span: 4, order: 1 } : 4}
+          lg={textRight ? { span: 6, order: 1 } : { span: 6, order: 4 }}
+        >
+          <ImageWrapper>{ImageComponent}</ImageWrapper>
+        </H31LayoutCol>
+
+        <H31LayoutCol
+          xs={textRight ? { span: 1, order: 3 } : 1}
+          lg={textRight ? { span: 1, order: 4 } : { span: 1, order: 3 }}
+        />
+      </H31LayoutRow>
+    </H31LayoutContainer>
+  );
+}
 
 ContentBlock1.defaultProps = {
   ImageComponent: <img alt="" src="https://via.placeholder.com/1200x1200" />,
@@ -126,7 +129,7 @@ ContentBlock1.defaultProps = {
   `,
   titleColor: "#000000",
   backgroundColor: "transparent",
-  textRight: false
+  textRight: false,
 };
 
 ContentBlock1.propTypes = {
@@ -135,7 +138,7 @@ ContentBlock1.propTypes = {
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   titleColor: PropTypes.string,
   backgroundColor: PropTypes.string,
-  textRight: PropTypes.bool
+  textRight: PropTypes.bool,
 };
 
 export default ContentBlock1;

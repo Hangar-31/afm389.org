@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable camelcase */
 // eslint-disable-next-line
 import React, { Component } from 'react'
@@ -27,10 +28,10 @@ export default class MailChimpSubscribeForm extends Component {
       status: "subscribed",
       merge_fields: {
         FNAME: "",
-        LNAME: ""
+        LNAME: "",
       },
       errors: [],
-      submitting: 0
+      submitting: 0,
     };
 
     this.onSubmit = this.onSubmit.bind(this);
@@ -64,11 +65,11 @@ export default class MailChimpSubscribeForm extends Component {
         headers: {
           authorization: "Basic b0415974a77ec2a1cacad2b498534adf-us20",
           Accept: "application/json",
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         url,
         data: JSON.stringify(data),
-        mode: "no-cors"
+        mode: "no-cors",
       })
         .then(() => {
           this.setState({ submitting: 2 });

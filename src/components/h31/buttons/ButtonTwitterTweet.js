@@ -1,4 +1,6 @@
-import styled from "@emotion/styled";
+/** @jsx jsx */
+import { jsx } from "@emotion/react";
+import styled from "@emotion/styled/macro";
 import ImgTwitterTweet from "../../../images/accents/social-twitter-tweet-button.png";
 
 export default styled.a`

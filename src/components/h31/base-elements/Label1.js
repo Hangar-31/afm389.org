@@ -1,4 +1,6 @@
-import styled from "@emotion/styled";
+/** @jsx jsx */
+import { jsx } from "@emotion/react";
+import styled from "@emotion/styled/macro";
 import _configBase from "./_config";
 import _configStyle from "../../_config";
 

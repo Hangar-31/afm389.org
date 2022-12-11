@@ -1,8 +1,9 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/no-unused-state */
+/** @jsx jsx */
 import React from "react";
-import styled from "@emotion/styled";
-import { css } from "@emotion/core";
+import { css, jsx } from "@emotion/react";
+import styled from "@emotion/styled/macro";
 import { StaticQuery, graphql } from "gatsby";
 import { H31BlogCard1 } from "..";
 import _config from "../../_config";
@@ -98,11 +99,10 @@ class SectionNews1 extends React.Component {
 
     this.articleComponents = [{ offsetLeft: 0 }];
     this.slideContainer = { scrollLeft: 0 };
-    this.x = 0;
 
     this.state = {
       slide: 0,
-      amount: 4
+      amount: 4,
     };
   }
 
@@ -112,7 +112,7 @@ class SectionNews1 extends React.Component {
 
   componentDidMount() {
     // Mouse Events
-    this.slideContainer.addEventListener("scroll", e => {
+    this.slideContainer.addEventListener("scroll", (e) => {
       const { slide } = this.state;
       // eslint-disable-next-line prettier/prettier
       const lengths = (e.srcElement.scrollWidth / this.articleComponents.length);
@@ -182,20 +182,20 @@ class SectionNews1 extends React.Component {
             }
           }
         `}
-        render={data => {
+        render={(data) => {
           const articles = data.allMarkdownRemark.edges
-            .map(article => article.node)
-            .filter(article =>
+            .map((article) => article.node)
+            .filter((article) =>
               article.fileAbsolutePath.includes("static/news-and-articles")
             )
-            .map(article => {
+            .map((article) => {
               const newArticle = {
                 image: article.frontmatter.image.childImageSharp.fluid,
                 title: article.frontmatter.title,
                 text: article.excerpt,
                 date: article.frontmatter.date,
                 link: article.fields.path,
-                linkText: "Read More"
+                linkText: "Read More",
               };
               return newArticle;
             });
@@ -204,14 +204,14 @@ class SectionNews1 extends React.Component {
               <MasterContainer>
                 <Background />
                 <Container
-                  ref={ref => {
+                  ref={(ref) => {
                     this.slideContainer = ref;
                   }}
                 >
                   {articles.map((article, i) => (
                     <ContainerOuter
                       key={article.title}
-                      ref={ref => {
+                      ref={(ref) => {
                         this.articleComponents[i] = ref;
                       }}
                     >

@@ -1,5 +1,5 @@
 import React from "react";
-import { css } from "@emotion/core";
+import { css } from "@emotion/react";
 
 // Components
 import Layout from "../components/layout";
@@ -15,7 +15,7 @@ import {
   H31Text3,
   H31Title2B,
   H31ListBullet1,
-  H31Item1
+  H31Item1,
 } from "../components/h31";
 
 const data = [
@@ -242,61 +242,63 @@ const data = [
     <br />
     <br />
     Effective Date: March 10, 2008
-  </H31Text3>
+  </H31Text3>,
 ];
 
-const PrivacyPolicyPage = () => (
-  <Layout>
-    <SEO
-      title="Privacy Policy"
-      description="The Central Florida Musicians' Association (CFMA) has created this
+function PrivacyPolicyPage() {
+  return (
+    <Layout>
+      <SEO
+        title="Privacy Policy"
+        description="The Central Florida Musicians' Association (CFMA) has created this
         privacy policy to explain how information is used that you may provide while
         visiting this website (“Website”) and to demonstrate our firm commitment to
         Internet privacy."
-    />
+      />
 
-    <H31LayoutContainer
-      fluid
-      as="section"
-      css={css`
-        margin: 45px 0;
-        @media (max-width: 719px) {
-          margin-top: 65px;
-        }
-        @media (max-width: 575px) {
-          margin: 30px 0 15px 0;
-        }
-      `}
-    >
-      <H31LayoutRow>
-        <H31LayoutCol xs={1} md={2} xl={3} />
-        <H31LayoutCol xs={10} md={8} xl={6}>
-          <div
-            css={css`
-              display: none !important;
-              @media (min-width: 576px) {
-                display: block !important;
-              }
-            `}
-          >
-            <H31ContentBlock2 title="Privacy Policy">{data}</H31ContentBlock2>
-          </div>
+      <H31LayoutContainer
+        fluid
+        as="section"
+        css={css`
+          margin: 45px 0;
+          @media (max-width: 719px) {
+            margin-top: 65px;
+          }
+          @media (max-width: 575px) {
+            margin: 30px 0 15px 0;
+          }
+        `}
+      >
+        <H31LayoutRow>
+          <H31LayoutCol xs={1} md={2} xl={3} />
+          <H31LayoutCol xs={10} md={8} xl={6}>
+            <div
+              css={css`
+                display: none !important;
+                @media (min-width: 576px) {
+                  display: block !important;
+                }
+              `}
+            >
+              <H31ContentBlock2 title="Privacy Policy">{data}</H31ContentBlock2>
+            </div>
 
-          <div
-            css={css`
-              display: none !important;
-              @media (max-width: 575px) {
-                display: block !important;
-              }
-            `}
-          >
-            <H31ContentBlock2>{data}</H31ContentBlock2>
-          </div>
-        </H31LayoutCol>
-        <H31LayoutCol xs={1} md={2} xl={3} />
-      </H31LayoutRow>
-    </H31LayoutContainer>
-  </Layout>
-);
+            <div
+              css={css`
+                display: none !important;
+                @media (max-width: 575px) {
+                  display: block !important;
+                }
+              `}
+            >
+              <H31ContentBlock2>{data}</H31ContentBlock2>
+            </div>
+          </H31LayoutCol>
+          <H31LayoutCol xs={1} md={2} xl={3} />
+        </H31LayoutRow>
+      </H31LayoutContainer>
+    </Layout>
+  );
+}
 
 export default PrivacyPolicyPage;

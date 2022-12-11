@@ -1,10 +1,12 @@
-import styled from "@emotion/styled";
+/** @jsx jsx */
+import { jsx } from "@emotion/react";
+import styled from "@emotion/styled/macro";
 import baseConfig from "./_config";
 import siteConfig from "../../_config";
 
 export default styled.h2`
   ${baseConfig}
-  
+
   color: ${siteConfig.colorWhite};
   font-size: 3.125rem;
   font-family: ${siteConfig.fontTertiary};

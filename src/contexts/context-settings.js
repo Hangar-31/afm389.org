@@ -1,11 +1,11 @@
 import React, { createContext } from "react";
 import PropTypes from "prop-types";
 
-import { ThemeProvider } from "emotion-theming";
+import { ThemeProvider } from "@emotion/react";
 
 export const ContextSettings = createContext();
 
-export const ContextSettingsProvider = props => {
+export function ContextSettingsProvider(props) {
   const { children, settings } = props;
   // if (!settings) return <>{children}</>;
 
@@ -19,18 +19,16 @@ export const ContextSettingsProvider = props => {
   settings.colorBlack = "#000000";
 
   return (
-    <>
-      <ContextSettings.Provider value={settings}>
-        <ThemeProvider theme={settings}>{children}</ThemeProvider>
-      </ContextSettings.Provider>
-    </>
+    <ContextSettings.Provider value={settings}>
+      <ThemeProvider theme={settings}>{children}</ThemeProvider>
+    </ContextSettings.Provider>
   );
-};
+}
 
 ContextSettingsProvider.defaultProps = {
-  settings: {}
+  settings: {},
 };
 ContextSettingsProvider.propTypes = {
   children: PropTypes.node.isRequired,
-  settings: PropTypes.objectOf(PropTypes.string)
+  settings: PropTypes.objectOf(PropTypes.string),
 };

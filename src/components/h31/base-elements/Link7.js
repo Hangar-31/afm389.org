@@ -1,5 +1,7 @@
 /* eslint-disable no-underscore-dangle */
-import styled from "@emotion/styled";
+/** @jsx jsx */
+import { jsx } from "@emotion/react";
+import styled from "@emotion/styled/macro";
 import { Link } from "gatsby";
 import _configBase from "./_config";
 import _configSite from "../../_config";

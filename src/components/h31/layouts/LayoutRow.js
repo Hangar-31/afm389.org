@@ -1,5 +1,7 @@
 // Style Library
-import styled from "@emotion/styled";
+/** @jsx jsx */
+import { jsx } from "@emotion/react";
+import styled from "@emotion/styled/macro";
 
 // Bootstrap Layout Components for Overwritting
 import Row from "react-bootstrap/Row";

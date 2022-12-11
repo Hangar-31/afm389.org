@@ -3,7 +3,7 @@ module.exports = {
     title: "Central Florida Musicians' Association",
     description: "[]",
     author: "Hangar 31 Development",
-    siteUrl: "https://afm389.org"
+    siteUrl: "https://afm389.org",
   },
   plugins: [
     // File sourcing into Gatsby for use with Gatsby Node API
@@ -11,15 +11,15 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: `${__dirname}/static/assets`
-      }
+        path: `${__dirname}/static/assets`,
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: `${__dirname}/src/images`
-      }
+        path: `${__dirname}/src/images`,
+      },
     },
     // Creates a manifest for the website
     {
@@ -31,30 +31,30 @@ module.exports = {
         background_color: "#FFFFFF",
         theme_color: "#6DA55F",
         display: "minimal-ui",
-        icon: "src/images/logos/cfma-logo-orlando-florida.png"
-      }
+        icon: "src/images/logos/cfma-logo-orlando-florida.png",
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `news-and-articles`,
-        path: `${__dirname}/static/news-and-articles`
-      }
+        path: `${__dirname}/static/news-and-articles`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `testimonials`,
-        path: `${__dirname}/static/testimonials`
-      }
+        path: `${__dirname}/static/testimonials`,
+      },
     },
 
     // Prefetch Google Fonts
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Roboto Slab`, `Sarpanch`, `Staatliches`, `Assistant`]
-      }
+        fonts: [`Roboto Slab`, `Sarpanch`, `Staatliches`, `Assistant`],
+      },
     },
     // Makes field "markdownRemark" queryable
     {
@@ -62,16 +62,16 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-relative-images`
+            resolve: `gatsby-remark-relative-images`,
           },
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1200
-            }
-          }
-        ]
-      }
+              maxWidth: 1200,
+            },
+          },
+        ],
+      },
     },
     // Sitemap
     "gatsby-plugin-advanced-sitemap",
@@ -103,8 +103,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-146527665-1"
-      }
-    }
-  ]
+        trackingId: "UA-146527665-1",
+      },
+    },
+  ],
 };

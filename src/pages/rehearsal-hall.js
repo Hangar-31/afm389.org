@@ -1,6 +1,7 @@
+/** @jsx jsx */
 import React from "react";
-import { css } from "@emotion/core";
-import styled from "@emotion/styled";
+import { css, jsx } from "@emotion/react";
+import styled from "@emotion/styled/macro";
 
 // Config
 import _config from "../components/_config";
@@ -19,7 +20,7 @@ import {
   H31Item1,
   H31ListNumbered1,
   H31ListBullet1,
-  H31Link4
+  H31Link4,
 } from "../components/h31";
 
 // Images
@@ -128,7 +129,7 @@ const content1 = [
         Local389@afm.org
       </H31Link4>
     </div>
-  </ContainerContact>
+  </ContainerContact>,
 ];
 
 const content2 = [
@@ -255,159 +256,161 @@ const content2 = [
     <H31Item1>Not returning Hall to proper order</H31Item1>
     <H31Item1>No-shows without prior cancellation notice</H31Item1>
     <H31Item1>Taking or borrowing equipment without prior permission</H31Item1>
-  </H31ListBullet1>
+  </H31ListBullet1>,
 ];
 
-export default () => (
-  <Layout>
-    <SEO
-      title="Rehearsal Hall"
-      description="Our Rehearsal Hall is located just outside the city of Orlando, and is open to all of our members to reserve and utilize. Schedule a time to come by and utilize the Rehearsal Hall's piano, music stands, tables, chairs and more!"
-    />
+export default function () {
+  return (
+    <Layout>
+      <SEO
+        title="Rehearsal Hall"
+        description="Our Rehearsal Hall is located just outside the city of Orlando, and is open to all of our members to reserve and utilize. Schedule a time to come by and utilize the Rehearsal Hall's piano, music stands, tables, chairs and more!"
+      />
 
-    <H31Masthead1
-      ImageComponent={<ImgMastheadRehearsalHall />}
-      title="CFMA Rehearsal Facility"
-      text="Do you need rehearsal space? Our rehearsal facility is available 24/7 and is free to members in good standing."
-    />
+      <H31Masthead1
+        ImageComponent={<ImgMastheadRehearsalHall />}
+        title="CFMA Rehearsal Facility"
+        text="Do you need rehearsal space? Our rehearsal facility is available 24/7 and is free to members in good standing."
+      />
 
-    <H31LayoutContainer
-      fluid
-      as="section"
-      css={css`
-        margin: 45px 0;
-        @media (max-width: 767px) {
-          margin: 0 0 30px 0;
-        }
-      `}
-    >
-      <H31LayoutRow
+      <H31LayoutContainer
+        fluid
+        as="section"
         css={css`
-          margin-bottom: 15px;
+          margin: 45px 0;
+          @media (max-width: 767px) {
+            margin: 0 0 30px 0;
+          }
         `}
       >
-        <H31LayoutCol md={12} lg={6}>
-          <H31ContentBlock2 title="Our Facility">
-            <H31LayoutContainer fluid>
-              <H31LayoutRow>
-                <H31LayoutCol
-                  css={css`
-                    flex-wrap: wrap;
-                    padding: 0 !important;
-                  `}
-                  lg={12}
-                  xs={6}
-                >
-                  {content1}
-                </H31LayoutCol>
-
-                <H31LayoutCol
-                  className="d-lg-none"
-                  css={css`
-                    .gatsby-image-wrapper {
-                      margin-bottom: 30px;
-                    }
-                  `}
-                  xs={6}
-                >
-                  <ImgRehearsalHall1 />
-                  <ImgRehearsalHall2 />
-                </H31LayoutCol>
-              </H31LayoutRow>
-            </H31LayoutContainer>
-          </H31ContentBlock2>
-        </H31LayoutCol>
-
-        <H31LayoutCol
-          className="d-none d-lg-block"
+        <H31LayoutRow
           css={css`
-            .gatsby-image-wrapper {
-              margin-bottom: 30px;
-            }
+            margin-bottom: 15px;
           `}
-          lg={3}
         >
-          <ImgRehearsalHall1 />
-          <ImgRehearsalHall2 />
-        </H31LayoutCol>
-
-        <H31LayoutCol
-          className="d-none d-lg-block"
-          css={css`
-            .gatsby-image-wrapper {
-              margin-bottom: 30px;
-            }
-          `}
-          lg={3}
-        >
-          <ImgRehearsalHall3 />
-          <ImgRehearsalHall4 />
-        </H31LayoutCol>
-      </H31LayoutRow>
-
-      <H31LayoutRow
-        css={css`
-          margin-bottom: 15px;
-        `}
-      >
-        <H31LayoutCol md={12}>
-          <H31ContentBlock2 id="calendar" title="Rehearsal Hall Calendar">
-            <H31LayoutContainer fluid>
-              <H31LayoutRow>
-                <H31LayoutCol
-                  css={css`
-                    padding: 0 !important;
-                  `}
-                  xs={12}
-                >
-                  <iframe
-                    title="Rehearsal Hall Calendar"
-                    src="https://calendar.google.com/calendar/embed?src=local389%40afm.org&ctz=America%2FNew_York?showTz=1&amp;showTitle=0&amp;showTabs=0&amp;showPrint=0&amp;showCalendars=0"
+          <H31LayoutCol md={12} lg={6}>
+            <H31ContentBlock2 title="Our Facility">
+              <H31LayoutContainer fluid>
+                <H31LayoutRow>
+                  <H31LayoutCol
                     css={css`
-                      width: 100%;
-                      height: 800px;
-                      border: none;
-                      padding: 0;
-                      margin: 0;
-                      @media (max-width: 767px) {
-                        height: 600px;
-                      }
-                      @media (max-width: 575px) {
-                        height: 400px;
+                      flex-wrap: wrap;
+                      padding: 0 !important;
+                    `}
+                    lg={12}
+                    xs={6}
+                  >
+                    {content1}
+                  </H31LayoutCol>
+
+                  <H31LayoutCol
+                    className="d-lg-none"
+                    css={css`
+                      .gatsby-image-wrapper {
+                        margin-bottom: 30px;
                       }
                     `}
-                    frameBorder="0"
-                    scrolling="no"
-                  />
-                </H31LayoutCol>
-              </H31LayoutRow>
-            </H31LayoutContainer>
-          </H31ContentBlock2>
-        </H31LayoutCol>
-      </H31LayoutRow>
+                    xs={6}
+                  >
+                    <ImgRehearsalHall1 />
+                    <ImgRehearsalHall2 />
+                  </H31LayoutCol>
+                </H31LayoutRow>
+              </H31LayoutContainer>
+            </H31ContentBlock2>
+          </H31LayoutCol>
 
-      <H31LayoutRow
-        css={css`
-          margin-bottom: 15px;
-        `}
-      >
-        <H31LayoutCol md={12}>
-          <H31ContentBlock2 id="rules" title="Rehearsal Hall Rules">
-            <H31LayoutContainer fluid>
-              <H31LayoutRow>
-                <H31LayoutCol
-                  css={css`
-                    padding: 0 !important;
-                  `}
-                  xs={12}
-                >
-                  {content2}
-                </H31LayoutCol>
-              </H31LayoutRow>
-            </H31LayoutContainer>
-          </H31ContentBlock2>
-        </H31LayoutCol>
-      </H31LayoutRow>
-    </H31LayoutContainer>
-  </Layout>
-);
+          <H31LayoutCol
+            className="d-none d-lg-block"
+            css={css`
+              .gatsby-image-wrapper {
+                margin-bottom: 30px;
+              }
+            `}
+            lg={3}
+          >
+            <ImgRehearsalHall1 />
+            <ImgRehearsalHall2 />
+          </H31LayoutCol>
+
+          <H31LayoutCol
+            className="d-none d-lg-block"
+            css={css`
+              .gatsby-image-wrapper {
+                margin-bottom: 30px;
+              }
+            `}
+            lg={3}
+          >
+            <ImgRehearsalHall3 />
+            <ImgRehearsalHall4 />
+          </H31LayoutCol>
+        </H31LayoutRow>
+
+        <H31LayoutRow
+          css={css`
+            margin-bottom: 15px;
+          `}
+        >
+          <H31LayoutCol md={12}>
+            <H31ContentBlock2 id="calendar" title="Rehearsal Hall Calendar">
+              <H31LayoutContainer fluid>
+                <H31LayoutRow>
+                  <H31LayoutCol
+                    css={css`
+                      padding: 0 !important;
+                    `}
+                    xs={12}
+                  >
+                    <iframe
+                      title="Rehearsal Hall Calendar"
+                      src="https://calendar.google.com/calendar/embed?src=local389%40afm.org&ctz=America%2FNew_York?showTz=1&amp;showTitle=0&amp;showTabs=0&amp;showPrint=0&amp;showCalendars=0"
+                      css={css`
+                        width: 100%;
+                        height: 800px;
+                        border: none;
+                        padding: 0;
+                        margin: 0;
+                        @media (max-width: 767px) {
+                          height: 600px;
+                        }
+                        @media (max-width: 575px) {
+                          height: 400px;
+                        }
+                      `}
+                      frameBorder="0"
+                      scrolling="no"
+                    />
+                  </H31LayoutCol>
+                </H31LayoutRow>
+              </H31LayoutContainer>
+            </H31ContentBlock2>
+          </H31LayoutCol>
+        </H31LayoutRow>
+
+        <H31LayoutRow
+          css={css`
+            margin-bottom: 15px;
+          `}
+        >
+          <H31LayoutCol md={12}>
+            <H31ContentBlock2 id="rules" title="Rehearsal Hall Rules">
+              <H31LayoutContainer fluid>
+                <H31LayoutRow>
+                  <H31LayoutCol
+                    css={css`
+                      padding: 0 !important;
+                    `}
+                    xs={12}
+                  >
+                    {content2}
+                  </H31LayoutCol>
+                </H31LayoutRow>
+              </H31LayoutContainer>
+            </H31ContentBlock2>
+          </H31LayoutCol>
+        </H31LayoutRow>
+      </H31LayoutContainer>
+    </Layout>
+  );
+}

@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
+/** @jsx jsx */
 import React, { Component } from "react";
-// import PropTypes from "prop-types";
-import { css } from "@emotion/core";
-import styled from "@emotion/styled";
+import { css, jsx } from "@emotion/react";
+import styled from "@emotion/styled/macro";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
 // Components
@@ -12,7 +12,7 @@ import {
   H31Link1,
   H31LayoutRow,
   H31SocialIcons,
-  H31OverlayMemberLogin1
+  H31OverlayMemberLogin1,
 } from "..";
 import _config from "../../_config";
 
@@ -32,7 +32,7 @@ export default class MobileNav1 extends Component {
   constructor() {
     super();
     this.state = {
-      visible: false
+      visible: false,
     };
 
     this.onClickToggleMenu = this.onClickToggleMenu.bind(this);
@@ -168,7 +168,7 @@ export default class MobileNav1 extends Component {
               </button>
             </H31LayoutCol>
 
-            {_config.mainNav.map(link => (
+            {_config.mainNav.map((link) => (
               <H31LayoutCol
                 key={link.name}
                 css={css`
@@ -206,7 +206,7 @@ export default class MobileNav1 extends Component {
               <H31OverlayMemberLogin1 />
             </H31LayoutCol>
 
-            {_config.socials.map(social => (
+            {_config.socials.map((social) => (
               <H31LayoutCol
                 key={social.social}
                 css={css`
@@ -224,7 +224,7 @@ export default class MobileNav1 extends Component {
               </H31LayoutCol>
             ))}
 
-            {_config.footerNav.map(link => (
+            {_config.footerNav.map((link) => (
               <H31LayoutCol
                 key={link.name}
                 css={css`

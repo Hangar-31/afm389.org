@@ -1,8 +1,8 @@
 /* eslint-disable react/no-array-index-key */
-import { PropTypes } from "prop-types";
 /** @jsx jsx */
-import { jsx } from "@emotion/core";
-import styled from "@emotion/styled";
+import { jsx } from "@emotion/react";
+import { PropTypes } from "prop-types";
+import styled from "@emotion/styled/macro";
 
 const List = styled.ul`
   position: relative;
@@ -22,24 +22,26 @@ const Item = styled.li`
   height: 100%;
 `;
 
-const LinkBarHorizontal = ({ linkComponents }) => (
-  <List>
-    {linkComponents.map(item => (
-      <Item key={item.props.LinkComponent.props.children}>{item}</Item>
-    ))}
-  </List>
-);
+function LinkBarHorizontal({ linkComponents }) {
+  return (
+    <List>
+      {linkComponents.map((item) => (
+        <Item key={item.props.LinkComponent.props.children}>{item}</Item>
+      ))}
+    </List>
+  );
+}
 
 LinkBarHorizontal.defaultProps = {
   linkComponents: [
     <a href="/">Test</a>,
     <a href="/">Test</a>,
-    <a href="/">Test</a>
-  ]
+    <a href="/">Test</a>,
+  ],
 };
 
 LinkBarHorizontal.propTypes = {
-  linkComponents: PropTypes.arrayOf(PropTypes.element)
+  linkComponents: PropTypes.arrayOf(PropTypes.element),
 };
 
 export default LinkBarHorizontal;

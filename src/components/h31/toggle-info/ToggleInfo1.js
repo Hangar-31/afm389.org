@@ -1,8 +1,8 @@
+/** @jsx jsx */
 import React from "react";
 import { PropTypes } from "prop-types";
-/** @jsx jsx */
-import { css, jsx } from "@emotion/core";
-import styled from "@emotion/styled";
+import { css, jsx } from "@emotion/react";
+import styled from "@emotion/styled/macro";
 
 // Components
 import {
@@ -11,7 +11,7 @@ import {
   H31Text3,
   H31LayoutCol,
   H31LayoutRow,
-  H31LayoutContainer
+  H31LayoutContainer,
 } from "../index";
 import _config from "../../_config";
 
@@ -22,7 +22,7 @@ export default class Bio1 extends React.Component {
     super();
 
     this.state = {
-      visible: false
+      visible: false,
     };
 
     this.onClick = this.onClick.bind(this);
@@ -164,11 +164,11 @@ export default class Bio1 extends React.Component {
             `}
           >
             <ParagraphWrapper
-              ref={bioContainer => {
+              ref={(bioContainer) => {
                 this.bioContainer = bioContainer;
               }}
             >
-              {info.map(text => (
+              {info.map((text) => (
                 <H31Text3
                   css={css`
                     padding-bottom: 15px;
@@ -192,11 +192,11 @@ Bio1.defaultProps = {
   name: "JohnDoe@Gmail.com",
   info: [
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed leo id orci tincidunt blandit vel ut eros. Nunc iaculis eleifend nisi, sit amet sagittis ex tempus a. Morbi efficitur tortor at leo iaculis malesuada. Sed vehicula, nunc eget hendrerit venenatis, metus eros sollicitudin purus, vitae interdum felis diam eu erat. Suspendisse congue diam risus, ut aliquet erat volutpat sit amet. Suspendisse at dignissim ex. Aenean mollis, elit non pretium efficitur, arcu magna porta leo, ac porta massa enim ac nunc. Integer a ligula pellentesque lectus auctor ultrices.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed leo id orci tincidunt blandit vel ut eros. Nunc iaculis eleifend nisi, sit amet sagittis ex tempus a. Morbi efficitur tortor at leo iaculis malesuada. Sed vehicula, nunc eget hendrerit venenatis, metus eros sollicitudin purus, vitae interdum felis diam eu erat. Suspendisse congue diam risus, ut aliquet erat volutpat sit amet. Suspendisse at dignissim ex. Aenean mollis, elit non pretium efficitur, arcu magna porta leo, ac porta massa enim ac nunc. Integer a ligula pellentesque lectus auctor ultrices."
-  ]
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed leo id orci tincidunt blandit vel ut eros. Nunc iaculis eleifend nisi, sit amet sagittis ex tempus a. Morbi efficitur tortor at leo iaculis malesuada. Sed vehicula, nunc eget hendrerit venenatis, metus eros sollicitudin purus, vitae interdum felis diam eu erat. Suspendisse congue diam risus, ut aliquet erat volutpat sit amet. Suspendisse at dignissim ex. Aenean mollis, elit non pretium efficitur, arcu magna porta leo, ac porta massa enim ac nunc. Integer a ligula pellentesque lectus auctor ultrices.",
+  ],
 };
 
 Bio1.propTypes = {
   name: PropTypes.string,
-  info: PropTypes.arrayOf(PropTypes.string)
+  info: PropTypes.arrayOf(PropTypes.string),
 };

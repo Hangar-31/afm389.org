@@ -1,4 +1,6 @@
-import styled from "@emotion/styled";
+/** @jsx jsx */
+import { jsx } from "@emotion/react";
+import styled from "@emotion/styled/macro";
 import _configBase from "./_config";
 import _configStyles from "../../_config";
 
@@ -27,7 +29,7 @@ export default styled.a`
   @media (max-width: 1369px) {
     font-size: 0.725rem;
   }
-  @media(max-width: 1099px) {
+  @media (max-width: 1099px) {
     font-size: 0.625rem;
     padding: 8px 6px;
   }

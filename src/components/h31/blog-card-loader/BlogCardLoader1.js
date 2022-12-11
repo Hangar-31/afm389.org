@@ -1,5 +1,6 @@
+/** @jsx jsx */
 import React from "react";
-import { css } from "@emotion/core";
+import { css, jsx } from "@emotion/react";
 import { StaticQuery, graphql } from "gatsby";
 
 // Components
@@ -8,7 +9,7 @@ import {
   H31LayoutRow,
   H31LayoutCol,
   H31BlogCard1,
-  H31Button1
+  H31Button1,
 } from "..";
 
 // Config
@@ -19,7 +20,7 @@ export default class BlogCardLoader1 extends React.Component {
     super();
 
     this.state = {
-      loadAmount: 7
+      loadAmount: 7,
     };
 
     this.onClickLoadMore = this.onClickLoadMore.bind(this);
@@ -64,20 +65,20 @@ export default class BlogCardLoader1 extends React.Component {
             }
           }
         `}
-        render={data => {
+        render={(data) => {
           const articles = data.allMarkdownRemark.edges
-            .map(article => article.node)
-            .filter(article =>
+            .map((article) => article.node)
+            .filter((article) =>
               article.fileAbsolutePath.includes("static/news-and-articles")
             )
-            .map(article => {
+            .map((article) => {
               const newArticle = {
                 image: article.frontmatter.image.childImageSharp.fluid,
                 title: article.frontmatter.title,
                 text: article.excerpt,
                 date: article.frontmatter.date,
                 link: article.fields.path,
-                linkText: "Read More"
+                linkText: "Read More",
               };
               return newArticle;
             });
@@ -126,8 +127,9 @@ export default class BlogCardLoader1 extends React.Component {
                               border-color: ${_config.colorTertiary};
                             }
                           `}
-                          name={`click to scroll the view of articles to position ${i +
-                            1}`}
+                          name={`click to scroll the view of articles to position ${
+                            i + 1
+                          }`}
                           onClick={this.onClickLoadMore}
                         >
                           More Stories

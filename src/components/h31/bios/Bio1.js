@@ -1,8 +1,8 @@
-import React from "react";
-import { PropTypes } from "prop-types";
 /** @jsx jsx */
-import { css, jsx } from "@emotion/core";
-import styled from "@emotion/styled";
+import React from "react";
+import { css, jsx } from "@emotion/react";
+import { PropTypes } from "prop-types";
+import styled from "@emotion/styled/macro";
 import MediaQuery from "react-responsive";
 
 // Components
@@ -13,7 +13,7 @@ import {
   H31LayoutContainer,
   H31LayoutRow,
   H31LayoutCol,
-  H31Text6
+  H31Text6,
 } from "../index";
 import _config from "../../_config";
 
@@ -24,7 +24,7 @@ export default class Bio1 extends React.Component {
     super();
 
     this.state = {
-      visible: false
+      visible: false,
     };
 
     this.onClick = this.onClick.bind(this);
@@ -99,11 +99,11 @@ export default class Bio1 extends React.Component {
                   `}
                 >
                   <ParagraphWrapper
-                    ref={bioContainer => {
+                    ref={(bioContainer) => {
                       this.bioContainer = bioContainer;
                     }}
                   >
-                    {bios.map(bio => (
+                    {bios.map((bio) => (
                       <H31Text3
                         css={css`
                           margin-bottom: 15px;
@@ -182,13 +182,13 @@ Bio1.defaultProps = {
   image: <img alt="" src="https://via.placeholder.com/500" />,
   bios: [
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed leo id orci tincidunt blandit vel ut eros. Nunc iaculis eleifend nisi, sit amet sagittis ex tempus a. Morbi efficitur tortor at leo iaculis malesuada. Sed vehicula, nunc eget hendrerit venenatis, metus eros sollicitudin purus, vitae interdum felis diam eu erat. Suspendisse congue diam risus, ut aliquet erat volutpat sit amet. Suspendisse at dignissim ex. Aenean mollis, elit non pretium efficitur, arcu magna porta leo, ac porta massa enim ac nunc. Integer a ligula pellentesque lectus auctor ultrices.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed leo id orci tincidunt blandit vel ut eros. Nunc iaculis eleifend nisi, sit amet sagittis ex tempus a. Morbi efficitur tortor at leo iaculis malesuada. Sed vehicula, nunc eget hendrerit venenatis, metus eros sollicitudin purus, vitae interdum felis diam eu erat. Suspendisse congue diam risus, ut aliquet erat volutpat sit amet. Suspendisse at dignissim ex. Aenean mollis, elit non pretium efficitur, arcu magna porta leo, ac porta massa enim ac nunc. Integer a ligula pellentesque lectus auctor ultrices."
-  ]
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed leo id orci tincidunt blandit vel ut eros. Nunc iaculis eleifend nisi, sit amet sagittis ex tempus a. Morbi efficitur tortor at leo iaculis malesuada. Sed vehicula, nunc eget hendrerit venenatis, metus eros sollicitudin purus, vitae interdum felis diam eu erat. Suspendisse congue diam risus, ut aliquet erat volutpat sit amet. Suspendisse at dignissim ex. Aenean mollis, elit non pretium efficitur, arcu magna porta leo, ac porta massa enim ac nunc. Integer a ligula pellentesque lectus auctor ultrices.",
+  ],
 };
 
 Bio1.propTypes = {
   name: PropTypes.string,
   title: PropTypes.string,
   image: PropTypes.element,
-  bios: PropTypes.arrayOf(PropTypes.string)
+  bios: PropTypes.arrayOf(PropTypes.string),
 };

@@ -1,8 +1,9 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/no-unused-state */
+/** @jsx jsx */
 import React from "react";
-import styled from "@emotion/styled";
-import { css } from "@emotion/core";
+import { css, jsx } from "@emotion/react";
+import styled from "@emotion/styled/macro";
 import { StaticQuery, graphql } from "gatsby";
 import { H31Title3A, H31Text4 } from "..";
 
@@ -113,11 +114,10 @@ class Testimonials extends React.Component {
 
     this.testimonialComponents = [{ offsetLeft: 0 }];
     this.slideContainer = { scrollLeft: 0 };
-    this.x = 0;
 
     this.state = {
       slide: 0,
-      amount: 3
+      amount: 3,
     };
   }
 
@@ -127,7 +127,7 @@ class Testimonials extends React.Component {
 
   componentDidMount() {
     // Mouse Events
-    this.slideContainer.addEventListener("scroll", e => {
+    this.slideContainer.addEventListener("scroll", (e) => {
       const { slide } = this.state;
       // eslint-disable-next-line prettier/prettier
       const lengths = (e.srcElement.scrollWidth / this.testimonialComponents.length);
@@ -187,23 +187,23 @@ class Testimonials extends React.Component {
             }
           }
         `}
-        render={data => {
+        render={(data) => {
           const testimonials = data.allMarkdownRemark.edges
-            .map(testimonial => testimonial.node.frontmatter)
-            .filter(testimonial => testimonial.name !== null);
+            .map((testimonial) => testimonial.node.frontmatter)
+            .filter((testimonial) => testimonial.name !== null);
 
           return (
             <>
               <MasterContainer>
                 <Container
-                  ref={ref => {
+                  ref={(ref) => {
                     this.slideContainer = ref;
                   }}
                 >
                   {testimonials.map((testimonial, i) => (
                     <ContainerOuter
                       key={testimonial.name}
-                      ref={ref => {
+                      ref={(ref) => {
                         this.testimonialComponents[i] = ref;
                       }}
                     >

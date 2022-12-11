@@ -1,7 +1,7 @@
-import { PropTypes } from "prop-types";
 /** @jsx jsx */
-import { css, jsx } from "@emotion/core";
-import styled from "@emotion/styled";
+import { css, jsx } from "@emotion/react";
+import { PropTypes } from "prop-types";
+import styled from "@emotion/styled/macro";
 
 const Wrapper = styled.section`
   width: 100%;
@@ -9,15 +9,17 @@ const Wrapper = styled.section`
   padding: 5px;
 `;
 
-const TextBlock1 = ({ ParagraphComponent, backgroundColor }) => (
-  <Wrapper
-    css={css`
-      background-color: ${backgroundColor};
-    `}
-  >
-    {ParagraphComponent}
-  </Wrapper>
-);
+function TextBlock1({ ParagraphComponent, backgroundColor }) {
+  return (
+    <Wrapper
+      css={css`
+        background-color: ${backgroundColor};
+      `}
+    >
+      {ParagraphComponent}
+    </Wrapper>
+  );
+}
 
 TextBlock1.defaultProps = {
   backgroundColor: "rgba(0,0,0,0.55)",
@@ -31,12 +33,12 @@ TextBlock1.defaultProps = {
       condimentum convallis est sed tincidunt. Cras eget velit at justo
       ullamcorper gravida.
     </p>
-  )
+  ),
 };
 
 TextBlock1.propTypes = {
   backgroundColor: PropTypes.string,
-  ParagraphComponent: PropTypes.element
+  ParagraphComponent: PropTypes.element,
 };
 
 export default TextBlock1;

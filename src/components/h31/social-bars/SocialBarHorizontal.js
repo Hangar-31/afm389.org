@@ -1,6 +1,8 @@
+/** @jsx jsx */
 import React from "react";
+import { jsx } from "@emotion/react";
 import { PropTypes } from "prop-types";
-import styled from "@emotion/styled";
+import styled from "@emotion/styled/macro";
 
 const List = styled.ul`
   position: relative;
@@ -18,20 +20,22 @@ const Item = styled.li`
   margin: 0 10px;
 `;
 
-const SocialBarHorizontal = ({ socialComponents }) => (
-  <List>
-    {socialComponents.map(item => (
-      <Item key={item.props.social}>{item}</Item>
-    ))}
-  </List>
-);
+function SocialBarHorizontal({ socialComponents }) {
+  return (
+    <List>
+      {socialComponents.map((item) => (
+        <Item key={item.props.social}>{item}</Item>
+      ))}
+    </List>
+  );
+}
 
 SocialBarHorizontal.defaultProps = {
-  socialComponents: [<span>H</span>, <span>H</span>, <span>H</span>]
+  socialComponents: [<span>H</span>, <span>H</span>, <span>H</span>],
 };
 
 SocialBarHorizontal.propTypes = {
-  socialComponents: PropTypes.arrayOf(PropTypes.element)
+  socialComponents: PropTypes.arrayOf(PropTypes.element),
 };
 
 export default SocialBarHorizontal;

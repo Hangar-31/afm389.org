@@ -1,3 +1,5 @@
+/* eslint-disable import/named */
+/* eslint-disable react/forbid-prop-types */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 /* eslint-disable no-underscore-dangle */
@@ -7,7 +9,7 @@ import { graphql } from "gatsby";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
 import MediaQuery from "react-responsive";
 import moment from "moment";
-import { css } from "@emotion/core";
+import { css } from "@emotion/react";
 import Img from "gatsby-image";
 
 // Config
@@ -30,10 +32,10 @@ import {
   H31ButtonFacebookShare,
   H31ButtonTwitterTweet,
   H31ButtonFillArrow,
-  H31BlogCard2
+  H31BlogCard2,
 } from "../components/h31";
 
-const NewsAndEvents = ({ data, pageContext }) => {
+function NewsAndEvents({ data, pageContext }) {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
 
@@ -46,7 +48,7 @@ const NewsAndEvents = ({ data, pageContext }) => {
       text: next.excerpt,
       date: next.frontmatter.date,
       link: next.fields.path,
-      linkText: "Read More"
+      linkText: "Read More",
     };
   }
   if (previous !== null) {
@@ -56,7 +58,7 @@ const NewsAndEvents = ({ data, pageContext }) => {
       text: previous.excerpt,
       date: previous.frontmatter.date,
       link: previous.fields.path,
-      linkText: "Read More"
+      linkText: "Read More",
     };
   }
 
@@ -342,22 +344,22 @@ const NewsAndEvents = ({ data, pageContext }) => {
       </H31LayoutContainer>
     </Layout>
   );
-};
+}
 
 NewsAndEvents.defaultProps = {
   data: {},
-  pageContext: {}
+  pageContext: {},
 };
 
 NewsAndEvents.propTypes = {
   data: PropTypes.objectOf(PropTypes.object),
-  pageContext: PropTypes.objectOf(PropTypes.object)
+  pageContext: PropTypes.objectOf(PropTypes.object),
 };
 
 export default NewsAndEvents;
 
 export const pageQuery = graphql`
-  query($path: String!) {
+  query ($path: String!) {
     markdownRemark(fields: { path: { eq: $path } }) {
       id
       excerpt

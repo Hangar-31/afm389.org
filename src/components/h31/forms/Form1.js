@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
-import React from "react";
 /** @jsx jsx */
-import { css, jsx } from "@emotion/core";
-import styled from "@emotion/styled";
+import React from "react";
+import { css, jsx } from "@emotion/react";
+import styled from "@emotion/styled/macro";
 import {
   H31LoadingIndicator1,
   H31Input1,
@@ -10,7 +10,7 @@ import {
   H31ButtonBrightSubmit,
   H31Select1,
   H31Textarea1,
-  H31Error1
+  H31Error1,
 } from "../index";
 import _config from "../../_config";
 
@@ -53,7 +53,7 @@ const Required = (
 // Encode Function for Data
 function encode(data) {
   return Object.keys(data)
-    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
     .join("&");
 }
 
@@ -71,7 +71,7 @@ export default class Form1 extends React.Component {
       State: "",
       Message: "",
       errors: [],
-      submitting: 0
+      submitting: 0,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -129,8 +129,8 @@ export default class Form1 extends React.Component {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
           "form-name": form.getAttribute("name"),
-          ...data
-        })
+          ...data,
+        }),
       })
         .then(() => {
           this.setState({ submitting: 2 });
@@ -147,7 +147,7 @@ export default class Form1 extends React.Component {
   render() {
     return (
       <Form
-        ref={form => {
+        ref={(form) => {
           this.formEl = form;
         }}
         onSubmit={this.onSubmit}
@@ -171,7 +171,7 @@ export default class Form1 extends React.Component {
               margin-bottom: 30px;
             `}
           >
-            {this.state.errors.map(error => (
+            {this.state.errors.map((error) => (
               <li key={error}>
                 <H31Error1>{error}</H31Error1>
               </li>
@@ -335,18 +335,14 @@ export default class Form1 extends React.Component {
               name="submit form to afm389"
               type="submit"
               css={css`
-              ${
-                this.state.submitting === 2
+                ${this.state.submitting === 2
                   ? `background: ${_config.colorSecondary};`
-                  : ``
-              }
-              ${
-                this.state.submitting === 2
+                  : ``}
+                ${this.state.submitting === 2
                   ? `border: 1px solid ${_config.colorWhite};`
-                  : ``
-              }
+                  : ``}
               ${this.state.submitting === 2 ? "pointer-events: none;" : ""}
-          `}
+              `}
             >
               <H31Button3
                 name="submit form to afm389"

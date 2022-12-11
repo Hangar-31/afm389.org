@@ -1,8 +1,8 @@
 /* eslint-disable no-underscore-dangle */
 import PropTypes from "prop-types";
 /** @jsx jsx */
-import styled from "@emotion/styled";
-import { css, jsx } from "@emotion/core";
+import styled from "@emotion/styled/macro";
+import { css, jsx } from "@emotion/react";
 import { Link as gLink } from "gatsby";
 import { H31Button1 } from "..";
 import _config from "../../_config";
@@ -46,53 +46,55 @@ const Link = styled(gLink)`
   }
 `;
 
-const ButtonFillArrow = ({
+function ButtonFillArrow({
   link,
   text,
   primaryColor,
   secondaryColor,
   carrotColor,
-  arrowDirection
-}) => (
-  <Container>
-    {arrowDirection === "left" && (
-      <CarrotLeft
+  arrowDirection,
+}) {
+  return (
+    <Container>
+      {arrowDirection === "left" && (
+        <CarrotLeft
+          css={css`
+            border-right: 8px solid ${carrotColor};
+          `}
+        />
+      )}
+      <Link
+        to={link}
         css={css`
-          border-right: 8px solid ${carrotColor};
-        `}
-      />
-    )}
-    <Link
-      to={link}
-      css={css`
-        padding: 20px 20px;
-        background-color: ${primaryColor};
-        border: 1px solid ${secondaryColor};
-        font-weight: bold;
-        transition: 0.2s;
-        span {
-          color: ${carrotColor};
-        }
-        &:hover {
-          color: ${primaryColor};
-          background-color: ${secondaryColor};
+          padding: 20px 20px;
+          background-color: ${primaryColor};
+          border: 1px solid ${secondaryColor};
+          font-weight: bold;
+          transition: 0.2s;
           span {
-            color: ${primaryColor};
+            color: ${carrotColor};
           }
-        }
-      `}
-    >
-      {text}
-    </Link>
-    {arrowDirection === "right" && (
-      <CarrotRight
-        css={css`
-          border-left: 8px solid ${carrotColor};
+          &:hover {
+            color: ${primaryColor};
+            background-color: ${secondaryColor};
+            span {
+              color: ${primaryColor};
+            }
+          }
         `}
-      />
-    )}
-  </Container>
-);
+      >
+        {text}
+      </Link>
+      {arrowDirection === "right" && (
+        <CarrotRight
+          css={css`
+            border-left: 8px solid ${carrotColor};
+          `}
+        />
+      )}
+    </Container>
+  );
+}
 
 ButtonFillArrow.defaultProps = {
   link: "/",
@@ -100,7 +102,7 @@ ButtonFillArrow.defaultProps = {
   secondaryColor: "#000000",
   primaryColor: "#FFFFFF",
   carrotColor: "#000000",
-  arrowDirection: "right"
+  arrowDirection: "right",
 };
 
 ButtonFillArrow.propTypes = {
@@ -109,7 +111,7 @@ ButtonFillArrow.propTypes = {
   secondaryColor: PropTypes.string,
   primaryColor: PropTypes.string,
   carrotColor: PropTypes.string,
-  arrowDirection: PropTypes.string
+  arrowDirection: PropTypes.string,
 };
 
 export default ButtonFillArrow;

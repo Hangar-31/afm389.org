@@ -1,8 +1,7 @@
 /* eslint-disable consistent-return */
-const { fmImagesToRelative } = require("gatsby-remark-relative-images");
 const path = require("path");
 
-const urlMaker = pathWay => {
+const urlMaker = (pathWay) => {
   return `/${pathWay.split("/")[pathWay.split("/").length - 2]}/${
     pathWay.split("/")[pathWay.split("/").length - 1].split(".")[0]
   }`;
@@ -45,12 +44,12 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then(result => {
+  `).then((result) => {
     if (result.errors) {
       return Promise.reject(result.errors);
     }
 
-    const posts = result.data.allMarkdownRemark.edges.filter(post =>
+    const posts = result.data.allMarkdownRemark.edges.filter((post) =>
       post.node.fileAbsolutePath.includes("static/news-and-articles")
     );
 
@@ -72,8 +71,8 @@ exports.createPages = ({ actions, graphql }) => {
           nextNext,
           next,
           previous,
-          previousPrevious
-        }
+          previousPrevious,
+        },
       });
     });
   });
@@ -81,12 +80,11 @@ exports.createPages = ({ actions, graphql }) => {
 
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
-  fmImagesToRelative(node);
   if (node.internal.type === `MarkdownRemark`) {
     createNodeField({
       node,
       name: `path`,
-      value: urlMaker(node.fileAbsolutePath)
+      value: urlMaker(node.fileAbsolutePath),
     });
   }
 };

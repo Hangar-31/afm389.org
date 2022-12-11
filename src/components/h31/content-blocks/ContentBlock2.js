@@ -1,7 +1,8 @@
+/** @jsx jsx */
 import React from "react";
+import { css, jsx } from "@emotion/react";
 import { PropTypes } from "prop-types";
-import { css } from "@emotion/core";
-import styled from "@emotion/styled";
+import styled from "@emotion/styled/macro";
 
 // Config
 import _config from "../../_config";
@@ -19,23 +20,25 @@ const Container = styled.section`
   overflow: hidden;
 `;
 
-const ContentBlock2 = ({ id, title, children }) => (
-  <Container id={id}>
-    {title !== null && (
-      <H31Title2C
-        css={css`
-          padding: 15px 0;
-          margin-bottom: 15px;
-          text-align: center;
-          background-color: ${_config.colorSecondary};
-        `}
-      >
-        {title}
-      </H31Title2C>
-    )}
-    {children}
-  </Container>
-);
+function ContentBlock2({ id, title, children }) {
+  return (
+    <Container id={id}>
+      {title !== null && (
+        <H31Title2C
+          css={css`
+            padding: 15px 0;
+            margin-bottom: 15px;
+            text-align: center;
+            background-color: ${_config.colorSecondary};
+          `}
+        >
+          {title}
+        </H31Title2C>
+      )}
+      {children}
+    </Container>
+  );
+}
 
 ContentBlock2.defaultProps = {
   id: null,
@@ -56,13 +59,13 @@ ContentBlock2.defaultProps = {
         ut labore et dolore magna aliqua.
       </p>
     </>
-  )
+  ),
 };
 
 ContentBlock2.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 export default ContentBlock2;

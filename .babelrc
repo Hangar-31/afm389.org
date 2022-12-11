@@ -10,12 +10,9 @@
           ]
         }
       }
-    ],
-    "@emotion/babel-preset-css-prop"
+    ]
   ],
   "plugins": [
-    "@babel/plugin-proposal-optional-chaining",
-    "emotion",
     [
       "@babel/plugin-proposal-class-properties",
       {

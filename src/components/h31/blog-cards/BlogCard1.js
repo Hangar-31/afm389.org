@@ -1,8 +1,9 @@
 /* eslint-disable valid-typeof */
+/** @jsx jsx */
 import React from "react";
+import { css, jsx } from "@emotion/react";
 import PropTypes from "prop-types";
-import { css } from "@emotion/core";
-import styled from "@emotion/styled";
+import styled from "@emotion/styled/macro";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 
@@ -92,109 +93,113 @@ const ContainerBlock = styled.article`
   background-color: #ffffff;
 `;
 
-const BlogCard1 = ({ article, hover }) => (
-  <>
-    {hover && (
-      <ContainerLink
-        css={css`
+function BlogCard1({ article, hover }) {
+  return (
+    <>
+      {hover && (
+        <ContainerLink
+          css={css`
           min-height: ${article.date ? "420px" : "350px"};
           &:hover {
             text-decoration: none !important;
-            ${hover &&
+            ${
+              hover &&
               `
                 pointer: cursor;
                 ${Overlay} {
                   opacity: 1;
                   background-color: rgba(243, 149, 8, 0.84);
                 }
-            `}
+            `
+            }
         `}
-        to={article.link}
-      >
-        <ImageContainer>
-          {!React.isValidElement(article.image) && (
-            <Img alt={article.title} fluid={article.image} />
-          )}
-          {React.isValidElement(article.image) && article.image}
-          <Overlay>
-            <OverlayClick>
-              <H31Title4A>{article.linkText}</H31Title4A>
-            </OverlayClick>
-          </Overlay>
-        </ImageContainer>
-
-        <ContentContainer
-          css={css`
-            min-height: ${article.date ? "163px" : "100%"};
-            padding: ${article.date ? "15px 30px 0 30px;" : "15px 30px;"};
-          `}
+          to={article.link}
         >
-          <ContentGroup>
-            <TitleContainer>
-              <H31Title3B>{article.title}</H31Title3B>
-            </TitleContainer>
-            <H31Text3
-              css={css`
-                @media (max-width: 575px) {
-                  font-size: 1rem;
-                }
-              `}
-            >
-              {article.text}
-            </H31Text3>
-          </ContentGroup>
-        </ContentContainer>
-        {article.date && (
-          <DateContainer>
-            <H31SimpleTime date={article.date} />
-          </DateContainer>
-        )}
-      </ContainerLink>
-    )}
-    {!hover && (
-      <ContainerBlock>
-        <ImageContainer>
-          {!React.isValidElement(article.image) && (
-            <Img alt={article.title} fluid={article.image} />
-          )}
-          {React.isValidElement(article.image) && article.image}
-          <Overlay>
-            <OverlayClick>
-              <H31Title4A>{article.linkText}</H31Title4A>
-            </OverlayClick>
-          </Overlay>
-        </ImageContainer>
+          <ImageContainer>
+            {!React.isValidElement(article.image) && (
+              <Img alt={article.title} fluid={article.image} />
+            )}
+            {React.isValidElement(article.image) && article.image}
+            <Overlay>
+              <OverlayClick>
+                <H31Title4A>{article.linkText}</H31Title4A>
+              </OverlayClick>
+            </Overlay>
+          </ImageContainer>
 
-        <ContentContainer
-          css={css`
-            min-height: ${article.date ? "163px" : "100%"};
-            padding: ${article.date ? "15px 30px 0 30px;" : "15px 30px;"};
-          `}
-        >
-          <ContentGroup>
-            <TitleContainer>
-              <H31Title3B>{article.title}</H31Title3B>
-            </TitleContainer>
-            <H31Text3
-              css={css`
-                @media (max-width: 575px) {
-                  font-size: 1rem;
-                }
-              `}
-            >
-              {article.text}
-            </H31Text3>
-          </ContentGroup>
-        </ContentContainer>
-        {article.date && (
-          <DateContainer>
-            <H31SimpleTime date={article.date} />
-          </DateContainer>
-        )}
-      </ContainerBlock>
-    )}
-  </>
-);
+          <ContentContainer
+            css={css`
+              min-height: ${article.date ? "163px" : "100%"};
+              padding: ${article.date ? "15px 30px 0 30px;" : "15px 30px;"};
+            `}
+          >
+            <ContentGroup>
+              <TitleContainer>
+                <H31Title3B>{article.title}</H31Title3B>
+              </TitleContainer>
+              <H31Text3
+                css={css`
+                  @media (max-width: 575px) {
+                    font-size: 1rem;
+                  }
+                `}
+              >
+                {article.text}
+              </H31Text3>
+            </ContentGroup>
+          </ContentContainer>
+          {article.date && (
+            <DateContainer>
+              <H31SimpleTime date={article.date} />
+            </DateContainer>
+          )}
+        </ContainerLink>
+      )}
+      {!hover && (
+        <ContainerBlock>
+          <ImageContainer>
+            {!React.isValidElement(article.image) && (
+              <Img alt={article.title} fluid={article.image} />
+            )}
+            {React.isValidElement(article.image) && article.image}
+            <Overlay>
+              <OverlayClick>
+                <H31Title4A>{article.linkText}</H31Title4A>
+              </OverlayClick>
+            </Overlay>
+          </ImageContainer>
+
+          <ContentContainer
+            css={css`
+              min-height: ${article.date ? "163px" : "100%"};
+              padding: ${article.date ? "15px 30px 0 30px;" : "15px 30px;"};
+            `}
+          >
+            <ContentGroup>
+              <TitleContainer>
+                <H31Title3B>{article.title}</H31Title3B>
+              </TitleContainer>
+              <H31Text3
+                css={css`
+                  @media (max-width: 575px) {
+                    font-size: 1rem;
+                  }
+                `}
+              >
+                {article.text}
+              </H31Text3>
+            </ContentGroup>
+          </ContentContainer>
+          {article.date && (
+            <DateContainer>
+              <H31SimpleTime date={article.date} />
+            </DateContainer>
+          )}
+        </ContainerBlock>
+      )}
+    </>
+  );
+}
 
 BlogCard1.defaultProps = {
   article: {
@@ -203,9 +208,9 @@ BlogCard1.defaultProps = {
     text: "text",
     link: "link",
     linkText: "link text",
-    date: "date"
+    date: "date",
   },
-  hover: true
+  hover: true,
 };
 
 BlogCard1.propTypes = {
@@ -215,9 +220,9 @@ BlogCard1.propTypes = {
     text: PropTypes.string,
     link: PropTypes.string,
     linkText: PropTypes.string,
-    date: PropTypes.string
+    date: PropTypes.string,
   }),
-  hover: PropTypes.bool
+  hover: PropTypes.bool,
 };
 
 export default BlogCard1;
