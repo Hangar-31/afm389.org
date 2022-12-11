@@ -1,5 +1,6 @@
+/** @jsx jsx */
 import React from "react";
-import { css } from "@emotion/react";
+import { jsx, css } from "@emotion/react";
 
 // Config
 import _config from "../components/_config";

@@ -37,6 +37,7 @@ import {
 
 function NewsAndEvents({ data, pageContext }) {
   const { markdownRemark } = data;
+  console.log(data);
   const { frontmatter, html } = markdownRemark;
 
   // Extract articles for next and previous navigating

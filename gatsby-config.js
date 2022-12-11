@@ -5,6 +5,7 @@ module.exports = {
     author: "Hangar 31 Development",
     siteUrl: "https://afm389.org",
   },
+  trailingSlash: "never",
   plugins: [
     // File sourcing into Gatsby for use with Gatsby Node API
     {
