@@ -31,6 +31,7 @@ import ImgHome1 from "../components/images/_home/ImgHome1";
 import ImgHome2 from "../components/images/_home/ImgHome2";
 import ImgHome3 from "../components/images/_home/ImgHome3";
 import ImgHome4 from "../components/images/_home/ImgHome4";
+import InstagramSection from "../components/h31/instagram/Instagram";
 
 // Data
 const contentBlocks = [
@@ -110,6 +111,13 @@ export default function () {
           check email, voice mail and regular mail regularly."
         />
       </div> */}
+
+      <H31SectionTitleFullWidth
+        backgroundColor={_config.colorWhite}
+        titleSmall="Recent Instagram Posts"
+      />
+
+      <InstagramSection />
 
       <H31SectionTitleFullWidth
         backgroundColor={_config.colorWhite}

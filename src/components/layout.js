@@ -60,6 +60,7 @@ function Layout({ children }) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
         <script src="https://code.jquery.com/pep/0.4.3/pep.js" />
+        <script async src="//www.instagram.com/embed.js" />
       </Helmet>
 
       <SkipNavLink />
