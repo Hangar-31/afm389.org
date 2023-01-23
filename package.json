@@ -86,7 +86,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "npm i --legacy-peer-deps && gatsby build",
     "dev": "gatsby develop",
     "test": "eslint src/**/*.js",
     "format": "eslint --fix --ext .js,.jsx",
