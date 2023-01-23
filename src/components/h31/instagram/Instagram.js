@@ -43,19 +43,6 @@ const Wrapper = styled.section`
 const instIds = ["CnnbdEdtE2S", "Cm3KDtzsn1s", "CmxI55FMd8B", "CmxHxNNL5KV"];
 
 function InstagramSection() {
-  // const [instaItems, setInstaItems] = useState("");
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const res = await fetch(
-  //       "https://crossorigin.me/https://www.instagram.com/cfma389/"
-  //     );
-  //     const body = await res.text();
-  //     console.log(body);
-  //   };
-  //   fetchData();
-  // }, []);
-
   return (
     <MasterContainer>
       <Background />
