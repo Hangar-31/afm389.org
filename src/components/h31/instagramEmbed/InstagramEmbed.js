@@ -13,14 +13,16 @@ function InstagramEmbed({ instaId }) {
       data-instgrm-permalink={`https://www.instagram.com/p/${instaId}/?utm_source=ig_embed&amp;utm_campaign=loading`}
       data-instgrm-version="14"
       css={css`
+        z-index: 2;
         background: #fff;
         border: 0;
         border-radius: 3px;
         box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5),
           0 1px 10px 0 rgba(0, 0, 0, 0.15);
         margin: 0 15px;
-        max-width: 540px;
-        min-width: 326px;
+        max-height: 650px;
+        max-width: 440px;
+        min-width: 300px;
         padding: 0;
         width: 99.375%;
         width: -webkit-calc(100% - 2px);

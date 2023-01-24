@@ -10,7 +10,6 @@ import InstagramEmbed from "../instagramEmbed/InstagramEmbed";
 
 const MasterContainer = styled.section`
   position: relative;
-  overflow-y: hidden;
 `;
 
 const Background = styled.div`
@@ -31,12 +30,34 @@ const Wrapper = styled.section`
   max-width: 1440px;
   margin: 0 auto;
   flex-direction: row;
-  justify-content: center;
-  align-items: space-between;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    width: 83.33%;
+  }
+
+  > iframe:nth-of-type(3) {
+    @media (max-width: 1440px) {
+      display: none !important;
+    }
+  }
+
+  > iframe:nth-of-type(2) {
+    @media (max-width: 1070px) {
+      display: none !important;
+    }
+  }
+
+  > iframe:nth-of-type(1) {
+    @media (max-width: 680px) {
+      display: none !important;
+    }
+  }
 
   > iframe {
     z-index: 1 !important;
     margin: 0 15px !important;
+    min-width: 290px !important;
   }
 `;
 
