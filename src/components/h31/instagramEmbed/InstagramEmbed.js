@@ -124,6 +124,16 @@ function InstagramEmbed({ instaId }) {
                 </g>
               </g>
             </svg>
+            <span
+              css={css`
+                font-size: 14px;
+                font-weight: bold;
+                position: relative;
+                top: 13px;
+              `}
+            >
+              Loading...
+            </span>
           </div>
           <div
             css={css`
@@ -304,7 +314,7 @@ function InstagramEmbed({ instaId }) {
             target="_blank"
             rel="noreferrer"
           >
-            A post shared by OnArk (@onark.app)
+            A post shared by CFMA (@cfma389)
           </a>
         </p>
       </div>
