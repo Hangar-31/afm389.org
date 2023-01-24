@@ -31,6 +31,7 @@ const Wrapper = styled.section`
   margin: 0 auto;
   flex-direction: row;
   justify-content: space-between;
+  overflow: hidden;
 
   @media (max-width: 768px) {
     width: 83.33%;
@@ -57,7 +58,7 @@ const Wrapper = styled.section`
   > iframe {
     z-index: 1 !important;
     margin: 0 15px !important;
-    min-width: 290px !important;
+    min-width: 260px !important;
   }
 `;
 
