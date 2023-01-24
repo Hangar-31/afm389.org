@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { Global, css, jsx } from "@emotion/react";
 import { SkipNavLink, SkipNavContent } from "@reach/skip-nav";
+import { Script } from "gatsby";
 import RobotoSlabVar from "../../static/fonts/RobotoSlabVar.ttf";
 
 // Config
@@ -56,11 +57,12 @@ function Layout({ children }) {
         `}
       />
 
+      <Script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
+      <Script src="https://code.jquery.com/pep/0.4.3/pep.js" />
+      <Script async src="//www.instagram.com/embed.js" />
+
       <Helmet>
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
-        <script src="https://code.jquery.com/pep/0.4.3/pep.js" />
-        <script async src="//www.instagram.com/embed.js" />
       </Helmet>
 
       <SkipNavLink />
