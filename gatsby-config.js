@@ -83,9 +83,6 @@ module.exports = {
     "gatsby-plugin-netlify-cms",
     "gatsby-plugin-netlify",
 
-    // Netlify Caching
-    "gatsby-plugin-netlify-cache",
-
     // Robots TXT
     "gatsby-plugin-robots-txt",
 
