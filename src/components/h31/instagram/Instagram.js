@@ -62,7 +62,7 @@ const Wrapper = styled.section`
   }
 `;
 
-const instIds = ["Crdr6eyM4Vm", "CrbS54KsSHc", "CrV9hnWtmo_", "CrQ943ot9cd"];
+const instIds = ["CsB-ijHsbiu", "Crdr6eyM4Vm", "CrbS54KsSHc", "CrV9hnWtmo_"];
 
 function InstagramSection() {
   return (
