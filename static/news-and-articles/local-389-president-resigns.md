@@ -1,7 +1,7 @@
 ---
 date: 2023-07-25T18:47:35.626Z
 title: Local 389 President Resigns
-image: assets/guests-3.jpg
+image: /assets/guests-3.jpg
 ---
 *P﻿ictured: Michelle Jones, Madison Harding, Mike Avila and Carol Stein at Mike's farewell party.*
 
