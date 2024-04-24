@@ -48,10 +48,10 @@ const ContainerContact = styled.section`
 // Data
 const content1 = [
   <H31Text3>
-    Our newly-renovated rehearsal space is 25’x40’ and features a Yamaha upright
-    piano, drum set, speakers, amplifier, Hammond B-3 organ, tables, chairs and
-    music stands for your convenience. Refrigerator and microwave oven are also
-    available. It is air conditioned and has various lighting levels.
+    Our rehearsal space is 25’x40’ and features a Yamaha upright piano, drum
+    set, speakers, amplifier, tables, chairs and music stands for your
+    convenience. Refrigerator and microwave oven are also available. It is air
+    conditioned and has various lighting levels.
   </H31Text3>,
   <H31Text3>
     The use of this space is free to our members. This is a great value in a
@@ -124,9 +124,9 @@ const content1 = [
           color: #ffffff;
           display: block;
         `}
-        href="mailto::Local389@afm.org"
+        href="mailto::info@afm389.org"
       >
-        Local389@afm.org
+        info@afm389.org
       </H31Link4>
     </div>
   </ContainerContact>,
@@ -141,11 +141,6 @@ const content2 = [
     Rehearsal Hall Rules
   </H31Title2B>,
   <H31ListNumbered1>
-    <H31Item1>
-      Signed Agreement. You must have a signed Rules agreement form on file
-      before you can reserve the Hall. The agreement form is only available
-      through meeting with the President or another Executive Board member.
-    </H31Item1>
     <H31Item1>
       Membership: You must be a member in good standing (i.e., all annual dues
       and work dues must be paid to date) in order to reserve the Hall. No
@@ -172,19 +167,19 @@ const content2 = [
       Rehearsal Form and fee for non-members is required. Fill out completely
       and turn in the Rehearsal Hall Form. List all individuals rehearsing with
       you on this form – first and last names – and pay $5 for anyone rehearsing
-      with you who is not an AFM member. You may pay with cash or check, or call
-      the office during business hours to pay by card. There is a black Mailbox
-      on the inside wall by the rear entry doors into which you may deposit the
+      with you who is not an AFM member. You may pay with cash or check, or
+      request to be invoiced and pay by credit card. There is a black Mailbox on
+      the inside wall by the rear entry doors into which you may deposit the
       form and the cash/check.
     </H31Item1>
     <H31Item1>
       Return Rehearsal Hall to order. Return Rehearsal Hall to the order in
       which you found it – music stands and folding chairs stored in their
-      specific storage locations, piano/organ covered, speakers/equipment turned
-      off, trash picked up, drums reassembled and returned to original location,
-      etc. Report broken equipment immediately. If the Hall is in disorder when
-      you arrive for your rehearsal, take a photo with your smartphone and text
-      it to the President immediately.
+      specific storage locations, piano covered, speakers/equipment turned off,
+      trash picked up, drums reassembled and returned to original location, etc.
+      Report broken equipment immediately. If the Hall is in disorder when you
+      arrive for your rehearsal, take a photo with your smartphone and text it
+      to the President immediately.
     </H31Item1>
     <H31Item1>
       Equipment may not be removed from the Hall without prior permission. This
@@ -194,7 +189,7 @@ const content2 = [
     <H31Item1>
       Security. On the back doors, make sure flush bolt locks are securely
       placed in the lock position and doors are closed securely. Turn all lights
-      off before you depart, except for red kitchen light.
+      off before you depart.
     </H31Item1>
     <H31Item1>
       Door Code. The code to the back door is meant only for Band Leaders. Do
