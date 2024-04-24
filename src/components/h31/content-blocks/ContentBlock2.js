@@ -30,6 +30,10 @@ function ContentBlock2({ id, title, children }) {
             margin-bottom: 15px;
             text-align: center;
             background-color: ${_config.colorSecondary};
+
+            @media (max-width: 575px) {
+              display: none !important;
+            }
           `}
         >
           {title}

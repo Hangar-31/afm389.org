@@ -189,8 +189,17 @@ class SectionNews1 extends React.Component {
               article.fileAbsolutePath.includes("static/news-and-articles")
             )
             .map((article) => {
+              let imageFluid = "";
+              if (
+                article.frontmatter &&
+                article.frontmatter.image &&
+                article.frontmatter.image.childImageSharp &&
+                article.frontmatter.image.childImageSharp.fluid
+              ) {
+                imageFluid = article.frontmatter.image.childImageSharp.fluid;
+              }
               const newArticle = {
-                image: article.frontmatter.image.childImageSharp.fluid,
+                image: imageFluid,
                 title: article.frontmatter.title,
                 text: article.excerpt,
                 date: article.frontmatter.date,

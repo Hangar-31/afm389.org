@@ -23,11 +23,7 @@ import {
 import ImgMastheadAbout from "../components/images/mastheads/ImgMastheadAbout";
 import _config from "../components/_config";
 import ImgAbout1 from "../components/images/_about/ImgAbout1";
-import ImgBioMikeAvila from "../components/images/bios/ImgBioMikeAvila";
-import ImgBioDeborahWells from "../components/images/bios/ImgBioDeborahWells";
 import ImgBioSamZambito from "../components/images/bios/ImgBioSamZambito";
-import ImgBioNancyCrockford from "../components/images/bios/ImgBioNancyCrockford";
-// import ImgBioHowardHerman from "../components/images/bios/ImgBioHowardHerman";
 import ImgBioBarrySmith from "../components/images/bios/ImgBioBarrySmith";
 import ImgBioBrianSmithers from "../components/images/bios/ImgBioBrianSmithers";
 import ImgBioKathyThomas from "../components/images/bios/ImgBioKathyThomas";
@@ -66,35 +62,11 @@ const data = [
 // Data
 const bios = [
   {
-    name: "Mike Avila",
-    title: "President",
-    image: <ImgBioMikeAvila />,
-    bios: [
-      "Mike spent the bulk of his playing career as part of two brass quintets. He performed 16 years at Walt Disney World in the Maple Leaf Brass, followed by 14 years with Sovereign Brass. He has been president of CFMA since March 1999. Areas of expertise: Collective Bargaining/Contract Negotiation, Mediation, Audition Coaching, Career Counseling and more.",
-    ],
-  },
-  {
-    name: "Deborah Dansby Wells",
-    title: "Vice President",
-    image: <ImgBioDeborahWells />,
-    bios: [
-      "Deborah, is principal viola of the Mantovani Orchestra, touring Internationally and domestically. Often in demand as a clinician and adjudicator, she divides her time between the educational and performance worlds. As a player, Ms. Dansby Wells is equally at home on the classical and popular stages where she may be found as a soloist or principal player. Her primary studies were done at the University of Michigan with extensive post-graduate work at the Manhattan School in New York, and at a number of universities in Florida.",
-    ],
-  },
-  {
     name: "Sam Zambito",
     title: "Treasurer/Recording Secretary",
     image: <ImgBioSamZambito />,
     bios: [
       "Sam Zambito, originally from Canandaigua, NY, has lived and worked in central Florida since 1974. After undergraduate studies at the Eastman School of Music, Sam has played trumpet in various groups in the Central Florida area eventually becoming a bandleader at Walt Disney World for more than 20 years. During his time at Disney, Sam became one of the earliest players of the Electronic Valve Instrument (EVI) which led to many opportunities. A long association with the Japanese company Akai led to performances throughout the USA, Canada and Europe at trade shows, educational conferences and college clinics. Sam has been Secretary/Treasurer of Local 389 since January 2003 and a member of the American Federation of Musicians since 1972.",
-    ],
-  },
-  {
-    name: "Nancy Crockford",
-    title: "Executive Board",
-    image: <ImgBioNancyCrockford />,
-    bios: [
-      "Nancy Crockford, a native of Orlando, Florida, joined Local 389 when she was 16. She has worked with symphonies, chamber ensembles, operas, ballets, musicals & tours in venues throughout the Southeast & New York. Ms. Crockford attended Stetson University, University of Central Florida & spent summers at Eastman School of Music for private violin lessons. During her six-year tenure with The Florida Orchestra, Nancy was the Violin Section Grievance Representative & helped spearhead the formation of the Florida Orchestra Musicians’ Association. She was elected Treasurer and Historian, was on the Bylaw Committee & chaired the Benefit Concert Committee.",
     ],
   },
   {
@@ -164,29 +136,9 @@ export default function () {
         <H31LayoutRow>
           <H31LayoutCol xs={1} md={2} xl={3} />
           <H31LayoutCol xs={10} md={8} xl={6}>
-            <div
-              css={css`
-                display: none !important;
-                @media (min-width: 576px) {
-                  display: block !important;
-                }
-              `}
-            >
-              <H31ContentBlock2 title="Musicians Working For Musicians">
-                {data}
-              </H31ContentBlock2>
-            </div>
-
-            <div
-              css={css`
-                display: none !important;
-                @media (max-width: 575px) {
-                  display: block !important;
-                }
-              `}
-            >
-              <H31ContentBlock2>{data}</H31ContentBlock2>
-            </div>
+            <H31ContentBlock2 title="Musicians Working For Musicians">
+              {data}
+            </H31ContentBlock2>
           </H31LayoutCol>
           <H31LayoutCol xs={1} md={2} xl={3} />
         </H31LayoutRow>
