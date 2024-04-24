@@ -34,26 +34,26 @@ import ImgBioKathyThomas from "../components/images/bios/ImgBioKathyThomas";
 import ImgBioJeffThomas from "../components/images/bios/ImgBioJeffThomas";
 
 const data = [
-  <H31Text3 key={`about-page-${Math.random() * 10000}`}>
+  <H31Text3 key="about-page-1">
     <b>Wondering what the next step in your career should be? </b>
     We are happy to share our years of experience on formulating a plan that
     fits your needs and dreams.
   </H31Text3>,
-  <H31Text3 key={`about-page-${Math.random() * 10000}`}>
+  <H31Text3 key="about-page-2">
     <b>Are you new in town and need to know who to connect with? </b>
     We network through membership meetings, a contractor list, weekly updates of
     current events and networking opportunities, social media and a quarterly
     newsletter, among other things.
   </H31Text3>,
-  <ImgAbout1 key={`about-page-${Math.random() * 10000}`} />,
-  <br key={`about-page-${Math.random() * 10000}`} />,
-  <br key={`about-page-${Math.random() * 10000}`} />,
-  <H31Text3 key={`about-page-${Math.random() * 10000}`}>
+  <ImgAbout1 key="about-page-3" />,
+  <br key="about-page-4" />,
+  <br key="about-page-5" />,
+  <H31Text3 key="about-page-6">
     <b>Would you like coaching on how to audition for Walt Disney World? </b>
     We hold up to three auditions per year for our members to audition for the
     company and we would love to help you prepare.
   </H31Text3>,
-  <H31Text3 key={`about-page-${Math.random() * 10000}`}>
+  <H31Text3 key="about-page-7">
     <b>
       Are you owed money from a contractor or organization for whom you have
       worked?&nbsp;
