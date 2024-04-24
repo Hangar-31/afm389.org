@@ -36,7 +36,7 @@ const benefits = [
   },
   {
     name: "Liability Insurance",
-    info: ["Many area venues – such as local government recreation centers or hotels and bars - require the performer to carry Performance Liability Insurance. This can cost as much as $1,000 per year. As a member of CFMA however, you can purchase coverage for only $198 annually!"]
+    info: ["Many area venues – such as local government recreation centers or hotels and bars - require the performer to carry Performance Liability Insurance. This can cost as much as $1,000 per year. As a member of CFMA however, you can purchase lower-cost coverage. Contact the office for current prices."]
   },
   {
     name: "Member Directory",
@@ -102,7 +102,7 @@ const benefits = [
   },
   {
     name: "Contract Negotiation",
-    info: ["The Association has been negotiating musician’s contracts in Central Florida for almost 100 years. These contracts range from the largest entertainment company in the world (Walt Disney World) to single engagement contracts for weddings and special events."]
+    info: ["The Association has been negotiating musician’s contracts in Central Florida for 100 years. These contracts range from the largest entertainment company in the world (Walt Disney World) to single engagement contracts for weddings and special events."]
   },
   {
     name: "National and International Audition Notices",
@@ -129,7 +129,7 @@ const articles = [
   {
     image: <ImgPartner2 />,
     title: "Orlando Philharmonic Orchestra",
-    text: "Newly unionized in 2012, our agreement and amiable working relationship with the Philharmonic continues to better wages and working conditions for our musicians.",
+    text: "Unionized in 2012, our agreement and amiable working relationship with the Philharmonic continues to better wages and working conditions for our musicians.",
     link: "/",
     linkText: "Visit Site"
   },
