@@ -1,7 +1,7 @@
 ---
 date: 2024-04-24T19:53:13.808Z
 title: CFMA Celebrates 100 Years!
-image: assets/collage-for-website.jpg
+image: /assets/cool-collage-for-website.jpg
 ---
 O﻿n April 18, 1924, the Orlando chapter of the American Federation of Musicians - Local 389 - was chartered. Originally known as the Musicians' Protective Association, and later the Orlando Musician's Association, the current Central Florida Musicians' Association now boasts more than 600 members.
 
