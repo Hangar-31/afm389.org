@@ -113,6 +113,14 @@ export default function () {
       </div> */}
 
       <H31SectionTitleFullWidth
+        backgroundColor={_config.colorPrimary}
+        titleSmall=""
+        titleSmallColor={_config.colorSecondary}
+        titleLarge="CELEBRATING 100 YEAR! ESTABLISHED 1924"
+        customCSS="justify-content: center;"
+      />
+
+      <H31SectionTitleFullWidth
         backgroundColor={_config.colorWhite}
         titleSmall="Recent Instagram Posts"
       />

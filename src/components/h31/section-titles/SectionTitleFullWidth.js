@@ -18,6 +18,7 @@ function SectionTitleFullWidth({
   titleSmall,
   titleLarge,
   id,
+  customCSS,
 }) {
   return (
     <H31LayoutContainer
@@ -53,6 +54,7 @@ function SectionTitleFullWidth({
             display: flex;
             align-items: center;
             flex-wrap: wrap;
+            ${customCSS}
           `}
           xs={10}
           md={12}
@@ -79,6 +81,7 @@ SectionTitleFullWidth.defaultProps = {
   titleSmallColor: "",
   titleLarge: null,
   id: null,
+  customCSS: "",
 };
 
 SectionTitleFullWidth.propTypes = {
@@ -87,6 +90,7 @@ SectionTitleFullWidth.propTypes = {
   titleSmallColor: PropTypes.string,
   titleLarge: PropTypes.string,
   id: PropTypes.string,
+  customCSS: PropTypes.string,
 };
 
 export default SectionTitleFullWidth;
