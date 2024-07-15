@@ -33,6 +33,20 @@ import ImgBioMichaelSciallaba from "../components/images/bios/ImgBioMichaelScial
 import ImgBioMadisonHarding from "../components/images/bios/ImgBioMadisonHarding";
 
 const data = [
+  <H31Text3 key="about-page-0">
+    On April 18, 1924, a charter was granted by the American Federation of
+    Musicians to allow the creation of Local 389 – then known as the Musicians’
+    Protective Association. The charter was requested by members of the Pythian
+    Band, with the goal being to ensure that musicians were paid fairly. Through
+    the years, the organization (which eventually joined with the Daytona Beach
+    Local) became known as the Orland Musicians’ Association, and finally the
+    Central Florida Musicians’ Association. The CFMA started with eight members
+    in 1924 then grew to almost a thousand in 50 years. Among its major
+    achievements - collective bargaining agreements with Walt Disney World and
+    Orlando Philharmonic Orchestra. Today’s music scene is much different than
+    that of 100 years ago. But the CFMA remains – supporting musicians in their
+    endeavor to make a living making music.
+  </H31Text3>,
   <H31Text3 key="about-page-1">
     <b>Wondering what the next step in your career should be? </b>
     We are happy to share our years of experience on formulating a plan that
