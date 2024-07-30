@@ -116,7 +116,7 @@ export default function () {
         backgroundColor={_config.colorPrimary}
         titleSmall=""
         titleSmallColor={_config.colorSecondary}
-        titleLarge="CELEBRATING 100 YEAR! ESTABLISHED 1924"
+        titleLarge="CELEBRATING 100 YEARS! ESTABLISHED 1924"
         customCSS="justify-content: center;"
       />
 

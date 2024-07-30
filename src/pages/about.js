@@ -39,7 +39,7 @@ const data = [
     Protective Association. The charter was requested by members of the Pythian
     Band, with the goal being to ensure that musicians were paid fairly. Through
     the years, the organization (which eventually joined with the Daytona Beach
-    Local) became known as the Orland Musicians’ Association, and finally the
+    Local) became known as the Orlando Musicians’ Association, and finally the
     Central Florida Musicians’ Association. The CFMA started with eight members
     in 1924 then grew to almost a thousand in 50 years. Among its major
     achievements - collective bargaining agreements with Walt Disney World and
