@@ -79,27 +79,27 @@ const data = [
 // Data
 const bios = [
   {
-    name: "David Uhrig",
+    name: "Sam Zambito",
     title: "President",
-    image: <ImgBioDavidUhrig />,
+    image: <ImgBioSamZambito />,
     bios: [
-      "I am a Life Member of the American Federation of Musicians. In my 35+ years at Walt Disney World as both a musician and entertainment manager, I negotiated from both sides of the table on all types of issues. I served as a Shop Steward and Band Leader/Conductor. When I came to Florida as a freelance musician, I worked for all major contractors, and the Brevard Symphony Orchestra. At Disney, I co-authored Ongoing Casual Engagement language with former Local 389 President Mike Avila. And I co-authored with Labor Relations Negotiating Team Actor’s Equity Association Collective Bargaining Agreement language. I have a strong working relationship with WDW Management teams, Labor/Employee Relations and I am a Compliance Member of grievance/arbitrations teams for AFM, AEA, IATSE, TEAMSTERS/CHARACTERS/TECHNICIANS. As Contracts Manager, I taught CBAs to WDW leadership.",
+      "Sam Zambito, originally from Canandaigua, NY, has lived and worked in central Florida since 1974. After undergraduate studies at the Eastman School of Music, Sam has played trumpet in various groups in the Central Florida area eventually becoming a bandleader at Walt Disney World for more than 20 years. During his time at Disney, Sam became one of the earliest players of the Electronic Valve Instrument (EVI) which led to many opportunities. A long association with the Japanese company Akai led to performances throughout the USA, Canada and Europe at trade shows, educational conferences and college clinics. Sam has been Secretary/Treasurer of Local 389 since January 2003 and a member of the American Federation of Musicians since 1972.",
+    ],
+  },
+  {
+    name: "Madison Harding",
+    title: "Vice President",
+    image: <ImgBioMadisonHarding />,
+    bios: [
+      "I am primarily a harpist, but also have a background in piano and percussion. I freelance throughout Central Florida as a soloist and as part of various ensembles and orchestras. I am a musician sideman at Disney, performing with the Candlelight Orchestra. I have been an active member of AFM Local 389 since 2016 and have served as a member of the Local’s Bylaw Committee since 2021. I am a firm believer that musicians are stronger together. I look forward to learning from our returning board members, while contributing my unique perspective to the team.",
     ],
   },
   {
     name: "Michael Sciallaba",
-    title: "Vice President",
+    title: "Treasurer",
     image: <ImgBioMichaelSciallaba />,
     bios: [
       "My name is Michael Scialabba and as a graduate of Winter Park High School and the University of Florida, I am proud to say that I am a local music product, shaped by the many exceptional educators and professionals that call Central Florida home. I've been a performer at Walt Disney World for over three decades, and I'm currently a longstanding member of the Main Street Philharmonic at the Magic Kingdom. I've served as a Disney Shop Steward for over 10 years, as well as a key member of the Disney CBA Negotiations Team for the last two contracts. I also have a master's degree in Organizational Leadership, which specializes in Strategy and Innovation. I'm incredibly passionate about creating fair and transparent working conditions for all, and defending worker's rights. Your issues matter to me, and I take great pride in representing you with a respectful, but vigorous approach, aimed at finding amicable solutions. I am in your service, and always available to hear your concerns, or ideas about how the union can best support its membership.",
-    ],
-  },
-  {
-    name: "Sam Zambito",
-    title: "Treasurer/Recording Secretary",
-    image: <ImgBioSamZambito />,
-    bios: [
-      "Sam Zambito, originally from Canandaigua, NY, has lived and worked in central Florida since 1974. After undergraduate studies at the Eastman School of Music, Sam has played trumpet in various groups in the Central Florida area eventually becoming a bandleader at Walt Disney World for more than 20 years. During his time at Disney, Sam became one of the earliest players of the Electronic Valve Instrument (EVI) which led to many opportunities. A long association with the Japanese company Akai led to performances throughout the USA, Canada and Europe at trade shows, educational conferences and college clinics. Sam has been Secretary/Treasurer of Local 389 since January 2003 and a member of the American Federation of Musicians since 1972.",
     ],
   },
   {
@@ -132,14 +132,6 @@ const bios = [
     image: <ImgBioKathyThomas />,
     bios: [
       "Kathy studied French horn at the University of Illinois at Champaign/Urbana and Northern Illinois University. She has played with the Wheaton Summer Symphony, Champaign/Urbana Symphony, Symfonia Da Camera, Danville Symphony, and Hinsdale Symphony, Brevard Symphony Orchestra, Bach Festival Orchestra, West Coast Symphony, Sovereign Brass Quintet and The Florida Orchestra. Since moving to Florida in 1993, Kathy has steadily worked for the Walt Disney World company. In 2004, she won the third horn position with the Orlando Philharmonic. In 2012 Kathy was appointed the position of adjunct professor of French Horn at Stetson University. Mrs. Thomas manages a private teaching studio, and has an extensive recording studio career, including “Movie Songs” and “Broadway” under the Warner Brothers label.",
-    ],
-  },
-  {
-    name: "Madison Harding",
-    title: "Executive Board",
-    image: <ImgBioMadisonHarding />,
-    bios: [
-      "I am primarily a harpist, but also have a background in piano and percussion. I freelance throughout Central Florida as a soloist and as part of various ensembles and orchestras. I am a musician sideman at Disney, performing with the Candlelight Orchestra. I have been an active member of AFM Local 389 since 2016 and have served as a member of the Local’s Bylaw Committee since 2021. I am a firm believer that musicians are stronger together. I look forward to learning from our returning board members, while contributing my unique perspective to the team.",
     ],
   },
 ];

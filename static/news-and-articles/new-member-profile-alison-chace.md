@@ -8,4 +8,4 @@ Alison says: "It's great to finally be a local musician here in the Orlando area
 Alison is currently teaching orchestra at Jones High School. She came from New York where she was involved in three symphonies, a string quartet, and had a community of pit orchestra friends in the Hudson Valley. She hopes to connect to the musicians and musical groups in the area and start performing professionally again in the upcoming year.\
 \
 IG and Tiktok: [@disneygal_ali](https://www.instagram.com/disneygal_ali/)\
-YouTube: [@violinali](https://www.instagram.com/violinali/)
+YouTube: [@violinali](https://www.instagram.com/violinali/)d
