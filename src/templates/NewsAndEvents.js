@@ -43,7 +43,7 @@ function NewsAndEvents({ data, pageContext }) {
   let { next, previous } = pageContext;
   if (next !== null) {
     next = {
-      image: next.frontmatter.image.childImageSharp.fluid,
+      image: next.frontmatter.image?.childImageSharp?.fluid,
       title: next.frontmatter.title,
       text: next.excerpt,
       date: next.frontmatter.date,
@@ -53,7 +53,7 @@ function NewsAndEvents({ data, pageContext }) {
   }
   if (previous !== null) {
     previous = {
-      image: previous.frontmatter.image.childImageSharp.fluid,
+      image: previous.frontmatter.image?.childImageSharp?.fluid,
       title: previous.frontmatter.title,
       text: previous.excerpt,
       date: previous.frontmatter.date,
@@ -187,23 +187,25 @@ function NewsAndEvents({ data, pageContext }) {
                     `}
                   >
                     <div>
-                      <Img
-                        css={css`
-                          margin-bottom: 15px;
-                          height: 450px;
-                          @media (max-width: 991px) {
-                            height: 350px;
-                          }
-                          @media (max-width: 767px) {
-                            height: 300px;
-                          }
-                          @media (max-width: 574px) {
-                            height: 250px;
-                          }
-                        `}
-                        alt={frontmatter.title}
-                        fluid={frontmatter.image.childImageSharp.fluid}
-                      />
+                      {frontmatter.image?.childImageSharp?.fluid && (
+                        <Img
+                          css={css`
+                            margin-bottom: 15px;
+                            height: 450px;
+                            @media (max-width: 991px) {
+                              height: 350px;
+                            }
+                            @media (max-width: 767px) {
+                              height: 300px;
+                            }
+                            @media (max-width: 574px) {
+                              height: 250px;
+                            }
+                          `}
+                          alt={frontmatter.title}
+                          fluid={frontmatter.image.childImageSharp.fluid}
+                        />
+                      )}
                       <div
                         id="blog-html-styles"
                         css={css`
