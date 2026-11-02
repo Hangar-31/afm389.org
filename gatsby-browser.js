@@ -12,3 +12,12 @@ export function wrapRootElement({ element }) {
 wrapRootElement.propTypes = {
   element: PropTypes.node.isRequired,
 };
+
+// Netlify Identity emails link to the site root. Send invite, recovery and
+// confirmation links to the CMS, where the Identity widget handles them.
+export function onInitialClientRender() {
+  const hash = (document.location.hash || "").replace(/^#\/?/, "");
+  if (/^(invite_token|recovery_token|confirmation_token|email_change_token)=/.test(hash)) {
+    document.location.href = `/admin/#${hash}`;
+  }
+}

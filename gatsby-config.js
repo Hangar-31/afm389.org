@@ -45,6 +45,20 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `site-content`,
+        path: `${__dirname}/static/site-content`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `officers`,
+        path: `${__dirname}/static/officers`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `testimonials`,
         path: `${__dirname}/static/testimonials`,
       },
@@ -79,8 +93,6 @@ module.exports = {
 
     // Helmet plugin
     "gatsby-plugin-react-helmet",
-    // Netlify CMS
-    "gatsby-plugin-netlify-cms",
     "gatsby-plugin-netlify",
 
     // Robots TXT
@@ -94,9 +106,6 @@ module.exports = {
 
     // Gives additional image processing functions
     "gatsby-plugin-sharp",
-
-    // Gatsby Plugin for linting -- Using AirBNB
-    "gatsby-plugin-eslint",
 
     {
       resolve: `gatsby-plugin-google-analytics`,
