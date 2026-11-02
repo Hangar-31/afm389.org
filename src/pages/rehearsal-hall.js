@@ -1,10 +1,14 @@
 /** @jsx jsx */
 import React from "react";
 import { css, jsx } from "@emotion/react";
+import { graphql } from "gatsby";
 import styled from "@emotion/styled/macro";
 
 // Config
 import _config from "../components/_config";
+import CmsImage from "../components/CmsImage";
+import { richParagraphs } from "../components/RichText";
+import useSiteSettings from "../hooks/useSiteSettings";
 
 // Components
 import Layout from "../components/layout";
@@ -23,13 +27,6 @@ import {
   H31Link4,
 } from "../components/h31";
 
-// Images
-import ImgMastheadRehearsalHall from "../components/images/mastheads/ImgMastheadRehearsalHall";
-import ImgRehearsalHall1 from "../components/images/_rehearsal-hall/ImgRehearsalHall1";
-import ImgRehearsalHall2 from "../components/images/_rehearsal-hall/ImgRehearsalHall2";
-import ImgRehearsalHall3 from "../components/images/_rehearsal-hall/ImgRehearsalHall3";
-import ImgRehearsalHall4 from "../components/images/_rehearsal-hall/ImgRehearsalHall4";
-
 // Styled Components
 const ContainerContact = styled.section`
   display: grid;
@@ -45,216 +42,160 @@ const ContainerContact = styled.section`
   }
 `;
 
-// Data
-const content1 = [
-  <H31Text3>
-    Our rehearsal space is 25’x40’ and features a Yamaha upright piano, drum
-    set, speakers, amplifier, tables, chairs and music stands for your
-    convenience. Refrigerator and microwave oven are also available. It is air
-    conditioned and has various lighting levels.
-  </H31Text3>,
-  <H31Text3>
-    The use of this space is free to our members. This is a great value in a
-    city in which the average rehearsal space cost is $25/hour to several
-    hundred dollars per month.
-  </H31Text3>,
-  <ContainerContact>
-    <H31Title2B
-      css={css`
-        display: block;
-        text-align: center;
-        width: 100%;
-        color: #ffffff;
-        grid-column: span 2;
-        padding-bottom: 10px;
-        margin-bottom: 15px;
-        border-bottom: 2px solid #ffffff;
-        @media (max-width: 767px) {
-          grid-column: span 1;
-        }
-      `}
-    >
-      Reserve a Time
-    </H31Title2B>
-    <div
-      css={css`
-        width: 100%;
-        text-align: center;
-        margin-bottom: 15px;
-        border-right: 2px solid #ffffff;
-        @media (max-width: 767px) {
-          border-right: none;
-        }
-      `}
-    >
-      <H31Text3
+// The CMS file widget can return a path relative to this page's data.
+const assetUrl = (path) => `/assets/${path.split("assets/").pop()}`;
+
+const FormLink = styled.a`
+  display: inline-block;
+  margin: 0 15px 15px 0;
+  padding: 10px 25px;
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: ${_config.colorPrimary};
+  transition: 0.2s;
+  &:hover {
+    color: #ffffff;
+    background-color: ${_config.colorSecondary};
+  }
+`;
+
+function FacilityInfo({ page }) {
+  const settings = useSiteSettings();
+  return (
+    <>
+      {richParagraphs(page.facility_text).map((paragraph) => (
+        <H31Text3 key={paragraph.key}>{paragraph}</H31Text3>
+      ))}
+      {(page.request_form || page.usage_form) && (
+        <div
+          css={css`
+            margin-top: 15px;
+          `}
+        >
+          {page.request_form && (
+            <FormLink href={assetUrl(page.request_form)} target="_blank" rel="noreferrer">
+              Download Request Form
+            </FormLink>
+          )}
+          {page.usage_form && (
+            <FormLink href={assetUrl(page.usage_form)} target="_blank" rel="noreferrer">
+              Download Usage Form
+            </FormLink>
+          )}
+        </div>
+      )}
+    <ContainerContact>
+      <H31Title2B
         css={css`
-          font-weight: bold;
-          color: ${_config.colorTertiary};
-        `}
-      >
-        Call
-      </H31Text3>
-      <H31Link4
-        css={css`
-          color: #ffffff;
           display: block;
-        `}
-        href="tel::(407) 894-8666"
-      >
-        (407) 894-8666
-      </H31Link4>
-    </div>
-
-    <div
-      css={css`
-        text-align: center;
-      `}
-    >
-      <H31Text3
-        css={css`
-          font-weight: bold;
-          color: ${_config.colorTertiary};
-        `}
-      >
-        Email
-      </H31Text3>
-      <H31Link4
-        css={css`
+          text-align: center;
+          width: 100%;
           color: #ffffff;
-          display: block;
+          grid-column: span 2;
+          padding-bottom: 10px;
+          margin-bottom: 15px;
+          border-bottom: 2px solid #ffffff;
+          @media (max-width: 767px) {
+            grid-column: span 1;
+          }
         `}
-        href="mailto::info@afm389.org"
       >
-        info@afm389.org
-      </H31Link4>
-    </div>
-  </ContainerContact>,
-];
+        Reserve a Time
+      </H31Title2B>
+      <div
+        css={css`
+          width: 100%;
+          text-align: center;
+          margin-bottom: 15px;
+          border-right: 2px solid #ffffff;
+          @media (max-width: 767px) {
+            border-right: none;
+          }
+        `}
+      >
+        <H31Text3
+          css={css`
+            font-weight: bold;
+            color: ${_config.colorTertiary};
+          `}
+        >
+          Call
+        </H31Text3>
+        <H31Link4
+          css={css`
+            color: #ffffff;
+            display: block;
+          `}
+          href={settings.telHref}
+        >
+          {settings.phone}
+        </H31Link4>
+      </div>
 
-const content2 = [
-  <H31Title2B
-    css={css`
-      margin: 30px 0;
-    `}
-  >
-    Rehearsal Hall Rules
-  </H31Title2B>,
-  <H31ListNumbered1>
-    <H31Item1>
-      Membership: You must be a member in good standing (i.e., all annual dues
-      and work dues must be paid to date) in order to reserve the Hall. No
-      exceptions will be made.
-    </H31Item1>
-    <H31Item1>
-      Set blocks of time. You may reserve a three-hour block of time. Arrive at
-      the beginning of your block of time - don’t expect to arrive late and
-      extend your time at the back end. Scheduling large blocks of time prevents
-      other bands from being able to use the Hall. Rare exceptions may be made
-      on a case-by-case basis.
-    </H31Item1>
-    <H31Item1>
-      Hall must be booked ahead of time. Rehearsals can only be booked through
-      the office during business hours.
-    </H31Item1>
-    <H31Item1>
-      No-shows. If you cannot not make your rehearsal, you must let us know as
-      soon as possible - during business hours, call the office; before/after
-      business hours, text the president. Note: A no-show means another band
-      could have missed an opportunity to rehearse during that time.
-    </H31Item1>
-    <H31Item1>
-      Rehearsal Form and fee for non-members is required. Fill out completely
-      and turn in the Rehearsal Hall Form. List all individuals rehearsing with
-      you on this form – first and last names – and pay $5 for anyone rehearsing
-      with you who is not an AFM member. You may pay with cash or check, or
-      request to be invoiced and pay by credit card. There is a black Mailbox on
-      the inside wall by the rear entry doors into which you may deposit the
-      form and the cash/check.
-    </H31Item1>
-    <H31Item1>
-      Return Rehearsal Hall to order. Return Rehearsal Hall to the order in
-      which you found it – music stands and folding chairs stored in their
-      specific storage locations, piano covered, speakers/equipment turned off,
-      trash picked up, drums reassembled and returned to original location, etc.
-      Report broken equipment immediately. If the Hall is in disorder when you
-      arrive for your rehearsal, take a photo with your smartphone and text it
-      to the President immediately.
-    </H31Item1>
-    <H31Item1>
-      Equipment may not be removed from the Hall without prior permission. This
-      includes, but is not limited to: chairs, music stands, drums, speakers,
-      lighting, etc.
-    </H31Item1>
-    <H31Item1>
-      Security. On the back doors, make sure flush bolt locks are securely
-      placed in the lock position and doors are closed securely. Turn all lights
-      off before you depart.
-    </H31Item1>
-    <H31Item1>
-      Door Code. The code to the back door is meant only for Band Leaders. Do
-      not give it out to anyone else – even other members or other Band Leaders
-      – without prior permission from the office.
-    </H31Item1>
-    <H31Item1>
-      Air conditioning. Only use the Up/Down buttons to adjust temperature. Do
-      not touch any other buttons.
-    </H31Item1>
-    <H31Item1>
-      Advertising. Do not put up signs or banners without permission. Business
-      cards may be left by members only – all others will be discarded on the
-      following business day of your rehearsal.
-    </H31Item1>
-    <H31Item1>No Smoking anywhere inside the building.</H31Item1>
-    <H31Item1>
-      Keep doors closed. Out of respect for our neighbors, please keep the doors
-      closed while rehearsing.
-    </H31Item1>
-  </H31ListNumbered1>,
-  <H31Title2B
-    css={css`
-      margin: 30px 0;
-    `}
-  >
-    Hall Reservation Priority List
-  </H31Title2B>,
-  <H31Text3>
-    If two or more groups wish to reserve the same time slot, the following list
-    sets the order of priority. A higher-priority group can bump a group that
-    has already reserved the Hall.
-  </H31Text3>,
-  <H31ListNumbered1>
-    <H31Item1>Union Business, Meetings or Events</H31Item1>
-    <H31Item1>
-      Member group rehearsals (where 75% or more of the group are members)
-    </H31Item1>
-    <H31Item1>Member individual rehearsals</H31Item1>
-    <H31Item1>Majority non-member rehearsals</H31Item1>
-  </H31ListNumbered1>,
-  <H31Title2B
-    css={css`
-      margin: 30px 0;
-    `}
-  >
-    Three-Strike Policy
-  </H31Title2B>,
-  <H31Text3>
-    If you are in violation of any of the rules three times within any
-    contiguous 12-month period, you will be disallowed from reserving and using
-    the Hall for one year. For example, if a Band Leader is in violation of
-    these terms, he will not be allowed to have one of his band members book the
-    Hall in his stead. Detailed Rules are below, but violations include:
-  </H31Text3>,
-  <H31ListBullet1>
-    <H31Item1>Not paying for non-members</H31Item1>
-    <H31Item1>Not completing Rehearsal Hall form</H31Item1>
-    <H31Item1>Not returning Hall to proper order</H31Item1>
-    <H31Item1>No-shows without prior cancellation notice</H31Item1>
-    <H31Item1>Taking or borrowing equipment without prior permission</H31Item1>
-  </H31ListBullet1>,
-];
+      <div
+        css={css`
+          text-align: center;
+        `}
+      >
+        <H31Text3
+          css={css`
+            font-weight: bold;
+            color: ${_config.colorTertiary};
+          `}
+        >
+          Email
+        </H31Text3>
+        <H31Link4
+          css={css`
+            color: #ffffff;
+            display: block;
+          `}
+          href={settings.mailHref}
+        >
+          {settings.email}
+        </H31Link4>
+      </div>
+    </ContainerContact>
+    </>
+  );
+}
 
-export default function () {
+const sectionTitle = css`
+  margin: 30px 0;
+`;
+
+function HallRules({ page }) {
+  return (
+    <>
+      <H31Title2B css={sectionTitle}>Rehearsal Hall Rules</H31Title2B>
+      <H31ListNumbered1>
+        {page.rules.map(({ rule }) => (
+          <H31Item1 key={rule}>{rule}</H31Item1>
+        ))}
+      </H31ListNumbered1>
+      <H31Title2B css={sectionTitle}>Hall Reservation Priority List</H31Title2B>
+      <H31Text3>{page.priority_text}</H31Text3>
+      <H31ListNumbered1>
+        {page.priority_list.map(({ item }) => (
+          <H31Item1 key={item}>{item}</H31Item1>
+        ))}
+      </H31ListNumbered1>
+      <H31Title2B css={sectionTitle}>Three-Strike Policy</H31Title2B>
+      <H31Text3>{page.strike_text}</H31Text3>
+      <H31ListBullet1>
+        {page.strike_list.map(({ item }) => (
+          <H31Item1 key={item}>{item}</H31Item1>
+        ))}
+      </H31ListBullet1>
+    </>
+  );
+}
+
+export default function RehearsalHall({ data }) {
+  const page = data.markdownRemark.frontmatter;
+  const photo = (i) => <CmsImage image={page.photos[i]?.image} alt={page.photos[i]?.alt} />;
+
   return (
     <Layout>
       <SEO
@@ -263,9 +204,9 @@ export default function () {
       />
 
       <H31Masthead1
-        ImageComponent={<ImgMastheadRehearsalHall />}
-        title="CFMA Rehearsal Facility"
-        text="Do you need rehearsal space? Our rehearsal facility is available 24/7 and is free to members in good standing."
+        ImageComponent={<CmsImage image={page.masthead_image} alt={page.masthead_alt} loading="eager" />}
+        title={page.masthead_title}
+        text={page.masthead_text}
       />
 
       <H31LayoutContainer
@@ -295,7 +236,7 @@ export default function () {
                     lg={12}
                     xs={6}
                   >
-                    {content1}
+                    <FacilityInfo page={page} />
                   </H31LayoutCol>
 
                   <H31LayoutCol
@@ -307,8 +248,8 @@ export default function () {
                     `}
                     xs={6}
                   >
-                    <ImgRehearsalHall1 />
-                    <ImgRehearsalHall2 />
+                    {photo(0)}
+                    {photo(1)}
                   </H31LayoutCol>
                 </H31LayoutRow>
               </H31LayoutContainer>
@@ -324,8 +265,8 @@ export default function () {
             `}
             lg={3}
           >
-            <ImgRehearsalHall1 />
-            <ImgRehearsalHall2 />
+            {photo(0)}
+            {photo(1)}
           </H31LayoutCol>
 
           <H31LayoutCol
@@ -337,8 +278,8 @@ export default function () {
             `}
             lg={3}
           >
-            <ImgRehearsalHall3 />
-            <ImgRehearsalHall4 />
+            {photo(2)}
+            {photo(3)}
           </H31LayoutCol>
         </H31LayoutRow>
 
@@ -398,7 +339,7 @@ export default function () {
                     `}
                     xs={12}
                   >
-                    {content2}
+                    <HallRules page={page} />
                   </H31LayoutCol>
                 </H31LayoutRow>
               </H31LayoutContainer>
@@ -409,3 +350,46 @@ export default function () {
     </Layout>
   );
 }
+
+export const query = graphql`
+  query RehearsalHallPage {
+    markdownRemark(fileAbsolutePath: { regex: "/site-content/rehearsal-hall.md$/" }) {
+      frontmatter {
+        masthead_image {
+          childImageSharp {
+            fluid(maxWidth: 1920) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        masthead_alt
+        masthead_title
+        masthead_text
+        facility_text
+        request_form
+        usage_form
+        photos {
+          alt
+          image {
+            childImageSharp {
+              fluid(maxWidth: 700) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        rules {
+          rule
+        }
+        priority_text
+        priority_list {
+          item
+        }
+        strike_text
+        strike_list {
+          item
+        }
+      }
+    }
+  }
+`;

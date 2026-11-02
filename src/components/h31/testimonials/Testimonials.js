@@ -189,8 +189,10 @@ class Testimonials extends React.Component {
         `}
         render={(data) => {
           const testimonials = data.allMarkdownRemark.edges
-            .map((testimonial) => testimonial.node.frontmatter)
-            .filter((testimonial) => testimonial.name !== null);
+            .filter((testimonial) =>
+              testimonial.node.fileAbsolutePath.includes("static/testimonials")
+            )
+            .map((testimonial) => testimonial.node.frontmatter);
 
           return (
             <>

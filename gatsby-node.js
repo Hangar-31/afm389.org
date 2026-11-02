@@ -78,6 +78,21 @@ exports.createPages = ({ actions, graphql }) => {
   });
 };
 
+// CMS fields that may be empty in every file, so Gatsby can't infer their types.
+exports.createSchemaCustomization = ({ actions }) => {
+  actions.createTypes(`
+    type MarkdownRemark implements Node {
+      frontmatter: MarkdownRemarkFrontmatter
+    }
+    type MarkdownRemarkFrontmatter {
+      banner: String
+      request_form: String
+      usage_form: String
+      linkedin: String
+    }
+  `);
+};
+
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {

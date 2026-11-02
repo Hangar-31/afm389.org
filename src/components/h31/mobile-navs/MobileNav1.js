@@ -12,6 +12,7 @@ import {
   H31Link1,
   H31LayoutRow,
   H31SocialIcons,
+  H31SiteSocials,
   H31OverlayMemberLogin1,
 } from "..";
 import _config from "../../_config";
@@ -206,23 +207,27 @@ export default class MobileNav1 extends Component {
               <H31OverlayMemberLogin1 />
             </H31LayoutCol>
 
-            {_config.socials.map((social) => (
-              <H31LayoutCol
-                key={social.social}
-                css={css`
-                  text-align: center;
-                  margin-bottom: 45px;
-                `}
-                xs={12}
-              >
-                <H31SocialIcons
-                  color={_config.colorWhite}
-                  social={social.social}
-                  link={social.link}
-                  colorHover={_config.colorTertiary}
-                />
-              </H31LayoutCol>
-            ))}
+            <H31SiteSocials>
+              {(socials) =>
+                socials.map((social) => (
+                  <H31LayoutCol
+                    key={social.social}
+                    css={css`
+                      text-align: center;
+                      margin-bottom: 45px;
+                    `}
+                    xs={12}
+                  >
+                    <H31SocialIcons
+                      color={_config.colorWhite}
+                      social={social.social}
+                      link={social.link}
+                      colorHover={_config.colorTertiary}
+                    />
+                  </H31LayoutCol>
+                ))
+              }
+            </H31SiteSocials>
 
             {_config.footerNav.map((link) => (
               <H31LayoutCol

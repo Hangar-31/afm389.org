@@ -4,6 +4,7 @@ import { jsx, css } from "@emotion/react";
 
 // Config
 import _config from "../components/_config";
+import useSiteSettings from "../hooks/useSiteSettings";
 
 // Components
 import Layout from "../components/layout";
@@ -22,7 +23,9 @@ import {
 // Images
 import ImgMastheadContact from "../components/images/mastheads/ImgMastheadContact";
 
-export default function () {
+export default function Contact() {
+  const settings = useSiteSettings();
+
   return (
     <Layout>
       <SEO
@@ -83,9 +86,11 @@ export default function () {
                 display: block;
                 margin-bottom: 60px;
               `}
-              href="https://www.google.com/maps/place/3020+E+Robinson+St,+Orlando,+FL+32803/@28.5457854,-81.3470503,17z/data=!3m1!4b1!4m5!3m4!1s0x88e77ad22dc16cc1:0x85de0e8e8138f6ec!8m2!3d28.5457854!4d-81.3448616"
+              href={settings.map_url}
             >
-              {["3020 East Robinson Street", <br />, "Orlando, FL 3280"]}
+              {settings.address_line_1}
+              <br />
+              {settings.address_line_2}
             </H31Link4>
 
             <H31Title3A
@@ -101,9 +106,9 @@ export default function () {
                 display: block;
                 margin-bottom: 60px;
               `}
-              href="tel::(407) 894-8666"
+              href={settings.telHref}
             >
-              (407) 894-8666
+              {settings.phone}
             </H31Link4>
 
             <H31Title3A
@@ -114,7 +119,7 @@ export default function () {
             >
               E-mail
             </H31Title3A>
-            <H31Link4 href="mailto::info@afm389.org">info@afm389.org</H31Link4>
+            <H31Link4 href={settings.mailHref}>{settings.email}</H31Link4>
           </H31LayoutCol>
           <H31LayoutCol
             css={css`

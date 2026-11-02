@@ -3,9 +3,12 @@
 /* eslint-disable react/jsx-wrap-multilines */
 import React from "react";
 import { css } from "@emotion/react";
+import { graphql } from "gatsby";
 
 // Config
 import _config from "../components/_config";
+import CmsImage from "../components/CmsImage";
+import { richInline } from "../components/RichText";
 
 // Components
 import Layout from "../components/layout";
@@ -22,52 +25,11 @@ import {
   H31LayoutCol,
   H31ButtonFillArrow,
   H31SectionNews1,
-  H31Link7,
 } from "../components/h31";
-import ImgMastheadHome from "../components/images/mastheads/ImgMastheadHome";
 
-// Images
-import ImgHome1 from "../components/images/_home/ImgHome1";
-import ImgHome2 from "../components/images/_home/ImgHome2";
-import ImgHome3 from "../components/images/_home/ImgHome3";
-import ImgHome4 from "../components/images/_home/ImgHome4";
-import InstagramSection from "../components/h31/instagram/Instagram";
+export default function Home({ data }) {
+  const page = data.markdownRemark.frontmatter;
 
-// Data
-const contentBlocks = [
-  {
-    title: "Your Legal Support",
-    text: `Having a contract is one thing, but having a contract backed by the
-      union is another. We work with the finest attorneys in the business.
-      We have recovered thousands of dollars for our members.`,
-    image: <ImgHome1 />,
-  },
-  {
-    title: "Keeping You Informed",
-    text: `The local music scene is ever-changing. Our member-ship is a great
-      resource to help navigate that scene. Quarterly membership meetings,
-      newsletters and social media can help keep you informed.`,
-    image: <ImgHome2 />,
-  },
-  {
-    title: "A Vibrant Community",
-    text: `Nearly 600 musicians call themselves CFMA members. From Jazz to
-      Classical, Latin to Rock, R&B to Hip-Hop, our members play it all.`,
-    image: <ImgHome3 />,
-  },
-  {
-    title: "Ready For A Rehearsal",
-    text: (
-      <>
-        Use of the Rehearsal Hall is free for our members! More details can be
-        found <H31Link7 to="/rehearsal-hall">here</H31Link7>.
-      </>
-    ),
-    image: <ImgHome4 />,
-  },
-];
-
-export default function () {
   return (
     <Layout>
       <SEO
@@ -76,9 +38,15 @@ export default function () {
       />
 
       <H31Masthead1
-        ImageComponent={<ImgMastheadHome />}
-        title="Your Path to a Musical Career"
-        text="Welcome to the Central Florida Musicians’ Association! For over a century, we have been serving the interests of musicians in Central Florida. Whether you’re interested in the benefits of union membership or simply in joining the largest association of professional musicians in the country, we’re here for you!"
+        ImageComponent={
+          <CmsImage
+            image={page.masthead_image}
+            alt={page.masthead_alt}
+            loading="eager"
+          />
+        }
+        title={page.masthead_title}
+        text={page.masthead_text}
       />
 
       {/* <div
@@ -112,20 +80,15 @@ export default function () {
         />
       </div> */}
 
-      <H31SectionTitleFullWidth
-        backgroundColor={_config.colorPrimary}
-        titleSmall=""
-        titleSmallColor={_config.colorSecondary}
-        titleLarge="CELEBRATING 100 YEARS! ESTABLISHED 1924"
-        customCSS="justify-content: center;"
-      />
-
-      <H31SectionTitleFullWidth
-        backgroundColor={_config.colorWhite}
-        titleSmall="Recent Instagram Posts"
-      />
-
-      <InstagramSection />
+      {page.banner && (
+        <H31SectionTitleFullWidth
+          backgroundColor={_config.colorPrimary}
+          titleSmall=""
+          titleSmallColor={_config.colorSecondary}
+          titleLarge={page.banner}
+          customCSS="justify-content: center;"
+        />
+      )}
 
       <H31SectionTitleFullWidth
         backgroundColor={_config.colorWhite}
@@ -164,19 +127,17 @@ export default function () {
       </H31LayoutContainer>
 
       <H31TextBlock2
-        title="Musicians Working For Musicians"
-        subtitle="Helping Musicians Succeed"
-        text="As part of the American Federation of Musicians — the largest
-        organization in the world representing musicians — we are committed to
-        raising industry standards in Central Florida. How can we help you?"
+        title={page.intro_title}
+        subtitle={page.intro_subtitle}
+        text={page.intro_text}
       />
 
-      {contentBlocks.map((contentBlock, i) => (
+      {page.blocks.map((block, i) => (
         <H31ContentBlock1
-          key={contentBlock.title}
-          ImageComponent={contentBlock.image}
-          title={contentBlock.title}
-          text={contentBlock.text}
+          key={block.title}
+          ImageComponent={<CmsImage image={block.image} alt={block.image_alt} />}
+          title={block.title}
+          text={richInline(block.text)}
           backgroundColor={i % 2 === 0 ? "#F9F9F9" : "transparent"}
           titleColor={
             i % 2 === 0 ? _config.colorPrimary : _config.colorSecondary
@@ -196,3 +157,38 @@ export default function () {
     </Layout>
   );
 }
+
+export const query = graphql`
+  query HomePage {
+    markdownRemark(fileAbsolutePath: { regex: "/site-content/home.md$/" }) {
+      frontmatter {
+        masthead_image {
+          childImageSharp {
+            fluid(maxWidth: 1920) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        masthead_alt
+        masthead_title
+        masthead_text
+        banner
+        intro_title
+        intro_subtitle
+        intro_text
+        blocks {
+          title
+          text
+          image_alt
+          image {
+            childImageSharp {
+              fluid(maxWidth: 1000) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
