@@ -103,3 +103,22 @@ exports.onCreateNode = ({ node, actions }) => {
     });
   }
 };
+
+// On Netlify deploy previews, point the CMS at the preview's own branch so it
+// loads that branch's content and test saves never reach the live site.
+exports.onPostBuild = () => {
+  const { CONTEXT, HEAD } = process.env;
+  if (!HEAD || (CONTEXT !== "deploy-preview" && CONTEXT !== "branch-deploy")) {
+    return;
+  }
+  const fs = require("fs");
+  const configPath = path.resolve("public/admin/config.yml");
+  const config = fs.readFileSync(configPath, "utf8");
+  fs.writeFileSync(
+    configPath,
+    config.replace(
+      "  name: git-gateway\n",
+      `  name: git-gateway\n  branch: ${HEAD}\n`
+    )
+  );
+};
