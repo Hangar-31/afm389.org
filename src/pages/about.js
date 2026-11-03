@@ -72,7 +72,7 @@ const history = [
 ];
 
 export default function About({ data: page }) {
-  const officers = page.allMarkdownRemark.nodes.map((node) => node.frontmatter);
+  const { officers } = page.markdownRemark.frontmatter;
 
   return (
     <Layout>
@@ -144,12 +144,9 @@ export default function About({ data: page }) {
 
 export const query = graphql`
   query AboutPage {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/static/officers/" } }
-      sort: { fields: [frontmatter___order], order: ASC }
-    ) {
-      nodes {
-        frontmatter {
+    markdownRemark(fileAbsolutePath: { regex: "/site-content/officers.md$/" }) {
+      frontmatter {
+        officers {
           name
           title
           bio

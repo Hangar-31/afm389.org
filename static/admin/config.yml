@@ -24,22 +24,6 @@ collections:
     fields:
       - { name: name, label: Name }
       - { name: text, label: text, widget: text }
-  - name: officers
-    label: Officers
-    label_singular: Officer
-    folder: static/officers
-    create: true
-    delete: true
-    identifier_field: name
-    slug: "{{name}}"
-    summary: "{{order}}. {{name}} ({{title}})"
-    sortable_fields: [order, name]
-    fields:
-      - { name: name, label: Name }
-      - { name: title, label: Title }
-      - { name: order, label: Display order, widget: number, value_type: int, min: 1, hint: "1 shows first on the About page." }
-      - { name: photo, label: Photo, widget: image }
-      - { name: bio, label: Bio, widget: text, hint: "Leave a blank line between paragraphs." }
   - name: pages
     label: Pages
     delete: false
@@ -139,6 +123,22 @@ collections:
             summary: "{{fields.item}}"
             fields:
               - { name: item, label: Item }
+      - name: officers
+        label: Officers
+        file: static/site-content/officers.md
+        fields:
+          - name: officers
+            label: Officers
+            label_singular: Officer
+            widget: list
+            collapsed: true
+            summary: "{{fields.name}} — {{fields.title}}"
+            hint: "Drag officers by the handle to set the order they show on the About page."
+            fields:
+              - { name: name, label: Name }
+              - { name: title, label: Title }
+              - { name: photo, label: Photo, widget: image }
+              - { name: bio, label: Bio, widget: text, hint: "Leave a blank line between paragraphs." }
       - name: site-settings
         label: Contact and Site Settings
         file: static/site-content/site-settings.md
