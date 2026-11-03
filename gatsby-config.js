@@ -7,6 +7,13 @@ module.exports = {
   },
   trailingSlash: "never",
   plugins: [
+    // Lets every component use emotion's css prop
+    {
+      resolve: `gatsby-plugin-emotion`,
+      // Auto labels crash on unnamed components like `export default function ()`
+      options: { autoLabel: `never` },
+    },
+
     // File sourcing into Gatsby for use with Gatsby Node API
     {
       resolve: "gatsby-source-filesystem",

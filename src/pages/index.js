@@ -97,15 +97,7 @@ export default function Home({ data }) {
 
       <H31SectionNews1 />
 
-      <H31LayoutContainer
-        css={css`
-          @media (max-width: 767px) {
-            display: none;
-          }
-        `}
-        fluid
-        as="section"
-      >
+      <H31LayoutContainer fluid as="section">
         <H31LayoutRow>
           <H31LayoutCol
             css={css`
