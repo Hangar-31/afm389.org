@@ -2,6 +2,7 @@
 /* eslint-disable react/jsx-wrap-multilines */
 import React from "react";
 import { css } from "@emotion/react";
+import { graphql } from "gatsby";
 
 // Components
 import Layout from "../components/layout";
@@ -22,17 +23,11 @@ import {
 // Images
 import ImgMastheadAbout from "../components/images/mastheads/ImgMastheadAbout";
 import _config from "../components/_config";
+import CmsImage from "../components/CmsImage";
+import { plainParagraphs } from "../components/RichText";
 import ImgAbout1 from "../components/images/_about/ImgAbout1";
-import ImgBioSamZambito from "../components/images/bios/ImgBioSamZambito";
-import ImgBioBarrySmith from "../components/images/bios/ImgBioBarrySmith";
-import ImgBioBrianSmithers from "../components/images/bios/ImgBioBrianSmithers";
-import ImgBioKathyThomas from "../components/images/bios/ImgBioKathyThomas";
-import ImgBioJeffThomas from "../components/images/bios/ImgBioJeffThomas";
-import ImgBioDavidUhrig from "../components/images/bios/ImgBioDavidUhrig";
-import ImgBioMichaelSciallaba from "../components/images/bios/ImgBioMichaelSciallaba";
-import ImgBioMadisonHarding from "../components/images/bios/ImgBioMadisonHarding";
 
-const data = [
+const history = [
   <H31Text3 key="about-page-0">
     On April 18, 1924, a charter was granted by the American Federation of
     Musicians to allow the creation of Local 389 – then known as the Musicians’
@@ -76,67 +71,9 @@ const data = [
   </H31Text3>,
 ];
 
-// Data
-const bios = [
-  {
-    name: "Sam Zambito",
-    title: "President",
-    image: <ImgBioSamZambito />,
-    bios: [
-      "Sam Zambito, originally from Canandaigua, NY, has lived and worked in central Florida since 1974. After undergraduate studies at the Eastman School of Music, Sam has played trumpet in various groups in the Central Florida area eventually becoming a bandleader at Walt Disney World for more than 20 years. During his time at Disney, Sam became one of the earliest players of the Electronic Valve Instrument (EVI) which led to many opportunities. A long association with the Japanese company Akai led to performances throughout the USA, Canada and Europe at trade shows, educational conferences and college clinics. Sam has been Secretary/Treasurer of Local 389 since January 2003 and a member of the American Federation of Musicians since 1972.",
-    ],
-  },
-  {
-    name: "Madison Harding",
-    title: "Vice President",
-    image: <ImgBioMadisonHarding />,
-    bios: [
-      "I am primarily a harpist, but also have a background in piano and percussion. I freelance throughout Central Florida as a soloist and as part of various ensembles and orchestras. I am a musician sideman at Disney, performing with the Candlelight Orchestra. I have been an active member of AFM Local 389 since 2016 and have served as a member of the Local’s Bylaw Committee since 2021. I am a firm believer that musicians are stronger together. I look forward to learning from our returning board members, while contributing my unique perspective to the team.",
-    ],
-  },
-  {
-    name: "Michael Sciallaba",
-    title: "Treasurer",
-    image: <ImgBioMichaelSciallaba />,
-    bios: [
-      "My name is Michael Scialabba and as a graduate of Winter Park High School and the University of Florida, I am proud to say that I am a local music product, shaped by the many exceptional educators and professionals that call Central Florida home. I've been a performer at Walt Disney World for over three decades, and I'm currently a longstanding member of the Main Street Philharmonic at the Magic Kingdom. I've served as a Disney Shop Steward for over 10 years, as well as a key member of the Disney CBA Negotiations Team for the last two contracts. I also have a master's degree in Organizational Leadership, which specializes in Strategy and Innovation. I'm incredibly passionate about creating fair and transparent working conditions for all, and defending worker's rights. Your issues matter to me, and I take great pride in representing you with a respectful, but vigorous approach, aimed at finding amicable solutions. I am in your service, and always available to hear your concerns, or ideas about how the union can best support its membership.",
-    ],
-  },
-  {
-    name: "Jeff Thomas",
-    title: "Executive Board",
-    image: <ImgBioJeffThomas />,
-    bios: [
-      "Having been trained as a classical and jazz musician, Jeff has had a varied career in both the commercial music industry and on the concert stage. He is Principal Trombone with the Orlando Philharmonic Orchestra and the Bach Festival Orchestra. Jeff has studied with some of the most respected teachers in the country, and he has paid that experience forward through inspiring countless numbers of students and professional performers through teaching and mentoring. All of this (and much more) allows Jeff to reach out and serve the interests of our musicians on a variety of levels. Jeff shares a blended family of six children with his wife and best friend, Kathy Thomas.",
-    ],
-  },
-  {
-    name: "Barry Smith",
-    title: "Executive Board",
-    image: <ImgBioBarrySmith />,
-    bios: [
-      "Originally from Jacksonville, Florida, Barry received his Bachelor of Music Degree from North Texas State University. Since 1982, Barry has been based in the Orlando area as a free-lance musician and performing for Walt Disney World in production shows, conventions, casuals and backing artists in clubs such as the Village Lounge and Pleasure Island Jazz Company. Barry has performed on festivals, tours, and in concerts and clubs with artists such as Rosemary Clooney, Woody Herman, Ira Sullivan, Marian McPartland, Rob McConnell, Bobby Shew, and Debbie Boone. A variety of his recording work includes live television series such as the New Original Amateur Hour and with popular groups such as Mannheim Steamroller. Barry is on faculty at Valencia College, Daytona State College, and has served on faculty at other colleges including Florida State University as Assistant Professor of Music. He has served as an Executive Board member for 20 years.",
-    ],
-  },
-  {
-    name: "Brian Smithers",
-    title: "Executive Board",
-    image: <ImgBioBrianSmithers />,
-    bios: [
-      "Brian Smithers has been active in the Central Florida music scene for more than 30 years, playing woodwinds at Walt Disney World, in Broadway shows, on the orchestral stage, and in nearly every venue in the area. He has served the CFMA as board member, Vice President, shop steward, and co-chair of the WDW negotiating committee. He is a founding member of the Hippocrene Saxophone Quartet. Brian is currently Program Director of Audio Production at Full Sail University. He has also taught Music Technology at Stetson University. Brian studied saxophone at Ithaca College and the University of Central Florida.",
-    ],
-  },
-  {
-    name: "Kathy Thomas",
-    title: "Executive Board",
-    image: <ImgBioKathyThomas />,
-    bios: [
-      "Kathy studied French horn at the University of Illinois at Champaign/Urbana and Northern Illinois University. She has played with the Wheaton Summer Symphony, Champaign/Urbana Symphony, Symfonia Da Camera, Danville Symphony, and Hinsdale Symphony, Brevard Symphony Orchestra, Bach Festival Orchestra, West Coast Symphony, Sovereign Brass Quintet and The Florida Orchestra. Since moving to Florida in 1993, Kathy has steadily worked for the Walt Disney World company. In 2004, she won the third horn position with the Orlando Philharmonic. In 2012 Kathy was appointed the position of adjunct professor of French Horn at Stetson University. Mrs. Thomas manages a private teaching studio, and has an extensive recording studio career, including “Movie Songs” and “Broadway” under the Warner Brothers label.",
-    ],
-  },
-];
+export default function About({ data: page }) {
+  const { officers } = page.markdownRemark.frontmatter;
 
-export default function () {
   return (
     <Layout>
       <SEO
@@ -170,7 +107,7 @@ export default function () {
           <H31LayoutCol xs={1} md={2} xl={3} />
           <H31LayoutCol xs={10} md={8} xl={6}>
             <H31ContentBlock2 title="Musicians Working For Musicians">
-              {data}
+              {history}
             </H31ContentBlock2>
           </H31LayoutCol>
           <H31LayoutCol xs={1} md={2} xl={3} />
@@ -185,13 +122,13 @@ export default function () {
         id="board-of-directors"
       />
 
-      {bios.map((bio) => (
+      {officers.map((officer) => (
         <H31Bio1
-          key={bio.name}
-          name={bio.name}
-          title={bio.title}
-          image={bio.image}
-          bios={bio.bios}
+          key={officer.name}
+          name={officer.name}
+          title={officer.title}
+          image={<CmsImage image={officer.photo} alt={officer.name} />}
+          bios={plainParagraphs(officer.bio)}
         />
       ))}
 
@@ -204,3 +141,24 @@ export default function () {
     </Layout>
   );
 }
+
+export const query = graphql`
+  query AboutPage {
+    markdownRemark(fileAbsolutePath: { regex: "/site-content/officers.md$/" }) {
+      frontmatter {
+        officers {
+          name
+          title
+          bio
+          photo {
+            childImageSharp {
+              fluid(maxWidth: 600) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;

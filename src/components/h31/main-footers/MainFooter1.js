@@ -12,6 +12,7 @@ import {
   H31LayoutRow,
   H31LayoutCol,
   H31SocialIcons,
+  H31SiteSocials,
   H31LinkTallUnderline,
   H31Title4C,
   H31Title2B,
@@ -270,16 +271,20 @@ function MainFooter1({ topBarColor, bottomBarColor, ImageComponent }) {
               }
             `}
           >
-            {_config.socials.map((social) => (
-              <H31SocialIcons
-                key={social.social}
-                name={social.social}
-                color={_config.colorWhite}
-                social={social.social}
-                link={social.link}
-                colorHover={_config.colorTertiary}
-              />
-            ))}
+            <H31SiteSocials>
+              {(socials) =>
+                socials.map((social) => (
+                  <H31SocialIcons
+                    key={social.social}
+                    name={social.social}
+                    color={_config.colorWhite}
+                    social={social.social}
+                    link={social.link}
+                    colorHover={_config.colorTertiary}
+                  />
+                ))
+              }
+            </H31SiteSocials>
           </H31LayoutCol>
 
           <H31LayoutCol

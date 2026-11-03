@@ -5,7 +5,7 @@ backend:
     - editor
 
 media_folder: static/assets
-public_folder: assets
+public_folder: /assets
 
 collections:
   - name: news-and-articles
@@ -24,3 +24,130 @@ collections:
     fields:
       - { name: name, label: Name }
       - { name: text, label: text, widget: text }
+  - name: pages
+    label: Pages
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: home
+        label: Home
+        file: static/site-content/home.md
+        fields:
+          - { name: masthead_image, label: Header image, widget: image }
+          - { name: masthead_alt, label: Header image description, hint: "Describes the image for screen readers." }
+          - { name: masthead_title, label: Header title }
+          - { name: masthead_text, label: Header text, widget: text }
+          - { name: banner, label: Banner text (optional), required: false, hint: "Shows in a colored bar under the header. Leave empty to hide it." }
+          - { name: intro_title, label: Intro title }
+          - { name: intro_subtitle, label: Intro subtitle }
+          - { name: intro_text, label: Intro text, widget: text }
+          - name: blocks
+            label: Feature blocks
+            label_singular: Feature block
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: Title }
+              - { name: text, label: Text, widget: markdown, buttons: [bold, italic, link], editor_components: [] }
+              - { name: image, label: Image, widget: image }
+              - { name: image_alt, label: Image description }
+      - name: member-benefits
+        label: Member Benefits
+        file: static/site-content/member-benefits.md
+        fields:
+          - { name: masthead_image, label: Header image or collage, widget: image }
+          - { name: masthead_alt, label: Header image description }
+          - { name: masthead_title, label: Header title }
+          - name: benefits
+            label: Benefits
+            label_singular: Benefit
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: Name }
+              - { name: info, label: Description, widget: markdown, buttons: [bold, italic, link], editor_components: [] }
+          - name: partners
+            label: Collective bargaining partners
+            label_singular: Partner
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: image, label: Image, widget: image }
+              - { name: title, label: Name }
+              - { name: text, label: Description, widget: text }
+              - { name: link, label: Link }
+              - { name: link_text, label: Link text }
+          - { name: cba_text, label: Text under the partners, widget: text }
+      - name: rehearsal-hall
+        label: Rehearsal Hall
+        file: static/site-content/rehearsal-hall.md
+        fields:
+          - { name: masthead_image, label: Header image, widget: image }
+          - { name: masthead_alt, label: Header image description }
+          - { name: masthead_title, label: Header title }
+          - { name: masthead_text, label: Header text, widget: text }
+          - { name: facility_text, label: About the facility, widget: markdown, buttons: [bold, italic, link], editor_components: [] }
+          - { name: request_form, label: Request form (PDF), widget: file, required: false, hint: "A download button appears on the page once a file is added." }
+          - { name: usage_form, label: Usage form (PDF), widget: file, required: false, hint: "A download button appears on the page once a file is added." }
+          - name: photos
+            label: Photos
+            label_singular: Photo
+            widget: list
+            min: 4
+            max: 4
+            summary: "{{fields.alt}}"
+            fields:
+              - { name: image, label: Image, widget: image }
+              - { name: alt, label: Image description }
+          - name: rules
+            label: Rehearsal Hall rules
+            label_singular: Rule
+            widget: list
+            summary: "{{fields.rule}}"
+            fields:
+              - { name: rule, label: Rule, widget: text }
+          - { name: priority_text, label: Reservation priority intro, widget: text }
+          - name: priority_list
+            label: Reservation priority list
+            label_singular: Priority
+            widget: list
+            summary: "{{fields.item}}"
+            fields:
+              - { name: item, label: Item }
+          - { name: strike_text, label: Three-strike policy intro, widget: text }
+          - name: strike_list
+            label: Three-strike violations
+            label_singular: Violation
+            widget: list
+            summary: "{{fields.item}}"
+            fields:
+              - { name: item, label: Item }
+      - name: officers
+        label: Officers
+        file: static/site-content/officers.md
+        fields:
+          - name: officers
+            label: Officers
+            label_singular: Officer
+            widget: list
+            collapsed: true
+            summary: "{{fields.name}} — {{fields.title}}"
+            hint: "Drag officers by the handle to set the order they show on the About page."
+            fields:
+              - { name: name, label: Name }
+              - { name: title, label: Title }
+              - { name: photo, label: Photo, widget: image }
+              - { name: bio, label: Bio, widget: text, hint: "Leave a blank line between paragraphs." }
+      - name: site-settings
+        label: Contact and Site Settings
+        file: static/site-content/site-settings.md
+        fields:
+          - { name: phone, label: Phone }
+          - { name: email, label: Email }
+          - { name: address_line_1, label: Address line 1 }
+          - { name: address_line_2, label: Address line 2 }
+          - { name: map_url, label: Map link }
+          - { name: facebook, label: Facebook link, required: false }
+          - { name: instagram, label: Instagram link, required: false }
+          - { name: linkedin, label: LinkedIn link, required: false, hint: "The LinkedIn icon appears in the header and footer once this is filled in." }

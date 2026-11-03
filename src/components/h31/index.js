@@ -115,6 +115,7 @@ export { default as H31SocialBarHorizontal } from "./social-bars/SocialBarHorizo
 
 // Socials
 export { default as H31SocialIcons } from "./socials/SocialIcons";
+export { default as H31SiteSocials } from "./socials/SiteSocials";
 
 // Testimonials
 export { default as H31Testimonials } from "./testimonials/Testimonials";

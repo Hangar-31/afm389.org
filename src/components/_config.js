@@ -149,15 +149,4 @@ export default {
     },
   ],
 
-  // Socials
-  socials: [
-    {
-      social: "facebook",
-      link: "https://www.facebook.com/CentralFloridaMusiciansAssociation/",
-    },
-    {
-      social: "instagram",
-      link: "https://www.instagram.com/cfma389/",
-    },
-  ],
 };

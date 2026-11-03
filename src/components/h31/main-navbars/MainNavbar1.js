@@ -13,6 +13,7 @@ import _config from "../../_config";
 // Components
 import {
   H31SocialIcons,
+  H31SiteSocials,
   H31LinkTallUnderline,
   H31Title1A,
   H31Text2,
@@ -241,15 +242,19 @@ function MainNavbar1({
             }
           `}
         >
-          {_config.socials.map(social => (
-            <H31SocialIcons
-              key={social.social}
-              color={_config.colorWhite}
-              social={social.social}
-              link={social.link}
-              colorHover={_config.colorTertiary}
-            />
-            ))}
+          <H31SiteSocials>
+            {(socials) =>
+              socials.map((social) => (
+                <H31SocialIcons
+                  key={social.social}
+                  color={_config.colorWhite}
+                  social={social.social}
+                  link={social.link}
+                  colorHover={_config.colorTertiary}
+                />
+              ))
+            }
+          </H31SiteSocials>
 
           <H31OverlayMemberLogin1 />
         </H31LayoutCol>

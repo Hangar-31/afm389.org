@@ -168,12 +168,13 @@ export default class Bio1 extends React.Component {
                 this.bioContainer = bioContainer;
               }}
             >
-              {info.map((text) => (
+              {info.map((text, i) => (
                 <H31Text3
                   css={css`
                     padding-bottom: 15px;
                   `}
-                  key={text}
+                  // eslint-disable-next-line react/no-array-index-key
+                  key={i}
                 >
                   {text}
                 </H31Text3>
@@ -198,5 +199,5 @@ Bio1.defaultProps = {
 
 Bio1.propTypes = {
   name: PropTypes.string,
-  info: PropTypes.arrayOf(PropTypes.string),
+  info: PropTypes.arrayOf(PropTypes.node),
 };

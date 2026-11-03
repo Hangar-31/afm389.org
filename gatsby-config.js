@@ -7,6 +7,13 @@ module.exports = {
   },
   trailingSlash: "never",
   plugins: [
+    // Lets every component use emotion's css prop
+    {
+      resolve: `gatsby-plugin-emotion`,
+      // Auto labels crash on unnamed components like `export default function ()`
+      options: { autoLabel: `never` },
+    },
+
     // File sourcing into Gatsby for use with Gatsby Node API
     {
       resolve: "gatsby-source-filesystem",
@@ -40,6 +47,13 @@ module.exports = {
       options: {
         name: `news-and-articles`,
         path: `${__dirname}/static/news-and-articles`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `site-content`,
+        path: `${__dirname}/static/site-content`,
       },
     },
     {
@@ -79,8 +93,6 @@ module.exports = {
 
     // Helmet plugin
     "gatsby-plugin-react-helmet",
-    // Netlify CMS
-    "gatsby-plugin-netlify-cms",
     "gatsby-plugin-netlify",
 
     // Robots TXT
@@ -94,9 +106,6 @@ module.exports = {
 
     // Gives additional image processing functions
     "gatsby-plugin-sharp",
-
-    // Gatsby Plugin for linting -- Using AirBNB
-    "gatsby-plugin-eslint",
 
     {
       resolve: `gatsby-plugin-google-analytics`,

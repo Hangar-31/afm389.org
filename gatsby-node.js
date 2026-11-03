@@ -78,6 +78,21 @@ exports.createPages = ({ actions, graphql }) => {
   });
 };
 
+// CMS fields that may be empty in every file, so Gatsby can't infer their types.
+exports.createSchemaCustomization = ({ actions }) => {
+  actions.createTypes(`
+    type MarkdownRemark implements Node {
+      frontmatter: MarkdownRemarkFrontmatter
+    }
+    type MarkdownRemarkFrontmatter {
+      banner: String
+      request_form: String
+      usage_form: String
+      linkedin: String
+    }
+  `);
+};
+
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
@@ -87,4 +102,23 @@ exports.onCreateNode = ({ node, actions }) => {
       value: urlMaker(node.fileAbsolutePath),
     });
   }
+};
+
+// On Netlify deploy previews, point the CMS at the preview's own branch so it
+// loads that branch's content and test saves never reach the live site.
+exports.onPostBuild = () => {
+  const { CONTEXT, HEAD } = process.env;
+  if (!HEAD || (CONTEXT !== "deploy-preview" && CONTEXT !== "branch-deploy")) {
+    return;
+  }
+  const fs = require("fs");
+  const configPath = path.resolve("public/admin/config.yml");
+  const config = fs.readFileSync(configPath, "utf8");
+  fs.writeFileSync(
+    configPath,
+    config.replace(
+      "  name: git-gateway\n",
+      `  name: git-gateway\n  branch: ${HEAD}\n`
+    )
+  );
 };

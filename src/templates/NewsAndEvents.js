@@ -191,16 +191,6 @@ function NewsAndEvents({ data, pageContext }) {
                         <Img
                           css={css`
                             margin-bottom: 15px;
-                            height: 450px;
-                            @media (max-width: 991px) {
-                              height: 350px;
-                            }
-                            @media (max-width: 767px) {
-                              height: 300px;
-                            }
-                            @media (max-width: 574px) {
-                              height: 250px;
-                            }
                           `}
                           alt={frontmatter.title}
                           fluid={frontmatter.image.childImageSharp.fluid}
