@@ -109,17 +109,21 @@ exports.onCreateNode = ({ node, actions }) => {
 exports.onPostBuild = ({ store }) => {
   const fs = require("fs");
 
-  // Write each page as both about/index.html and about.html so Netlify serves
-  // /about and /about/ without redirecting. Browsers remember the old site's
-  // /about -> /about/ redirect, so redirecting either way loops for someone.
+  // Serve /about and /about/ both without redirecting. Browsers remember the
+  // old site's /about -> /about/ redirect, so redirecting either way loops for
+  // someone. Netlify matches rules with or without the slash, and forcing the
+  // rewrite skips its own slash redirect.
+  const rewrites = [];
   store.getState().pages.forEach(({ path: pagePath }) => {
     const name = pagePath.replace(/^\/|\/$/g, "");
-    const source = path.resolve("public", name, "index.html");
-    const target = path.resolve("public", `${name}.html`);
-    if (name && fs.existsSync(source) && !fs.existsSync(target)) {
-      fs.copyFileSync(source, target);
+    if (name && fs.existsSync(path.resolve("public", name, "index.html"))) {
+      rewrites.push(`/${encodeURI(name)}  /${encodeURI(name)}/index.html  200!`);
     }
   });
+  fs.appendFileSync(
+    path.resolve("public/_redirects"),
+    `\n# Pages load with or without a trailing slash\n${rewrites.join("\n")}\n`
+  );
 
   const { CONTEXT, HEAD } = process.env;
   if (!HEAD || (CONTEXT !== "deploy-preview" && CONTEXT !== "branch-deploy")) {
