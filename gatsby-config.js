@@ -5,7 +5,13 @@ module.exports = {
     author: "Hangar 31 Development",
     siteUrl: "https://afm389.org",
   },
-  trailingSlash: "never",
+  // The old site sent /about to /about/ and browsers remember that redirect.
+  // Redirecting back the other way loops, so serve both forms.
+  trailingSlash: "ignore",
+  // Netlify's auto-installed Gatsby adapter moves about/index.html to
+  // about.html, which makes /about/ redirect. The site is fully static, so
+  // skip it; gatsby-node.js writes the rewrites that serve both forms.
+  adapter: { name: "static-files", adapt() {} },
   plugins: [
     // Lets every component use emotion's css prop
     {
@@ -98,8 +104,9 @@ module.exports = {
     // Robots TXT
     "gatsby-plugin-robots-txt",
 
-    // Creates a Service Worker for offline use
-    "gatsby-plugin-offline",
+    // Replaces the old offline service worker with one that removes itself.
+    // Browsers that kept the old site's copy were stuck on it after launch.
+    "gatsby-plugin-remove-serviceworker",
 
     // Creates ImageSharp nodes for image manipulation within GraphQL queries
     "gatsby-transformer-sharp",

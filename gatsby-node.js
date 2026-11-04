@@ -106,12 +106,29 @@ exports.onCreateNode = ({ node, actions }) => {
 
 // On Netlify deploy previews, point the CMS at the preview's own branch so it
 // loads that branch's content and test saves never reach the live site.
-exports.onPostBuild = () => {
+exports.onPostBuild = ({ store }) => {
+  const fs = require("fs");
+
+  // Serve /about and /about/ both without redirecting. Browsers remember the
+  // old site's /about -> /about/ redirect, so redirecting either way loops for
+  // someone. Netlify matches rules with or without the slash, and forcing the
+  // rewrite skips its own slash redirect.
+  const rewrites = [];
+  store.getState().pages.forEach(({ path: pagePath }) => {
+    const name = pagePath.replace(/^\/|\/$/g, "");
+    if (name && fs.existsSync(path.resolve("public", name, "index.html"))) {
+      rewrites.push(`/${encodeURI(name)}  /${encodeURI(name)}/index.html  200!`);
+    }
+  });
+  fs.appendFileSync(
+    path.resolve("public/_redirects"),
+    `\n# Pages load with or without a trailing slash\n${rewrites.join("\n")}\n`
+  );
+
   const { CONTEXT, HEAD } = process.env;
   if (!HEAD || (CONTEXT !== "deploy-preview" && CONTEXT !== "branch-deploy")) {
     return;
   }
-  const fs = require("fs");
   const configPath = path.resolve("public/admin/config.yml");
   const config = fs.readFileSync(configPath, "utf8");
   fs.writeFileSync(
