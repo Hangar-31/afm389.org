@@ -106,12 +106,25 @@ exports.onCreateNode = ({ node, actions }) => {
 
 // On Netlify deploy previews, point the CMS at the preview's own branch so it
 // loads that branch's content and test saves never reach the live site.
-exports.onPostBuild = () => {
+exports.onPostBuild = ({ store }) => {
+  const fs = require("fs");
+
+  // Write each page as both about/index.html and about.html so Netlify serves
+  // /about and /about/ without redirecting. Browsers remember the old site's
+  // /about -> /about/ redirect, so redirecting either way loops for someone.
+  store.getState().pages.forEach(({ path: pagePath }) => {
+    const name = pagePath.replace(/^\/|\/$/g, "");
+    const source = path.resolve("public", name, "index.html");
+    const target = path.resolve("public", `${name}.html`);
+    if (name && fs.existsSync(source) && !fs.existsSync(target)) {
+      fs.copyFileSync(source, target);
+    }
+  });
+
   const { CONTEXT, HEAD } = process.env;
   if (!HEAD || (CONTEXT !== "deploy-preview" && CONTEXT !== "branch-deploy")) {
     return;
   }
-  const fs = require("fs");
   const configPath = path.resolve("public/admin/config.yml");
   const config = fs.readFileSync(configPath, "utf8");
   fs.writeFileSync(

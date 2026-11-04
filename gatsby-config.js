@@ -8,6 +8,10 @@ module.exports = {
   // The old site sent /about to /about/ and browsers remember that redirect.
   // Redirecting back the other way loops, so serve both forms.
   trailingSlash: "ignore",
+  // Netlify's auto-installed Gatsby adapter moves about/index.html to
+  // about.html, which makes /about/ redirect. The site is fully static, so
+  // skip it and let Netlify serve the files gatsby-node.js writes.
+  adapter: { name: "static-files", adapt() {} },
   plugins: [
     // Lets every component use emotion's css prop
     {
